@@ -1,0 +1,39 @@
+[
+    {
+        "name": "Wikipedia",
+        "url": "https://bk.tw.lvfukeji.com/baike-Wikipedia:%E9%A6%96%E9%A1%B5",
+        "title": "随便翻翻",
+        "introduction": "维基百科，全球最大、最受欢迎的百科全书。",
+        "avatar": "/medias/avatars/wikipedia.jpg"
+    },{
+        "name": "Wikihow",
+        "url": "https://www.wikihow.com/Main-Page",
+        "title": "探探虚实",
+        "introduction": "通过漫画“指导”你做这样辣样的事儿~",
+        "avatar": "/medias/avatars/wikihow.jpg"
+    },{
+        "name": "NPR",
+        "url": "https://www.npr.org",
+        "title": "前去收听",
+        "introduction": "声音舒适，口吻放松，店长推荐的英语电台。",
+        "avatar": "/medias/avatars/npr.jpg"
+    },{
+        "name": "USA Today",
+        "url": "https://www.usatoday.com/",
+        "title": "瞅一瞅",
+        "introduction": "快餐式的阅读，题材非常广泛，有一定的娱乐性。",
+        "avatar": "/medias/avatars/usatoday.jpg"
+    },{
+        "name": "The Times",
+        "url": "https://www.thetimes.co.uk/",
+        "title": "瞧一瞧",
+        "introduction": "泰晤士报，来自福尔摩斯的墙裂推荐。",
+        "avatar": "/medias/avatars/thetimes.jpg"
+    },{
+        "name": "LeetCode",
+        "url": "https://leetcode-cn.com/problemset/all/",
+        "title": "Coding",
+        "introduction": "每日打卡，一天不打上房揭瓦！",
+        "avatar": "/medias/avatars/leetcode.jpg"
+    }
+]
