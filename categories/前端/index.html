@@ -563,20 +563,20 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 
                 
                 
-                <a href="/categories/工具/" title="工具: 3">
+                <a href="/categories/GitHub/" title="GitHub: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9EBEA;">工具
-                        <span class="tag-length">3</span>
+                            style="background-color: #F9EBEA;">GitHub
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/GitHub/" title="GitHub: 1">
+                <a href="/categories/工具/" title="工具: 3">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">GitHub
-                        <span class="tag-length">1</span>
+                            style="background-color: #F5EEF8;">工具
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -773,8 +773,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 	$(document).ready(function () {
 
         var int = setInterval(fixCount, 50);  // 50ms周期检测函数
-        var pvcountOffset = 80000;  // 初始化首次数据
-        var uvcountOffset = 20000;
+        var pvcountOffset = 0;  // 初始化首次数据
+        var uvcountOffset = 0;
 
         function fixCount() {
             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {

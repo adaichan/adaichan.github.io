@@ -562,19 +562,10 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             <div class="tag-chips">
                 
                 
-                <a href="/tags/Markdown/" title="Markdown: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            data-tagname="Markdown" style="background-color: #F9EBEA;">Markdown
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/Hexo/" title="Hexo: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Hexo" style="background-color: #F5EEF8;">Hexo
+                            data-tagname="Hexo" style="background-color: #F9EBEA;">Hexo
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -583,7 +574,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/tags/GitHub/" title="GitHub: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="GitHub" style="background-color: #D5F5E3;">GitHub
+                            data-tagname="GitHub" style="background-color: #F5EEF8;">GitHub
                         <span class="tag-length">2</span>
                     </span>
                 </a>
@@ -592,7 +583,16 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/tags/Blog/" title="Blog: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Blog" style="background-color: #E8F8F5;">Blog
+                            data-tagname="Blog" style="background-color: #D5F5E3;">Blog
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Markdown/" title="Markdown: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="Markdown" style="background-color: #E8F8F5;">Markdown
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -616,10 +616,10 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/VSCode/" title="VSCode: 1">
+                <a href="/tags/移动端/" title="移动端: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="VSCode" style="background-color: #82E0AA;">VSCode
+                            data-tagname="移动端" style="background-color: #82E0AA;">移动端
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -634,10 +634,10 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/移动端/" title="移动端: 1">
+                <a href="/tags/VSCode/" title="VSCode: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="移动端" style="background-color: #A3E4D7;">移动端
+                            data-tagname="VSCode" style="background-color: #A3E4D7;">VSCode
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -766,8 +766,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 	$(document).ready(function () {
 
         var int = setInterval(fixCount, 50);  // 50ms周期检测函数
-        var pvcountOffset = 80000;  // 初始化首次数据
-        var uvcountOffset = 20000;
+        var pvcountOffset = 0;  // 初始化首次数据
+        var uvcountOffset = 0;
 
         function fixCount() {
             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
