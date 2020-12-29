@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://adaichan.com/"/>
-  <updated>2020-12-28T12:59:50.808Z</updated>
+  <updated>2020-12-29T13:06:48.047Z</updated>
   <id>http://adaichan.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>JS的模块化标准</title>
+    <title>JS 模块化标准</title>
     <link href="http://adaichan.com/2020/12/10/06.js-mo-kuai-hua/"/>
     <id>http://adaichan.com/2020/12/10/06.js-mo-kuai-hua/</id>
     <published>2020-12-09T16:00:00.000Z</published>
-    <updated>2020-12-28T12:59:50.808Z</updated>
+    <updated>2020-12-29T13:06:48.047Z</updated>
     
     <summary type="html">
     
@@ -142,9 +142,9 @@
       <category term="工具" scheme="http://adaichan.com/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="GitHub" scheme="http://adaichan.com/tags/GitHub/"/>
-    
       <category term="Git" scheme="http://adaichan.com/tags/Git/"/>
+    
+      <category term="GitHub" scheme="http://adaichan.com/tags/GitHub/"/>
     
       <category term="Eslint" scheme="http://adaichan.com/tags/Eslint/"/>
     
@@ -198,9 +198,9 @@
       <category term="GitHub" scheme="http://adaichan.com/categories/GitHub/"/>
     
     
-      <category term="Hexo" scheme="http://adaichan.com/tags/Hexo/"/>
-    
       <category term="GitHub" scheme="http://adaichan.com/tags/GitHub/"/>
+    
+      <category term="Hexo" scheme="http://adaichan.com/tags/Hexo/"/>
     
       <category term="Blog" scheme="http://adaichan.com/tags/Blog/"/>
     

@@ -81,7 +81,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="/images/loading.svg" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">兴趣使然の边缘人小站</span>
                 </a>
@@ -269,7 +269,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/images/loading.svg" data-original="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">兴趣使然の边缘人小站</div>
         <div class="logo-desc">
@@ -658,6 +658,50 @@
     
     
     <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('/medias/banner/3.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">Git 填坑之 error 整理</div>
+                    <div class="description center-align">
+                    
+                        Git 是远优于 SVN 的分布式版本控制系统，作为当前版本的答案、猴头人必备的专业技能，这篇文章专门整理了阿呆开发过程中遇到的一些问题，为了避免日后再次犯病，整理收集如下，当然 Git 基础相关知识也收录在内！
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/2020/12/06/02.git/" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('/medias/banner/4.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">VSCode 心得分享</div>
+                    <div class="description center-align">
+                    
+                        前端正处于春秋战国时代，各路英雄豪杰成为后浪，各种框架工具层出不穷，VSCode 无疑是大前端时代最骄傲的工具。写下这篇文章，是顺势而为之，顺便纪念下两年来的使用心得，或许这就是：桃李不言，下自成蹊！
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/2020/12/07/03.vscode/" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
             style="background-image: url('/medias/banner/2.jpg');">
         <div class="container">
             <div class="row">
@@ -692,50 +736,6 @@
                     </div>
                     <div class="cover-btns">
                         <a href="/2020/12/04/00.website/" class="waves-effect waves-light btn" target="_blank">
-                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="carousel-item amber white-text carousel-post bg-cover"
-            style="background-image: url('/medias/banner/4.jpg');">
-        <div class="container">
-            <div class="row">
-                <div class="col s10 offset-s1">
-                    <div class="title center-align">VSCode 心得分享</div>
-                    <div class="description center-align">
-                    
-                        前端正处于春秋战国时代，各路英雄豪杰成为后浪，各种框架工具层出不穷，VSCode 无疑是大前端时代最骄傲的工具。写下这篇文章，是顺势而为之，顺便纪念下两年来的使用心得，或许这就是：桃李不言，下自成蹊！
-                    
-                    </div>
-                    <div class="cover-btns">
-                        <a href="/2020/12/07/03.vscode/" class="waves-effect waves-light btn" target="_blank">
-                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="carousel-item amber white-text carousel-post bg-cover"
-            style="background-image: url('/medias/banner/3.jpg');">
-        <div class="container">
-            <div class="row">
-                <div class="col s10 offset-s1">
-                    <div class="title center-align">Git 填坑之 error 整理</div>
-                    <div class="description center-align">
-                    
-                        Git 是远优于 SVN 的分布式版本控制系统，作为当前版本的答案、猴头人必备的专业技能，这篇文章专门整理了阿呆开发过程中遇到的一些问题，为了避免日后再次犯病，整理收集如下，当然 Git 基础相关知识也收录在内！
-                    
-                    </div>
-                    <div class="cover-btns">
-                        <a href="/2020/12/06/02.git/" class="waves-effect waves-light btn" target="_blank">
                             <i class="icon fa fa-eye fa-fw"></i>阅读更多
                         </a>
                     </div>
@@ -886,81 +886,6 @@ $(function () {
     
     
     <div class="col s12 m6" >
-        <div class="post-card" style="background-image: url('/medias/featureimages/1.jpg')">
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                    <a href="/categories/工具/" class="category" target="_blank">工具</a>
-                    
-                </div>
-                <a href="/2020/12/05/01.markdown/" target="_blank">
-                    <h3 class="post-title">Markdown 使用详解（附图文）</h3>
-                </a>
-                <p class="post-description">
-                    
-                        本文是关于 Markdown 语法的详细指♂南。特地根据写作人、猴头人的实际需求量身定做，深入浅出、图文并茂的介绍了它的完整语法。多说无益，为了迅速、全面的掌握好它，建议各位钢琴家多弹奏几曲方可了然于胸 ♪♪
-                    
-                </p>
-                <a href="/2020/12/05/01.markdown/" target="_blank"
-                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)">
-                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="col s12 m6" >
-        <div class="post-card" style="background-image: url('/medias/featureimages/0.jpg')">
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                    <a href="/categories/GitHub/" class="category" target="_blank">GitHub</a>
-                    
-                </div>
-                <a href="/2020/12/04/00.website/" target="_blank">
-                    <h3 class="post-title">Hexo + GitHub 搭建教程</h3>
-                </a>
-                <p class="post-description">
-                    
-                        如果你厌倦了在主流网站上记录分享，偏安一隅，如果你在搭建途中遇到亿些奇怪的bug，莫方！这太正常了... 希望这篇文章能给求道者一点微妙的帮助，虽然我不这么认为，以下教程过于言简意赅需要悟性，欢迎参考！
-                    
-                </p>
-                <a href="/2020/12/04/00.website/" target="_blank"
-                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)">
-                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="col s12 m6" data-aos="zoom-in-up">
-        <div class="post-card" style="background-image: url('/medias/featureimages/3.jpg')">
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                    <a href="/categories/工具/" class="category" target="_blank">工具</a>
-                    
-                </div>
-                <a href="/2020/12/07/03.vscode/" target="_blank">
-                    <h3 class="post-title">VSCode 心得分享</h3>
-                </a>
-                <p class="post-description">
-                    
-                        前端正处于春秋战国时代，各路英雄豪杰成为后浪，各种框架工具层出不穷，VSCode 无疑是大前端时代最骄傲的工具。写下这篇文章，是顺势而为之，顺便纪念下两年来的使用心得，或许这就是：桃李不言，下自成蹊！
-                    
-                </p>
-                <a href="/2020/12/07/03.vscode/" target="_blank"
-                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)">
-                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="col s12 m6" data-aos="zoom-in-up">
         <div class="post-card" style="background-image: url('/medias/featureimages/2.jpg')">
             <div class="post-body">
                 <div class="post-categories">
@@ -977,6 +902,81 @@ $(function () {
                     
                 </p>
                 <a href="/2020/12/06/02.git/" target="_blank"
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" >
+        <div class="post-card" style="background-image: url('/medias/featureimages/3.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/工具/" class="category" target="_blank">工具</a>
+                    
+                </div>
+                <a href="/2020/12/07/03.vscode/" target="_blank">
+                    <h3 class="post-title">VSCode 心得分享</h3>
+                </a>
+                <p class="post-description">
+                    
+                        前端正处于春秋战国时代，各路英雄豪杰成为后浪，各种框架工具层出不穷，VSCode 无疑是大前端时代最骄傲的工具。写下这篇文章，是顺势而为之，顺便纪念下两年来的使用心得，或许这就是：桃李不言，下自成蹊！
+                    
+                </p>
+                <a href="/2020/12/07/03.vscode/" target="_blank"
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
+        <div class="post-card" style="background-image: url('/medias/featureimages/1.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/工具/" class="category" target="_blank">工具</a>
+                    
+                </div>
+                <a href="/2020/12/05/01.markdown/" target="_blank">
+                    <h3 class="post-title">Markdown 使用详解（附图文）</h3>
+                </a>
+                <p class="post-description">
+                    
+                        本文是关于 Markdown 语法的详细指♂南。特地根据写作人、猴头人的实际需求量身定做，深入浅出、图文并茂的介绍了它的完整语法。多说无益，为了迅速、全面的掌握好它，建议各位钢琴家多弹奏几曲方可了然于胸 ♪♪
+                    
+                </p>
+                <a href="/2020/12/05/01.markdown/" target="_blank"
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
+        <div class="post-card" style="background-image: url('/medias/featureimages/0.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/GitHub/" class="category" target="_blank">GitHub</a>
+                    
+                </div>
+                <a href="/2020/12/04/00.website/" target="_blank">
+                    <h3 class="post-title">Hexo + GitHub 搭建教程</h3>
+                </a>
+                <p class="post-description">
+                    
+                        如果你厌倦了在主流网站上记录分享，偏安一隅，如果你在搭建途中遇到亿些奇怪的bug，莫方！这太正常了... 希望这篇文章能给求道者一点微妙的帮助，虽然我不这么认为，以下教程过于言简意赅需要悟性，欢迎参考！
+                    
+                </p>
+                <a href="/2020/12/04/00.website/" target="_blank"
                         class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FFCC00 0%, #FF9500 100%)">
                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
                 </a>
@@ -1056,9 +1056,9 @@ $(function () {
                     <a href="/2020/12/10/06.js-mo-kuai-hua/" target="_blank">
                         <div class="card-image">
                             
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="JS的模块化标准">
+                            <img src="/images/loading.svg" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="JS 模块化标准">
                             
-                            <span class="card-title">JS的模块化标准</span>
+                            <span class="card-title">JS 模块化标准</span>
                         </div>
                     </a>
 
@@ -1102,7 +1102,7 @@ $(function () {
                     <a href="/2020/12/09/05.yi-dong-duan-gua-pei/" target="_blank">
                         <div class="card-image">
                             
-                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="移动端适配方案汇总">
+                            <img src="/images/loading.svg" data-original="/medias/featureimages/5.jpg" class="responsive-img" alt="移动端适配方案汇总">
                             
                             <span class="card-title">移动端适配方案汇总</span>
                         </div>
@@ -1148,7 +1148,7 @@ $(function () {
                     <a href="/2020/12/08/04.vue-3.0/" target="_blank">
                         <div class="card-image">
                             
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="快速进阶 Vue 3.0">
+                            <img src="/images/loading.svg" data-original="/medias/featureimages/4.jpg" class="responsive-img" alt="快速进阶 Vue 3.0">
                             
                             <span class="card-title">快速进阶 Vue 3.0</span>
                         </div>
@@ -1194,7 +1194,7 @@ $(function () {
                     <a href="/2020/12/07/03.vscode/" target="_blank">
                         <div class="card-image">
                             
-                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="VSCode 心得分享">
+                            <img src="/images/loading.svg" data-original="/medias/featureimages/3.jpg" class="responsive-img" alt="VSCode 心得分享">
                             
                             <span class="card-title">VSCode 心得分享</span>
                         </div>
@@ -1240,7 +1240,7 @@ $(function () {
                     <a href="/2020/12/06/02.git/" target="_blank">
                         <div class="card-image">
                             
-                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Git 填坑之 error 整理">
+                            <img src="/images/loading.svg" data-original="/medias/featureimages/2.jpg" class="responsive-img" alt="Git 填坑之 error 整理">
                             
                             <span class="card-title">Git 填坑之 error 整理</span>
                         </div>
@@ -1272,12 +1272,12 @@ $(function () {
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/GitHub/" target="_blank">
-                            <span class="chip bg-color">GitHub</span>
-                        </a>
-                        
                         <a href="/tags/Git/" target="_blank">
                             <span class="chip bg-color">Git</span>
+                        </a>
+                        
+                        <a href="/tags/GitHub/" target="_blank">
+                            <span class="chip bg-color">GitHub</span>
                         </a>
                         
                         <a href="/tags/Eslint/" target="_blank">
@@ -1294,7 +1294,7 @@ $(function () {
                     <a href="/2020/12/05/01.markdown/" target="_blank">
                         <div class="card-image">
                             
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Markdown 使用详解（附图文）">
+                            <img src="/images/loading.svg" data-original="/medias/featureimages/1.jpg" class="responsive-img" alt="Markdown 使用详解（附图文）">
                             
                             <span class="card-title">Markdown 使用详解（附图文）</span>
                         </div>
@@ -1340,7 +1340,7 @@ $(function () {
                     <a href="/2020/12/04/00.website/" target="_blank">
                         <div class="card-image">
                             
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Hexo + GitHub 搭建教程">
+                            <img src="/images/loading.svg" data-original="/medias/featureimages/0.jpg" class="responsive-img" alt="Hexo + GitHub 搭建教程">
                             
                             <span class="card-title">Hexo + GitHub 搭建教程</span>
                         </div>
@@ -1372,12 +1372,12 @@ $(function () {
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/Hexo/" target="_blank">
-                            <span class="chip bg-color">Hexo</span>
-                        </a>
-                        
                         <a href="/tags/GitHub/" target="_blank">
                             <span class="chip bg-color">GitHub</span>
+                        </a>
+                        
+                        <a href="/tags/Hexo/" target="_blank">
+                            <span class="chip bg-color">Hexo</span>
                         </a>
                         
                         <a href="/tags/Blog/" target="_blank">
@@ -1645,6 +1645,15 @@ $(function () {
 
         <!-- 在线聊天工具  adaichan 2020.12.04 M -->
         
+		
+		<div id="weather-v2-plugin-standard"></div>
+<script>WIDGET = {CONFIG:{"layout":1,"width":"450","height":"150","background":1,"dataColor":"FFFFFF","borderRadius":5,"key":"396oOvUCQC"}}</script>
+<script src="https://apip.weatherdt.com/standard/static/js/weather-standard-common.js?v=2.0"></script>
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>undefined</script></body>
 </html>
