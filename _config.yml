@@ -157,6 +157,6 @@ githubEmojis:
   customEmojis:
 
 lazyload:
-  enable: true 
-  onlypost: true
-  loadingImg: /images/loading.svg
+  enable: true
+  onlypost: false
+  loadingImg: ./images/loading.gif
