@@ -110,10 +110,10 @@ $(function () {
             showThumbByDefault: false  //2018.08.14
         });
 
-        /*网站加载逻辑问题 网站加载逻辑问题：图片最后加载 adaichan 2020.12.04 M*/
-        // $(document).find('img[data-original]').each(function () {
-        //     $(this).parent().attr("href", $(this).attr("data-original"));
-        // });
+        /* 解决懒加载插件与 lightgallery 插件冲突 adaichan 2020.12.04 M */
+        $(document).find('img[data-original]').each(function () {
+			$(this).parent().attr("href", $(this).attr("data-original"));
+        });
 
         // progress bar init
         const progressElement = window.document.querySelector('.progress-bar');
