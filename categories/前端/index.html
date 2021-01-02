@@ -72,20 +72,21 @@
 
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
-
     <body>
-
+	
         <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/" class="waves-effect waves-light">
-                    
-                    <img src="/images/loading.svg" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
-                    
-                    <span class="logo-span">兴趣使然の边缘人小站</span>
-                </a>
-            </div>
+				<a href="/" class="waves-effect waves-light">
+					<div>
+						
+						<img src="./images/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+						
+						<span class="logo-span">兴趣使然の边缘人小站</span>
+					</div>
+				</a>
+			</div>
             
 
 <!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
@@ -269,7 +270,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/images/loading.svg" data-original="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="./images/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">兴趣使然の边缘人小站</div>
         <div class="logo-desc">
@@ -573,19 +574,19 @@
                 </a>
                 
                 
-                <a href="/categories/前端/" title="前端: 3">
+                <a href="/categories/工具/" title="工具: 3">
                     <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #F5EEF8;">前端
+                             chip-default "
+                            style="background-color: #F5EEF8;">工具
                         <span class="tag-length">3</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/工具/" title="工具: 3">
+                <a href="/categories/前端/" title="前端: 3">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #D5F5E3;">工具
+                             chip-active "
+                            style="background-color: #D5F5E3;">前端
                         <span class="tag-length">3</span>
                     </span>
                 </a>
@@ -606,7 +607,7 @@
                     <a href="/2020/12/10/06.js-mo-kuai-hua/">
                         <div class="card-image tag-image">
                             
-                            <img src="/images/loading.svg" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="JS 模块化标准">
+                            <img src="./images/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="JS 模块化标准">
                             
                             <span class="card-title">JS 模块化标准</span>
                         </div>
@@ -651,7 +652,7 @@
                     <a href="/2020/12/09/05.yi-dong-duan-gua-pei/">
                         <div class="card-image tag-image">
                             
-                            <img src="/images/loading.svg" data-original="/medias/featureimages/5.jpg" class="responsive-img" alt="移动端适配方案汇总">
+                            <img src="./images/loading.gif" data-original="/medias/featureimages/5.jpg" class="responsive-img" alt="移动端适配方案汇总">
                             
                             <span class="card-title">移动端适配方案汇总</span>
                         </div>
@@ -696,7 +697,7 @@
                     <a href="/2020/12/08/04.vue-3.0/">
                         <div class="card-image tag-image">
                             
-                            <img src="/images/loading.svg" data-original="/medias/featureimages/4.jpg" class="responsive-img" alt="快速进阶 Vue 3.0">
+                            <img src="./images/loading.gif" data-original="/medias/featureimages/4.jpg" class="responsive-img" alt="快速进阶 Vue 3.0">
                             
                             <span class="card-title">快速进阶 Vue 3.0</span>
                         </div>
@@ -875,7 +876,6 @@
     siteTime();
 </script>
 
-
         <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
     <div class="modal-content">
@@ -993,8 +993,7 @@ $(function () {
         
 		
 		<!--  添加中国天气网插件 adaichan 2020.12.04 M -->
-		<div id="weather-v2-plugin-simple"></div>
-		
+		<div id="weather-v2-plugin-simple"></div>		
 		<script>
 			WIDGET = {
 			  CONFIG: {
@@ -1014,19 +1013,18 @@ $(function () {
 				"fixed": "true",
 				"vertical": "middle",
 				"horizontal": "center",
-				"left": 10,
-				"top": 10,
-				"key": "9L6VV3pLmT"
+				"left": "16",
+				"top": "16",
+				"key": "WVBRHIPYJk"
 			  }
 			}
-		</script>
+		</script>		
+		<script src="https://apip.weatherdt.com/simple/static/js/weather-simple-common.js?v=2.0"></script>				
 		
-		<script src="https://apip.weatherdt.com/simple/static/js/weather-simple-common.js?v=2.0"></script>
-    
-	<script>
+		<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>undefined</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

@@ -73,20 +73,21 @@
 
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
-
     <body>
-
+	
         <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/" class="waves-effect waves-light">
-                    
-                    <img src="/images/loading.svg" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
-                    
-                    <span class="logo-span">兴趣使然の边缘人小站</span>
-                </a>
-            </div>
+				<a href="/" class="waves-effect waves-light">
+					<div>
+						
+						<img src="./images/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+						
+						<span class="logo-span">兴趣使然の边缘人小站</span>
+					</div>
+				</a>
+			</div>
             
 
 <!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
@@ -270,7 +271,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/images/loading.svg" data-original="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="./images/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">兴趣使然の边缘人小站</div>
         <div class="logo-desc">
@@ -723,11 +724,11 @@
 <h4 id="CSS-像素"><a href="#CSS-像素" class="headerlink" title="CSS 像素"></a>CSS 像素</h4><p><strong>逻辑像素(逻辑分辨率) = 设备独立像素(DIP) = CSS像素：是非真实存在的，相对的，代码中用来衡量页面内容的大小。</strong>不同屏幕上，<code>css</code>像素呈现的物理尺寸一致，但<code>css</code>像素对应的物理像素具数不同。标准的显示密度下，<code>1</code>个<code>css</code>像素对应一个物理像素，缩放时，<code>1</code>个<code>css</code>像素对应的物理像素会减增。</p>
 <h4 id="物理像素"><a href="#物理像素" class="headerlink" title="物理像素"></a>物理像素</h4><p><strong>物理像素(物理分辨率) = 设备像素(DP) ：</strong> 设备屏幕的显示单位，设计图一般给的是物理分辨率</p>
 <h4 id="PPI-pixel-per-inch"><a href="#PPI-pixel-per-inch" class="headerlink" title="PPI (pixel per inch)"></a>PPI (pixel per inch)</h4><p><strong>屏幕像素密度(ppi)：</strong>屏幕每英寸可显示像素点的数量，与之类似的还有dpi。值越高，显示画面细节越丰富。计算公式为：</p>
-<p><img src="/images/loading.svg" data-original="2.1.1.png" alt=""></p>
+<p><img src="./images/loading.gif" data-original="2.1.1.png" alt=""></p>
 <p>其中 <strong>W</strong> 和 <strong>H</strong> 是分辨率的宽高，<strong>S</strong> 是屏幕尺寸。</p>
 <h4 id="DPI-dot-per-inch"><a href="#DPI-dot-per-inch" class="headerlink" title="DPI (dot per inch)"></a>DPI (dot per inch)</h4><p>打印设备每英寸印刷出来的点有多少个，值越高，图片越细腻。</p>
 <h4 id="DPR-devicePixelRatio"><a href="#DPR-devicePixelRatio" class="headerlink" title="DPR (devicePixelRatio)"></a>DPR (devicePixelRatio)</h4><p><strong>设备像素比</strong>，即：</p>
-<p><img src="/images/loading.svg" data-original="2.1.2.png" alt=""></p>
+<p><img src="./images/loading.gif" data-original="2.1.2.png" alt=""></p>
 <p>指用多少个物理像素来渲染一个css像素。js中通过<code>window.devicePixelRatio</code>获取，css中通过<code>-webkit-device-pixel-ratio</code>,<code>-webkit-min-device-pixel-ratio</code>,<code>-webkit-max-device-pixel-ratio</code>进行媒体查询。</p>
 <p>dpr 的出现是苹果公司在 iphone4 产品中推出了所谓的 retina 视网膜屏幕。因为屏幕的 ppi 太高，达到了人类视网膜的分辨极限。它在保持屏幕大小尺寸不变的情况下将它物理分辨率提高了一倍，在同样大小的屏幕上，像素多了一倍。</p>
 <h4 id="em"><a href="#em" class="headerlink" title="em"></a>em</h4><p>大小<strong>取决于当前对象的 font-size</strong>，未设置的话则 1 em 默认为 16 px，此时 10 px = 0.625 em。</p>
@@ -1030,7 +1031,7 @@
 <li><p>android: 2.1系统以上都支持</p>
 </li>
 <li><p>大部分主流浏览器都支持</p>
-<p><img src="/images/loading.svg" data-original="3.2.png" alt=""></p>
+<p><img src="./images/loading.gif" data-original="3.2.png" alt=""></p>
 </li>
 </ul>
 <blockquote>
@@ -1070,7 +1071,7 @@ $vw_base<span class="token punctuation">:</span> <span class="token number">1080
 <li>存在一些兼容性问题，Android4.4以下不支持</li>
 </ul>
 </blockquote>
-<p><img src="/images/loading.svg" data-original="3.3.png" alt=""></p>
+<p><img src="./images/loading.gif" data-original="3.3.png" alt=""></p>
 <h3 id="3-4-rem-vw-vh-方案"><a href="#3-4-rem-vw-vh-方案" class="headerlink" title="3.4 rem + vw / vh 方案"></a>3.4 rem + vw / vh 方案</h3><h4 id="原理-3"><a href="#原理-3" class="headerlink" title="原理"></a>原理</h4><blockquote>
 <p><strong>vw / vh</strong>  方案能够实现宽度和高度的自适应，并且逻辑清晰，由于其被支持得较晚，所以存在一定的兼容性问题。将  <strong>vw/vh</strong>  方案与 <strong>rem</strong> 方案相结合，<strong>给根元素设置随视口变化的 vw 单位</strong>，可以通过 <code>postcss-plugin-vwtorem</code> 将其转换。具体的<strong>计算过程</strong>为：</p>
 </blockquote>
@@ -1354,10 +1355,10 @@ img<span class="token punctuation">.</span>onload <span class="token operator">=
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/images/loading.svg" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="./images/loading.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/images/loading.svg" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="./images/loading.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1719,7 +1720,7 @@ img<span class="token punctuation">.</span>onload <span class="token operator">=
                 <a href="/2020/12/10/06.js-mo-kuai-hua/">
                     <div class="card-image">
                         
-                        <img src="/images/loading.svg" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="JS 模块化标准">
+                        <img src="./images/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="JS 模块化标准">
                         
                         <span class="card-title">JS 模块化标准</span>
                     </div>
@@ -1767,7 +1768,7 @@ img<span class="token punctuation">.</span>onload <span class="token operator">=
                 <a href="/2020/12/08/04.vue-3.0/">
                     <div class="card-image">
                         
-                        <img src="/images/loading.svg" data-original="/medias/featureimages/4.jpg" class="responsive-img" alt="快速进阶 Vue 3.0">
+                        <img src="./images/loading.gif" data-original="/medias/featureimages/4.jpg" class="responsive-img" alt="快速进阶 Vue 3.0">
                         
                         <span class="card-title">快速进阶 Vue 3.0</span>
                     </div>
@@ -2088,7 +2089,6 @@ img<span class="token punctuation">.</span>onload <span class="token operator">=
     siteTime();
 </script>
 
-
         <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
     <div class="modal-content">
@@ -2206,8 +2206,7 @@ $(function () {
         
 		
 		<!--  添加中国天气网插件 adaichan 2020.12.04 M -->
-		<div id="weather-v2-plugin-simple"></div>
-		
+		<div id="weather-v2-plugin-simple"></div>		
 		<script>
 			WIDGET = {
 			  CONFIG: {
@@ -2227,19 +2226,18 @@ $(function () {
 				"fixed": "true",
 				"vertical": "middle",
 				"horizontal": "center",
-				"left": 10,
-				"top": 10,
-				"key": "9L6VV3pLmT"
+				"left": "16",
+				"top": "16",
+				"key": "WVBRHIPYJk"
 			  }
 			}
-		</script>
+		</script>		
+		<script src="https://apip.weatherdt.com/simple/static/js/weather-simple-common.js?v=2.0"></script>				
 		
-		<script src="https://apip.weatherdt.com/simple/static/js/weather-simple-common.js?v=2.0"></script>
-    
-	<script>
+		<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>undefined</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>
