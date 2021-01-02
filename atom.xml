@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://adaichan.com/"/>
-  <updated>2021-01-02T10:00:48.130Z</updated>
+  <updated>2021-01-02T12:00:47.083Z</updated>
   <id>http://adaichan.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="http://adaichan.com/2021/01/02/07/"/>
-    <id>http://adaichan.com/2021/01/02/07/</id>
-    <published>2021-01-02T10:00:48.130Z</published>
-    <updated>2021-01-02T10:00:48.130Z</updated>
+    <title>删除 Github 仓库里的文件</title>
+    <link href="http://adaichan.com/2020/12/12/08.github/"/>
+    <id>http://adaichan.com/2020/12/12/08.github/</id>
+    <published>2020-12-11T16:00:00.000Z</published>
+    <updated>2021-01-02T12:00:47.083Z</updated>
     
     <summary type="html">
     
@@ -29,16 +29,45 @@
       
         
         
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
+          &lt;h2 id=&quot;一、删除已有仓库&quot;&gt;&lt;a href=&quot;#一、删除已有仓库&quot; class=&quot;headerlink&quot; title=&quot;一、删除已有仓库&quot;&gt;&lt;/a&gt;一、删除已有仓库&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;进入到我们需要删除的仓库里面，找到
         
       
     
     </summary>
     
+      <category term="工具" scheme="http://adaichan.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="Github" scheme="http://adaichan.com/tags/Github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ESLint 使用和配置</title>
+    <link href="http://adaichan.com/2020/12/11/07.eslint/"/>
+    <id>http://adaichan.com/2020/12/11/07.eslint/</id>
+    <published>2020-12-10T16:00:00.000Z</published>
+    <updated>2021-01-02T12:00:11.993Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、简介&quot;&gt;&lt;a href=&quot;#一、简介&quot; class=&quot;headerlink&quot; title=&quot;一、简介&quot;&gt;&lt;/a&gt;一、简介&lt;/h2&gt;&lt;p&gt;ESLint 是一个用来识别 ECMAScript
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    
+      <category term="ESLint" scheme="http://adaichan.com/tags/ESLint/"/>
     
   </entry>
   
