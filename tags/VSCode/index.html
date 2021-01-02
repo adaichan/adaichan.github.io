@@ -563,10 +563,19 @@
             <div class="tag-chips">
                 
                 
+                <a href="/tags/Markdown/" title="Markdown: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Markdown" style="background-color: #F9EBEA;">Markdown
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/Git/" title="Git: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Git" style="background-color: #F9EBEA;">Git
+                            data-tagname="Git" style="background-color: #F5EEF8;">Git
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -575,7 +584,7 @@
                 <a href="/tags/GitHub/" title="GitHub: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="GitHub" style="background-color: #F5EEF8;">GitHub
+                            data-tagname="GitHub" style="background-color: #D5F5E3;">GitHub
                         <span class="tag-length">2</span>
                     </span>
                 </a>
@@ -584,25 +593,7 @@
                 <a href="/tags/Eslint/" title="Eslint: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Eslint" style="background-color: #D5F5E3;">Eslint
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/VSCode/" title="VSCode: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            data-tagname="VSCode" style="background-color: #E8F8F5;">VSCode
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Markdown/" title="Markdown: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Markdown" style="background-color: #FEF9E7;">Markdown
+                            data-tagname="Eslint" style="background-color: #E8F8F5;">Eslint
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -611,7 +602,7 @@
                 <a href="/tags/Hexo/" title="Hexo: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Hexo" style="background-color: #F8F9F9;">Hexo
+                            data-tagname="Hexo" style="background-color: #FEF9E7;">Hexo
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -620,7 +611,7 @@
                 <a href="/tags/Blog/" title="Blog: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Blog" style="background-color: #82E0AA;">Blog
+                            data-tagname="Blog" style="background-color: #F8F9F9;">Blog
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -629,16 +620,7 @@
                 <a href="/tags/Vue/" title="Vue: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Vue" style="background-color: #D7BDE2;">Vue
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/JavaScript/" title="JavaScript: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="JavaScript" style="background-color: #A3E4D7;">JavaScript
+                            data-tagname="Vue" style="background-color: #82E0AA;">Vue
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -647,7 +629,25 @@
                 <a href="/tags/移动端/" title="移动端: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="移动端" style="background-color: #85C1E9;">移动端
+                            data-tagname="移动端" style="background-color: #D7BDE2;">移动端
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/VSCode/" title="VSCode: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="VSCode" style="background-color: #A3E4D7;">VSCode
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/JavaScript/" title="JavaScript: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="JavaScript" style="background-color: #85C1E9;">JavaScript
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -949,14 +949,41 @@ $(function () {
         <!-- 在线聊天工具  adaichan 2020.12.04 M -->
         
 		
-		<div id="weather-v2-plugin-standard"></div>
-<script>WIDGET = {CONFIG:{"layout":1,"width":"450","height":"150","background":1,"dataColor":"FFFFFF","borderRadius":5,"key":"396oOvUCQC"}}</script>
-<script src="https://apip.weatherdt.com/standard/static/js/weather-standard-common.js?v=2.0"></script>
-
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>
+		<!--  添加中国天气网插件 adaichan 2020.12.04 M -->
+		<div id="weather-v2-plugin-simple"></div>
+		
+		<script>
+			WIDGET = {
+			  CONFIG: {
+				"modules": "01234",
+				"background": 1,
+				"tmpColor": "FFFFFF",
+				"tmpSize": 16,
+				"cityColor": "FFFFFF",
+				"citySize": 16,
+				"aqiSize": 16,
+				"weatherIconSize": 24,
+				"alertIconSize": 18,
+				"padding": "10px 10px 10px 10px",
+				"shadow": "1",
+				"language": "auto",
+				"borderRadius": 5,
+				"fixed": "true",
+				"vertical": "middle",
+				"horizontal": "center",
+				"left": 10,
+				"top": 10,
+				"key": "9L6VV3pLmT"
+			  }
+			}
+		</script>
+		
+		<script src="https://apip.weatherdt.com/simple/static/js/weather-simple-common.js?v=2.0"></script>
+    
+	<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>undefined</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>undefined</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 </html>
