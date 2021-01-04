@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://adaichan.com/"/>
-  <updated>2021-01-04T02:09:38.409Z</updated>
+  <updated>2021-01-04T14:18:24.925Z</updated>
   <id>http://adaichan.com/</id>
   
   <author>
@@ -17,11 +17,65 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>HTTP 协议相关</title>
+    <link href="http://adaichan.com/2020/12/22/13.http-xie-yi/"/>
+    <id>http://adaichan.com/2020/12/22/13.http-xie-yi/</id>
+    <published>2020-12-21T16:00:00.000Z</published>
+    <updated>2021-01-04T14:18:24.925Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、请求报文和响应报文&quot;&gt;&lt;a href=&quot;#一、请求报文和响应报文&quot; class=&quot;headerlink&quot; title=&quot;一、请求报文和响应报文&quot;&gt;&lt;/a&gt;一、请求报文和响应报文&lt;/h2&gt;&lt;p&gt;http请求报文组成:
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="HTTP" scheme="http://adaichan.com/tags/HTTP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Webpack 初步了解</title>
+    <link href="http://adaichan.com/2020/12/20/12.webpack-ru-men/"/>
+    <id>http://adaichan.com/2020/12/20/12.webpack-ru-men/</id>
+    <published>2020-12-19T16:00:00.000Z</published>
+    <updated>2021-01-04T14:01:08.895Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot; title=&quot;一、前言&quot;&gt;&lt;/a&gt;一、前言&lt;/h2&gt;&lt;p&gt;Webpack 是一种前端资源构建工具，一个静态模块打包器。当 Webpack
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    
+      <category term="Webpack" scheme="http://adaichan.com/tags/Webpack/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ES6特性语法汇总</title>
     <link href="http://adaichan.com/2020/12/18/11.es6/"/>
     <id>http://adaichan.com/2020/12/18/11.es6/</id>
     <published>2020-12-17T16:00:00.000Z</published>
-    <updated>2021-01-04T02:09:38.409Z</updated>
+    <updated>2021-01-04T04:06:35.554Z</updated>
     
     <summary type="html">
     
