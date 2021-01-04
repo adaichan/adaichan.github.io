@@ -1,3 +1,6 @@
+http://adaichan.com/2020/12/18/11.es6/
+http://adaichan.com/2020/12/16/10.duo-wei-shu-zu-zhuan-yi-wei/
+http://adaichan.com/2020/12/14/09.kua-yu/
 http://adaichan.com/2020/12/12/08.github/
 http://adaichan.com/2020/12/11/07.eslint/
 http://adaichan.com/2020/12/10/06.js-mo-kuai-hua/

@@ -6,7 +6,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="删除 Github 仓库里的文件, note blog algorithm adaichan">
+    <meta name="keywords" content="删除 Github 仓库文件夹, note blog algorithm adaichan">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
     <meta name="description" content="一、删除已有仓库
@@ -20,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>删除 Github 仓库里的文件 | 兴趣使然の边缘人小站</title>
+    <title>删除 Github 仓库文件夹 | 兴趣使然の边缘人小站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -542,7 +542,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        删除 Github 仓库里的文件
+                        删除 Github 仓库文件夹
                     </div>
                 </div>
             </div>
@@ -692,7 +692,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        510
+                        511
                     </div>
                     
 
@@ -721,7 +721,7 @@
 <li>然后，在仓库设置里拉到最底部，找到 <strong>“Danger Zone”</strong> 危险区域。</li>
 <li>点击 <strong>“Delete this repository”</strong> 这样就可以删除该仓库了。</li>
 </ol>
-<h2 id="二、删除某个文件"><a href="#二、删除某个文件" class="headerlink" title="二、删除某个文件"></a>二、删除某个文件</h2><p>我们知道，在 Github 上我们只能删除仓库，并不能删除文件夹，所以只能用命令来解决。</p>
+<h2 id="二、删除某个文件"><a href="#二、删除某个文件" class="headerlink" title="二、删除某个文件"></a>二、删除某个文件</h2><p>我们知道，在 Github 上我们只能删除仓库，并不能删除文件夹，所以只能采用命令来解决。</p>
 <h3 id="2-1-新建文件夹"><a href="#2-1-新建文件夹" class="headerlink" title="2.1 新建文件夹"></a>2.1 新建文件夹</h3><p>在桌面上新建一个文件夹 <code>delete</code>，叫啥名都行。</p>
 <h3 id="2-2-git-bash-here"><a href="#2-2-git-bash-here" class="headerlink" title="2.2 git bash here"></a>2.2 git bash here</h3><p>在新建的文件夹里右键<code>git bash here</code>打开终端，并执行<code>git init</code>初始化仓库。</p>
 <h3 id="2-3-git-clone-仓库地址"><a href="#2-3-git-clone-仓库地址" class="headerlink" title="2.3 git clone 仓库地址"></a>2.3 git clone 仓库地址</h3><p>找到 Github 上要删除的仓库地址，并复制，在终端里输入<code>git clone + 地址</code></p>
@@ -901,7 +901,7 @@
                     </span>
                     <a href="http://adaichan.com" class="b-link-green">兴趣使然の边缘人小站</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2020/12/12/08.github/" class="b-link-green">删除 Github 仓库里的文件</a>
+                    <a href="/2020/12/12/08.github/" class="b-link-green">删除 Github 仓库文件夹</a>
                 </p>
             </div>
 
@@ -1221,47 +1221,45 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/12/12/08.github/">
+                <a href="/2020/12/14/09.kua-yu/">
                     <div class="card-image">
                         
-                        <img src="./images/loading.gif" data-original="/medias/featureimages/8.jpg" class="responsive-img" alt="删除 Github 仓库里的文件">
+                        <img src="./images/loading.gif" data-original="/medias/featureimages/9.jpg" class="responsive-img" alt="九种跨域方式及其原理">
                         
-                        <span class="card-title">删除 Github 仓库里的文件</span>
+                        <span class="card-title">九种跨域方式及其原理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在 Github 上可以删除整个仓库，也可以移除某个文件，但是对于文件夹则只能通过建立本地仓库，采取命令的形式来删除。虽然不是很方便，但偶尔也会遇到需要删除某些文件夹的情况，具体步骤参考下文。
+                            浏览器和服务端之间进行数据交互经常会面临跨域问题，由于受到同源策略的影响，属于不同域的页面之间不能相互访问各自的页面内容。本文非常详细的介绍了九种跨域的方法及其原理，目的是彻底解决跨域问题。
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-12-12
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-12-14
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/工具/" class="post-category" target="_blank">
-                                    工具
+                            <a href="/categories/前端/" class="post-category" target="_blank">
+                                    前端
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Github/" target="_blank">
-                        <span class="chip bg-color">Github</span>
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
@@ -1475,7 +1473,7 @@
 			
 			
                 <i class="fa fa-area-chart"></i>&nbsp;字数统计:&nbsp;
-                <span class="white-color">32.4k</span> 字
+                <span class="white-color">41.9k</span> 字
             
 			
 			
@@ -1719,11 +1717,11 @@ $(function () {
 		</script>		
 		<script src="https://apip.weatherdt.com/simple/static/js/weather-simple-common.js?v=2.0"></script>
     
-	<script>
+	<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 	
 </html>
