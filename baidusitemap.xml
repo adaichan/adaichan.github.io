@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://adaichan.com/2020/12/16/10.duo-wei-shu-zu-zhuan-yi-wei/</loc>
+    <lastmod>2021-01-05</lastmod>
+  </url>  <url>
+    <loc>http://adaichan.com/2020/12/10/06.js-mo-kuai-hua/</loc>
+    <lastmod>2021-01-05</lastmod>
+  </url>  <url>
+    <loc>http://adaichan.com/2020/12/04/00.website/</loc>
+    <lastmod>2021-01-05</lastmod>
+  </url>  <url>
     <loc>http://adaichan.com/2020/12/22/13.http-xie-yi/</loc>
     <lastmod>2021-01-04</lastmod>
   </url>  <url>
@@ -8,9 +17,6 @@
     <lastmod>2021-01-04</lastmod>
   </url>  <url>
     <loc>http://adaichan.com/2020/12/18/11.es6/</loc>
-    <lastmod>2021-01-04</lastmod>
-  </url>  <url>
-    <loc>http://adaichan.com/2020/12/16/10.duo-wei-shu-zu-zhuan-yi-wei/</loc>
     <lastmod>2021-01-04</lastmod>
   </url>  <url>
     <loc>http://adaichan.com/2020/12/14/09.kua-yu/</loc>
@@ -21,9 +27,6 @@
   </url>  <url>
     <loc>http://adaichan.com/2020/12/11/07.eslint/</loc>
     <lastmod>2021-01-02</lastmod>
-  </url>  <url>
-    <loc>http://adaichan.com/2020/12/10/06.js-mo-kuai-hua/</loc>
-    <lastmod>2020-12-29</lastmod>
   </url>  <url>
     <loc>http://adaichan.com/2020/12/09/05.yi-dong-duan-gua-pei/</loc>
     <lastmod>2020-12-28</lastmod>
@@ -38,9 +41,6 @@
     <lastmod>2020-12-28</lastmod>
   </url>  <url>
     <loc>http://adaichan.com/2020/12/05/01.markdown/</loc>
-    <lastmod>2020-12-28</lastmod>
-  </url>  <url>
-    <loc>http://adaichan.com/2020/12/04/00.website/</loc>
     <lastmod>2020-12-28</lastmod>
   </url>
 </urlset>

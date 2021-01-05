@@ -103,7 +103,7 @@
     <link href="http://adaichan.com/2020/12/16/10.duo-wei-shu-zu-zhuan-yi-wei/"/>
     <id>http://adaichan.com/2020/12/16/10.duo-wei-shu-zu-zhuan-yi-wei/</id>
     <published>2020-12-15T16:00:00.000Z</published>
-    <updated>2021-01-04T02:01:16.731Z</updated>
+    <updated>2021-01-05T03:00:16.408Z</updated>
     
     <summary type="html">
     
@@ -210,7 +210,7 @@
     <link href="http://adaichan.com/2020/12/10/06.js-mo-kuai-hua/"/>
     <id>http://adaichan.com/2020/12/10/06.js-mo-kuai-hua/</id>
     <published>2020-12-09T16:00:00.000Z</published>
-    <updated>2020-12-29T13:06:48.047Z</updated>
+    <updated>2021-01-05T02:59:38.688Z</updated>
     
     <summary type="html">
     
@@ -370,7 +370,7 @@
     <link href="http://adaichan.com/2020/12/04/00.website/"/>
     <id>http://adaichan.com/2020/12/04/00.website/</id>
     <published>2020-12-03T16:00:00.000Z</published>
-    <updated>2020-12-28T02:00:01.976Z</updated>
+    <updated>2021-01-05T02:58:28.617Z</updated>
     
     <summary type="html">
     
@@ -384,14 +384,10 @@
     
     </summary>
     
-      <category term="GitHub" scheme="http://adaichan.com/categories/GitHub/"/>
+      <category term="工具" scheme="http://adaichan.com/categories/%E5%B7%A5%E5%85%B7/"/>
     
-    
-      <category term="Hexo" scheme="http://adaichan.com/tags/Hexo/"/>
     
       <category term="GitHub" scheme="http://adaichan.com/tags/GitHub/"/>
-    
-      <category term="Blog" scheme="http://adaichan.com/tags/Blog/"/>
     
   </entry>
   
