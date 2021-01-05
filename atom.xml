@@ -199,9 +199,9 @@
       <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="ESLint" scheme="http://adaichan.com/tags/ESLint/"/>
-    
       <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    
+      <category term="ESLint" scheme="http://adaichan.com/tags/ESLint/"/>
     
   </entry>
   
