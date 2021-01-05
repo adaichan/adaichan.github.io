@@ -70,10 +70,280 @@
         </script>
     
 
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+    
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
 
-    <body>
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+    
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+    
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+    
+   
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },1000); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+ </script><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+    
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+    
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+    
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+    
+   
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },1000); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+ </script></head>
+
+    
+ <div id="loading-container">
+     <p class="loading-text">玩命加载中 . . . </p> 
+     <div class="loading-image">
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div> 
+         <div></div>
+     </div>
+ </div><body>
 
         <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
@@ -82,7 +352,7 @@
 				<a href="/" class="waves-effect waves-light">
 					<div>
 						
-						<img src="./images/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+						<img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
 						
 						<span class="logo-span">兴趣使然の边缘人小站</span>
 					</div>
@@ -271,7 +541,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="./images/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">兴趣使然の边缘人小站</div>
         <div class="logo-desc">
@@ -718,7 +988,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>Webpack 是一种前端资源构建工具，一个静态模块打包器。当 Webpack 处理应用程序时，前端的所有资源文件(js/json/css/img/less/…)都会作为模块处理，它将根据模块的依赖关系进行静态分析，打包生成对应的静态资源。</p>
-<p><img src="./images/loading.gif" data-original="1.jpg" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="1.jpg" alt=""></p>
 <h2 id="二、Webpack-五个核心概念"><a href="#二、Webpack-五个核心概念" class="headerlink" title="二、Webpack 五个核心概念"></a>二、Webpack 五个核心概念</h2><h3 id="2-1-Entry"><a href="#2-1-Entry" class="headerlink" title="2.1 Entry"></a>2.1 Entry</h3><p>入口(Entry)指示Webpack以哪个文件作为入口起点分析构建内部依赖图并进行打包。</p>
 <h3 id="2-2-Output"><a href="#2-2-Output" class="headerlink" title="2.2 Output"></a>2.2 Output</h3><p>输出(Output)指示Webpack打包后的资源bundles输出到哪里去，以及如何命名。</p>
 <h3 id="2-3-Loader"><a href="#2-3-Loader" class="headerlink" title="2.3 Loader"></a>2.3 Loader</h3><p>Loader让Webpack能够去处理那些非JavaScript语言的文件，Webpack本身只能理解JavaScript。</p>
@@ -729,9 +999,9 @@
 <li><strong>production:</strong> 生产模式，能让代码优化运行的环境，会将process.env.NODE_ENV的值设为production，同时启用FlagDependencyUsagePlugin、FlagIncludedChunksPlugin、ModuleConcatenationPlugin、NoEmitreplaceStringsPlugin、OccurrenceOrderPlugin、SideEffectsFlagPlugin和UglifyJsPlugin插件。</li>
 </ul>
 <h2 id="三、Webpack-配置"><a href="#三、Webpack-配置" class="headerlink" title="三、Webpack 配置"></a>三、Webpack 配置</h2><h3 id="3-1-webpack-config-js-文件"><a href="#3-1-webpack-config-js-文件" class="headerlink" title="3.1 webpack.config.js 文件"></a>3.1 webpack.config.js 文件</h3><p>webpack.config.js是webpack的配置文件，用来指示webpack工作，运行webpack指令时，会加载里面的配置，所有构建工具都是基于nodejs平台运行的，默认采用commonjs模块化。</p>
-<p><img src="./images/loading.gif" data-original="3.1.jpg" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="3.1.jpg" alt=""></p>
 <h3 id="3-2-devServer-配置"><a href="#3-2-devServer-配置" class="headerlink" title="3.2 devServer 配置"></a>3.2 devServer 配置</h3><p>开发服务器(devServer)用来实现自动化(自动编译、自动打开浏览器、自动刷新浏览器)，只会在内存中编译打包，不会有任何文件输出，本地安装webpack-dev-server后，通过npx webpack-dev-server命令启动devServer。</p>
-<p><img src="./images/loading.gif" data-original="3.2.jpg" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="3.2.jpg" alt=""></p>
 <h3 id="3-3-打包-html-样式-图片-其它资源"><a href="#3-3-打包-html-样式-图片-其它资源" class="headerlink" title="3.3 打包 html/样式/图片/其它资源"></a>3.3 打包 html/样式/图片/其它资源</h3><p>打包不同的资源会使用不同的loader和插件，打包html/样式/图片/其它资源的流程如下所述。</p>
 <h4 id="3-3-1-打包-html-资源"><a href="#3-3-1-打包-html-资源" class="headerlink" title="3.3.1 打包 html 资源"></a>3.3.1 打包 html 资源</h4><p>1.下载html-webpack-plugin插件；</p>
 <p>2.引入html-webpack-plugin插件；</p>
@@ -766,18 +1036,18 @@
 <li><p>配置loader</p>
 </li>
 </ol>
-<p><img src="./images/loading.gif" data-original="3.5.2.jpg" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="3.5.2.jpg" alt=""></p>
 <h4 id="3-5-3-js-压缩"><a href="#3-5-3-js-压缩" class="headerlink" title="3.5.3 js 压缩"></a>3.5.3 js 压缩</h4><p>mode设置为production生产环境时会自动压缩js代码。</p>
 <h2 id="四、webpack-性能优化"><a href="#四、webpack-性能优化" class="headerlink" title="四、webpack 性能优化"></a>四、webpack 性能优化</h2><p>可以从开发环境和生产环境分别对webpack进行性能优化。开发环境主要考虑从打包构建速度和代码调试两个方面进行优化，生产环境主要考虑从打包构建速度和代码运行性能两个方面进行优化。下面简单介绍下开发环境上通过HMR提升构建速度。</p>
 <h3 id="4-1-HMR"><a href="#4-1-HMR" class="headerlink" title="4.1 HMR"></a>4.1 HMR</h3><p>HMR(热模块替换)，作用是一个模块发生变化后，只会更新打包这一个模块而不是所有模块，通过在devServer中设置hot:true属性启动HMR功能。</p>
 <p>对于样式文件，可用HMR功能，因为style-loader内部实现了；</p>
 <p>对于js文件，默认不能用HMR功能，解决方法：修改入口文件js代码，添加支持HMR功能的代码，另外HMR只能处理非入口js文件的其他文件，对入口文件不生效，因为一旦入口文件更新，入口文件引入的其他文件一定会被重新加载；</p>
 <p>对于html文件，默认不能使用HMR功能，同时会导致html文件不能热更新，解决方法：修改entry入口文件，将html文件引入，只能解决html文件不能热更新的问题。</p>
-<p><img src="./images/loading.gif" data-original="4.1.jpg" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="4.1.jpg" alt=""></p>
 <h3 id="4-2-HMR-效果"><a href="#4-2-HMR-效果" class="headerlink" title="4.2 HMR 效果"></a>4.2 HMR 效果</h3><p>在入口index.js文件中引入print.js文件，运行npx webpack-devserver后，页面如图：</p>
-<p><img src="./images/loading.gif" data-original="4.2.1.jpg" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="4.2.1.jpg" alt=""></p>
 <p>修改print.js文件后，只会重新加载print.js文件，不会重新加载index.js文件，HMR效果如图：</p>
-<p><img src="./images/loading.gif" data-original="4.2.2.jpg" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="4.2.2.jpg" alt=""></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -908,10 +1178,10 @@
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="./images/loading.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/loading.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="./images/loading.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/loading.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1273,7 +1543,7 @@
                 <a href="/2020/12/22/13.http-xie-yi/">
                     <div class="card-image">
                         
-                        <img src="./images/loading.gif" data-original="/medias/featureimages/13.jpg" class="responsive-img" alt="HTTP 协议相关">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/13.jpg" class="responsive-img" alt="HTTP 协议相关">
                         
                         <span class="card-title">HTTP 协议相关</span>
                     </div>
@@ -1321,7 +1591,7 @@
                 <a href="/2020/12/18/11.es6/">
                     <div class="card-image">
                         
-                        <img src="./images/loading.gif" data-original="/medias/featureimages/11.jpg" class="responsive-img" alt="ES6特性语法汇总">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/11.jpg" class="responsive-img" alt="ES6特性语法汇总">
                         
                         <span class="card-title">ES6特性语法汇总</span>
                     </div>
@@ -1583,7 +1853,7 @@
 	$(document).ready(function () {
 
         var int = setInterval(fixCount, 50); // 50ms周期检测函数
-        var pvcountOffset = 0; // 初始化首次数据
+        var pvcountOffset = 2020; // 初始化首次数据
         var uvcountOffset = 0;
 
         function fixCount() {
@@ -1760,11 +2030,11 @@ $(function () {
 		<script>WIDGET = {CONFIG:{"modules":"01234","background":1,"tmpColor":"FFFFFF","tmpSize":16,"cityColor":"FFFFFF","citySize":16,"aqiSize":16,"weatherIconSize":24,"alertIconSize":18,"padding":"10px 10px 10px 10px","shadow":"1","language":"auto","borderRadius":5,"city":"CN101200101","fixed":"true","vertical":"middle","horizontal":"center","left":"16","top":"16","key":"bAnFmmXfQG"}}</script>
 		<script src="https://apip.weatherdt.com/simple/static/js/weather-simple-common.js?v=2.0"></script>
     
-	<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>
+	<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 	
 </html>
