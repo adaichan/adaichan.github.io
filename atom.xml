@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://adaichan.com/"/>
-  <updated>2021-01-06T02:24:12.423Z</updated>
+  <updated>2021-01-06T06:36:56.404Z</updated>
   <id>http://adaichan.com/</id>
   
   <author>
@@ -15,6 +15,192 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Sass 基础学习</title>
+    <link href="http://adaichan.com/2021/01/06/20.sass/"/>
+    <id>http://adaichan.com/2021/01/06/20.sass/</id>
+    <published>2021-01-05T16:00:00.000Z</published>
+    <updated>2021-01-06T06:36:56.404Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、安装和使用&quot;&gt;&lt;a href=&quot;#一、安装和使用&quot; class=&quot;headerlink&quot; title=&quot;一、安装和使用&quot;&gt;&lt;/a&gt;一、安装和使用&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://sass-lang.com/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Sass" scheme="http://adaichan.com/tags/Sass/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SEO 站点优化</title>
+    <link href="http://adaichan.com/2021/01/04/19.seo/"/>
+    <id>http://adaichan.com/2021/01/04/19.seo/</id>
+    <published>2021-01-03T16:00:00.000Z</published>
+    <updated>2021-01-06T06:36:53.588Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、百度收录&quot;&gt;&lt;a href=&quot;#一、百度收录&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="http://adaichan.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="SEO" scheme="http://adaichan.com/tags/SEO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Gulp 快速入门</title>
+    <link href="http://adaichan.com/2021/01/01/18.gulp/"/>
+    <id>http://adaichan.com/2021/01/01/18.gulp/</id>
+    <published>2020-12-31T16:00:00.000Z</published>
+    <updated>2021-01-06T06:36:49.740Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、安装&quot;&gt;&lt;a href=&quot;#一、安装&quot; class=&quot;headerlink&quot; title=&quot;一、安装&quot;&gt;&lt;/a&gt;一、安装&lt;/h2&gt;&lt;p&gt;在确保你的电脑里装了 Node 的情况下，打开命令行执行以下代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Gulp" scheme="http://adaichan.com/tags/Gulp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PR 重拾记录</title>
+    <link href="http://adaichan.com/2020/12/31/17.pr/"/>
+    <id>http://adaichan.com/2020/12/31/17.pr/</id>
+    <published>2020-12-30T16:00:00.000Z</published>
+    <updated>2021-01-06T06:36:42.851Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、导入素材&quot;&gt;&lt;a href=&quot;#一、导入素材&quot; class=&quot;headerlink&quot; title=&quot;一、导入素材&quot;&gt;&lt;/a&gt;一、导入素材&lt;/h2&gt;&lt;p&gt;打开 PR &lt;strong&gt;新建项目：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="http://adaichan.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="PR" scheme="http://adaichan.com/tags/PR/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Lazyload 优化</title>
+    <link href="http://adaichan.com/2020/12/28/16.lazyload/"/>
+    <id>http://adaichan.com/2020/12/28/16.lazyload/</id>
+    <published>2020-12-27T16:00:00.000Z</published>
+    <updated>2021-01-06T06:36:37.958Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、懒加载和预加载&quot;&gt;&lt;a href=&quot;#一、懒加载和预加载&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Lazyload" scheme="http://adaichan.com/tags/Lazyload/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Element UI 实战心得</title>
+    <link href="http://adaichan.com/2020/12/26/15.element-ui/"/>
+    <id>http://adaichan.com/2020/12/26/15.element-ui/</id>
+    <published>2020-12-25T16:00:00.000Z</published>
+    <updated>2021-01-06T06:36:33.936Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、安装&quot;&gt;&lt;a href=&quot;#一、安装&quot; class=&quot;headerlink&quot; title=&quot;一、安装&quot;&gt;&lt;/a&gt;一、安装&lt;/h2&gt;&lt;p&gt;这里首先得下载 Element UI 才能在项目中使用，方式有很多种，我是在项目初始化时先安装 Vue
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    
+      <category term="Element UI" scheme="http://adaichan.com/tags/Element-UI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS 继承汇总</title>
+    <link href="http://adaichan.com/2020/12/24/14.js-ji-cheng/"/>
+    <id>http://adaichan.com/2020/12/24/14.js-ji-cheng/</id>
+    <published>2020-12-23T16:00:00.000Z</published>
+    <updated>2021-01-06T06:36:24.825Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、原型链继承&quot;&gt;&lt;a href=&quot;#一、原型链继承&quot; class=&quot;headerlink&quot; title=&quot;一、原型链继承&quot;&gt;&lt;/a&gt;一、原型链继承&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-js&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>HTTP 协议相关</title>
@@ -362,32 +548,6 @@
     
     
       <category term="Markdown" scheme="http://adaichan.com/tags/Markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo + GitHub 搭建教程</title>
-    <link href="http://adaichan.com/2020/12/04/00.website/"/>
-    <id>http://adaichan.com/2020/12/04/00.website/</id>
-    <published>2020-12-03T16:00:00.000Z</published>
-    <updated>2021-01-06T02:36:37.886Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="工具" scheme="http://adaichan.com/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="GitHub" scheme="http://adaichan.com/tags/GitHub/"/>
     
   </entry>
   
