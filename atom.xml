@@ -500,7 +500,7 @@
     <link href="http://adaichan.com/2020/12/06/02.git/"/>
     <id>http://adaichan.com/2020/12/06/02.git/</id>
     <published>2020-12-05T16:00:00.000Z</published>
-    <updated>2020-12-28T02:00:23.543Z</updated>
+    <updated>2021-01-06T10:00:01.993Z</updated>
     
     <summary type="html">
     
@@ -517,11 +517,11 @@
       <category term="工具" scheme="http://adaichan.com/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Git" scheme="http://adaichan.com/tags/Git/"/>
-    
       <category term="GitHub" scheme="http://adaichan.com/tags/GitHub/"/>
     
-      <category term="Eslint" scheme="http://adaichan.com/tags/Eslint/"/>
+      <category term="Git" scheme="http://adaichan.com/tags/Git/"/>
+    
+      <category term="ESLint" scheme="http://adaichan.com/tags/ESLint/"/>
     
   </entry>
   

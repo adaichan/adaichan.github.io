@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://adaichan.com/2020/12/06/02.git/</loc>
+    <lastmod>2021-01-06</lastmod>
+  </url>  <url>
     <loc>http://adaichan.com/2021/01/06/20.sass/</loc>
     <lastmod>2021-01-06</lastmod>
   </url>  <url>
@@ -56,9 +59,6 @@
     <lastmod>2020-12-28</lastmod>
   </url>  <url>
     <loc>http://adaichan.com/2020/12/08/04.vue-3.0/</loc>
-    <lastmod>2020-12-28</lastmod>
-  </url>  <url>
-    <loc>http://adaichan.com/2020/12/06/02.git/</loc>
     <lastmod>2020-12-28</lastmod>
   </url>  <url>
     <loc>http://adaichan.com/2020/12/05/01.markdown/</loc>
