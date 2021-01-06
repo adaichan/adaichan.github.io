@@ -385,9 +385,9 @@
       <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
-    
       <category term="ESLint" scheme="http://adaichan.com/tags/ESLint/"/>
+    
+      <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
     
   </entry>
   
@@ -517,9 +517,9 @@
       <category term="工具" scheme="http://adaichan.com/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="GitHub" scheme="http://adaichan.com/tags/GitHub/"/>
-    
       <category term="Git" scheme="http://adaichan.com/tags/Git/"/>
+    
+      <category term="GitHub" scheme="http://adaichan.com/tags/GitHub/"/>
     
       <category term="Eslint" scheme="http://adaichan.com/tags/Eslint/"/>
     

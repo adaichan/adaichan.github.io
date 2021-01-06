@@ -1096,7 +1096,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["JavaScript","GitHub","Markdown","Git","Eslint","VSCode","移动端","Vue","Github","ESLint"]
+                data: ["JavaScript","GitHub","Git","Eslint","Markdown","Vue","移动端","VSCode","ESLint","Github"]
             }
         ],
         yAxis: [
@@ -1313,20 +1313,14 @@
         <div class="tag-chips center-align">
             
             
-            <a href="/tags/GitHub/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">GitHub</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Markdown/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">Markdown</span>
-            </a>
-            
-            
-            
             <a href="/tags/Git/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">Git</span>
+            </a>
+            
+            
+            
+            <a href="/tags/GitHub/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">GitHub</span>
             </a>
             
             
@@ -1337,11 +1331,11 @@
             
             
             
-            
-            
-            <a href="/tags/VSCode/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">VSCode</span>
+            <a href="/tags/Markdown/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Markdown</span>
             </a>
+            
+            
             
             
             
@@ -1351,16 +1345,22 @@
             
             
             
-            
-            
-            <a href="/tags/Github/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">Github</span>
+            <a href="/tags/VSCode/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">VSCode</span>
             </a>
             
             
             
             <a href="/tags/ESLint/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">ESLint</span>
+            </a>
+            
+            
+            
+            
+            
+            <a href="/tags/Github/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Github</span>
             </a>
             
             
@@ -1377,20 +1377,14 @@
             
             
             
-            <a href="/tags/HTTP/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">HTTP</span>
-            </a>
-            
-            
-            
             <a href="/tags/Element-UI/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">Element UI</span>
             </a>
             
             
             
-            <a href="/tags/Lazyload/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">Lazyload</span>
+            <a href="/tags/HTTP/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">HTTP</span>
             </a>
             
             
@@ -1409,6 +1403,12 @@
             
             <a href="/tags/SEO/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">SEO</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Lazyload/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Lazyload</span>
             </a>
             
             
@@ -1906,7 +1906,7 @@
         var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
         var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
             minutes) / seconds);
-        document.getElementById("sitetime").innerHTML = "兴趣使然の边缘人小站已悄然問世 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+        document.getElementById("sitetime").innerHTML = "边缘人小站已悄然問世 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
             " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
     }
     siteTime();
