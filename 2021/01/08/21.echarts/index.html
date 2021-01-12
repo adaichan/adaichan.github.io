@@ -6,12 +6,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Vue 项目优化及部署, note blog algorithm adaichan">
+    <meta name="keywords" content="ECharts 图表渲染, note blog algorithm adaichan">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="一、小问题解决1.1 问题完善项目如果刚开发完肯定存在一些不足之处需要完善，先处理一下 Vue CLI 脚手架的可视化面板中存在的报错和警告。
-1.2 NProgress 进度条通过 NProgress 给项目添加进度条效果。
-安装：npm">
+    <meta name="description" content="一、安装引入1.1 安装方式（1）vue ui 可视化工具安装：进入依赖项面板 - 点击安装依赖 - 在运行依赖中搜索插件 echarts - 点击安装 echarts 。（推荐）
+（2）npm 安装：npm install echarts">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Vue 项目优化及部署 | 兴趣使然の边缘人小站</title>
+    <title>ECharts 图表渲染 | 兴趣使然の边缘人小站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -805,13 +804,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Vue 项目优化及部署
+                        ECharts 图表渲染
                     </div>
                 </div>
             </div>
@@ -927,8 +926,8 @@
                                 <span class="chip bg-color">JavaScript</span>
                             </a>
                         
-                            <a href="/tags/Vue/" target="_blank">
-                                <span class="chip bg-color">Vue</span>
+                            <a href="/tags/ECharts/" target="_blank">
+                                <span class="chip bg-color">ECharts</span>
                             </a>
                         
                     </div>
@@ -951,7 +950,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-14
+                    2021-01-08
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -965,14 +964,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        4.1k
+                        1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        18 分
+                        4 分
                     </div>
                     
                 
@@ -989,394 +988,168 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、小问题解决"><a href="#一、小问题解决" class="headerlink" title="一、小问题解决"></a>一、小问题解决</h2><h3 id="1-1-问题完善"><a href="#1-1-问题完善" class="headerlink" title="1.1 问题完善"></a>1.1 问题完善</h3><p>项目如果刚开发完肯定存在一些不足之处需要完善，先处理一下 Vue CLI 脚手架的可视化面板中存在的报错和警告。</p>
-<h3 id="1-2-NProgress-进度条"><a href="#1-2-NProgress-进度条" class="headerlink" title="1.2 NProgress 进度条"></a>1.2 NProgress 进度条</h3><p><strong>通过 NProgress 给项目添加进度条效果。</strong></p>
-<p>安装：<code>npm install --save nprogress</code></p>
-<p>也可以在 Vue CLI 的可视化 UI 面板的<strong>运行依赖</strong>中搜索 nprogress 下载安装</p>
-<p>导入 nprogress 包后会得到一个全局的对象 NProgress，通过调用它的 API 实现显示隐藏：</p>
-<pre><code>NProgress.start(); // 展示进度条
-NProgress.done(); // 隐藏进度条</code></pre><p><strong>这里需要基于 ajax 发起请求的 request 拦截器以及请求完毕的 response 拦截器来实现显示隐藏效果。</strong></p>
-<p>在 main.js 中导入进度条 NProgress 包对应的 JS 和 CSS</p>
-<pre><code>import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'</code></pre><p>完整代码：</p>
-<pre><code>// 导入进度条NProgress包对应的JS和CSS
-import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
+                <h2 id="一、安装引入"><a href="#一、安装引入" class="headerlink" title="一、安装引入"></a>一、安装引入</h2><h3 id="1-1-安装方式"><a href="#1-1-安装方式" class="headerlink" title="1.1 安装方式"></a>1.1 安装方式</h3><p>（1）<strong>vue ui</strong> 可视化工具安装：进入依赖项面板 - 点击安装依赖 - 在运行依赖中搜索插件 <strong>echarts</strong> - 点击安装 echarts 。（推荐）</p>
+<p>（2）<strong>npm</strong> 安装：<code>npm install echarts --save</code>（推荐）</p>
+<p>（3）通过 <a href="https://www.jsdelivr.com/package/npm/echarts" target="_blank" rel="noopener">jsDelivr</a> 等 CDN 引入。（推荐）</p>
+<p>（4）在 ECharts 的 <a href="https://github.com/apache/incubator-echarts/releases" target="_blank" rel="noopener">GitHub</a> 获取。</p>
+<p>（5）从 <a href="https://echarts.apache.org/zh/download.html" target="_blank" rel="noopener">Apache ECharts (incubating) 官网下载界面</a> 获取官方源码包后构建。</p>
+<h3 id="1-2-引入项目"><a href="#1-2-引入项目" class="headerlink" title="1.2 引入项目"></a>1.2 引入项目</h3><p><strong>导入 ECharts：</strong></p>
+<p>在文件的 <code>script</code> 节点导入 ECharts：</p>
+<p><code>import echarts from 'echarts'</code></p>
+<p>这里会<strong>报错：”export ‘default’ (imported as ‘echarts’) was not found in ‘echarts’</strong></p>
+<p>摸了下头皮发现是版本太新导致的，我的是 5.0.0 版本，需要这样来引入：</p>
+<p><code>import * as echarts from 'echarts'</code></p>
+<h2 id="二、使用"><a href="#二、使用" class="headerlink" title="二、使用"></a>二、使用</h2><h3 id="2-1-页面放置图表区域"><a href="#2-1-页面放置图表区域" class="headerlink" title="2.1 页面放置图表区域"></a>2.1 页面放置图表区域</h3><pre><code>&lt;!-- 卡片视图区域 --&gt;
+&lt;el-card&gt;
+  &lt;!-- 为 ECharts 准备一个具备大小（宽高）的 Dom --&gt;
+  &lt;div id="main" style="width: 750px;height:400px;"&gt;&lt;/div&gt;
+&lt;/el-card&gt;</code></pre><h3 id="2-2-渲染图表"><a href="#2-2-渲染图表" class="headerlink" title="2.2 渲染图表"></a>2.2 渲染图表</h3><p>首先调用 echarts 包的 init 函数将上面的 div 初始化为 echarts 实例，值得注意的是：</p>
+<p><strong>初始化图表必须在页面的 dom 结构被渲染完毕后进行</strong>，在 <strong>mounted</strong> 生命周期钩子中初始化：</p>
+<pre><code>mounted() {
+  // 3. 基于准备好的dom，初始化echarts实例
+  var myChart = echarts.init(document.getElementById('main'))
+}    </code></pre><h3 id="2-3-准备数据和配置项"><a href="#2-3-准备数据和配置项" class="headerlink" title="2.3 准备数据和配置项"></a>2.3 准备数据和配置项</h3><pre><code>// 指定图表的配置项和数据
+var option = {
+    title: {
+        text: 'ECharts 入门示例'
+    },
+    tooltip: {},
+    legend: {
+        data:['销量']
+    },
+    xAxis: {
+        data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+    },
+    yAxis: {},
+    series: [{
+        name: '销量',
+        type: 'bar',
+        data: [5, 20, 36, 10, 10, 20]
+    }]
+};</code></pre><h3 id="2-4-展示数据"><a href="#2-4-展示数据" class="headerlink" title="2.4 展示数据"></a>2.4 展示数据</h3><p>将 option 中的数据设置到 myChart 中，使用刚指定的配置项和数据显示图表：</p>
+<pre><code>// 使用刚指定的配置项和数据显示图表。
+myChart.setOption(option);</code></pre><p>此时网页中图表就渲染出来了！</p>
+<p><img src="/medias/loading.gif" data-original="2.4.png" alt=""></p>
+<h2 id="三、合并服务器数据"><a href="#三、合并服务器数据" class="headerlink" title="三、合并服务器数据"></a>三、合并服务器数据</h2><h3 id="3-1-调用接口"><a href="#3-1-调用接口" class="headerlink" title="3.1 调用接口"></a>3.1 调用接口</h3><p>接下来需要发 ajax 请求获取基于时间统计的折线图，调用接口成功服务器会返回一个折线图数据。</p>
+<p>但该数据不能直接交给图表进行渲染，需要先<strong>将数据先和 options 对象合并成一个新对象后交给图表展示</strong>。</p>
+<pre><code>// 此时页面上的元素已经被渲染完毕了
+async mounted() {
+  // 基于准备好的dom，初始化echarts实例
+  var myChart = echarts.init(document.getElementById('main'))
 
-// 导入axios
-import axios from 'axios'
-
-// 设置请求的根路径
-axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
-
-// 设置请求拦截器预处理请求添加token验证，为每一次API请求挂载一个Authorization请求头
-// 并在request拦截器中，展示进度条 NProgress.start()
-axios.interceptors.request.use(config =&gt; {
-  NProgress.start()
-  config.headers.Authorization = window.sessionStorage.getItem('token')
-  return config
-})
-// 在response拦截器中，隐藏进度条 NProgress.done()
-axios.interceptors.response.use(config =&gt; {
-  NProgress.done()
-  return config
-})
-// 将axios挂载到Vue的原型对象上，每一个Vue组件都能通过this访问到$http发ajax请求
-Vue.prototype.$http = axios</code></pre><p>此时进度条的 loading 效果就实现了！</p>
-<p><img src="/medias/loading.gif" data-original="1.2.png" alt=""></p>
-<h3 id="1-3-serve-中-ESLint-警告"><a href="#1-3-serve-中-ESLint-警告" class="headerlink" title="1.3 serve 中 ESLint 警告"></a>1.3 serve 中 ESLint 警告</h3><p>在 Vue CLI 的可视化面板的 <strong>任务 - serve -运行</strong> 后有一些 ESLint 的语法错误：</p>
-<p><img src="/medias/loading.gif" data-original="1.3.png" alt=""></p>
-<p>例如<strong>这个是 prettier 格式化工具和 ESLint 规则不符</strong>：中括号要在同一行显示找到报错的代码位置并修改到同一行即可。</p>
-<p>也可以在根目录的 .prettierrc 文件下做下配置修改：</p>
-<pre><code>{
-  "semi": false, 
-  "singleQuote": true,
-  "printWidth": 200 // 自动换行所需字符数，默认80，改到200即可
-}</code></pre><p>下面这个报错是定义了变量没有使用，只需要找到对应变量删掉就行。</p>
-<pre><code>“xxx” is defined but never used</code></pre><h3 id="1-4-build-命令警告"><a href="#1-4-build-命令警告" class="headerlink" title="1.4 build 命令警告"></a>1.4 build 命令警告</h3><h4 id="1-4-1-移除-console-log"><a href="#1-4-1-移除-console-log" class="headerlink" title="1.4.1 移除 console.log()"></a>1.4.1 移除 console.log()</h4><p>在 Vue CLI 的可视化面板的 <strong>任务 - build -运行</strong> 后有一些警告：</p>
-<p><img src="/medias/loading.gif" data-original="1.4.1.png" alt=""></p>
-<p>在 <strong>输出</strong> 面板查看具体警告信息：大部分是 <strong>Unexpected console statement</strong> 警告。</p>
-<p>即<strong>生产环境打包不要出现开发环境时调试时用的 <code>console.log()</code> 语句</strong>。</p>
-<p>需要对自己的项目配置一个 babel 的插件，实现不同开发环境下的 <code>console.log()</code> 语句的显示移除。</p>
-<p>（1）在 Vue CLI 的可视化面板的<strong>开发依赖</strong>中搜索安装：<strong>babel-plugin-transform-remove-console</strong></p>
-<p>（2）<code>npm install babel-plugin-transform-remove-console --save-dev</code></p>
-<p><strong>引入：</strong></p>
-<p>在项目根目录的 <strong>babel.config.js</strong> 文件的 <strong>plugins</strong> 中新增节点：</p>
-<pre><code>'transform-remove-console'</code></pre><p>但是这种方式存在问题，<strong>babel.config.js</strong> 文件是全局共享的，不管是项目开发阶段还是发布阶段都会生效。</p>
-<h4 id="1-4-2-解决方案"><a href="#1-4-2-解决方案" class="headerlink" title="1.4.2 解决方案"></a>1.4.2 解决方案</h4><p>思路：可以在 <strong>babel.config.js</strong> 文件的 <strong>module.exports</strong> 前定义一个常量数组存放发布阶段需要用到的一些插件。</p>
-<p>然后判断当前的开发处于哪种阶段，如果是发布阶段就向数组中 <strong>push</strong> 对应的插件名称即可。</p>
-<p>完整代码：</p>
-<pre><code>// 项目发布阶段需要用到的 babel 插件
-const prodPlugins = []
-
-// 判断当前的开发阶段
-if(process.env.NODE_ENV === 'production') {
-  prodPlugins.push('transform-remove-console')
-}
-
-module.exports = {
-  'presets': [
-    '@vue/app'
-  ],
-  'plugins': [
-    [
-      'component',
-      {
-        'libraryName': 'element-ui',
-        'styleLibraryName': 'theme-chalk'
-      }
-    ],
-    // 发布产品时候的插件数组
-    ...prodPlugins,
-    '@babel/plugin-syntax-dynamic-import'
-  ]
-}</code></pre><p>这样就实现了只在项目发布阶段移除所有 <code>console</code> ！</p>
-<h2 id="二、项目优化"><a href="#二、项目优化" class="headerlink" title="二、项目优化"></a>二、项目优化</h2><h3 id="2-1-项目优化策略"><a href="#2-1-项目优化策略" class="headerlink" title="2.1 项目优化策略"></a>2.1 项目优化策略</h3><ol>
-<li>生成打包报告 （根据报告发现项目中存在的问题并进行解决）</li>
-<li>第三方库启用 CDN （提高页面加载效率）</li>
-<li>Element-UI 组件按需加载 </li>
-<li>路由懒加载</li>
-<li>首页内容定制</li>
-</ol>
-<h3 id="2-2-生成打包报告"><a href="#2-2-生成打包报告" class="headerlink" title="2.2 生成打包报告"></a>2.2 生成打包报告</h3><p>打包时，为了直观地发现项目中存在的问题，可以在打包时生成报告。</p>
-<p>生成报告的方式有两种：</p>
-<p> ① 通过命令行参数的形式生成报告</p>
-<p>通过 vue-cli 的命令选项可以生成打包报告 </p>
-<p>–report 选项可以生成 report.html 以帮助分析包内容 vue-cli-service build –report</p>
-<p>② 通过可视化的UI面板直接查看报告（推荐）</p>
-<p>在可视化的UI面板中，通过控制台和分析面板，可以方便地看到项目中所存在的问题。</p>
-<p>在可视化的UI面板的 <strong>任务 - build - 运行</strong> 后会生成一些对应的报告信息，在控制台和分析面板查看报告：</p>
-<p><img src="/medias/loading.gif" data-original="2.2.1.png" alt=""></p>
-<p><img src="/medias/loading.gif" data-original="2.2.2.png" alt=""></p>
-<p><img src="/medias/loading.gif" data-original="2.2.3.png" alt=""></p>
-<p>由于我的已经优化处理过了看不出来效果，之前将体积大的文件和依赖性压缩处理了…</p>
-<h3 id="2-3-修改-Webpack-默认配置"><a href="#2-3-修改-Webpack-默认配置" class="headerlink" title="2.3 修改 Webpack 默认配置"></a>2.3 修改 Webpack 默认配置</h3><p><strong>通过 vue.config.js 修改 Webpack 的默认配置。</strong></p>
-<p>通过 vue-cli 3.0 工具生成的项目，默认隐藏了所有 webpack 的配置项，目的是为了屏蔽项目的配置过程，让程 序员把工作的重心，放到具体功能和业务逻辑的实现上。</p>
-<p>如果程序员有修改 webpack 默认配置的需求，可以在项目根目录中，按需创建 <strong>vue.config.js</strong> 这个配置文件，从<br>而对项目的打包发布过程做自定义的配置（具体配置参考 <a href="https://cli.vuejs.org/zh/config/#vue-config-js）。" target="_blank" rel="noopener">https://cli.vuejs.org/zh/config/#vue-config-js）。</a></p>
-<pre><code>// vue.config.js 
-// 这个文件中，应该导出一个包含了自定义配置选项的对象 
-module.exports = { 
-    // 选项...
-}</code></pre><h4 id="2-3-1-为开发-发布模式指定不同的打包入口"><a href="#2-3-1-为开发-发布模式指定不同的打包入口" class="headerlink" title="2.3.1 为开发/发布模式指定不同的打包入口"></a>2.3.1 为开发/发布模式指定不同的打包入口</h4><p>默认情况下，Vue项目的开发模式与发布模式，共用同一个打包的入口文件（即 src/main.js）。为了将项目 的开发过程与发布过程分离，我们可以为两种模式，各自指定打包的入口文件，即： </p>
-<p>① 开发模式的入口文件为 src/main-dev.js</p>
-<p>② 发布模式的入口文件为 src/main-prod.js</p>
-<h4 id="2-3-2-configureWebpack-和-chainWebpack"><a href="#2-3-2-configureWebpack-和-chainWebpack" class="headerlink" title="2.3.2 configureWebpack 和 chainWebpack"></a>2.3.2 configureWebpack 和 chainWebpack</h4><p>在 vue.config.js 导出的配置对象中，新增 configureWebpack 或 chainWebpack 节点，来自定义 webpack 的打包配置。</p>
-<p>在这里， configureWebpack 和 chainWebpack 的作用相同，唯一的区别就是它们修改 webpack 配置的方 式不同： </p>
-<p>① chainWebpack 通过链式编程的形式，来修改默认的 webpack 配置 </p>
-<p>② configureWebpack 通过操作对象的形式，来修改默认的 webpack 配置</p>
-<p>两者具体的使用差异，可参考如下网址：</p>
-<p><a href="https://cli.vuejs.org/zh/guide/webpack.html#webpack-%E7%9B%B8%E5%85%B3" target="_blank" rel="noopener">https://cli.vuejs.org/zh/guide/webpack.html#webpack-%E7%9B%B8%E5%85%B3</a></p>
-<h4 id="2-3-3-chainWebpack-自定义打包入口"><a href="#2-3-3-chainWebpack-自定义打包入口" class="headerlink" title="2.3.3 chainWebpack 自定义打包入口"></a>2.3.3 chainWebpack 自定义打包入口</h4><pre><code>// vue.config.js 
-module.exports = {
-  chainWebpack: config =&gt; {
-    // 发布模式
-    config.when(process.env.NODE_ENV === 'production', config =&gt; {
-      config
-        .entry('app')
-        .clear()
-        .add('./src/main-prod.js')
-
-      config.set('externals', {
-        vue: 'Vue',
-        'vue-router': 'VueRouter',
-        axios: 'axios',
-        lodash: '_',
-        echarts: 'echarts',
-        nprogress: 'NProgress',
-        'vue-quill-editor': 'VueQuillEditor'
-      })
-
-      config.plugin('html').tap(args =&gt; {
-        args[0].isProd = true
-        return args
-      })
-    })
-
-    // 开发模式
-    config.when(process.env.NODE_ENV === 'development', config =&gt; {
-      config
-        .entry('app')
-        .clear()
-        .add('./src/main-dev.js')
-
-      config.plugin('html').tap(args =&gt; {
-        args[0].isProd = false
-        return args
-      })
-    })
+  const { data: res } = await this.$http.get('reports/type/1')
+  if (res.meta.status !== 200) {
+    return this.$message.error('获取折线图数据失败！')
   }
-}</code></pre><h3 id="2-4-externals-加载外部-CDN-资源"><a href="#2-4-externals-加载外部-CDN-资源" class="headerlink" title="2.4 externals 加载外部 CDN 资源"></a>2.4 externals 加载外部 CDN 资源</h3><p>默认情况下，通过 import 语法导入的第三方依赖包，最终会被打包合并到同一个文件中，从而导致打包成功 后，单文件体积过大的问题。</p>
-<p><img src="/medias/loading.gif" data-original="2.4.1.png" alt=""></p>
-<p>可以看到有一个 JS 文件有1.6m，这会导致加载速度特别慢。为了解决上述问题，可以通过 webpack 的 externals 节点，来配置并加载外部的 CDN 资源。<strong>凡是声明在externals 中的第三方依赖包，都不会被打包。</strong></p>
-<pre><code>// vue.config.js 
-config.set('externals', { 
-    vue: 'Vue',
-    'vue-router': 'VueRouter',
-    axios: 'axios',
-    lodash: '_',
-    echarts: 'echarts',
-    nprogress: 'NProgress', 
-    'vue-quill-editor': 'VueQuillEditor'
-})</code></pre><p>同时，需要在 public/index.html 文件的头部，添加如下的 CDN 资源引用：</p>
-<pre><code>&lt;!-- nprogress 的样式表文件 --&gt; &lt;link rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" /&gt; &lt;!-- 富文本编辑器的样式表文件 --&gt;
-&lt;link rel="stylesheet" href="https://cdn.staticfile.org/quill/1.3.4/quill.core.min.css"/&gt; 
-&lt;link rel="stylesheet" href="https://cdn.staticfile.org/quill/1.3.4/quill.snow.min.css"/&gt;
-&lt;link rel="stylesheet" href="https://cdn.staticfile.org/quill/1.3.4/quill.bubble.min.css"/&gt;</code></pre><p>还需要在 public/index.html 文件的头部，添加如下的 CDN 资源引用：</p>
-<pre><code>&lt;script src="https://cdn.staticfile.org/vue/2.5.22/vue.min.js"&gt;&lt;/script&gt;
-&lt;script src="https://cdn.staticfile.org/vue-router/3.0.1/vue-router.min.js"&gt;&lt;/script&gt; 
-&lt;script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"&gt;&lt;/script&gt; 
-&lt;script src="https://cdn.staticfile.org/lodash.js/4.17.11/lodash.min.js"&gt;&lt;/script&gt; 
-&lt;script src="https://cdn.staticfile.org/echarts/4.1.0/echarts.min.js"&gt;&lt;/script&gt; 
-&lt;script src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js"&gt;&lt;/script&gt; 
-&lt;!-- 富文本编辑器的 js 文件 --&gt;
-&lt;script src="https://cdn.staticfile.org/quill/1.3.4/quill.min.js"&gt;&lt;/script&gt;
-&lt;script src="https://cdn.jsdelivr.net/npm/vue-quill-editor@3.0.4/dist/vue-quill-editor.js"&gt;&lt;/script&gt;</code></pre><p>此时再使用 build 打包体积就大大减小了！（从 1.6m 到 480k）</p>
-<p><img src="/medias/loading.gif" data-original="2.4.2png" alt=""></p>
-<h3 id="2-5-CDN-优化-ElementUI-打包"><a href="#2-5-CDN-优化-ElementUI-打包" class="headerlink" title="2.5 CDN 优化 ElementUI 打包"></a>2.5 CDN 优化 ElementUI 打包</h3><p>虽然在开发阶段，我们启用了 element-ui 组件的按需加载，尽可能的减少了打包的体积，但是那些被按需加 载的组件，还是占用了较大的文件体积。此时，我们可以将 element-ui 中的组件，也通过 CDN 的形式来加<br>载，这样能够进一步减小打包后的文件体积。</p>
-<p>具体操作流程如下：</p>
-<p>① 在 main-prod.js 中，注释掉 element-ui 按需加载的代码 </p>
-<p>② 在 index.html 的头部区域中，通过 CDN 加载 element-ui 的 js 和 css 样式</p>
-<pre><code>&lt;!-- element-ui 的样式表文件 --&gt; 
-&lt;link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.8.2/themechalk/index.css" /&gt; 
-&lt;!-- element-ui 的 js 文件 --&gt;
-&lt;script src="https://cdn.staticfile.org/element-ui/2.8.2/index.js"&gt;&lt;/script&gt;</code></pre><p><img src="/medias/loading.gif" data-original="2.5.png" alt=""></p>
-<p>可以看到又瘦了不少。</p>
-<h3 id="2-6-定制首页内容"><a href="#2-6-定制首页内容" class="headerlink" title="2.6 定制首页内容"></a>2.6 定制首页内容</h3><p>不同的打包环境下，首页内容可能会有所不同。我们可以通过插件的方式进行定制，插件配置如下：</p>
-<pre><code>chainWebpack: config =&gt; { 
-    config.when(process.env.NODE_ENV === 'production', config =&gt; { 
-        config.plugin('html').tap(args =&gt; { 
-            args[0].isProd = true 
-            return args
-        }) 
-    })
-    config.when(process.env.NODE_ENV === 'development', config =&gt; { 
-        config.plugin('html').tap(args =&gt; { 
-            args[0].isProd = false 
-            return args
-        }) 
-    })
-}</code></pre><p>在 public/index.html 首页中，可以根据 isProd 的值，来决定如何渲染页面结构：</p>
-<pre><code>&lt;!– 按需渲染页面的标题 --&gt;
-&lt;title&gt;&lt;%= htmlWebpackPlugin.options.isProd ? '' : 'dev - ' %&gt;Title&lt;/title&gt;
-
-&lt;!– 按需加载外部的 CDN 资源 --&gt;
-&lt;% if(htmlWebpackPlugin.options.isProd) { %&gt;
-&lt;!—通过 externals 加载的外部 CDN 资源--&gt;
-&lt;% } %&gt;</code></pre><h3 id="2-7-路由懒加载"><a href="#2-7-路由懒加载" class="headerlink" title="2.7 路由懒加载"></a>2.7 路由懒加载</h3><p>当打包构建项目时，JavaScript 包会变得非常大，影响页面加载。如果我们能把不同路由对应的组件分割成 不同的代码块，然后当路由被访问的时候才加载对应组件，这样就更加高效了。</p>
-<p>具体需要 3 步：</p>
-<p>① 安装 @babel/plugin-syntax-dynamic-import 包。 </p>
-<p>② 在 babel.config.js 配置文件中声明该插件。</p>
-<p>③ 将路由改为按需加载的形式，示例代码如下：</p>
-<pre><code>const Foo = () =&gt; import(/* webpackChunkName: "group-foo" */ './Foo.vue') 
-const Bar = () =&gt; import(/* webpackChunkName: "group-foo" */ './Bar.vue')
-const Baz = () =&gt; import(/* webpackChunkName: "group-boo" */ './Baz.vue')</code></pre><p>关于路由懒加载的详细文档，可参考如下链接：</p>
-<p><a href="https://router.vuejs.org/zh/guide/advanced/lazy-loading.html" target="_blank" rel="noopener">https://router.vuejs.org/zh/guide/advanced/lazy-loading.html</a></p>
-<p>完整代码：</p>
-<pre><code>// router.js
-import Vue from 'vue'
-import Router from 'vue-router'
-
-// import Login from './components/Login.vue'
-const Login = () =&gt; import(/* webpackChunkName: "login_home_welcome" */ './components/Login.vue')
-// import Home from './components/Home.vue'
-const Home = () =&gt; import(/* webpackChunkName: "login_home_welcome" */ './components/Home.vue')
-// import Welcome from './components/Welcome.vue'
-const Welcome = () =&gt; import(/* webpackChunkName: "login_home_welcome" */ './components/Welcome.vue')
-
-// import Users from './components/user/Users.vue'
-const Users = () =&gt; import(/* webpackChunkName: "Users_Rights_Roles" */ './components/user/Users.vue')
-// import Rights from './components/power/Rights.vue'
-const Rights = () =&gt; import(/* webpackChunkName: "Users_Rights_Roles" */ './components/power/Rights.vue')
-// import Roles from './components/power/Roles.vue'
-const Roles = () =&gt; import(/* webpackChunkName: "Users_Rights_Roles" */ './components/power/Roles.vue')
-
-// import Cate from './components/goods/Cate.vue'
-const Cate = () =&gt; import(/* webpackChunkName: "Cate_Params" */ './components/goods/Cate.vue')
-// import Params from './components/goods/Params.vue'
-const Params = () =&gt; import(/* webpackChunkName: "Cate_Params" */ './components/goods/Params.vue')
-
-// import GoodsList from './components/goods/List.vue'
-const GoodsList = () =&gt; import(/* webpackChunkName: "GoodsList_Add" */ './components/goods/List.vue')
-// import Add from './components/goods/Add.vue'
-const Add = () =&gt; import(/* webpackChunkName: "GoodsList_Add" */ './components/goods/Add.vue')
-
-// import Order from './components/order/Order.vue'
-const Order = () =&gt; import(/* webpackChunkName: "Order_Report" */ './components/order/Order.vue')
-// import Report from './components/report/Report.vue'
-const Report = () =&gt; import(/* webpackChunkName: "Order_Report" */ './components/report/Report.vue')
-
-Vue.use(Router)
-
-const router = new Router({
-  routes: [
-    { path: '/', redirect: '/login' },
-    { path: '/login', component: Login },
-    {
-      path: '/home',
-      component: Home,
-      redirect: '/welcome',
-      children: [
-        { path: '/welcome', component: Welcome },
-        { path: '/users', component: Users },
-        { path: '/rights', component: Rights },
-        { path: '/roles', component: Roles },
-        { path: '/categories', component: Cate },
-        { path: '/params', component: Params },
-        { path: '/goods', component: GoodsList },
-        { path: '/goods/add', component: Add },
-        { path: '/orders', component: Order },
-        { path: '/reports', component: Report }
-      ]
+  // 展示数据
+  myChart.setOption(res.data)
+}</code></pre><p>此时页面中多了一个折线图的图形：</p>
+<p><img src="/medias/loading.gif" data-original="3.1.png" alt=""></p>
+<h3 id="3-2-合并-options"><a href="#3-2-合并-options" class="headerlink" title="3.2 合并 options"></a>3.2 合并 options</h3><p>此时图表尚不完整，需要和官方文档提供的 options 选项做下合并。</p>
+<p>将 options 放到 data 中：</p>
+<pre><code>data() {
+    return {
+      // 需要合并的数据
+      options: {
+        title: {
+          text: '用户来源'
+        },
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'cross',
+            label: {
+              backgroundColor: '#E9EEF3'
+            }
+          }
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+        },
+        xAxis: [
+          {
+            boundaryGap: false
+          }
+        ],
+        yAxis: [
+          {
+            type: 'value'
+          }
+        ]
+      }
     }
-  ]
-})
+}</code></pre><h3 id="3-3-Lodash-合并对象"><a href="#3-3-Lodash-合并对象" class="headerlink" title="3.3 Lodash 合并对象"></a>3.3 Lodash 合并对象</h3><p><em>Lodash</em> 是一个一致性、模块化、高性能的 JavaScript 实用工具库，之前使用它进行过深拷贝，这次用它合并对象。</p>
+<p>官方文档：<a href="https://lodash.com/" target="_blank" rel="noopener">https://lodash.com/</a></p>
+<p>导入 lodash</p>
+<pre><code>import _ from 'lodash'</code></pre><p>调用 lodash 提供的 merge 函数合并对象：</p>
+<pre><code>// 准备数据和配置项
+const result = _.merge(res.data, this.options)
 
-// 挂载路由导航守卫
-router.beforeEach((to, from, next) =&gt; {
-  // to 将要访问的路径
-  // from 代表从哪个路径跳转而来
-  // next 是一个函数，表示放行
-  //     next()  放行    next('/login')  强制跳转
+// 将合并的新对象交给图表去展示
+myChart.setOption(result)</code></pre><p>完整代码：</p>
+<pre><code>&lt;script&gt;
+// 1. 导入 echarts
+import * as echarts from 'echarts'
+import _ from 'lodash'
 
-  if (to.path === '/login') return next()
-  // 获取token
-  const tokenStr = window.sessionStorage.getItem('token')
-  if (!tokenStr) return next('/login')
-  next()
-})
+export default {
+  data() {
+    return {
+      // 需要合并的数据
+      options: {
+        title: {
+          text: '用户来源'
+        },
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'cross',
+            label: {
+              backgroundColor: '#E9EEF3'
+            }
+          }
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+        },
+        xAxis: [
+          {
+            boundaryGap: false
+          }
+        ],
+        yAxis: [
+          {
+            type: 'value'
+          }
+        ]
+      }
+    }
+  },
+  // 此时，页面上的元素，已经被渲染完毕了！
+  async mounted() {
+    // 3. 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'))
 
-export default router</code></pre><h2 id="三、项目上线"><a href="#三、项目上线" class="headerlink" title="三、项目上线"></a>三、项目上线</h2><h3 id="3-1-项目上线相关配置"><a href="#3-1-项目上线相关配置" class="headerlink" title="3.1 项目上线相关配置"></a>3.1 项目上线相关配置</h3><ol>
-<li>通过 node 创建 web 服务器。 </li>
-<li>开启 gzip 配置。 </li>
-<li>配置 https 服务。</li>
-<li>使用 pm2 管理应用。</li>
-</ol>
-<h3 id="3-2-通过-node-创建-web-服务器"><a href="#3-2-通过-node-创建-web-服务器" class="headerlink" title="3.2 通过 node 创建 web 服务器"></a>3.2 通过 node 创建 web 服务器</h3><p>创建 node 项目，并安装 express，通过 express 快速创建 web 服务器，将 vue 打包生成的 dist 文件夹， 托管为静态资源即可，关键代码如下：</p>
-<pre><code>const express = require('express')
-// 创建 web 服务器 
-const app = express()
-// 托管静态资源 
-app.use(express.static('./dist'))
-// 启动 web 服务器 
-app.listen(80, () =&gt; { 
-    console.log('web server running at http://127.0.0.1')
-})</code></pre><p>先在项目文件夹下新建文件如 <strong>“xxx_server”</strong>，VSCode 打开文件夹终端运行：</p>
-<p><code>npm init -y</code> ：初始化一个包管理配置文件</p>
-<p><code>npm i express -S</code>：安装 express</p>
-<p>将之前项目打包生成的 dist 文件夹粘贴到新建文件夹 <strong>“xxx_server”</strong> 下</p>
-<p>回到 VSCode 新建 app.js 文件</p>
-<p>导入express：</p>
-<p><code>const express = require('express')</code></p>
-<p>调用 express 得到真正的服务器：</p>
-<p><code>const app = express()</code></p>
-<p>注册 static 中间件把目录托管为静态资源：</p>
-<p><code>app.use(express.static('./dist'))</code></p>
-<p>启动服务器：</p>
-<pre><code>app.listen(80, () =&gt; {
-  console.log('server running at http://127.0.0.1')
-})</code></pre><h3 id="3-3-开启-gzip"><a href="#3-3-开启-gzip" class="headerlink" title="3.3 开启 gzip"></a>3.3 开启 gzip</h3><p>使用 gzip 可以减小文件体积，使传输速度更快。</p>
-<p>通过服务器端使用 Express 做 gzip 压缩。其配置如下：</p>
-<pre><code>// 安装相应包 
-npm install compression -S 
-// 导入包
-const compression = require('compression'); 
-// 启用中间件
-app.use(compression());</code></pre><p>这是减肥前，文件有多大体积差不多就会在网络中传输多大体积：</p>
-<p><img src="/medias/loading.gif" data-original="3.3.1.png" alt=""></p>
-<p><strong>优化：</strong>在之前的新建文件夹 <strong>“xxx_server”</strong> 终端下下载包：</p>
-<p><code>npm i compression -S</code></p>
-<p><strong>导入：</strong></p>
-<p><code>const compression = require('compression')</code></p>
-<p><strong>注册：</strong></p>
-<p><code>app.use(compression())</code></p>
-<blockquote>
-<p>注意：这行注册代码得放在 <code>app.use(express.static('./dist'))</code> 之前，即写到静态资源托管之前</p>
-</blockquote>
-<p>重新运行服务器，可以看到减肥大成功！压缩后只传输了 24.6k，文件打开速度更快！又双叒叕瘦了！</p>
-<p><img src="/medias/loading.gif" data-original="3.3.2.png" alt=""></p>
-<h3 id="3-4-配置-HTTPS-服务"><a href="#3-4-配置-HTTPS-服务" class="headerlink" title="3.4 配置 HTTPS 服务"></a>3.4 配置 HTTPS 服务</h3><p>为什么要启用 HTTPS 服务？</p>
-<p>①传统的 HTTP 协议传输的数据都是明文，不安全</p>
-<p>②采用 HTTPS 协议对传输的数据进行了加密处理，可以防止数据被中间人窃取，使用更安全</p>
-<p><strong>申请 SSL 证书</strong>（<a href="https://freessl.org）" target="_blank" rel="noopener">https://freessl.org）</a></p>
-<p>① 进入 <a href="https://freessl.cn/" target="_blank" rel="noopener">https://freessl.cn/</a> 官网，输入要申请的域名并选择品牌。 </p>
-<p>② 输入自己的邮箱并选择相关选项。 </p>
-<p>③ 验证 DNS（在域名管理后台添加 TXT 记录）。</p>
-<p>④ 验证通过之后，下载 SSL 证书（ full_chain.pem 公钥；private.key 私钥）。</p>
-<p><strong>在后台项目中导入证书</strong></p>
-<pre><code>const https = require('https'); 
-const fs = require('fs'); 
-const options = { 
-    cert: fs.readFileSync('./full_chain.pem'), 
-    key: fs.readFileSync('./private.key')
+    const { data: res } = await this.$http.get('reports/type/1')
+    if (res.meta.status !== 200) {
+      return this.$message.error('获取折线图数据失败！')
+    }
+
+    // 4. 准备数据和配置项
+    const result = _.merge(res.data, this.options)
+
+    // 5. 展示数据
+    myChart.setOption(result)
+  },
 }
-https.createServer(options, app).listen(443);</code></pre><p>完整代码：</p>
-<pre><code>const express = require('express')
-const compression = require('compression')
-const https = require('https')
-const fs = require('fs')
-const app = express()
-
-const options = {
-  cert: fs.readFileSync('./full_chain.pem'),
-  key: fs.readFileSync('./private.key')
-}
-
-// 一定要把这一行代码，写到静态资源托管之前
-app.use(compression())
-app.use(express.static('./dist'))
-
-// app.listen(80, () =&gt; {
-//   console.log('server running at http://127.0.0.1')
-// })
-
-https.createServer(options, app).listen(443)</code></pre><h3 id="3-5-使用-pm2-管理应用"><a href="#3-5-使用-pm2-管理应用" class="headerlink" title="3.5 使用 pm2 管理应用"></a>3.5 使用 pm2 管理应用</h3><p>在后台文件夹 Shift + 右键 打开 Powershell 窗口，输入固定指令：本地运行 Web 服务器：<code>node .\app.js</code></p>
-<p>此时一旦关闭 Powershell 服务器就关了，此时就需要借助 pm2：</p>
-<p>① 在服务器中安装 pm2：npm i pm2 -g </p>
-<p>② 启动项目：pm2 start 脚本 –name 自定义名称 </p>
-<p>③ 查看运行项目：pm2 ls </p>
-<p>④ 重启项目：pm2 restart 自定义名称 </p>
-<p>⑤ 停止项目：pm2 stop 自定义名称</p>
-<p>⑥ 删除项目：pm2 delete 自定义名称</p>
+&lt;/script&gt;</code></pre><p>此时完整的图表就展示出来了！</p>
+<p><img src="/medias/loading.gif" data-original="3.3.png" alt=""></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1545,7 +1318,7 @@ https.createServer(options, app).listen(443)</code></pre><h3 id="3-5-使用-pm2-
                     </span>
                     <a href="http://adaichan.com" class="b-link-green">兴趣使然の边缘人小站</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2021/01/14/22.vue-xiang-mu-you-hua-ji-bu-shu/" class="b-link-green">Vue 项目优化及部署</a>
+                    <a href="/2021/01/08/21.echarts/" class="b-link-green">ECharts 图表渲染</a>
                 </p>
             </div>
 
@@ -1865,12 +1638,11 @@ https.createServer(options, app).listen(443)</code></pre><h3 id="3-5-使用-pm2-
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/01/14/22.vue-xiang-mu-you-hua-ji-bu-shu/">
+                <a href="/2021/01/10/22.vue-xiang-mu-you-hua-ji-bu-shu/">
                     <div class="card-image">
                         
                         <img src="/medias/loading.gif" data-original="/medias/featureimages/22.jpg" class="responsive-img" alt="Vue 项目优化及部署">
@@ -1885,9 +1657,9 @@ https.createServer(options, app).listen(443)</code></pre><h3 id="3-5-使用-pm2-
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-01-14
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-01-10
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1900,16 +1672,15 @@ https.createServer(options, app).listen(443)</code></pre><h3 id="3-5-使用-pm2-
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript/" target="_blank">
-                        <span class="chip bg-color">JavaScript</span>
-                    </a>
-                    
                     <a href="/tags/Vue/" target="_blank">
                         <span class="chip bg-color">Vue</span>
+                    </a>
+                    
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
@@ -1923,23 +1694,23 @@ https.createServer(options, app).listen(443)</code></pre><h3 id="3-5-使用-pm2-
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/10/21.echarts/">
+                <a href="/2021/01/06/20.sass/">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/21.jpg" class="responsive-img" alt="ECharts 图表渲染">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/20.jpg" class="responsive-img" alt="Sass 基础学习">
                         
-                        <span class="card-title">ECharts 图表渲染</span>
+                        <span class="card-title">Sass 基础学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前阵子在项目中使用到商业级数据图表 ECharts,即 Enterprise Charts 的缩写,它是百度的一个开源的数据可视化工具,一个纯 Javascript 的图表库。这里简单记录一下 ECharts 从安装引入到渲染使用的整个流程。
+                            我们知道 CSS 不是编程语言，它没有变量、条件语句，只是单纯一行行的描述，于是很自然的有人就开始为 CSS 加入编程元素，即预处理器。Sass 是门成熟专业的 CSS 扩展语言，相比 Less、Stylus 窝还是撅腚学习这个。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-01-10
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-01-06
                             </span>
                         <span class="publish-author">
                             
@@ -1956,12 +1727,8 @@ https.createServer(options, app).listen(443)</code></pre><h3 id="3-5-使用-pm2-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript/" target="_blank">
-                        <span class="chip bg-color">JavaScript</span>
-                    </a>
-                    
-                    <a href="/tags/ECharts/" target="_blank">
-                        <span class="chip bg-color">ECharts</span>
+                    <a href="/tags/Sass/" target="_blank">
+                        <span class="chip bg-color">Sass</span>
                     </a>
                     
                 </div>
@@ -2123,7 +1890,7 @@ https.createServer(options, app).listen(443)</code></pre><h3 id="3-5-使用-pm2-
 			
 			
                 <i class="fa fa-area-chart"></i>&nbsp;字数统计:&nbsp;
-                <span class="white-color">68k</span> 字
+                <span class="white-color">69.8k</span> 字
             
 			
 			
@@ -2365,11 +2132,11 @@ $(function () {
 		<script>WIDGET = {CONFIG:{"modules":"01234","background":1,"tmpColor":"FFFFFF","tmpSize":16,"cityColor":"FFFFFF","citySize":16,"aqiSize":16,"weatherIconSize":24,"alertIconSize":18,"padding":"10px 10px 10px 10px","shadow":"1","language":"auto","borderRadius":5,"city":"CN101200101","fixed":"true","vertical":"middle","horizontal":"center","left":"16","top":"16","key":"bAnFmmXfQG"}}</script>
 		<script src="https://apip.weatherdt.com/simple/static/js/weather-simple-common.js?v=2.0"></script>
     
-	<script>
+	<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 	
 </html>
