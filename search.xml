@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>React 全家桶</title>
-      <link href="/2021/01/12/23.react-quan-jia-tong/"/>
-      <url>/2021/01/12/23.react-quan-jia-tong/</url>
+      <title>React 全家桶 day 01</title>
+      <link href="/2021/02/13/37.react-quan-jia-tong-day-01/"/>
+      <url>/2021/02/13/37.react-quan-jia-tong-day-01/</url>
       
-        <content type="html"><![CDATA[<h2 id="一、JS-库-框架对比"><a href="#一、JS-库-框架对比" class="headerlink" title="一、JS 库 / 框架对比"></a>一、JS 库 / 框架对比</h2><h3 id="1-1-jQuery"><a href="#1-1-jQuery" class="headerlink" title="1.1 jQuery"></a>1.1 jQuery</h3><p>JS 的函数库，对原生 JS 的 API 进行了封装，只是语法简单了<strong>本质还是用选择器（$）在操作 DOM。</strong></p><p><strong>可以进行选中元素、操作 CSS、遍历 DOM、事件、JS 动画、AJAX 等一些增删改查、筛选的操作。</strong></p><blockquote><p><strong>缺点：</strong>数据和视图耦合，<strong>频繁操作 DOM（导致页面频繁重绘）</strong>，影响页面性能。</p></blockquote><h3 id="1-2-Vue"><a href="#1-2-Vue" class="headerlink" title="1.2 Vue"></a>1.2 Vue</h3><h4 id="1-2-1-特点"><a href="#1-2-1-特点" class="headerlink" title="1.2.1 特点"></a>1.2.1 特点</h4><p>渐进式 JavaScript 框架，易上手，包含大量插件（全家桶）。</p><p><strong>Vue</strong> 基于 <strong>MVVM</strong> 模式，<strong>将数据层和视图层完全解耦分离</strong>（开放封闭原则），以数据驱动视图，只关心数据，DOM操作被封装。</p><p>React 只支持内存到界面的单向变化，Vue 支持内存和界面数据的双向交流：</p><blockquote><p>通过数据劫持结合发布者-订阅者模式，通过 Object.defineProperty() 将 data 的属性代理到 vm 上，劫持各个属性的 setter、getter，一旦数据变动（修改 data）立马发布消息给订阅者，触发相应的监听回调响应式的更新视图层。</p></blockquote><p>拓展：属性都有两个对应的方法，一个是 get 方法，一个是 set 方法，都是回调函数。</p><ul><li>get：当需要读取当前属性值时执行回调，根据相关数据计算并返回当前属性的值。</li><li>set：用来监视属性值的变化，一旦属性值改变就调用 set 更新相关属性数据。</li></ul><h4 id="1-2-2-我对-MVVM-的理解"><a href="#1-2-2-我对-MVVM-的理解" class="headerlink" title="1.2.2 我对 MVVM 的理解"></a>1.2.2 <strong>我对 MVVM 的理解</strong></h4><p>看了 Vue 的源码我发现 Vue 的 MVVM 实现<strong>包含了两个重要的技术：a. 模板解析 b. 数据绑定</strong></p><ul><li><p><strong>模板解析用来初始化组件界面，解析两个部分：大括号表达式和指令</strong></p></li><li><p><strong>数据绑定用来实现更新数据，界面就自动变化的功能，主要靠的是数据劫持</strong></p></li></ul><p><img src="/medias/loading.gif" data-original="1.2.2.png" alt=""></p><p><strong>分析：</strong>我们写代码的时候 Vue 底层相当于 new 了一个 MVVM，它会创建两个对象，先是创建一个 Observe，用来劫持（或者叫监视）data 中所有层次的属性，同时还为每一个属性创建了另外一种对象，叫 Dep，几个属性就对应几个 Dep。</p><p>这些准备工作完成 MVVM 会再创建一个叫 Compile 的对象，它有两个作用，最重要的是去编译模板（也就是编译大括号表达式和指令），这时会去调用一个叫 Updater 的对象来初始化页面，同时 Compile 还会为模板的每个表达式（事件指令表达式除外）创建一个 Watcher，并指定更新节点的回调函数，一旦创建了 Watcher，就会去建立 Watcher 和 Dep 之间的相互关系，将 Watcher 添加到所有对应的 Dep 中从而让 Dep 可以通过 Watcher 去调用 Updater 更新视图，将 Dep 添加到 Watcher 只是为了防止重复建立。</p><p>其实到这里初始化的整个流程就完了，它做了两件事：实现初始化显示，为更新做了准备（实现了数据劫持并创建了对应的 Watcher 和 Dep）</p><p>接下来比如我们点击了一个按钮来更新某一个属性，这会被 Observe 里面的 set 知道，set 会先去通知该属性对应的那一个 Dep，Dep 再去通知所有相关的 Watcher，由于前面初始化阶段指定了更新节点的回调函数，Watcher 就调用回调函数去找 Updater 里面的方法去更新界面。</p><h3 id="1-3-React"><a href="#1-3-React" class="headerlink" title="1.3 React"></a>1.3 React</h3><p>用于构建用户界面的 JavaScript 库，<strong>严格上只针对 MVC 的 view 层。</strong></p><ul><li><p>申明式：不用再操作 DOM，只需要更新数据，数据更新，界面就自动变化（数据驱动视图变化）</p></li><li><p>组件化：将界面的每个功能模块拆分为组件进行封装，组件复用（props 传递复用）、方便维护</p></li><li><p>跨平台：可用 Node 进行服务器渲染，或使用 <a href="https://reactnative.dev/" target="_blank" rel="noopener">React Native</a> 开发原生移动应用。</p></li></ul><p>JSX 本质：JSX 是语法糖，需要被解析成 JS 才能运行，可被其他项目使用，JSX 是模板，最终要渲染成 html，需要 vdom 的原因：JSX 要渲染成 html，数据驱动视图。</p><h3 id="1-4-尤大阐述两大框架"><a href="#1-4-尤大阐述两大框架" class="headerlink" title="1.4 尤大阐述两大框架"></a>1.4 尤大阐述两大框架</h3><p><strong>Vue 设计者尤雨溪亲自回答：</strong></p><p>虽然 Vue 和 React 两者在定位上有一些交集，但差异也是很明显的。</p><p><strong>Vue 使用的是 web 开发者更熟悉的模板与特性</strong>，Vue 的 API 跟传统 web 开发者熟悉的模板契合度更高，比如 Vue 的单文件组件是以模板 + JavaScript + CSS 的组合模式呈现，它跟 web 现有的 HTML、JavaScript、CSS 能够更好地配合。<strong>React 的特色在于函数式编程的理念和丰富的技术选型</strong>。Vue 比起 React 更容易被前端工程师接受，这是一个直观的感受；React 则更容易吸引在 FP 上持续走下去的开发者。</p><p>从<strong>使用习惯和思维模式</strong>上考虑，对于一个没有任何 Vue 和 React 基础的 web 开发者来说， Vue 会更友好，更符合他的思维模式。React 对于拥有函数式编程背景的开发者以及一些并不是以 web 为主要开发平台的开发人员而言，React 更容易接受。这并不意味着他们不能接受 Vue，Vue 和 React 之间的差异对他们来说就没有 web 开发者那么明显。可以说，<strong>Vue 更加注重 web 开发者的习惯</strong>。</p><p><strong>实现上，Vue 跟 React 的最大区别在于数据的 reactivity，就是反应式系统上。</strong>Vue提供反应式的数据，当数据改动时，界面就会自动更新，而 React 里面需要调用方法 SetState。我把两者分别称为 <strong>Push-based</strong> 和 <strong>Pull-based</strong>。所谓 Push-based 就是说，改动数据之后，数据本身会把这个改动推送出去，告知渲染系统自动进行渲染。在 React 里面，它是一个 Pull 的形式，用户要给系统一个明确的信号说明现在需要重新渲染了，这个系统才会重新渲染。两者并没有绝对的优劣之分，更多的也是思维模式和开发习惯的不同。</p><p>两者不是完全互斥的，比如说在 React 里面，你也可以用一些第三方的库像 MobX 实现 Push-based 的系统，同时你也可以在 Vue2.0 里面，通过一些手段，比如把数据 freeze 起来，让数据不再具有反应式特点，或者通过手动调用组件更新的方法来做一个 pull-based 系统。所以两者并没有一个绝对的界限，只是默认的倾向性不同而已。</p><blockquote><p>以上回答摘自图灵社区对尤雨溪的访谈：《以匠人的态度不断打磨完善Vue》</p></blockquote><p>感觉尤大说得很中肯，虽然有些地方暂时看不明白在说啥，但还是有种恍然大悟豁然开朗如拨云雾而见青天的赶脚。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<h2 id="一、React-简介"><a href="#一、React-简介" class="headerlink" title="一、React 简介"></a>一、React 简介</h2><ol><li><p><strong>概念：</strong></p><p>用于构建用户<strong>界面</strong>的 JavaScript 库。即 React 只关注<strong>视图层</strong>。</p><p>比如有个需求：在页面上展示一些信息，之前的话是分三步走：</p><ol><li>发送请求获取后台接口数据</li><li>处理数据（对数组的遍历、过滤等格式整理）</li><li>使用 JS、jQuery <strong>操作 DOM</strong>，将数据放到相应节点<strong>呈现页面</strong></li></ol></li></ol><p>React 只处理上述的第三步，也就是只负责将数据渲染成 HTML 视图。</p><ol start="2"><li><p><strong>原生的劣势：</strong></p><ol><li><p>原生 JS 频繁操作 DOM，效率低（DOM-API 操作 UI），每一次操作 DOM，会引起浏览器重绘、重排</p><pre><code>document.getElementById('app')document.querySelector('#app')document.getElementsByTagName('span')</code></pre></li><li><p>jQuery 只是在编码上简化了 JS，还是会引起重绘、重排</p></li><li><p>原生 JS 没有<strong>组件化</strong>的编码方案，代码复用率低</p><p>a. 模块化：将一个大的 JS 按功能拆分成多个小的 JS，每个小的 JS 文件可以写一些独立的业务逻辑，方便复用</p><p>b. 组件化：构成页面的每一个独立的功能区域（除了 JS，还包括 HTML、CSS、音视频、字体等）</p></li></ol></li><li><p><strong>React 优势：</strong></p><ol><li><p><strong>组件化</strong>模式，<strong>申明式</strong>（相比于没封装的命令式）编码，提高开发效率和组件复用率。但对应的你得学习它的语法规则</p></li><li><p>在 React Native 中可以使用 React <strong>进行移动端开发</strong>，即可以用 JS 编写 Android 应用（Java）或 iOS 应用（OC/Swift）</p></li><li><p>使用<strong>虚拟 DOM + 优秀的 Diffing 算法</strong>，尽量减少与真实 DOM 的交互</p><p>虚拟 DOM：不放在页面中，而是代码运行时，放在电脑的内存里头</p><p><img src="/medias/loading.gif" data-original="1.1.png" alt=""></p><p>数组中每多添加一个 li 标签，DOM 就要重新渲染一次。之前如果有一百个人的 DOM，当新加一个人，就得重新渲染101个 DOM。</p><p>React 会对虚拟 DOM 进行比较，如果没发生变化就不再对应生成新的真实 DOM。</p><p><img src="/medias/loading.gif" data-original="1.2.png" alt=""></p></li></ol></li></ol><h2 id="二、使用案例"><a href="#二、使用案例" class="headerlink" title="二、使用案例"></a>二、使用案例</h2><p>这里不像工程化项目使用脚手架搭建，只是一个案例示范。</p><p><strong>准备好三个文件按顺序引入：</strong></p><p><strong>babel.min.js</strong>：ES6 =&gt; ES5、模块化时浏览器不能解析 import、JSX =&gt; JS</p><p><strong>react.development.js</strong>：React 的核心库</p><p><strong>react-dom.development.js</strong>：操作 DOM 的 React 扩展库</p><blockquote><p>注意：</p><ol><li>需要准备一个容器</li><li>核心库必须在扩展库之前引入</li><li>script 标签是 text/babel</li><li>标签不加引号’’</li></ol></blockquote><p><img src="/medias/loading.gif" data-original="2.png" alt=""></p><h2 id="三、虚拟-DOM-的两种创建方式"><a href="#三、虚拟-DOM-的两种创建方式" class="headerlink" title="三、虚拟 DOM 的两种创建方式"></a>三、虚拟 DOM 的两种创建方式</h2><p><strong>JSX 可以更简单的创建虚拟 DOM</strong>，相当于原生创建虚拟 DOM 写法的一个语法糖。</p><p><img src="/medias/loading.gif" data-original="3.1.png" alt=""></p><p>相当于原生 JS 这样写（不会采用）：</p><p><img src="/medias/loading.gif" data-original="3.2.png" alt=""></p><h2 id="四、虚拟-DOM-和真实-DOM"><a href="#四、虚拟-DOM-和真实-DOM" class="headerlink" title="四、虚拟 DOM 和真实 DOM"></a>四、虚拟 DOM 和真实 DOM</h2><pre><code>console.log('虚拟DOM:',VDOM) // 打印显示：Object（非数组对象和函数对象的一般对象）console.log(typeof VDOM) // 查看数据类型：Objectconsole.log(VDOM instanceof Object) // true</code></pre><p><img src="/medias/loading.gif" data-original="4.png" alt=""></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
@@ -20,9 +20,369 @@
       
         <tags>
             
-            <tag> Vue </tag>
+            <tag> JavaScript </tag>
+            
+            <tag> React </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>移除元素</title>
+      <link href="/2021/02/12/36.yi-chu-yuan-su/"/>
+      <url>/2021/02/12/36.yi-chu-yuan-su/</url>
+      
+        <content type="html"><![CDATA[<p><strong>移除元素：</strong>给你一个数组 nums 和一个值 val，你需要 <strong>原地</strong> 移除所有数值等于 val 的元素，并返回移除后数组的新长度。</p><p>不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并 <strong>原地 修改输入数组</strong>。</p><p>元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</p><p><strong>说明：</strong></p><p>为什么返回数值是整数，但输出的答案是数组呢?</p><p>请注意，输入数组是以<strong>「引用」</strong>方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。可以想象内部操作如下：</p><pre><code>// nums 是以“引用”方式传递的。也就是说，不对实参作任何拷贝int len = removeElement(nums, val);// 在函数里修改输入数组对于调用者是可见的。// 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。for (int i = 0; i &lt; len; i++) {    print(nums[i]);}</code></pre><ul><li><p>示例 1：</p><p>输入：nums = [3,2,2,3], val = 3<br>输出：2, nums = [2,2]<br>解释：函数应返回新的长度 2, 且 nums 中前两个元素均为 2。不需考虑数组中超出新长度后面的元素。例如，函数返回的新长度为 2 ，而 nums = [2,2,3,3] 或 nums = [2,2,0,0]，也会被视作正确答案。</p></li><li><p>示例 2：</p><p>输入：nums = [0,1,2,2,3,0,4,2], val = 2<br>输出：5, nums = [0,1,4,0,3]<br>解释：函数应该返回新的长度 5, 且 nums 中的前五个元素为 0, 1, 3, 0, 4。注意这五个元素可为任意顺序。不需考虑数组中超出新长度后面的元素。</p></li></ul><p><strong>提示：</strong></p><ul><li>0 &lt;= nums.length &lt;= 100</li><li>0 &lt;= nums[i] &lt;= 50</li><li>0 &lt;= val &lt;= 100</li></ul><p><strong>题解：</strong></p><pre><code>var removeElement = function(nums, val) {    let ans = 0;    for(const num of nums) {        if(num != val) {            nums[ans] = num;            ans++;        }    }    return ans;};</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Algorithm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>删除排序数组中的重复项</title>
+      <link href="/2021/02/11/35.shan-chu-pai-xu-shu-zu-zhong-de-chong-fu-xiang/"/>
+      <url>/2021/02/11/35.shan-chu-pai-xu-shu-zu-zhong-de-chong-fu-xiang/</url>
+      
+        <content type="html"><![CDATA[<p><strong>删除排序数组中的重复项：</strong>给定一个排序数组，你需要在 <strong>原地</strong> 删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。</p><p>不要使用额外的数组空间，你必须在 <strong>原地 修改输入数组</strong> 并在使用 O(1) 额外空间的条件下完成。</p><ul><li><p>示例 1:</p><p>给定数组 nums = [1,1,2], </p><p>函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。 </p><p>你不需要考虑数组中超出新长度后面的元素。</p></li><li><p>示例 2:</p><p>给定 nums = [0,0,1,1,1,2,2,3,3,4],</p><p>函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。</p><p>你不需要考虑数组中超出新长度后面的元素。</p></li></ul><p><strong>说明：</strong></p><p>为什么返回数值是整数，输出的答案是数组呢?</p><p>注意，输入数组是以<strong>「引用」</strong>方式传递，这意味着在函数里修改输入数组对于调用者是可见的。</p><p>你可以想象内部操作如下：</p><pre><code>// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝int len = removeDuplicates(nums);// 在函数里修改输入数组对于调用者是可见的。// 根据你的函数返回的长度, 它会打印出数组中该长度范围内的所有元素。for (int i = 0; i &lt; len; i++) {    print(nums[i]);}</code></pre><p><strong>题解：</strong></p><pre><code>var removeDuplicates = function(nums) {    var count = 0;    var n = nums.length;    for(let i = 1;i&lt;n;i++){        if(nums[i] != nums[i-1]){            nums[i-count] = nums[i]        }else{            count++;        }    }    return n-count;};</code></pre><pre><code>var removeDuplicates = function(nums) {    var j = 0;    var n = nums.length;    for(let i = 1;i&lt;n;i++){        if(nums[i]!=nums[i-1]){            j++;            nums[j] = nums[i];        }    }    return j+1;};</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Algorithm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>合并两个有序链表</title>
+      <link href="/2021/02/10/34.he-bing-liang-ge-you-xu-lian-biao/"/>
+      <url>/2021/02/10/34.he-bing-liang-ge-you-xu-lian-biao/</url>
+      
+        <content type="html"><![CDATA[<p><strong>合并两个有序链表：</strong>将两个升序链表合并为一个新的 <strong>升序</strong> 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p><ul><li><p>示例 1：</p><p>输入：l1 = [1,2,4], l2 = [1,3,4]<br>输出：[1,1,2,3,4,4]</p></li><li><p>示例 2：</p><p>输入：l1 = [], l2 = []<br>输出：[]</p></li><li><p>示例 3：</p><p>输入：l1 = [], l2 = [0]<br>输出：[0]</p></li></ul><p><strong>提示：</strong></p><ul><li>两个链表节点数目范围是 [0, 50]</li><li>-100 &lt;= Node.val &lt;= 100</li><li>l1 和 l2 均按 <strong>非递减顺序</strong> 排列</li></ul><p><strong>题解：</strong></p><pre><code>// 递归var mergeTwoLists = function(l1, l2) {    if (l1 === null) {        return l2;    } else if (l2 === null) {        return l1;    } else if (l1.val &lt; l2.val) {        l1.next = mergeTwoLists(l1.next, l2);        return l1;    } else {        l2.next = mergeTwoLists(l1, l2.next);        return l2;    }};</code></pre><pre><code>// 迭代var mergeTwoLists = function(l1, l2) {    const prehead = new ListNode(-1);    let prev = prehead;    while (l1 != null &amp;&amp; l2 != null) {        if (l1.val &lt;= l2.val) {            prev.next = l1;            l1 = l1.next;        } else {            prev.next = l2;            l2 = l2.next;        }        prev = prev.next;    }    // 合并后 l1 和 l2 最多只有一个还未被合并完，我们直接将链表末尾指向未合并完的链表即可    prev.next = l1 === null ? l2 : l1;    return prehead.next;};</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Algorithm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>最长公共前缀</title>
+      <link href="/2021/02/08/32.zui-chang-gong-gong-qian-zhui/"/>
+      <url>/2021/02/08/32.zui-chang-gong-gong-qian-zhui/</url>
+      
+        <content type="html"><![CDATA[<p><strong>最长公共前缀：</strong>编写一个函数来查找字符串数组中的最长公共前缀。如果不存在公共前缀，返回空字符串 <code>""</code>。</p><ul><li><p>示例 1：</p><p>输入：strs = [“flower”,”flow”,”flight”]<br>输出：”fl”</p></li><li><p>示例 2：</p><p>输入：strs = [“dog”,”racecar”,”car”]<br>输出：””<br>解释：输入不存在公共前缀。</p></li></ul><p><strong>提示：</strong></p><ul><li><code>0 &lt;= strs.length &lt;= 200</code></li><li><code>0 &lt;= strs[i].length &lt;= 200</code></li><li><code>strs[i]</code> 仅由小写英文字母组成</li></ul><p><strong>题解：</strong></p><pre><code>var longestCommonPrefix = function(strs) {    if(strs.length == 0)         return "";    let ans = strs[0];    for(let i =1;i&lt;strs.length;i++) {        let j=0;        for(;j&lt;ans.length &amp;&amp; j &lt; strs[i].length;j++) {            if(ans[j] != strs[i][j])                break;        }        ans = ans.substr(0, j);        if(ans === "")            return ans;    }    return ans;};</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Algorithm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>有效的括号</title>
+      <link href="/2021/02/08/33.you-xiao-de-gua-hao/"/>
+      <url>/2021/02/08/33.you-xiao-de-gua-hao/</url>
+      
+        <content type="html"><![CDATA[<p><strong>有效的括号：</strong>给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串 s ，判断字符串是否有效。</p><p>有效字符串需满足：</p><ol><li>左括号必须用相同类型的右括号闭合。</li><li>左括号必须以正确的顺序闭合。</li></ol><ul><li><p>示例 1：</p><p>输入：s = “()”<br>输出：true</p></li><li><p>示例 2：</p><p>输入：s = “()[]{}”<br>输出：true</p></li><li><p>示例 3：</p><p>输入：s = “(]”<br>输出：false</p></li><li><p>示例 4：</p><p>输入：s = “([)]”<br>输出：false</p></li><li><p>示例 5：</p><p>输入：s = “{[]}”<br>输出：true</p></li></ul><p><strong>提示：</strong></p><ul><li>1 &lt;= s.length &lt;= 104</li><li>s 仅由括号 ‘()[]{}’ 组成</li></ul><p><strong>题解：</strong></p><pre><code>var isValid = function(s) {    const n = s.length;    if (n % 2 === 1) {        return false;    }    const pairs = new Map([        [')', '('],        [']', '['],        ['}', '{']    ]);    const stk = [];    s.split('').forEach(ch =&gt; {        if (pairs.has(ch)) {            if (!stk.length || stk[stk.length - 1] !== pairs.get(ch)) {                return false;            }            stk.pop();        }         else {            stk.push(ch);        }    });    return !stk.length;};</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Algorithm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>罗马数字转整数</title>
+      <link href="/2021/02/06/31.luo-ma-shu-zi-zhuan-zheng-shu/"/>
+      <url>/2021/02/06/31.luo-ma-shu-zi-zhuan-zheng-shu/</url>
+      
+        <content type="html"><![CDATA[<p><strong>罗马数字转整数：</strong>罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。</p><table><thead><tr><th>字符</th><th>数值</th></tr></thead><tbody><tr><td>I</td><td>1</td></tr><tr><td>V</td><td>5</td></tr><tr><td>X</td><td>10</td></tr><tr><td>L</td><td>50</td></tr><tr><td>C</td><td>100</td></tr><tr><td>D</td><td>500</td></tr><tr><td>M</td><td>1000</td></tr></tbody></table><p>例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。</p><p>通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：</p><ul><li>I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。</li><li>X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。 </li><li>C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。</li></ul><p>给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 范围内。</p><ul><li><p>示例 1:</p><p>输入: “III”<br>输出: 3</p></li><li><p>示例 2:</p><p>输入: “IV”<br>输出: 4</p></li><li><p>示例 3:</p><p>输入: “IX”<br>输出: 9</p></li><li><p>示例 4:</p><p>输入: “LVIII”<br>输出: 58<br>解释: L = 50, V= 5, III = 3.</p></li><li><p>示例 5:</p><p>输入: “MCMXCIV”<br>输出: 1994<br>解释: M = 1000, CM = 900, XC = 90, IV = 4.</p></li></ul><p>提示：</p><ul><li>1 &lt;= s.length &lt;= 15</li><li>s 仅含字符 (‘I’, ‘V’, ‘X’, ‘L’, ‘C’, ‘D’, ‘M’)</li><li>题目数据保证 s 是一个有效的罗马数字，且表示整数在范围 [1, 3999] 内</li><li>题目所给测试用例皆符合罗马数字书写规则，不会出现跨位等情况。</li><li>IL 和 IM 这样的例子并不符合题目要求，49 应写作 XLIX，999 应写作 CMXCIX 。</li></ul><pre><code>var romanToInt = function(s) {    const map = {        I : 1,        IV: 4,        V: 5,        IX: 9,        X: 10,        XL: 40,        L: 50,        XC: 90,        C: 100,        CD: 400,        D: 500,        CM: 900,        M: 1000    };    let ans = 0;    for(let i = 0;i &lt; s.length;) {        if(i + 1 &lt; s.length &amp;&amp; map[s.substring(i, i+2)]) {            ans += map[s.substring(i, i+2)];            i += 2;        } else {            ans += map[s.substring(i, i+1)];            i ++;        }    }    return ans;};</code></pre><pre><code>var romanToInt = function(s) {    var hashNum = {        "I":1,        "V":5,        "X":10,        "L":50,        "C":100,        "D":500,        "M":1000    }    var result = 0;    for(let i = 0;i&lt;s.length;i++){        hashNum[s[i]] &lt; hashNum[s[i+1]] ? result -= hashNum[s[i]] : result += hashNum[s[i]]    }    return result;};</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Algorithm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>回文数</title>
+      <link href="/2021/02/04/30.hui-wen-shu/"/>
+      <url>/2021/02/04/30.hui-wen-shu/</url>
+      
+        <content type="html"><![CDATA[<p><strong>回文数：</strong>给你一个整数 x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。回文数是指正序（从左向右）和倒序（从右向左）都一样的整数。如：121 是回文，而 123 不是。</p><ul><li><p>示例 1：</p><p>输入：x = 121<br>输出：true</p></li><li><p>示例 2：</p><p>输入：x = -121<br>输出：false<br>解释：从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。</p></li><li><p>示例 3：</p><p>输入：x = 10<br>输出：false<br>解释：从右向左读, 为 01 。因此它不是一个回文数。</p></li><li><p>示例 4：</p><p>输入：x = -101<br>输出：false</p></li></ul><p><strong>题解：</strong></p><pre><code>var isPalindrome = function(x) {    return x === Number(x.toString().split('').reverse().join(''))};</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Algorithm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>整数反转</title>
+      <link href="/2021/02/02/29.zheng-shu-fan-zhuan/"/>
+      <url>/2021/02/02/29.zheng-shu-fan-zhuan/</url>
+      
+        <content type="html"><![CDATA[<p><strong>整数反转：</strong>给你一个 32 位的有符号整数 x ，返回 x 中每位上的数字反转后的结果。如果反转后整数超过 32 位的有符号整数的范围 [−2<sup>31</sup>,  2<sup>31</sup> − 1] ，就返回 0。假设环境不允许存储 64 位整数（有符号或无符号）。</p><ul><li><p>示例 1：</p><p>输入：x = 123<br>输出：321</p></li><li><p>示例 2：</p><p>输入：x = -123<br>输出：-321</p></li><li><p>示例 3：</p><p>输入：x = 120<br>输出：21</p></li><li><p>示例 4：</p><p>输入：x = 0<br>输出：0</p></li></ul><p><strong>解题思路：</strong></p><ul><li>result * 10 + x % 10 取出末位， x % 10（负数结果还是负数，无需关心正负），拼接到 result 中。</li><li>x / 10 去除末位，| 0 强制转换为32位有符号整数。</li><li>通过 | 0 取整，无论正负，只移除小数点部分（正数向下取整，负数向上取整）。</li><li>result | 0 超过32位的整数转换结果不等于自身，可用作溢出判断。</li></ul><p><strong>题解：</strong></p><pre><code>var reverse = function(x) {    let result = 0;    while(x !== 0) {        result = result * 10 + x % 10;        x = (x / 10) | 0;    }    return (result | 0) === result ? result : 0;};</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Algorithm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>两数之和</title>
+      <link href="/2021/01/30/28.liang-shu-zhi-he/"/>
+      <url>/2021/01/30/28.liang-shu-zhi-he/</url>
+      
+        <content type="html"><![CDATA[<p><strong>两数之和：</strong>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回它们的数组下标。</p><p>你可以假设每种输入只会对应一个答案。但是，数组中的同一个元素不能使用两遍。你可以按任意顺序返回答案。</p><ul><li><p>示例 1：</p><p>输入：nums = [2,7,11,15], target = 9<br>输出：[0,1]<br>解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。</p></li><li><p>示例 2：</p><p>输入：nums = [3,2,4], target = 6<br>输出：[1,2]</p></li><li><p>示例 3：</p><p>输入：nums = [3,3], target = 6<br>输出：[0,1]</p></li></ul><p><strong>题解：</strong></p><pre><code>// 暴力枚举var twoSum = function (nums, target) {  let n = nums.length;  for (let i = 0; i &lt; n; i++) {    for (let j = i + 1; j &lt; n; j++) {      if (nums[i] + nums[j] === target) {        return [i, j]      }    }  }  return []};</code></pre><pre><code>// 哈希表var twoSum = function(nums, target){    const map = new Map();    for(let i=0; i&lt;nums.length; i++){        if (map.has(nums[i])){            return [map.get(nums[i]),i];        }else{            map.set(target-nums[i],i);        }    }}</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Algorithm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Element UI 组件心得</title>
+      <link href="/2021/01/28/27.element-ui-zu-jian/"/>
+      <url>/2021/01/28/27.element-ui-zu-jian/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、Drawer-抽屉"><a href="#一、Drawer-抽屉" class="headerlink" title="一、Drawer 抽屉"></a>一、Drawer 抽屉</h2><p>这个抽屉组件在 Element 组件的最下面，通过搜索框匹配不到</p><p><img src="/medias/loading.gif" data-original="1.1.png" alt=""></p><p>它是一个带遮罩效果的弹出层，可以设置从设备屏幕的上下左右四个方向弹出，<strong>值得注意的是只能从屏幕的起始位置弹出，如果设置绝对定位或相对定位或者是 margin 都会使里面放置的内容布局出错，遮罩层的点击关闭抽屉事件也会失效</strong>。</p><p><img src="/medias/loading.gif" data-original="1.2.png" alt=""></p><p>Drawer 抽屉类似于 Dialog 弹框组件，里面可以放置表单、表格等多种内容。</p><p>上方页面的效果一开始是使用 Dialog 组件加上手写的 CSS 遮罩来实现，代码冗杂切实现比较麻烦，各种布局层级定位需要调整不好维护，还要修改兼容组件封装好的默认功能，所以挑对组件真的很关键。</p><blockquote><p>Bug：对于抽屉里的表单，如果是在 Vue 的 data 中写死的静态数据则不会自动打开获取焦点，但是后台接口遍历得到的数据则会在抽屉打开的时候自动聚焦第一个表单。如果这个表单是浏览框，它会在抽屉打开的时候自动打开浏览框弹窗，这样体验就很差了。</p></blockquote><p>我一开始是想用 jQuery 获取到抽屉中的第一个表单元素，给抽屉展开的按钮绑定一个点击方法 blur() 去取消聚焦第一个表单。这种方案完全不行，因为抽屉会先展开 =&gt; 聚焦第一个元素 =&gt; 再取消聚焦，此时浏览框已经打开了。后来查文档发现 Drawer 组件有两个事件，<strong>open：Drawer 打开的回调；opened：Drawer 打开动画结束时的回调。</strong>写在这里头还是不行。</p><ul><li>需要在 Drawer 中设置一个 div，设置 ref 和 tabindex 属性用于定位，为 drawer 设置 opened 事件：</li></ul><p><img src="/medias/loading.gif" data-original="1.3.png" alt=""></p><ul><li>在事件中手动聚焦在 div 中（注意：此处的 _this 为在 create 中手动定义的 this）：</li></ul><pre><code>created() {  _this = this;},</code></pre><p><img src="/medias/loading.gif" data-original="1.4.png" alt=""></p><pre class="line-numbers language-javascript"><code class="language-javascript">clearFocus<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  _this<span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>clearRef<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    _this<span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>clearRef<span class="token punctuation">.</span><span class="token function">blur</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">)</span>  <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"input"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">blur</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>这样就解决了 Element UI Drawer 抽屉组件的聚焦 Bug！</p><p>文档中 Drawer 抽屉组件的 size 属性值为 number / string，试了下设置成 auto 可以自适应，这样表单过多时就不会出现：overflow: hidden; 效果。</p><h2 id="二、Input-输入框"><a href="#二、Input-输入框" class="headerlink" title="二、Input 输入框"></a>二、Input 输入框</h2><p><strong>有时需要屏蔽 input 默认的回车事件/取消回车自动提交表单：</strong></p><p><strong>方法一： 在 form 标签上添加 ‘onkeypress’</strong> </p><pre><code>&lt;form onkeypress="return event.keyCode != 13;"&gt;</code></pre><p><strong>方法二： JQuery 统一处理</strong> </p><pre><code>$(document).on("keypress", "form", function(event) {     return event.keyCode != 13;});</code></pre><p><strong>方法三： JavaScript 统一处理</strong> </p><pre><code> killDefault(event){      var evt = window.event || event;      if (evt.keyCode == 13) {        if(evt.preventDefault){          evt.preventDefault();        }else{          evt.returnValue=false;        }      }    }</code></pre><h2 id="三、Select-选择器"><a href="#三、Select-选择器" class="headerlink" title="三、Select 选择器"></a>三、Select 选择器</h2><p>在 el-select 里面增加 style=“width:500px”，发现没有效果，为什么呢，因为在 element 里面固定好了控件的样式，el-input 里面增加style=”width:500px” 会有效果。</p><p>可以利用 CSS 的样式优先级写一个自定义的 class 来覆盖。</p><h2 id="四、table-行高"><a href="#四、table-行高" class="headerlink" title="四、table 行高"></a>四、table 行高</h2><p>Element UI 自带的 table 设置行高：</p><pre><code>:row-style="{height: 'xxpx'}":cell-style="{padding: '0'}"</code></pre><h2 id="五、表格联合搜索框"><a href="#五、表格联合搜索框" class="headerlink" title="五、表格联合搜索框"></a>五、表格联合搜索框</h2><p>这个不像 Bootstrap 和若依框架只需要申明式的做一下配置就可以实现搜索框对表格数据的筛选联动，具体代码略：</p><pre><code>// 搜索框&lt;el-input type="text" v-model="tableDataName" size="mini"&gt;&lt;/el-input&gt;// 按钮&lt;el-button type="primary" @click="doFilter" size="mini"&gt;搜索&lt;/el-button&gt;</code></pre><pre><code>mounted: function () {  var that = this;  that.getTableData();  that.getTableFilter()}</code></pre><pre><code>// 获取表格数据getTableData() {..}// 筛选后台数据getTableFilter() {...}// 筛选表格doFilter() {...}</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
             
             <tag> JavaScript </tag>
+            
+            <tag> Element UI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Echarts 甘特图</title>
+      <link href="/2021/01/24/26.echarts-gan-te-tu/"/>
+      <url>/2021/01/24/26.echarts-gan-te-tu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、引入"><a href="#一、引入" class="headerlink" title="一、引入"></a>一、引入</h2><p>进入 Echarts 官网：<a href="https://echarts.apache.org/zh/index.html" target="_blank" rel="noopener">https://echarts.apache.org/zh/index.html</a> ，没有用过的话最好先过一遍它的5分钟快速入门教程。</p><p><strong>值得注意的是在使用 Echarts 时 jQuery 的库也要按需引入</strong>。推荐使用 jsDelivr 方式引入。</p><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span> src<span class="token operator">=</span><span class="token string">"jQuery存放路径/jquery.min.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span> src<span class="token operator">=</span><span class="token string">"echarts存放/echarts.min.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2 id="二、甘特图"><a href="#二、甘特图" class="headerlink" title="二、甘特图"></a>二、甘特图</h2><p>参考 CSDN 社区的这篇博客：<a href="https://blog.csdn.net/yixu0534/article/details/82785119" target="_blank" rel="noopener">https://blog.csdn.net/yixu0534/article/details/82785119</a></p><p>他的甘特图不兼容高版本的 Echarts，使用时需要引入 4.0.2 版本。</p><p>引入后发现我之前用 5.0.1 版本制作的树，饼、柱状图表默认样式变丑了，还有部分图表无法显示，体验不是很好。所以想要自定义一个不错的甘特图还是得慢慢看文档说明。</p><h2 id="三、部分代码"><a href="#三、部分代码" class="headerlink" title="三、部分代码"></a>三、部分代码</h2><pre><code>// head&lt;head&gt;    &lt;meta charset="UTF-8" /&gt;    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;    &lt;title&gt;Echarts 图表&lt;/title&gt;    &lt;script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"&gt;&lt;/script&gt;    &lt;script src="https://cdn.jsdelivr.net/npm/echarts@5.0.1/dist/echarts.min.js"&gt;&lt;/script&gt;&lt;/head&gt;</code></pre><pre><code>// body&lt;body&gt;    &lt;div class="chartBox"&gt;      &lt;div class="leftChart"&gt;        &lt;div id="chart1" style="width: 600px; height: 300px"&gt;&lt;/div&gt;        &lt;div id="chart4" style="width: 600px; height: 300px"&gt;&lt;/div&gt;      &lt;/div&gt;      &lt;div class="rightChart"&gt;        &lt;div id="chart2" style="width: 600px; height: 300px"&gt;&lt;/div&gt;        &lt;div id="chart3" style="width: 600px; height: 300px"&gt;&lt;/div&gt;      &lt;/div&gt;    &lt;/div&gt;&lt;/body&gt;</code></pre><pre><code>// script&lt;script type="text/javascript"&gt;  var chartDom1 = document.getElementById("chart1");  var myChart1 = echarts.init(chartDom1);  var option1;  var treeDatePath = "./echartsTree.json";  var chartDom2 = document.getElementById("chart2");  var myChart2 = echarts.init(chartDom2);  var option2;  var chartDom3 = document.getElementById("chart3");  var myChart3 = echarts.init(chartDom3);  var option3;  var chartDom4 = document.getElementById("chart4");  var myChart4 = echarts.init(chartDom4);  var option4;  // 树状图（参考示例）  ...   // 饼状图（参考示例）  option2 = { ...  // 柱形图（参考示例）  option3 = { ...  // 甘特图（参考示例）  option4 = { ...  option1 &amp;&amp; myChart1.setOption(option1);  option2 &amp;&amp; myChart2.setOption(option2);  option3 &amp;&amp; myChart3.setOption(option3);  option4 &amp;&amp; myChart4.setOption(option4);&lt;/script&gt;</code></pre><pre><code>// style&lt;style&gt;  .chartBox {    display: flex;    align-items: center;    justify-content: space-between;  }  .leftChart {    margin: 20px;  }  .rightChart {    margin: 20px;  }&lt;/style&gt;</code></pre><h2 id="四、效果"><a href="#四、效果" class="headerlink" title="四、效果"></a>四、效果</h2><p><img src="/medias/loading.gif" data-original="4.1.png" alt=""></p><p>基本情况就是这样，具体操作可参考官方教程：<a href="https://echarts.apache.org/zh/index.html" target="_blank" rel="noopener">https://echarts.apache.org/zh/index.html</a></p><h2 id="五、报错"><a href="#五、报错" class="headerlink" title="五、报错"></a>五、报错</h2><p>Echarts 报错：<strong>“export ‘default’ (imported as ‘echarts’) was not found in ‘echarts’</strong></p><p>这个是 Echarts 版本太新导致的，引入时这样引入就行了：</p><pre><code>import * as echarts from 'echarts'</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Echarts </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Bootstrap - table 使用总结</title>
+      <link href="/2021/01/20/25.bootstrap-table/"/>
+      <url>/2021/01/20/25.bootstrap-table/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>　　在业务系统开发中，对表格记录的查询、分页、排序等处理是非常常见的，在 Web 开发中，可以采用很多功能强大的插件来满足要求，且能极大的提高开发效率，本随笔介绍这个 Bootstrap-table 是一款非常有名的开源表格插件，在很多项目中广泛的应用。 Bootstrap-table 插件提供了非常丰富的属性设置，可以实现查询、分页、排序、复选框、设置显示列、Card view 视图、主从表显示、合并列、国际化处理等处理功能，而且该插件同时也提供了一些不错的扩展功能，如移动行、移动列位置等一些特殊的功能，插件可以用基于 HTML5 的 data-* 属性标识设置，也可以使用 Javascript 方式进行设置，非常方便。本篇随笔介绍 Bootstrap-table 插件在我实际项目中的应用情况，总结相关使用中碰到的问题处理经验。</p><h2 id="二、模式"><a href="#二、模式" class="headerlink" title="二、模式"></a>二、模式</h2><p>Bootstrap-Table 显示数据到表格的方式有两种，一种是客户端（client）模式，一种是服务器（server）模式。</p><p>　　客户端模式：指的是在服务器中把要显示到表格的数据一次性加载出来，然后转换成 JSON 格式传到要显示的界面中，客户端模式较为简单，它是把数据一次性加载出来放到界面上，然后根据你设置的每页记录数，自动生成分页。当点击第二页时，会自动加载出数据，不会再向服务器发送请求。同时用户可以使用其自带的搜索功能，可以实现全数据搜索。对于数据量较少的时候，可以使用这个方法。</p><p>　　服务器模式：指的是根据设定的每页记录数和当前要显示的页码，发送数据到服务器进行查询，然后再显示到表格中。该方法可以根据用户的需要动态的加载数据，节省了服务器的资源，但是不能使用其自带的全数据搜索功能。</p><p>Bootstrap-table 是基于 Boostrap 开发的插件，因此使用的时候，需要引入 Bootstrap 的脚本和样式。</p><p>如果我们项目中没有引入相关的文件，则需要引入这些样式和脚本文件，如下所示。</p><pre><code>1 &lt;link rel="stylesheet" href="bootstrap.min.css"&gt;2 &lt;script src="jquery.min.js"&gt;&lt;/script&gt;3 &lt;script src="bootstrap.min.js"&gt;&lt;/script&gt;</code></pre><p>然后是 Bootstrap-table 的依赖引用：</p><p>CSS 文件引入：</p><pre><code>1 &lt;link rel="stylesheet" href="bootstrap-table.css"&gt;</code></pre><p>脚本文件引入：</p><pre><code>1 &lt;script src="bootstrap-table.js"&gt;&lt;/script&gt;2 &lt;--汉化文件，放在 bootstrap-table.js 后面--&gt;3 &lt;script src="bootstrap-table-zh-CN.js"&gt;&lt;/script&gt;</code></pre><p>Bootstrap-table 在页面中的使用，可以分为两种，一种是纯粹用 HTML5 的写法，通过 data-* 的方式指定各种属性设置，一种是 HTML + JS 方式实现弹性设置。</p><p>如果我们采用 HTML5 标识的方式初始化 HTML 代码，则是下面的代码。</p><pre><code>1 &lt;table data-toggle="table" data-url="data1.json"&gt;2     &lt;thead&gt;3         &lt;tr&gt;4             &lt;th data-field="id"&gt;Item ID&lt;/th&gt;5             &lt;th data-field="name"&gt;Item Name&lt;/th&gt;6             &lt;th data-field="price"&gt;Item Price&lt;/th&gt;7         &lt;/tr&gt;8     &lt;/thead&gt;9 &lt;/table&gt;</code></pre><p> 如果我们采用 JS 代码方式来初始化表格插件，那么只需要在 HTML 上声明一个表格对象即可，如下代码。</p><pre><code>1 &lt;table id="table"&gt;&lt;/table&gt;</code></pre><p>JS 代码如下：</p><pre><code> 1 $('#table').bootstrapTable({ 2     url: 'data1.json', 3     columns: [{ 4         field: 'id', 5         title: 'Item ID' 6     }, { 7         field: 'name', 8         title: 'Item Name' 9     }, {10         field: 'price',11         title: 'Item Price'12     }, ]13 });</code></pre><h2 id="三、详解"><a href="#三、详解" class="headerlink" title="三、详解"></a>三、详解</h2><h4 id="1）JS-属性配置"><a href="#1）JS-属性配置" class="headerlink" title="1）JS 属性配置"></a>1）JS 属性配置</h4><pre><code> 1 var $table; 2         //初始化bootstrap-table的内容 3         function InitMainTable () { 4             //记录页面bootstrap-table全局变量$table，方便应用 5             var queryUrl = '/TestUser/FindWithPager?rnd=' + Math.random() 6             $table = $('#grid').bootstrapTable({ 7                 url: queryUrl,                      //请求后台的URL（*） 8                 method: 'GET',                      //请求方式（*） 9                 //toolbar: '#toolbar',              //工具按钮用哪个容器10                 striped: true,                      //是否显示行间隔色11                 cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）12                 pagination: true,                   //是否显示分页（*）13                 sortable: true,                     //是否启用排序14                 sortOrder: "asc",                   //排序方式15                 sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）16                 pageNumber: 1,                      //初始化加载第一页，默认第一页,并记录17                 pageSize: rows,                     //每页的记录行数（*）18                 pageList: [10, 25, 50, 100],        //可供选择的每页的行数（*）19                 search: false,                      //是否显示表格搜索20                 strictSearch: true,21                 showColumns: true,                  //是否显示所有的列（选择显示的列）22                 showRefresh: true,                  //是否显示刷新按钮23                 minimumCountColumns: 2,             //最少允许的列数24                 clickToSelect: true,                //是否启用点击选中行25                 //height: 500,                      //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度26                 uniqueId: "ID",                     //每一行的唯一标识，一般为主键列27                 showToggle: true,                   //是否显示详细视图和列表视图的切换按钮28                 cardView: false,                    //是否显示详细视图29                 detailView: false,                  //是否显示父子表30                 //得到查询的参数31                 queryParams : function (params) {32                     //这里的键的名字和控制器的变量名必须一致，这边改动，控制器也需要改成一样的33                     var temp = {   34                         rows: params.limit,                         //页面大小35                         page: (params.offset / params.limit) + 1,   //页码36                         sort: params.sort,      //排序列名  37                         sortOrder: params.order //排位命令（desc，asc） 38                     };39                     return temp;40                 },41                 columns: [{42                     checkbox: true,  43                     visible: true                  //是否显示复选框  44                 }, {45                     field: 'Name',46                     title: '姓名',47                     sortable: true48                 }, {49                     field: 'Mobile',50                     title: '手机',51                     sortable: true52                 }, {53                     field: 'Email',54                     title: '邮箱',55                     sortable: true,56                     formatter: emailFormatter57                 }, {58                     field: 'Homepage',59                     title: '主页',60                     formatter: linkFormatter61                 }, {62                     field: 'Hobby',63                     title: '兴趣爱好'64                 }, {65                     field: 'Gender',66                     title: '性别',67                     sortable: true68                 }, {69                     field: 'Age',70                     title: '年龄'71                 }, {72                     field: 'BirthDate',73                     title: '出生日期',74                     formatter: dateFormatter75                 }, {76                     field: 'Height',77                     title: '身高'78                 }, {79                     field: 'Note',80                     title: '备注'81                 }, {82                     field:'ID',83                     title: '操作',84                     width: 120,85                     align: 'center',86                     valign: 'middle',87                     formatter: actionFormatter88                 }, ],89                 onLoadSuccess: function () {90                 },91                 onLoadError: function () {92                     showTips("数据加载失败！");93                 },94                 onDblClickRow: function (row, $element) {95                     var id = row.ID;96                     EditViewById(id, 'view');97                 },98             });99         };</code></pre><h4 id="2）查询及分页"><a href="#2）查询及分页" class="headerlink" title="2）查询及分页"></a>2）查询及分页</h4><p>这里的表格数据分页是采用服务器分页的方式，根据搜索条件从服务器返回数据记录的，并使用了排序的处理方式，这里的 queryParams 参数就是提交到服务器端的参数了。</p><pre><code> 1 //得到查询的参数 2 queryParams : function (params) { 3 //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的 4      var temp = {    5            rows: params.limit,                         //页面大小 6            page: (params.offset / params.limit) + 1,   //页码 7            sort: params.sort,      //排序列名   8            sortOrder: params.order //排位命令（desc，asc）  9      };10    return temp;11 },</code></pre><p> 另外我们看到返回数据的URL地址接口是FindWithPager，我们来看看这个MVC控制器方法是如何处理数据返回的。</p><pre><code> 1 /// &lt;summary&gt; 2         /// 根据条件查询数据库,并返回对象集合(用于分页数据显示) 3         /// &lt;/summary&gt; 4         /// &lt;returns&gt;指定对象的集合&lt;/returns&gt; 5         public override ActionResult FindWithPager() 6         { 7             //检查用户是否有权限，否则抛出MyDenyAccessException异常 8             base.CheckAuthorized(AuthorizeKey.ListKey); 9 10             string where = GetPagerCondition();11             PagerInfo pagerInfo = GetPagerInfo();12             var sort = GetSortOrder();13 14             List&lt;TestUserInfo&gt; list = null;15             if (sort != null &amp;&amp; !string.IsNullOrEmpty(sort.SortName))16             {17                 list = baseBLL.FindWithPager(where, pagerInfo, sort.SortName, sort.IsDesc);18             }19             else20             {21                 list = baseBLL.FindWithPager(where, pagerInfo);22             } 23 24             //Json格式的要求{total:22,rows:{}}25             //构造成Json的格式传递26             var result = new { total = pagerInfo.RecordCount, rows = list };27             return ToJsonContent(result);28         }</code></pre><p>处理了两个部分的对象信息，一个是分页实体类信息，一个是排序信息，然后根据这些条件获取记录，返回类似</p><pre><code>{total:22,rows:{}}</code></pre><p>格式的 JSON 数据记录。</p><pre><code>1 var result = new { total = pagerInfo.RecordCount, rows = list };2 return ToJsonContent(result);</code></pre><p> 获取分页的参数信息如下所示：</p><pre><code> 1 /// &lt;summary&gt; 2         /// 根据Request参数获取分页对象数据 3         /// &lt;/summary&gt; 4         /// &lt;returns&gt;&lt;/returns&gt; 5         protected virtual PagerInfo GetPagerInfo() 6         { 7             int pageIndex = Request["page"] == null ? 1 : int.Parse(Request["page"]); 8             int pageSize = Request["rows"] == null ? 10 : int.Parse(Request["rows"]); 9 10             PagerInfo pagerInfo = new PagerInfo();11             pagerInfo.CurrenetPageIndex = pageIndex;12             pagerInfo.PageSize = pageSize;13 14             return pagerInfo;15         }</code></pre><p> 获取排序参数信息的代码如下所示：</p><pre><code> 1 /// &lt;summary&gt; 2         /// 获取排序的信息 3         /// &lt;/summary&gt; 4         /// &lt;returns&gt;&lt;/returns&gt; 5         protected SortInfo GetSortOrder() 6         { 7             var name = Request["sort"]; 8             var order = Request["sortOrder"]; 9             return new SortInfo(name, order);10         }</code></pre><p> 最后就是具体实现具体条件、具体页码、具体排序条件下的数据记录了，这部分可以根据自己的要求实现逻辑，这里只是给出一个封装好的处理调用即可。</p><pre><code>baseBLL.FindWithPager(where, pagerInfo, sort.SortName, sort.IsDesc);</code></pre><p>实际情况下，我们列表的展示，一般需要使用不同的条件进行数据的查询的，虽然这个 Bootstrap-table 控件提供了一个默认的查询按钮，不过一般是在客户端分页的情况下使用，而且略显简单，我们一般使用自己查询条件进行处理。</p><p>那么这样对于上面的 JS 属性就需要调整下接受查询条件参数 queryParams 了：</p><pre><code> 1 //得到查询的参数 2                 queryParams : function (params) { 3                     //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的 4                     var temp = {    5                         rows: params.limit,                         //页面大小 6                         page: (params.offset / params.limit) + 1,   //页码 7                         sort: params.sort,      //排序列名   8                         sortOrder: params.order //排位命令（desc，asc）  9                     }; 10                     return temp; 11                 },</code></pre><p> 对于自定义查询条件，我们可以用下面的常规方式增加参数，如下所示：</p><p><img src="/medias/loading.gif" data-original="3.1.png" alt=""></p><p>但是查询条件的参数我们不方便一一设置，我们想通过一种较为快捷的方式来处理，那么就需要对这个处理方式进行一个特别的修改了，首先添加一个扩展函数来处理表单的条件（参考博客<a href="http://www.cnblogs.com/zcsj/p/6635677.html的介绍）" target="_blank" rel="noopener">http://www.cnblogs.com/zcsj/p/6635677.html的介绍）</a></p><pre><code> 1 //自定义函数处理queryParams的批量增加 2         $.fn.serializeJsonObject = function () { 3             var json = {}; 4             var form = this.serializeArray(); 5             $.each(form, function () { 6                 if (json[this.name]) { 7                     if (!json[this.name].push) { 8                         json[this.name] = [json[this.name]]; 9                     }10                     json[this.name].push();11                 } else {12                     json[this.name] = this.value || '';13                 }14             });15             return json;16         }</code></pre><p> 然后我们就可以批量处理表单的查询条件了。</p><pre><code> 1 queryParams : function (params) { 2                     //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的 3                     var temp = $("#ffSearch").serializeJsonObject(); 4                     temp["rows"] = params.limit;                        //页面大小 5                     temp["page"] = (params.offset / params.limit) + 1;  //页码 6                     temp["sort"] = params.sort;                         //排序列名 7                     temp["sortOrder"] = params.order;                   //排位命令（desc，asc）  8  9                     //特殊格式的条件处理10                     temp["WHC_Age"] = $("#WHC_Age").val() + "~" + $("#WHC_Age2").val();11                     temp["WHC_BirthDate"] = $("#WHC_BirthDate").val() + "~" + $("#WHC_BirthDate2").val();12 13                     return temp;14                 },</code></pre><p>然后后端统一按照逻辑处理查询参数即可。</p><h4 id="3）格式化输出函数及其他"><a href="#3）格式化输出函数及其他" class="headerlink" title="3）格式化输出函数及其他"></a>3）格式化输出函数及其他</h4><p>对于上面JS的配置信息，我们再来回顾一下，例如对于数据转义函数，可以格式化输出的内容的，如下界面代码。</p><p><img src="/medias/loading.gif" data-original="3.2.png" alt=""></p><p>格式化的数据转义函数如下，主要就是根据内容进行格式化输出的 JS 函数，好像是需要放在一个文件内。</p><pre><code> 1 //连接字段格式化 2         function linkFormatter(value, row, index) {                 3             return "&lt;a href='" + value + "' title='单击打开连接' target='_blank'&gt;" + value + "&lt;/a&gt;"; 4         } 5         //Email字段格式化 6         function emailFormatter(value, row, index) { 7             return "&lt;a href='mailto:" + value + "' title='单击打开连接'&gt;" + value + "&lt;/a&gt;"; 8         } 9         //性别字段格式化10         function sexFormatter(value) {11             if (value == "女") { color = 'Red'; }12             else if (value == "男") { color = 'Green'; }13             else { color = 'Yellow'; }14 15             return '&lt;div  style="color: ' + color + '"&gt;' + value + '&lt;/div&gt;';16         }</code></pre><p> 另外，我们看到行记录的最后增加了几个操作按钮，方便对当前记录的查看、编辑和删除操作，如下效果图所示。</p><p><img src="/medias/loading.gif" data-original="3.3.png" alt=""></p><p>这部分我们也是通过格式化函数进行处理的：</p><p><img src="/medias/loading.gif" data-original="3.4.png" alt=""></p><pre><code> 1 //操作栏的格式化 2         function actionFormatter(value, row, index) { 3             var id = value; 4             var result = ""; 5             result += "&lt;a href='javascript:;' class='btn btn-xs green' onclick=\"EditViewById('" + id + "', view='view')\" title='查看'&gt;&lt;span class='glyphicon glyphicon-search'&gt;&lt;/span&gt;&lt;/a&gt;"; 6             result += "&lt;a href='javascript:;' class='btn btn-xs blue' onclick=\"EditViewById('" + id + "')\" title='编辑'&gt;&lt;span class='glyphicon glyphicon-pencil'&gt;&lt;/span&gt;&lt;/a&gt;"; 7             result += "&lt;a href='javascript:;' class='btn btn-xs red' onclick=\"DeleteByIds('" + id + "')\" title='删除'&gt;&lt;span class='glyphicon glyphicon-remove'&gt;&lt;/span&gt;&lt;/a&gt;"; 8  9             return result;10         }</code></pre><p> 如果我们需要双击弹出编辑界面的层，我们可以处理表格的双击事件，如下代码所示。</p><pre><code>1 onDblClickRow: function (row, $element) {2                     var id = row.ID;3                     EditViewById(id, 'view');4                 },</code></pre><p> <img src="/medias/loading.gif" data-original="3.5.png" alt=""></p><p>如果我们需要设置行的不同的样式展示，可以通过增加 rowStyle 的 JS 处理函数即可，如下代码所示：</p><pre><code>1 rowStyle: function (row, index) { //设置行的特殊样式2                     //这里有5个取值颜色['active', 'success', 'info', 'warning', 'danger'];3                     var strclass = "";4                     if (index == 0) {5                         strclass = "warning";6                     }7                     return { classes: strclass }8                 }</code></pre><p> 对于表格记录的获取，我们可以通过下面的代码进行获取：$table.bootstrapTable(‘getSelections’)</p><pre><code>1   var rows = $table.bootstrapTable('getSelections');2             if (rows.length &gt; 0) {3                 ID = rows[0].ID;4             }</code></pre><p> 如果是多条记录的处理，例如删除记录。</p><pre><code> 1 //实现删除数据的方法 2         function Delete() { 3             var ids = "";//得到用户选择的数据的ID 4             var rows = $table.bootstrapTable('getSelections'); 5             for (var i = 0; i &lt; rows.length; i++) { 6                 ids += rows[i].ID + ','; 7             } 8             ids = ids.substring(0, ids.length - 1); 9 10             DeleteByIds(ids);11         }</code></pre><p> 如果需要设置显示列显示，如下界面所示：</p><p><img src="/medias/loading.gif" data-original="3.6.png" alt=""></p><p>以及排序处理：</p><p><img src="/medias/loading.gif" data-original="3.7.png" alt=""></p><p>这些需要在 JS 代码开启相关的属性即可。</p><p><img src="/medias/loading.gif" data-original="3.8.png" alt=""></p><p>还有就是一种 CardView 的卡片视图格式，如下所示：</p><p><img src="/medias/loading.gif" data-original="3.9.png" alt=""></p><p>另外一种是父子表的展开明细的格式，如下所示：</p><p><img src="/medias/loading.gif" data-original="3.10.png" alt=""></p><p>以上就是 Bootstrap-table 插件在我实际项目中的应用情况，基本上对 JS 各个属性的使用进行了一些介绍了，具体的应用我们可以参考它的文档，获取对应属性、方法、事件的详细说明，这样我们就可以更加详细的应用这个插件的各种功能了。</p><p> <a href="http://bootstrap-table.wenzhixin.net.cn/documentation/" target="_blank" rel="noopener">http://bootstrap-table.wenzhixin.net.cn/documentation/</a></p><p>PS：以上为转载内容，经过自己的梳理后重新发布，感谢原作者<a href="https://home.cnblogs.com/u/wuhuacong/" target="_blank" rel="noopener">伍华聪</a>，原文路径：<a href="https://www.cnblogs.com/wuhuacong/p/7284420.html" target="_blank" rel="noopener">https://www.cnblogs.com/wuhuacong/p/7284420.html</a></p><h2 id="四、分页"><a href="#四、分页" class="headerlink" title="四、分页"></a>四、分页</h2><p>在 Spring MVC 及 SpringBoot 项目中使用 Bootstrap-table 进行分页。</p><p><strong>前端代码块：</strong></p><pre><code>　　页面： 1 &lt;table id="test-table" class="col-xs-12" data-toolbar="#toolbar"&gt;　　JS: 2 function initTable(){ 3             $('#test-table').bootstrapTable({ 4                 method: 'get', 5                 toolbar: '#toolbar',    //工具按钮用哪个容器 6                 striped: true,      //是否显示行间隔色 7                 cache: false,      //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*） 8                 pagination: true,     //是否显示分页（*） 9                 sortable: false,      //是否启用排序10                 sortOrder: "asc",     //排序方式11                 pageNumber:1,      //初始化加载第一页，默认第一页12                 pageSize: 10,      //每页的记录行数（*）13                 pageList: [10, 25, 50, 100],  //可供选择的每页的行数（*）14                 url: "/testProject/page4list.json",//这个接口需要处理bootstrap table传递的固定参数15                 queryParamsType:'', //默认值为 'limit' ,在默认情况下 传给服务端的参数为：offset,limit,sort16                                     // 设置为 ''  在这种情况下传给服务器的参数为：pageSize,pageNumber17 18                 //queryParams: queryParams,//前端调用服务时，会默认传递上边提到的参数，如果需要添加自定义参数，可以自定义一个函数返回请求参数19                 sidePagination: "server",   //分页方式：client客户端分页，server服务端分页（*）20                 //search: true,      //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大21                 strictSearch: true,22                 //showColumns: true,     //是否显示所有的列23                 //showRefresh: true,     //是否显示刷新按钮24                 minimumCountColumns: 2,    //最少允许的列数25                 clickToSelect: true,    //是否启用点击选中行26                 searchOnEnterKey: true,27                 columns: [{28                     field: 'id',29                     title: 'id',30                     align: 'center'31                 }, {32                     field: 'testkey',33                     title: '测试标识',34                     align: 'center'35                 }, {36                     field: 'testname',37                     title: '测试名字',38                     align: 'center'39                 },{40                     field: 'id',41                     title: '操作',42                     align: 'center',43                     formatter:function(value,row,index){44                         //通过formatter可以自定义列显示的内容45                         //value：当前field的值，即id46                         //row：当前行的数据47                         var a = '&lt;a href="" &gt;测试&lt;/a&gt;';48                     } 49                 }],50                 pagination:true51             });52         }</code></pre><p>在前端通过请求获取 table 数据时，Bootstrap table会默认拼一个 searchText 的参数，来支持查询功能。</p><p><strong>服务端代码：</strong></p><pre><code> 1  @RequestMapping(value = "/page4list.json") 2 public void page4list(Integer pageSize, Integer pageNumber, String searchText, HttpServletRequest request, 3             HttpServletResponse response) { 4  5         //搜索框功能 6         //当查询条件中包含中文时，get请求默认会使用ISO-8859-1编码请求参数，在服务端需要对其解码 7         if (null != searchText) { 8             try { 9                 searchText = new String(searchText.getBytes("ISO-8859-1"), "UTF-8");10             } catch (Exception e) {11                 e.printStackTrace();12             }13         }14         //在service通过条件查询获取指定页的数据的list15         List&lt;MwmsgType&gt; list = mwMsgQueueService.page4List(pageSize, pageNumber, searchText);16         //根据查询条件，获取符合查询条件的数据总量17         int total = mwMsgQueueService.queryCountBySearchText(searchText);18         //自己封装的数据返回类型，bootstrap-table要求服务器返回的json数据必须包含：totlal，rows两个节点19         PageResultForBootstrap page = new PageResultForBootstrap();20         page.setTotal(total);21         page.setRows(list);22         //page就是最终返回给客户端的数据结构，可以直接返回给前端23 24         //下边这段，只是我自己的代码有自定义的spring HandlerInterceptor处理返回值，可以忽略。25         request.setAttribute(Constants.pageResultData, page);26 27     }</code></pre><p>完成上述代码，就可以实现服务器端自动分页，Bootstrap-table 根据服务器端返回的 total，以及 table 设定的 pageSize，自动生成分页的页面元素，每次点击下一页或者指定页码，Bootstrap-table 会自动给参数 pageNumber 赋值，服务器返回指定页的数据。</p><p><strong>如果发送的是 post 请求，因为 Bootstap table 使用的是 ajax 方式获取数据，这时会将请求的 content type 默认设置为  text/plain，这样在服务端直接通过 @RequestParam 参数映射是获取不到的。</strong></p><p><strong>这时就需要在 Bootstrap-table 的参数列表中显式设置：</strong></p><pre><code>1 contentType: "application/x-www-form-urlencoded"</code></pre><p><strong>设置成 form 表单的形式，tomcat 内部就会自动将 requset payload 中的数据部分解析放到 request.getParameter() 中，之后就可以直接通过 @RequestParam 映射参数获取。</strong></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Bootstrap </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Idea 热部署</title>
+      <link href="/2021/01/18/24.idea-re-bu-shu/"/>
+      <url>/2021/01/18/24.idea-re-bu-shu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、概念"><a href="#一、概念" class="headerlink" title="一、概念"></a>一、概念</h2><p>热部署就是正在运行状态的应用，<strong>修改源码后，在不重新启动的情况下能够自动把增量内容编译并部署到服务器上，使得修改立即生效</strong>。热部署解决的问题有两个， 一是在开发的时候，修改代码后不需要重启应用就能看到效果，提升开发效率；二是生产上运行的程序，可以在不停止运行的情况下进行升级，不影响用户使用。</p><p>用 Idea 的人大多数都是用来开发 Java 程序，当前流行的 Java 程序主要有两种，第一种是传统的 Web 应用，依赖 Tomcat 这种 Web 容器运行；第二种是 SpringBoot 程序， 内嵌了运行环境。我只记录配置 SpringBoot 热部署的方法。</p><h2 id="二、方法"><a href="#二、方法" class="headerlink" title="二、方法"></a>二、方法</h2><p><strong>开启自动编译：</strong></p><ul><li><strong>Ctrl+Alt+S 打开配置</strong></li><li><strong>设置自动编译</strong><br><strong>File-Settings-Compiler-Build Project automatically</strong></li></ul><p><img src="/medias/loading.gif" data-original="2.1.png" alt=""></p><ul><li><strong>Ctrl+Shift+Alt+/ 选择 Registry</strong></li></ul><p><img src="/medias/loading.gif" data-original="2.2.png" alt=""></p><ul><li>找到选项 <strong>Compiler autoMake allow when app running</strong> 打勾</li></ul><p><img src="/medias/loading.gif" data-original="2.3.png" alt=""></p><p><strong>设置项目启动加载方式：</strong></p><ul><li>菜单栏选择 <strong>Run-&gt;Edit Configurations…</strong></li></ul><p><img src="/medias/loading.gif" data-original="2.4.png" alt=""></p><p>找到 <strong>SpringBoot</strong>下的 <strong>On Update action</strong> 和 <strong>On frame deactivation</strong> ，选择 <strong>Update classes and resources</strong>。</p><p><img src="/medias/loading.gif" data-original="2.5.png" alt=""></p><h2 id="三、测试"><a href="#三、测试" class="headerlink" title="三、测试"></a>三、测试</h2><p>修改代码，查看 Idea 最下方的提示条，出现 <strong>build</strong> 后 紧接着出现 <strong>parsing java…</strong> 表示正在重新编译，值得注意的是热部署也是要一定时间的，更新会有一个短暂的延迟。</p><p><img src="/medias/loading.gif" data-original="2.6.png" alt=""></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Idea </tag>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>初识 React</title>
+      <link href="/2021/01/12/23.chu-shi-react/"/>
+      <url>/2021/01/12/23.chu-shi-react/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、jQuery"><a href="#一、jQuery" class="headerlink" title="一、jQuery"></a>一、jQuery</h2><p>JS 的函数库，对原生 JS 的 API 进行了封装，只是语法简单了<strong>本质还是用选择器（$）在操作 DOM。</strong></p><p><strong>可以进行选中元素、操作 CSS、遍历 DOM、事件、JS 动画、AJAX 等一些增删改查、筛选的操作。</strong></p><blockquote><p><strong>缺点：</strong>数据和视图耦合，<strong>频繁操作 DOM（导致页面频繁重绘）</strong>，影响页面性能。</p></blockquote><h2 id="二、Vue"><a href="#二、Vue" class="headerlink" title="二、Vue"></a>二、Vue</h2><h4 id="2-2-1-特点"><a href="#2-2-1-特点" class="headerlink" title="2.2.1 特点"></a>2.2.1 特点</h4><p>渐进式 JavaScript 框架，易上手，包含大量插件（全家桶）。</p><p><strong>Vue</strong> 基于 <strong>MVVM</strong> 模式，<strong>将数据层和视图层完全解耦分离</strong>（开放封闭原则），以数据驱动视图，只关心数据，DOM操作被封装。</p><p>React 只支持内存到界面的单向变化，Vue 支持内存和界面数据的双向交流：</p><blockquote><p>通过数据劫持结合发布者-订阅者模式，通过 Object.defineProperty() 将 data 的属性代理到 vm 上，劫持各个属性的 setter、getter，一旦数据变动（修改 data）立马发布消息给订阅者，触发相应的监听回调响应式的更新视图层。</p></blockquote><p>拓展：属性都有两个对应的方法，一个是 get 方法，一个是 set 方法，都是回调函数。</p><ul><li>get：当需要读取当前属性值时执行回调，根据相关数据计算并返回当前属性的值。</li><li>set：用来监视属性值的变化，一旦属性值改变就调用 set 更新相关属性数据。</li></ul><h4 id="2-2-2-我对-MVVM-的理解"><a href="#2-2-2-我对-MVVM-的理解" class="headerlink" title="2.2.2 我对 MVVM 的理解"></a>2.2.2 <strong>我对 MVVM 的理解</strong></h4><p>看了 Vue 的源码我发现 Vue 的 MVVM 实现<strong>包含了两个重要的技术：a. 模板解析 b. 数据绑定</strong></p><ul><li><p><strong>模板解析用来初始化组件界面，解析两个部分：大括号表达式和指令</strong></p></li><li><p><strong>数据绑定用来实现更新数据，界面就自动变化的功能，主要靠的是数据劫持</strong></p></li></ul><p><img src="/medias/loading.gif" data-original="2.2.2.png" alt=""></p><p><strong>分析：</strong>我们写代码的时候 Vue 底层相当于 new 了一个 MVVM，它会创建两个对象，先是创建一个 Observe，用来劫持（或者叫监视）data 中所有层次的属性，同时还为每一个属性创建了另外一种对象，叫 Dep，几个属性就对应几个 Dep。</p><p>这些准备工作完成 MVVM 会再创建一个叫 Compile 的对象，它有两个作用，最重要的是去编译模板（也就是编译大括号表达式和指令），这时会去调用一个叫 Updater 的对象来初始化页面，同时 Compile 还会为模板的每个表达式（事件指令表达式除外）创建一个 Watcher，并指定更新节点的回调函数，一旦创建了 Watcher，就会去建立 Watcher 和 Dep 之间的相互关系，将 Watcher 添加到所有对应的 Dep 中从而让 Dep 可以通过 Watcher 去调用 Updater 更新视图，将 Dep 添加到 Watcher 只是为了防止重复建立。</p><p>其实到这里初始化的整个流程就完了，它做了两件事：实现初始化显示，为更新做了准备（实现了数据劫持并创建了对应的 Watcher 和 Dep）</p><p>接下来比如我们点击了一个按钮来更新某一个属性，这会被 Observe 里面的 set 知道，set 会先去通知该属性对应的那一个 Dep，Dep 再去通知所有相关的 Watcher，由于前面初始化阶段指定了更新节点的回调函数，Watcher 就调用回调函数去找 Updater 里面的方法去更新界面。</p><h2 id="三、React"><a href="#三、React" class="headerlink" title="三、React"></a>三、React</h2><p>用于构建用户界面的 JavaScript 库，<strong>严格上只针对 MVC 的 view 层。</strong></p><h4 id="3-3-1-特点"><a href="#3-3-1-特点" class="headerlink" title="3.3.1 特点"></a>3.3.1 特点</h4><ul><li>申明式编码：不用再操作 DOM，只需要更新数据，数据更新，界面就自动变化（数据驱动视图变化）</li><li>组件化编码：将界面的每个功能模块拆分为组件进行封装，组件复用（props 传递复用）、方便维护</li><li>跨平台：可用 Node 进行服务器渲染，或使用 <a href="https://reactnative.dev/" target="_blank" rel="noopener">React Native</a> 开发原生移动应用，支持客户端和服务器渲染</li><li>高效</li><li>单向数据流</li></ul><h4 id="3-3-2-React高效原因"><a href="#3-3-2-React高效原因" class="headerlink" title="3.3.2 React高效原因"></a>3.3.2 React高效原因</h4><ul><li><strong>虚拟（Virtual）DOM，不总是直接操作 DOM</strong></li><li><strong>DOM Diff 算法，最小化页面重绘</strong></li></ul><h2 id="四、尤大阐述两大框架"><a href="#四、尤大阐述两大框架" class="headerlink" title="四、尤大阐述两大框架"></a>四、尤大阐述两大框架</h2><p><strong>Vue 设计者尤雨溪亲自回答：</strong></p><p>虽然 Vue 和 React 两者在定位上有一些交集，但差异也是很明显的。</p><p><strong>Vue 使用的是 web 开发者更熟悉的模板与特性</strong>，Vue 的 API 跟传统 web 开发者熟悉的模板契合度更高，比如 Vue 的单文件组件是以模板 + JavaScript + CSS 的组合模式呈现，它跟 web 现有的 HTML、JavaScript、CSS 能够更好地配合。<strong>React 的特色在于函数式编程的理念和丰富的技术选型</strong>。Vue 比起 React 更容易被前端工程师接受，这是一个直观的感受；React 则更容易吸引在 FP 上持续走下去的开发者。</p><p>从<strong>使用习惯和思维模式</strong>上考虑，对于一个没有任何 Vue 和 React 基础的 web 开发者来说， Vue 会更友好，更符合他的思维模式。React 对于拥有函数式编程背景的开发者以及一些并不是以 web 为主要开发平台的开发人员而言，React 更容易接受。这并不意味着他们不能接受 Vue，Vue 和 React 之间的差异对他们来说就没有 web 开发者那么明显。可以说，<strong>Vue 更加注重 web 开发者的习惯</strong>。</p><p><strong>实现上，Vue 跟 React 的最大区别在于数据的 reactivity，就是反应式系统上。</strong>Vue提供反应式的数据，当数据改动时，界面就会自动更新，而 React 里面需要调用方法 SetState。我把两者分别称为 <strong>Push-based</strong> 和 <strong>Pull-based</strong>。所谓 Push-based 就是说，改动数据之后，数据本身会把这个改动推送出去，告知渲染系统自动进行渲染。在 React 里面，它是一个 Pull 的形式，用户要给系统一个明确的信号说明现在需要重新渲染了，这个系统才会重新渲染。两者并没有绝对的优劣之分，更多的也是思维模式和开发习惯的不同。</p><p>两者不是完全互斥的，比如说在 React 里面，你也可以用一些第三方的库像 MobX 实现 Push-based 的系统，同时你也可以在 Vue2.0 里面，通过一些手段，比如把数据 freeze 起来，让数据不再具有反应式特点，或者通过手动调用组件更新的方法来做一个 pull-based 系统。所以两者并没有一个绝对的界限，只是默认的倾向性不同而已。</p><blockquote><p>以上回答摘自图灵社区对尤雨溪的访谈：《以匠人的态度不断打磨完善Vue》</p></blockquote><p>感觉尤大说得很中肯，虽然有些地方暂时看不明白在说啥，但还是有种恍然大悟豁然开朗如拨云雾而见青天的赶脚。</p><h2 id="五、Flag"><a href="#五、Flag" class="headerlink" title="五、Flag"></a>五、Flag</h2><p>年后对 React 进行一个系统的学习，从文档到小 demo，初步掌握其基本语法并使用它的全家桶完成一个实战项目。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Vue </tag>
             
             <tag> React </tag>
             
@@ -51,9 +411,9 @@
       
         <tags>
             
-            <tag> Vue </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> Vue </tag>
             
         </tags>
       
@@ -93,7 +453,7 @@
       <link href="/2021/01/06/20.sass/"/>
       <url>/2021/01/06/20.sass/</url>
       
-        <content type="html"><![CDATA[<h2 id="一、安装和使用"><a href="#一、安装和使用" class="headerlink" title="一、安装和使用"></a>一、安装和使用</h2><p><a href="http://sass-lang.com/" target="_blank" rel="noopener">Sass</a>是一种 CSS 的开发工具，提供了许多便利的写法，大大节省了设计者的时间，使得 CSS 的开发，变得简单和可维护。</p><h3 id="1-1-安装"><a href="#1-1-安装" class="headerlink" title="1.1 安装"></a>1.1 安装</h3><p>SASS是Ruby语言写的，但是两者的语法没有关系。不懂Ruby，照样使用。只是必须先<a href="http://www.ruby-lang.org/zh_cn/downloads/" target="_blank" rel="noopener">安装Ruby</a>，然后再安装SASS。</p><p>假定你已经安装好了Ruby，接着在命令行输入下面的命令：</p><blockquote><p>gem install sass</p></blockquote><p>然后，就可以使用了。</p><h3 id="1-2-使用"><a href="#1-2-使用" class="headerlink" title="1.2 使用"></a>1.2 使用</h3><p>SASS文件就是普通的文本文件，里面可以直接使用CSS语法。文件后缀名是.scss，意思为Sassy CSS。</p><p>下面的命令，可以在屏幕上显示.scss文件转化的css代码。（假设文件名为test。）</p><blockquote><p>sass test.scss</p></blockquote><p>如果要将显示结果保存成文件，后面再跟一个.css文件名。</p><blockquote><p>sass test.scss test.css</p></blockquote><p>SASS提供四个<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#output_style" target="_blank" rel="noopener">编译风格</a>的选项：</p><blockquote><ul><li><p>nested：嵌套缩进的css代码，它是默认值。</p></li><li><p>expanded：没有缩进的、扩展的css代码。</p></li><li><p>compact：简洁格式的css代码。</p></li><li><p>compressed：压缩后的css代码。</p></li></ul></blockquote><p>生产环境当中，一般使用最后一个选项。</p><blockquote><p>sass –style compressed test.sass test.css</p></blockquote><p>你也可以让SASS监听某个文件或目录，一旦源文件有变动，就自动生成编译后的版本。</p><blockquote><p>// watch a file</p><p>sass –watch input.scss:output.css</p><p>// watch a directory</p><p>sass –watch app/sass:public/stylesheets</p></blockquote><p>SASS的官方网站，提供了一个<a href="http://sass-lang.com/try.html" target="_blank" rel="noopener">在线转换器</a>。你可以在那里，试运行下面的各种例子。</p><h2 id="二、基本用法"><a href="#二、基本用法" class="headerlink" title="二、基本用法"></a>二、基本用法</h2><h3 id="2-1-变量"><a href="#2-1-变量" class="headerlink" title="2.1 变量"></a>2.1 变量</h3><p>SASS允许使用变量，所有变量以$开头。</p><blockquote><p>$blue : #1875e7;　</p><p>div {<br>    color : $blue;<br>}</p></blockquote><p>如果变量需要镶嵌在字符串之中，就必须需要写在#{}之中。</p><blockquote><p>$side : left;</p><p>.rounded {<br>    border-#{$side}-radius: 5px;<br>}</p></blockquote><h3 id="2-2-计算功能"><a href="#2-2-计算功能" class="headerlink" title="2.2 计算功能"></a>2.2 计算功能</h3><p>SASS允许在代码中使用算式：</p><blockquote><p>body {<br>    margin: (14px/2);<br>　top: 50px + 100px;<br>　right: $var * 10%;<br>}</p></blockquote><h3 id="2-3-嵌套"><a href="#2-3-嵌套" class="headerlink" title="2.3 嵌套"></a>2.3 嵌套</h3><p>SASS允许选择器嵌套。比如，下面的CSS代码：</p><blockquote><p>div h1 {<br>    color : red;<br>}</p></blockquote><p>可以写成：</p><blockquote><p>div {<br>　hi {<br>　　color:red;<br>　}<br>}</p></blockquote><p>属性也可以嵌套，比如border-color属性，可以写成：</p><blockquote><p>p {<br>　border: {<br>　　　color: red;<br>　}<br>}</p></blockquote><p>注意，border后面必须加上冒号。</p><p>在嵌套的代码块内，可以使用&amp;引用父元素。比如a:hover伪类，可以写成：</p><blockquote><p>a {<br>    &amp;:hover { color: #ffb3ff; }<br>}</p></blockquote><h3 id="2-4-注释"><a href="#2-4-注释" class="headerlink" title="2.4 注释"></a>2.4 注释</h3><p>SASS有两种注释风格。</p><p>标准的CSS注释 /* comment */ ，会保留到编译后的文件。</p><p>单行注释 // comment，只保留在SASS源文件中，编译后被省略。</p><p>在/*后面加一个感叹号，表示这是”重要注释”。即使是压缩模式编译，也会保留这行注释，通常可用于声明版权信息。</p><blockquote><p>/*!<br>    重要注释！<br>*/</p></blockquote><h2 id="三、代码的重用"><a href="#三、代码的重用" class="headerlink" title="三、代码的重用"></a>三、代码的重用</h2><h3 id="3-1-继承"><a href="#3-1-继承" class="headerlink" title="3.1 继承"></a>3.1 继承</h3><p>SASS允许一个选择器继承另一个选择器。比如，现有class1：</p><blockquote><p>.class1 {<br>    border: 1px solid #ddd;<br>}</p></blockquote><p>class2要继承class1，就要使用@extend命令：</p><blockquote><p>.class2 {<br>　@extend .class1;<br>　font-size:120%;<br>}</p></blockquote><h3 id="3-2-Mixin"><a href="#3-2-Mixin" class="headerlink" title="3.2 Mixin"></a>3.2 Mixin</h3><p>Mixin有点像C语言的宏（macro），是可以重用的代码块。</p><p>使用@mixin命令，定义一个代码块。</p><blockquote><p>@mixin left {<br>　float: left;<br>　margin-left: 10px;<br>}</p></blockquote><p>使用@include命令，调用这个mixin。</p><blockquote><p>div {<br>　@include left;<br>}</p></blockquote><p>mixin的强大之处，在于可以指定参数和缺省值。</p><blockquote><p>@mixin left($value: 10px) {<br>　float: left;<br>　margin-right: $value;<br>}</p></blockquote><p>使用的时候，根据需要加入参数：</p><blockquote><p>div {<br>    @include left(20px);<br>}</p></blockquote><p>下面是一个mixin的实例，用来生成浏览器前缀。</p><blockquote><p>@mixin rounded($vert, $horz, $radius: 10px) {<br>　border-#{$vert}-#{$horz}-radius: $radius;<br>　-moz-border-radius-#{$vert}#{$horz}: $radius;<br>　-webkit-border-#{$vert}-#{$horz}-radius: $radius;<br>}</p></blockquote><p>使用的时候，可以像下面这样调用：</p><blockquote><p>#navbar li { @include rounded(top, left); }</p><p>#footer { @include rounded(top, left, 5px); }</p></blockquote><h3 id="3-3-颜色函数"><a href="#3-3-颜色函数" class="headerlink" title="3.3 颜色函数"></a>3.3 颜色函数</h3><p>SASS提供了一些内置的颜色函数，以便生成系列颜色。</p><blockquote><p>lighten(#cc3, 10%) // #d6d65c<br>darken(#cc3, 10%) // #a3a329<br>grayscale(#cc3) // #808080<br>complement(#cc3) // #33c</p></blockquote><h3 id="3-4-插入文件"><a href="#3-4-插入文件" class="headerlink" title="3.4 插入文件"></a>3.4 插入文件</h3><p>@import命令，用来插入外部文件。</p><blockquote><p>@import “path/filename.scss”;</p></blockquote><p>如果插入的是.css文件，则等同于css的import命令。</p><blockquote><p>@import “foo.css”;</p></blockquote><p>四、高级用法</p><h3 id="4-1-条件语句"><a href="#4-1-条件语句" class="headerlink" title="4.1 条件语句"></a>4.1 条件语句</h3><p>@if可以用来判断：</p><blockquote><p>p {<br>　@if 1 + 1 == 2 { border: 1px solid; }<br>　@if 5 &lt; 3 { border: 2px dotted; }<br>}</p></blockquote><p>配套的还有@else命令：</p><blockquote><p>@if lightness($color) &gt; 30% {<br>　background-color: #000;<br>} @else {<br>　background-color: #fff;<br>}</p></blockquote><h3 id="4-2-循环语句"><a href="#4-2-循环语句" class="headerlink" title="4.2 循环语句"></a>4.2 循环语句</h3><p>支持for循环：</p><blockquote><p>@for $i from 1 to 10 {<br>　.border-#{$i} {<br>　　border: #{$i}px solid blue;<br>　}<br>}</p></blockquote><p>也支持while循环：</p><blockquote><p>$i: 6;</p><p>@while $i &gt; 0 {<br>　.item-#{$i} { width: 2em * $i; }<br>　$i: $i - 2;<br>}</p></blockquote><p>each命令，作用与for类似：</p><blockquote><p>@each $member in a, b, c, d {<br>　.#{$member} {<br>　　　background-image: url(“/image/#{$member}.jpg”);<br>　}<br>}</p></blockquote><h3 id="4-3-自定义函数"><a href="#4-3-自定义函数" class="headerlink" title="4.3 自定义函数"></a>4.3 自定义函数</h3><p>允许编写自己的函数。</p><blockquote><p>@function double($n) {<br>　@return $n * 2;<br>}</p><p>#sidebar {<br>　width: double(5px);<br>}</p></blockquote><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<h2 id="一、安装和使用"><a href="#一、安装和使用" class="headerlink" title="一、安装和使用"></a>一、安装和使用</h2><p><a href="http://sass-lang.com/" target="_blank" rel="noopener">Sass</a>是一种 CSS 的开发工具，提供了许多便利写法，大大节省了设计者的时间，使得 CSS 的开发，变得简单和可维护。</p><h3 id="1-1-安装"><a href="#1-1-安装" class="headerlink" title="1.1 安装"></a>1.1 安装</h3><p>SASS是Ruby语言写的，但是两者的语法没有关系。不懂Ruby，照样使用。只是必须先<a href="http://www.ruby-lang.org/zh_cn/downloads/" target="_blank" rel="noopener">安装Ruby</a>，然后再安装SASS。</p><p>假定你已经安装好了Ruby，接着在命令行输入下面的命令：</p><blockquote><p>gem install sass</p></blockquote><p>然后，就可以使用了。</p><h3 id="1-2-使用"><a href="#1-2-使用" class="headerlink" title="1.2 使用"></a>1.2 使用</h3><p>SASS文件就是普通的文本文件，里面可以直接使用CSS语法。文件后缀名是.scss，意思为Sassy CSS。</p><p>下面的命令，可以在屏幕上显示.scss文件转化的css代码。（假设文件名为test。）</p><blockquote><p>sass test.scss</p></blockquote><p>如果要将显示结果保存成文件，后面再跟一个.css文件名。</p><blockquote><p>sass test.scss test.css</p></blockquote><p>SASS提供四个<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#output_style" target="_blank" rel="noopener">编译风格</a>的选项：</p><blockquote><ul><li><p>nested：嵌套缩进的css代码，它是默认值。</p></li><li><p>expanded：没有缩进的、扩展的css代码。</p></li><li><p>compact：简洁格式的css代码。</p></li><li><p>compressed：压缩后的css代码。</p></li></ul></blockquote><p>生产环境当中，一般使用最后一个选项。</p><blockquote><p>sass –style compressed test.sass test.css</p></blockquote><p>你也可以让SASS监听某个文件或目录，一旦源文件有变动，就自动生成编译后的版本。</p><blockquote><p>// watch a file</p><p>sass –watch input.scss:output.css</p><p>// watch a directory</p><p>sass –watch app/sass:public/stylesheets</p></blockquote><p>SASS的官方网站，提供了一个<a href="http://sass-lang.com/try.html" target="_blank" rel="noopener">在线转换器</a>。你可以在那里，试运行下面的各种例子。</p><h2 id="二、基本用法"><a href="#二、基本用法" class="headerlink" title="二、基本用法"></a>二、基本用法</h2><h3 id="2-1-变量"><a href="#2-1-变量" class="headerlink" title="2.1 变量"></a>2.1 变量</h3><p>SASS允许使用变量，所有变量以$开头。</p><blockquote><p>$blue : #1875e7;　</p><p>div {<br>    color : $blue;<br>}</p></blockquote><p>如果变量需要镶嵌在字符串之中，就必须需要写在#{}之中。</p><blockquote><p>$side : left;</p><p>.rounded {<br>    border-#{$side}-radius: 5px;<br>}</p></blockquote><h3 id="2-2-计算功能"><a href="#2-2-计算功能" class="headerlink" title="2.2 计算功能"></a>2.2 计算功能</h3><p>SASS允许在代码中使用算式：</p><blockquote><p>body {<br>    margin: (14px/2);<br>　top: 50px + 100px;<br>　right: $var * 10%;<br>}</p></blockquote><h3 id="2-3-嵌套"><a href="#2-3-嵌套" class="headerlink" title="2.3 嵌套"></a>2.3 嵌套</h3><p>SASS允许选择器嵌套。比如，下面的CSS代码：</p><blockquote><p>div h1 {<br>    color : red;<br>}</p></blockquote><p>可以写成：</p><blockquote><p>div {<br>　hi {<br>　　color:red;<br>　}<br>}</p></blockquote><p>属性也可以嵌套，比如border-color属性，可以写成：</p><blockquote><p>p {<br>　border: {<br>　　　color: red;<br>　}<br>}</p></blockquote><p>注意，border后面必须加上冒号。</p><p>在嵌套的代码块内，可以使用&amp;引用父元素。比如a:hover伪类，可以写成：</p><blockquote><p>a {<br>    &amp;:hover { color: #ffb3ff; }<br>}</p></blockquote><h3 id="2-4-注释"><a href="#2-4-注释" class="headerlink" title="2.4 注释"></a>2.4 注释</h3><p>SASS有两种注释风格。</p><p>标准的CSS注释 /* comment */ ，会保留到编译后的文件。</p><p>单行注释 // comment，只保留在SASS源文件中，编译后被省略。</p><p>在/*后面加一个感叹号，表示这是”重要注释”。即使是压缩模式编译，也会保留这行注释，通常可用于声明版权信息。</p><blockquote><p>/*!<br>    重要注释！<br>*/</p></blockquote><h2 id="三、代码的重用"><a href="#三、代码的重用" class="headerlink" title="三、代码的重用"></a>三、代码的重用</h2><h3 id="3-1-继承"><a href="#3-1-继承" class="headerlink" title="3.1 继承"></a>3.1 继承</h3><p>SASS允许一个选择器继承另一个选择器。比如，现有class1：</p><blockquote><p>.class1 {<br>    border: 1px solid #ddd;<br>}</p></blockquote><p>class2要继承class1，就要使用@extend命令：</p><blockquote><p>.class2 {<br>　@extend .class1;<br>　font-size:120%;<br>}</p></blockquote><h3 id="3-2-Mixin"><a href="#3-2-Mixin" class="headerlink" title="3.2 Mixin"></a>3.2 Mixin</h3><p>Mixin有点像C语言的宏（macro），是可以重用的代码块。</p><p>使用@mixin命令，定义一个代码块。</p><blockquote><p>@mixin left {<br>　float: left;<br>　margin-left: 10px;<br>}</p></blockquote><p>使用@include命令，调用这个mixin。</p><blockquote><p>div {<br>　@include left;<br>}</p></blockquote><p>mixin的强大之处，在于可以指定参数和缺省值。</p><blockquote><p>@mixin left($value: 10px) {<br>　float: left;<br>　margin-right: $value;<br>}</p></blockquote><p>使用的时候，根据需要加入参数：</p><blockquote><p>div {<br>    @include left(20px);<br>}</p></blockquote><p>下面是一个mixin的实例，用来生成浏览器前缀。</p><blockquote><p>@mixin rounded($vert, $horz, $radius: 10px) {<br>　border-#{$vert}-#{$horz}-radius: $radius;<br>　-moz-border-radius-#{$vert}#{$horz}: $radius;<br>　-webkit-border-#{$vert}-#{$horz}-radius: $radius;<br>}</p></blockquote><p>使用的时候，可以像下面这样调用：</p><blockquote><p>#navbar li { @include rounded(top, left); }</p><p>#footer { @include rounded(top, left, 5px); }</p></blockquote><h3 id="3-3-颜色函数"><a href="#3-3-颜色函数" class="headerlink" title="3.3 颜色函数"></a>3.3 颜色函数</h3><p>SASS提供了一些内置的颜色函数，以便生成系列颜色。</p><blockquote><p>lighten(#cc3, 10%) // #d6d65c<br>darken(#cc3, 10%) // #a3a329<br>grayscale(#cc3) // #808080<br>complement(#cc3) // #33c</p></blockquote><h3 id="3-4-插入文件"><a href="#3-4-插入文件" class="headerlink" title="3.4 插入文件"></a>3.4 插入文件</h3><p>@import命令，用来插入外部文件。</p><blockquote><p>@import “path/filename.scss”;</p></blockquote><p>如果插入的是.css文件，则等同于css的import命令。</p><blockquote><p>@import “foo.css”;</p></blockquote><p>四、高级用法</p><h3 id="4-1-条件语句"><a href="#4-1-条件语句" class="headerlink" title="4.1 条件语句"></a>4.1 条件语句</h3><p>@if可以用来判断：</p><blockquote><p>p {<br>　@if 1 + 1 == 2 { border: 1px solid; }<br>　@if 5 &lt; 3 { border: 2px dotted; }<br>}</p></blockquote><p>配套的还有@else命令：</p><blockquote><p>@if lightness($color) &gt; 30% {<br>　background-color: #000;<br>} @else {<br>　background-color: #fff;<br>}</p></blockquote><h3 id="4-2-循环语句"><a href="#4-2-循环语句" class="headerlink" title="4.2 循环语句"></a>4.2 循环语句</h3><p>支持for循环：</p><blockquote><p>@for $i from 1 to 10 {<br>　.border-#{$i} {<br>　　border: #{$i}px solid blue;<br>　}<br>}</p></blockquote><p>也支持while循环：</p><blockquote><p>$i: 6;</p><p>@while $i &gt; 0 {<br>　.item-#{$i} { width: 2em * $i; }<br>　$i: $i - 2;<br>}</p></blockquote><p>each命令，作用与for类似：</p><blockquote><p>@each $member in a, b, c, d {<br>　.#{$member} {<br>　　　background-image: url(“/image/#{$member}.jpg”);<br>　}<br>}</p></blockquote><h3 id="4-3-自定义函数"><a href="#4-3-自定义函数" class="headerlink" title="4.3 自定义函数"></a>4.3 自定义函数</h3><p>允许编写自己的函数。</p><blockquote><p>@function double($n) {<br>　@return $n * 2;<br>}</p><p>#sidebar {<br>　width: double(5px);<br>}</p></blockquote><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
@@ -106,6 +466,8 @@
         <tags>
             
             <tag> Sass </tag>
+            
+            <tag> CSS </tag>
             
         </tags>
       
@@ -436,9 +798,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> ESLint </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -513,9 +875,9 @@
       
         <tags>
             
-            <tag> Vue </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> Vue </tag>
             
         </tags>
       

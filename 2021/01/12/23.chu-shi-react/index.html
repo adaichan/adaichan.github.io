@@ -6,11 +6,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="React 全家桶, note blog algorithm adaichan">
+    <meta name="keywords" content="初识 React, note blog algorithm adaichan">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="一、JS 库 / 框架对比1.1 jQueryJS 的函数库，对原生 JS 的 API 进行了封装，只是语法简单了本质还是用选择器（$）在操作 DOM。
-可以进行选中元素、操作 CSS、遍历 DOM、事件、JS 动画、AJAX 等一些增删改">
+    <meta name="description" content="一、jQueryJS 的函数库，对原生 JS 的 API 进行了封装，只是语法简单了本质还是用选择器（$）在操作 DOM。
+可以进行选中元素、操作 CSS、遍历 DOM、事件、JS 动画、AJAX 等一些增删改查、筛选的操作。
+
+缺点：数据">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>React 全家桶 | 兴趣使然の边缘人小站</title>
+    <title>初识 React | 兴趣使然の边缘人小站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -810,7 +812,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        React 全家桶
+                        初识 React
                     </div>
                 </div>
             </div>
@@ -922,12 +924,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Vue/" target="_blank">
-                                <span class="chip bg-color">Vue</span>
-                            </a>
-                        
                             <a href="/tags/JavaScript/" target="_blank">
                                 <span class="chip bg-color">JavaScript</span>
+                            </a>
+                        
+                            <a href="/tags/Vue/" target="_blank">
+                                <span class="chip bg-color">Vue</span>
                             </a>
                         
                             <a href="/tags/React/" target="_blank">
@@ -972,7 +974,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.8k
+                        1.9k
                     </div>
                     
 
@@ -996,12 +998,12 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、JS-库-框架对比"><a href="#一、JS-库-框架对比" class="headerlink" title="一、JS 库 / 框架对比"></a>一、JS 库 / 框架对比</h2><h3 id="1-1-jQuery"><a href="#1-1-jQuery" class="headerlink" title="1.1 jQuery"></a>1.1 jQuery</h3><p>JS 的函数库，对原生 JS 的 API 进行了封装，只是语法简单了<strong>本质还是用选择器（$）在操作 DOM。</strong></p>
+                <h2 id="一、jQuery"><a href="#一、jQuery" class="headerlink" title="一、jQuery"></a>一、jQuery</h2><p>JS 的函数库，对原生 JS 的 API 进行了封装，只是语法简单了<strong>本质还是用选择器（$）在操作 DOM。</strong></p>
 <p><strong>可以进行选中元素、操作 CSS、遍历 DOM、事件、JS 动画、AJAX 等一些增删改查、筛选的操作。</strong></p>
 <blockquote>
 <p><strong>缺点：</strong>数据和视图耦合，<strong>频繁操作 DOM（导致页面频繁重绘）</strong>，影响页面性能。</p>
 </blockquote>
-<h3 id="1-2-Vue"><a href="#1-2-Vue" class="headerlink" title="1.2 Vue"></a>1.2 Vue</h3><h4 id="1-2-1-特点"><a href="#1-2-1-特点" class="headerlink" title="1.2.1 特点"></a>1.2.1 特点</h4><p>渐进式 JavaScript 框架，易上手，包含大量插件（全家桶）。</p>
+<h2 id="二、Vue"><a href="#二、Vue" class="headerlink" title="二、Vue"></a>二、Vue</h2><h4 id="2-2-1-特点"><a href="#2-2-1-特点" class="headerlink" title="2.2.1 特点"></a>2.2.1 特点</h4><p>渐进式 JavaScript 框架，易上手，包含大量插件（全家桶）。</p>
 <p><strong>Vue</strong> 基于 <strong>MVVM</strong> 模式，<strong>将数据层和视图层完全解耦分离</strong>（开放封闭原则），以数据驱动视图，只关心数据，DOM操作被封装。</p>
 <p>React 只支持内存到界面的单向变化，Vue 支持内存和界面数据的双向交流：</p>
 <blockquote>
@@ -1012,29 +1014,31 @@
 <li>get：当需要读取当前属性值时执行回调，根据相关数据计算并返回当前属性的值。</li>
 <li>set：用来监视属性值的变化，一旦属性值改变就调用 set 更新相关属性数据。</li>
 </ul>
-<h4 id="1-2-2-我对-MVVM-的理解"><a href="#1-2-2-我对-MVVM-的理解" class="headerlink" title="1.2.2 我对 MVVM 的理解"></a>1.2.2 <strong>我对 MVVM 的理解</strong></h4><p>看了 Vue 的源码我发现 Vue 的 MVVM 实现<strong>包含了两个重要的技术：a. 模板解析 b. 数据绑定</strong></p>
+<h4 id="2-2-2-我对-MVVM-的理解"><a href="#2-2-2-我对-MVVM-的理解" class="headerlink" title="2.2.2 我对 MVVM 的理解"></a>2.2.2 <strong>我对 MVVM 的理解</strong></h4><p>看了 Vue 的源码我发现 Vue 的 MVVM 实现<strong>包含了两个重要的技术：a. 模板解析 b. 数据绑定</strong></p>
 <ul>
 <li><p><strong>模板解析用来初始化组件界面，解析两个部分：大括号表达式和指令</strong></p>
 </li>
 <li><p><strong>数据绑定用来实现更新数据，界面就自动变化的功能，主要靠的是数据劫持</strong></p>
 </li>
 </ul>
-<p><img src="/medias/loading.gif" data-original="1.2.2.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="2.2.2.png" alt=""></p>
 <p><strong>分析：</strong>我们写代码的时候 Vue 底层相当于 new 了一个 MVVM，它会创建两个对象，先是创建一个 Observe，用来劫持（或者叫监视）data 中所有层次的属性，同时还为每一个属性创建了另外一种对象，叫 Dep，几个属性就对应几个 Dep。</p>
 <p>这些准备工作完成 MVVM 会再创建一个叫 Compile 的对象，它有两个作用，最重要的是去编译模板（也就是编译大括号表达式和指令），这时会去调用一个叫 Updater 的对象来初始化页面，同时 Compile 还会为模板的每个表达式（事件指令表达式除外）创建一个 Watcher，并指定更新节点的回调函数，一旦创建了 Watcher，就会去建立 Watcher 和 Dep 之间的相互关系，将 Watcher 添加到所有对应的 Dep 中从而让 Dep 可以通过 Watcher 去调用 Updater 更新视图，将 Dep 添加到 Watcher 只是为了防止重复建立。</p>
 <p>其实到这里初始化的整个流程就完了，它做了两件事：实现初始化显示，为更新做了准备（实现了数据劫持并创建了对应的 Watcher 和 Dep）</p>
 <p>接下来比如我们点击了一个按钮来更新某一个属性，这会被 Observe 里面的 set 知道，set 会先去通知该属性对应的那一个 Dep，Dep 再去通知所有相关的 Watcher，由于前面初始化阶段指定了更新节点的回调函数，Watcher 就调用回调函数去找 Updater 里面的方法去更新界面。</p>
-<h3 id="1-3-React"><a href="#1-3-React" class="headerlink" title="1.3 React"></a>1.3 React</h3><p>用于构建用户界面的 JavaScript 库，<strong>严格上只针对 MVC 的 view 层。</strong></p>
-<ul>
-<li><p>申明式：不用再操作 DOM，只需要更新数据，数据更新，界面就自动变化（数据驱动视图变化）</p>
-</li>
-<li><p>组件化：将界面的每个功能模块拆分为组件进行封装，组件复用（props 传递复用）、方便维护</p>
-</li>
-<li><p>跨平台：可用 Node 进行服务器渲染，或使用 <a href="https://reactnative.dev/" target="_blank" rel="noopener">React Native</a> 开发原生移动应用。</p>
-</li>
+<h2 id="三、React"><a href="#三、React" class="headerlink" title="三、React"></a>三、React</h2><p>用于构建用户界面的 JavaScript 库，<strong>严格上只针对 MVC 的 view 层。</strong></p>
+<h4 id="3-3-1-特点"><a href="#3-3-1-特点" class="headerlink" title="3.3.1 特点"></a>3.3.1 特点</h4><ul>
+<li>申明式编码：不用再操作 DOM，只需要更新数据，数据更新，界面就自动变化（数据驱动视图变化）</li>
+<li>组件化编码：将界面的每个功能模块拆分为组件进行封装，组件复用（props 传递复用）、方便维护</li>
+<li>跨平台：可用 Node 进行服务器渲染，或使用 <a href="https://reactnative.dev/" target="_blank" rel="noopener">React Native</a> 开发原生移动应用，支持客户端和服务器渲染</li>
+<li>高效</li>
+<li>单向数据流</li>
 </ul>
-<p>JSX 本质：JSX 是语法糖，需要被解析成 JS 才能运行，可被其他项目使用，JSX 是模板，最终要渲染成 html，需要 vdom 的原因：JSX 要渲染成 html，数据驱动视图。</p>
-<h3 id="1-4-尤大阐述两大框架"><a href="#1-4-尤大阐述两大框架" class="headerlink" title="1.4 尤大阐述两大框架"></a>1.4 尤大阐述两大框架</h3><p><strong>Vue 设计者尤雨溪亲自回答：</strong></p>
+<h4 id="3-3-2-React高效原因"><a href="#3-3-2-React高效原因" class="headerlink" title="3.3.2 React高效原因"></a>3.3.2 React高效原因</h4><ul>
+<li><strong>虚拟（Virtual）DOM，不总是直接操作 DOM</strong></li>
+<li><strong>DOM Diff 算法，最小化页面重绘</strong></li>
+</ul>
+<h2 id="四、尤大阐述两大框架"><a href="#四、尤大阐述两大框架" class="headerlink" title="四、尤大阐述两大框架"></a>四、尤大阐述两大框架</h2><p><strong>Vue 设计者尤雨溪亲自回答：</strong></p>
 <p>虽然 Vue 和 React 两者在定位上有一些交集，但差异也是很明显的。</p>
 <p><strong>Vue 使用的是 web 开发者更熟悉的模板与特性</strong>，Vue 的 API 跟传统 web 开发者熟悉的模板契合度更高，比如 Vue 的单文件组件是以模板 + JavaScript + CSS 的组合模式呈现，它跟 web 现有的 HTML、JavaScript、CSS 能够更好地配合。<strong>React 的特色在于函数式编程的理念和丰富的技术选型</strong>。Vue 比起 React 更容易被前端工程师接受，这是一个直观的感受；React 则更容易吸引在 FP 上持续走下去的开发者。</p>
 <p>从<strong>使用习惯和思维模式</strong>上考虑，对于一个没有任何 Vue 和 React 基础的 web 开发者来说， Vue 会更友好，更符合他的思维模式。React 对于拥有函数式编程背景的开发者以及一些并不是以 web 为主要开发平台的开发人员而言，React 更容易接受。这并不意味着他们不能接受 Vue，Vue 和 React 之间的差异对他们来说就没有 web 开发者那么明显。可以说，<strong>Vue 更加注重 web 开发者的习惯</strong>。</p>
@@ -1044,6 +1048,7 @@
 <p>以上回答摘自图灵社区对尤雨溪的访谈：《以匠人的态度不断打磨完善Vue》</p>
 </blockquote>
 <p>感觉尤大说得很中肯，虽然有些地方暂时看不明白在说啥，但还是有种恍然大悟豁然开朗如拨云雾而见青天的赶脚。</p>
+<h2 id="五、Flag"><a href="#五、Flag" class="headerlink" title="五、Flag"></a>五、Flag</h2><p>年后对 React 进行一个系统的学习，从文档到小 demo，初步掌握其基本语法并使用它的全家桶完成一个实战项目。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1212,7 +1217,7 @@
                     </span>
                     <a href="http://adaichan.com" class="b-link-green">兴趣使然の边缘人小站</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2021/01/12/23.react-quan-jia-tong/" class="b-link-green">React 全家桶</a>
+                    <a href="/2021/01/12/23.chu-shi-react/" class="b-link-green">初识 React</a>
                 </p>
             </div>
 
@@ -1532,59 +1537,49 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/01/12/23.react-quan-jia-tong/">
+                <a href="/2021/01/18/24.idea-re-bu-shu/">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/23.jpg" class="responsive-img" alt="React 全家桶">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/24.jpg" class="responsive-img" alt="Idea 热部署">
                         
-                        <span class="card-title">React 全家桶</span>
+                        <span class="card-title">Idea 热部署</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            自动挡已经了然于胸，为了成为秋名山的 old driver，最近开始学习手动挡，没错！就是拥有函数式编程的理念和丰富的技术选型的前端两大框架之一的 React 全家桶。一个是响应式的，一个是手动 setState。多的不说盘它！
+                            阿呆在运行 SpringBoot 项目过程中进行多窗口前后台分离开发时热部署偶尔会失效，因为 Idea 的某些配置没有到位。虽然我更喜欢使用 VSCode 进行开发，然鹅项目组有需要么得法，这里把热部署的相关配置记录如下：
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-01-12
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-01-18
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/前端/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/后端/" class="post-category" target="_blank">
+                                    后端
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Vue/" target="_blank">
-                        <span class="chip bg-color">Vue</span>
+                    <a href="/tags/Idea/" target="_blank">
+                        <span class="chip bg-color">Idea</span>
                     </a>
                     
-                    <a href="/tags/JavaScript/" target="_blank">
-                        <span class="chip bg-color">JavaScript</span>
-                    </a>
-                    
-                    <a href="/tags/React/" target="_blank">
-                        <span class="chip bg-color">React</span>
-                    </a>
-                    
-                    <a href="/tags/jQuery/" target="_blank">
-                        <span class="chip bg-color">jQuery</span>
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
@@ -1631,12 +1626,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Vue/" target="_blank">
-                        <span class="chip bg-color">Vue</span>
-                    </a>
-                    
                     <a href="/tags/JavaScript/" target="_blank">
                         <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                    <a href="/tags/Vue/" target="_blank">
+                        <span class="chip bg-color">Vue</span>
                     </a>
                     
                 </div>
@@ -1798,7 +1793,7 @@
 			
 			
                 <i class="fa fa-area-chart"></i>&nbsp;字数统计:&nbsp;
-                <span class="white-color">69.8k</span> 字
+                <span class="white-color">80.5k</span> 字
             
 			
 			
@@ -2040,11 +2035,11 @@ $(function () {
 		<script>WIDGET = {CONFIG:{"modules":"01234","background":1,"tmpColor":"FFFFFF","tmpSize":16,"cityColor":"FFFFFF","citySize":16,"aqiSize":16,"weatherIconSize":24,"alertIconSize":18,"padding":"10px 10px 10px 10px","shadow":"1","language":"auto","borderRadius":5,"city":"CN101200101","fixed":"true","vertical":"middle","horizontal":"center","left":"16","top":"16","key":"bAnFmmXfQG"}}</script>
 		<script src="https://apip.weatherdt.com/simple/static/js/weather-simple-common.js?v=2.0"></script>
     
-	<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>
+	<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 	
 </html>
