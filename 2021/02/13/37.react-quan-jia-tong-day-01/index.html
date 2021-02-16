@@ -970,14 +970,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        764
+                        1.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        6 分
                     </div>
                     
                 
@@ -1025,7 +1025,7 @@ document.getElementsByTagName('span')</code></pre></li>
 </li>
 <li><p><strong>React 优势：</strong></p>
 <ol>
-<li><p><strong>组件化</strong>模式，<strong>申明式</strong>（相比于没封装的命令式）编码，提高开发效率和组件复用率。但对应的你得学习它的语法规则</p>
+<li><p><strong>组件化</strong>模式，<strong>申明式</strong>（相比于没封装的命令式）编码，提高开发效率和组件复用率。但对应的得学习它的语法规则</p>
 </li>
 <li><p>在 React Native 中可以使用 React <strong>进行移动端开发</strong>，即可以用 JS 编写 Android 应用（Java）或 iOS 应用（OC/Swift）</p>
 </li>
@@ -1061,7 +1061,93 @@ document.getElementsByTagName('span')</code></pre></li>
 <h2 id="四、虚拟-DOM-和真实-DOM"><a href="#四、虚拟-DOM-和真实-DOM" class="headerlink" title="四、虚拟 DOM 和真实 DOM"></a>四、虚拟 DOM 和真实 DOM</h2><pre><code>console.log('虚拟DOM:',VDOM) // 打印显示：Object（非数组对象和函数对象的一般对象）
 console.log(typeof VDOM) // 查看数据类型：Object
 console.log(VDOM instanceof Object) // true</code></pre><p><img src="/medias/loading.gif" data-original="4.png" alt=""></p>
-<script>
+<h2 id="五、JSX-语法规则"><a href="#五、JSX-语法规则" class="headerlink" title="五、JSX 语法规则"></a>五、JSX 语法规则</h2><p><img src="/medias/loading.gif" data-original="5.1.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="5.2.png" alt=""></p>
+<p>React 可以自动遍历显示数组中所有的元素，但是对象则不行</p>
+<pre><code>&lt;script type="text/babel"&gt;
+    /*
+     功能: 动态展示列表数据
+     */
+    /*
+     技术点:
+     1). 使用JSX创建虚拟DOM
+     2). React能自动遍历显示数组中所有的元素
+     3). array.map()的使用
+     */
+
+    // 数据的数组
+    var names = ['jquery', 'zeptoo', 'angular', 'react全家桶', 'vue全家桶']
+
+    // 数据的数组--&gt;标签的数组
+    var lis = []
+    names.forEach((name, index) =&gt; lis.push(&lt;li key={index}&gt;{name}&lt;/li&gt;))
+
+    // 创建虚拟DOM
+    const ul = &lt;ul&gt;{lis}&lt;/ul&gt;
+
+    // 渲染虚拟DOM
+    ReactDOM.render(ul, document.getElementById('example1'))
+    const ul2 = &lt;ul&gt;{
+      names.map((name, index) =&gt; &lt;li key={index}&gt;{name}&lt;/li&gt;)
+    }&lt;/ul&gt;
+    ReactDOM.render(ul2, document.getElementById('example2'))
+  &lt;/script&gt;</code></pre><h2 id="六、react-developer-tools"><a href="#六、react-developer-tools" class="headerlink" title="六、react-developer-tools"></a>六、react-developer-tools</h2><p>安装谷歌插件，包含 Components（查看组件状态）和 Profiler（记录网站性能） 功能。</p>
+<h2 id="七、class-类的复习"><a href="#七、class-类的复习" class="headerlink" title="七、class 类的复习"></a>七、class 类的复习</h2><h3 id="7-1-创建类和它的实例对象："><a href="#7-1-创建类和它的实例对象：" class="headerlink" title="7.1 创建类和它的实例对象："></a>7.1 创建类和它的实例对象：</h3><p><img src="/medias/loading.gif" data-original="7.1.png" alt=""></p>
+<h3 id="7-2-类的继承和重写："><a href="#7-2-类的继承和重写：" class="headerlink" title="7.2 类的继承和重写："></a>7.2 类的继承和重写：</h3><p><img src="/medias/loading.gif" data-original="7.2.png" alt=""></p>
+<blockquote>
+<p>继承让子类也可以使用父类原型上的方法，即使自身没有也可以沿着原型链往上找。</p>
+</blockquote>
+<p><img src="/medias/loading.gif" data-original="7.3.png" alt=""></p>
+<h2 id="八、函数组件和类组件"><a href="#八、函数组件和类组件" class="headerlink" title="八、函数组件和类组件"></a>八、函数组件和类组件</h2><blockquote>
+<p>注意：</p>
+<ol>
+<li>函数式组件申明时首字母必须大写，函数必须有返回值。</li>
+<li>ReactDOM.render() 中必须有组件标签。</li>
+<li>类式组件必须继承父类 extends React.Component。</li>
+<li>类式组件必须有 render 和它的返回值。</li>
+</ol>
+</blockquote>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;03_component_basic&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;div id="example1"&gt;&lt;/div&gt;
+  &lt;div id="example2"&gt;&lt;/div&gt;
+
+  &lt;script type="text/javascript" src="../js/react.development.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript" src="../js/react-dom.development.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript" src="../js/babel.min.js"&gt;&lt;/script&gt;
+
+  &lt;script type="text/babel"&gt;
+    // 1. 定义组件
+    /*方式1: 工厂函数组件(简单组件)*/
+    function MyComponent () {
+      return &lt;h2&gt;工厂函数组件(简单组件)&lt;/h2&gt;
+    }
+    /*方式2: ES6类组件(复杂组件)*/
+    class MyComponent2 extends React.Component {
+      render () {
+          // render放在类MyComponent2的原型对象上供实例使用，它的this是MyComponent2实例对象&lt;=&gt;MyComponent2组件实例对象。
+        console.log(this) // MyComponent2的实例对象
+        return &lt;h2&gt;ES6类组件(复杂组件)&lt;/h2&gt;
+      }
+    }
+    // 2. 渲染组件标签到页面
+    ReactDOM.render(&lt;MyComponent /&gt;, document.getElementById('example1'))
+    ReactDOM.render(&lt;MyComponent2 /&gt;, document.getElementById('example2'))
+    /* 
+        执行了ReactDOM.render(&lt;MyComponent /&gt; ... )后，发生了什么？
+            1. React解析组件标签，找到MyComponent组件。
+            2. 若发现组件是函数定义的，随后调用该函数，将返回的虚拟DOM转化为真实DOM呈现到页面中。
+            3. 若发现组件是类定义的，随后new出该类的实例，并通过该实例调用原型上的render方法
+    */
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1549,36 +1635,30 @@ console.log(VDOM instanceof Object) // true</code></pre><p><img src="/medias/loa
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/02/13/37.react-quan-jia-tong-day-01/">
+                <a href="/2021/02/14/38.react-quan-jia-tong-day-02/">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/37.jpg" class="responsive-img" alt="React 全家桶 day 01">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/38.jpg" class="responsive-img" alt="React 全家桶 day 02">
                         
-                        <span class="card-title">React 全家桶 day 01</span>
+                        <span class="card-title">React 全家桶 day 02</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、React 简介
-概念：
-用于构建用户界面的 JavaScript 库。即 React 只关注视图层。
-比如有个需求：在页面上展示一些信息，之前的话是分三步走：
+                            一、组件实例三大属性由于函数式组件没有自己的 this，也没有实例，更别说实例上的属性了。但是最新的 React 有了 hooks 可以让函数式组件使用三大属性。
 
-发送请求获取后台接口数据
-处理数据（对数组的遍历、过滤等格式整理）
-使用
+        document.querySelectorAll('.g
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-13
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-14
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1591,7 +1671,6 @@ console.log(VDOM instanceof Object) // true</code></pre><p><img src="/medias/loa
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1812,7 +1891,7 @@ console.log(VDOM instanceof Object) // true</code></pre><p><img src="/medias/loa
 			
 			
                 <i class="fa fa-area-chart"></i>&nbsp;字数统计:&nbsp;
-                <span class="white-color">80.5k</span> 字
+                <span class="white-color">81.3k</span> 字
             
 			
 			
@@ -2004,14 +2083,7 @@ $(function () {
 		<!-- 背景雪花飘落特效 adaichan 2020.12.04 M -->
         
 
-		<!-- 背景 canvas-nest adaichan 2020.12.04 M -->
-        
-            <script type="text/javascript">
-            var windowWidth = $(window).width();
-            if (windowWidth > 992) {
-                document.write('<script type="text/javascript" color="0,0,255" pointColor="0,0,255" opacity= "0.5" zIndex="--1" count="150"src="/libs/background/canvas-nest.js"><\/script>');
-            }
-            </script>
+		<!-- 背景动态科技线条 adaichan 2020.12.04 M -->
         
 
         <!-- 背景静止彩带 adaichan 2020.12.04 M -->
@@ -2054,11 +2126,11 @@ $(function () {
 		<script>WIDGET = {CONFIG:{"modules":"01234","background":1,"tmpColor":"FFFFFF","tmpSize":16,"cityColor":"FFFFFF","citySize":16,"aqiSize":16,"weatherIconSize":24,"alertIconSize":18,"padding":"10px 10px 10px 10px","shadow":"1","language":"auto","borderRadius":5,"city":"CN101200101","fixed":"true","vertical":"middle","horizontal":"center","left":"16","top":"16","key":"bAnFmmXfQG"}}</script>
 		<script src="https://apip.weatherdt.com/simple/static/js/weather-simple-common.js?v=2.0"></script>
     
-	<script>
+	<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 	
 </html>
