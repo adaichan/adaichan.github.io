@@ -825,9 +825,9 @@
       
         <tags>
             
-            <tag> ESLint </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> ESLint </tag>
             
         </tags>
       
@@ -954,9 +954,9 @@
       
         <tags>
             
-            <tag> Git </tag>
-            
             <tag> GitHub </tag>
+            
+            <tag> Git </tag>
             
             <tag> ESLint </tag>
             
