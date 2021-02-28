@@ -6,17 +6,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="React 全家桶 day 01, note blog algorithm adaichan">
+    <meta name="keywords" content="React 全家桶 day 02, note blog algorithm adaichan">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="一、React 简介
-概念：
-用于构建用户界面的 JavaScript 库。即 React 只关注视图层。
-比如有个需求：在页面上展示一些信息，之前的话是分三步走：
+    <meta name="description" content="一、组件实例的三大属性由于函数式组件没有自己的 this，也没有实例，更别说实例上的属性了。但是最新的 React 有了 hooks 可以让函数式组件使用三大属性。
 
-发送请求获取后台接口数据
-处理数据（对数组的遍历、过滤等格式整理）
-使用">
+React 发现组件是类定义的，随后new出该类的实例，并通过该实例调用">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -24,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>React 全家桶 day 01 | 兴趣使然の边缘人小站</title>
+    <title>React 全家桶 day 02 | 兴趣使然の边缘人小站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -810,13 +805,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/37.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/38.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        React 全家桶 day 01
+                        React 全家桶 day 02
                     </div>
                 </div>
             </div>
@@ -956,7 +951,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-13
+                    2021-02-16
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -970,14 +965,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.4k
+                        1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        6 分
+                        4 分
                     </div>
                     
                 
@@ -994,160 +989,106 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、React-简介"><a href="#一、React-简介" class="headerlink" title="一、React 简介"></a>一、React 简介</h2><ol>
-<li><p><strong>概念：</strong></p>
-<p>用于构建用户<strong>界面</strong>的 JavaScript 库。即 React 只关注<strong>视图层</strong>。</p>
-<p>比如有个需求：在页面上展示一些信息，之前的话是分三步走：</p>
-<ol>
-<li>发送请求获取后台接口数据</li>
-<li>处理数据（对数组的遍历、过滤等格式整理）</li>
-<li>使用 JS、jQuery <strong>操作 DOM</strong>，将数据放到相应节点<strong>呈现页面</strong></li>
-</ol>
-</li>
-</ol>
-<p>React 只处理上述的第三步，也就是只负责将数据渲染成 HTML 视图。</p>
-<ol start="2">
-<li><p><strong>原生的劣势：</strong></p>
-<ol>
-<li><p>原生 JS 频繁操作 DOM，效率低（DOM-API 操作 UI），每一次操作 DOM，会引起浏览器重绘、重排</p>
-<pre><code>document.getElementById('app')
-
-document.querySelector('#app')
-
-document.getElementsByTagName('span')</code></pre></li>
-<li><p>jQuery 只是在编码上简化了 JS，还是会引起重绘、重排</p>
-</li>
-<li><p>原生 JS 没有<strong>组件化</strong>的编码方案，代码复用率低</p>
-<p>a. 模块化：将一个大的 JS 按功能拆分成多个小的 JS，每个小的 JS 文件可以写一些独立的业务逻辑，方便复用</p>
-<p>b. 组件化：构成页面的每一个独立的功能区域（除了 JS，还包括 HTML、CSS、音视频、字体等）</p>
-</li>
-</ol>
-</li>
-<li><p><strong>React 优势：</strong></p>
-<ol>
-<li><p><strong>组件化</strong>模式，<strong>申明式</strong>（相比于没封装的命令式）编码，提高开发效率和组件复用率。但对应的得学习它的语法规则</p>
-</li>
-<li><p>在 React Native 中可以使用 React <strong>进行移动端开发</strong>，即可以用 JS 编写 Android 应用（Java）或 iOS 应用（OC/Swift）</p>
-</li>
-<li><p>使用<strong>虚拟 DOM + 优秀的 Diffing 算法</strong>，尽量减少与真实 DOM 的交互</p>
-<p>虚拟 DOM：不放在页面中，而是代码运行时，放在电脑的内存里头</p>
-<p><img src="/medias/loading.gif" data-original="1.1.png" alt=""></p>
-<p>数组中每多添加一个 li 标签，DOM 就要重新渲染一次。之前如果有一百个人的 DOM，当新加一个人，就得重新渲染101个 DOM。</p>
-<p>React 会对虚拟 DOM 进行比较，如果没发生变化就不再对应生成新的真实 DOM。</p>
-<p><img src="/medias/loading.gif" data-original="1.2.png" alt=""></p>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="二、使用案例"><a href="#二、使用案例" class="headerlink" title="二、使用案例"></a>二、使用案例</h2><p>这里不像工程化项目使用脚手架搭建，只是一个案例示范。</p>
-<p><strong>准备好三个文件按顺序引入：</strong></p>
-<p><strong>babel.min.js</strong>：ES6 =&gt; ES5、模块化时浏览器不能解析 import、JSX =&gt; JS</p>
-<p><strong>react.development.js</strong>：React 的核心库</p>
-<p><strong>react-dom.development.js</strong>：操作 DOM 的 React 扩展库</p>
+                <h2 id="一、组件实例的三大属性"><a href="#一、组件实例的三大属性" class="headerlink" title="一、组件实例的三大属性"></a>一、组件实例的三大属性</h2><p>由于函数式组件没有自己的 this，也没有实例，更别说实例上的属性了。但是最新的 React 有了 hooks 可以让函数式组件使用三大属性。</p>
 <blockquote>
-<p>注意：</p>
-<ol>
-<li>需要准备一个容器</li>
-<li>核心库必须在扩展库之前引入</li>
-<li>script 标签是 text/babel</li>
-<li>标签不加引号’’</li>
-</ol>
+<p>React 发现组件是类定义的，随后new出该类的实例，并通过该实例调用原型上的render方法。</p>
+<p>React 初始化了三大属性具体值由我们后续添加进去，三大属性不是由组件类生成，而是由类创造的实例对象生成。</p>
 </blockquote>
-<p><img src="/medias/loading.gif" data-original="2.png" alt=""></p>
-<h2 id="三、虚拟-DOM-的两种创建方式"><a href="#三、虚拟-DOM-的两种创建方式" class="headerlink" title="三、虚拟 DOM 的两种创建方式"></a>三、虚拟 DOM 的两种创建方式</h2><p><strong>JSX 可以更简单的创建虚拟 DOM</strong>，相当于原生创建虚拟 DOM 写法的一个语法糖。</p>
-<p><img src="/medias/loading.gif" data-original="3.1.png" alt=""></p>
-<p>相当于原生 JS 这样写（不会采用）：</p>
-<p><img src="/medias/loading.gif" data-original="3.2.png" alt=""></p>
-<h2 id="四、虚拟-DOM-和真实-DOM"><a href="#四、虚拟-DOM-和真实-DOM" class="headerlink" title="四、虚拟 DOM 和真实 DOM"></a>四、虚拟 DOM 和真实 DOM</h2><pre><code>console.log('虚拟DOM:',VDOM) // 打印显示：Object（非数组对象和函数对象的一般对象）
-console.log(typeof VDOM) // 查看数据类型：Object
-console.log(VDOM instanceof Object) // true</code></pre><p><img src="/medias/loading.gif" data-original="4.png" alt=""></p>
-<h2 id="五、JSX-语法规则"><a href="#五、JSX-语法规则" class="headerlink" title="五、JSX 语法规则"></a>五、JSX 语法规则</h2><p><img src="/medias/loading.gif" data-original="5.1.png" alt=""></p>
-<p><img src="/medias/loading.gif" data-original="5.2.png" alt=""></p>
-<p>React 可以自动遍历显示数组中所有的元素，但是对象则不行</p>
-<pre><code>&lt;script type="text/babel"&gt;
-    /*
-     功能: 动态展示列表数据
-     */
-    /*
-     技术点:
-     1). 使用JSX创建虚拟DOM
-     2). React能自动遍历显示数组中所有的元素
-     3). array.map()的使用
-     */
+<h2 id="二、State"><a href="#二、State" class="headerlink" title="二、State"></a>二、State</h2><h3 id="2-1-原生的事件绑定"><a href="#2-1-原生的事件绑定" class="headerlink" title="2.1 原生的事件绑定"></a>2.1 原生的事件绑定</h3><p><img src="/medias/loading.gif" data-original="2.1.png" alt=""></p>
+<h3 id="2-2-React-事件绑定"><a href="#2-2-React-事件绑定" class="headerlink" title="2.2 React 事件绑定"></a>2.2 React 事件绑定</h3><ul>
+<li><strong>原生：onclick=”demo()”</strong></li>
+<li><strong>React：onClick={demo}</strong></li>
+<li><strong>on 后面首字母大写；函数不要双引号放在花括号中；函数不加小括号调用</strong></li>
+</ul>
+<h3 id="2-3-类的方法的-this"><a href="#2-3-类的方法的-this" class="headerlink" title="2.3 类的方法的 this"></a>2.3 类的方法的 this</h3><p><img src="/medias/loading.gif" data-original="2.3.1.png" alt=""></p>
+<p><img src="/medias/loading.gif" data-original="2.3.2.png" alt=""></p>
+<ul>
+<li><p>实例对象 p1 虽然没有 study 方法但可以沿着原型链去找，study 中的 this 是 p1 实例。</p>
+</li>
+<li><p>第23行代码并没有调用 study 方法，而是在堆内存多开辟一个引用 x 指向栈内存的 study 方法，24 行属于函数直接调用方法，理论上 this 是指向 Window，但却是 undefined。</p>
+</li>
+<li><p>原因：类中所定义的方法会自动在局部开启严格模式，从而 this 为 undefined。</p>
+</li>
+</ul>
+<h3 id="2-4-案例"><a href="#2-4-案例" class="headerlink" title="2.4 案例"></a>2.4 案例</h3><p>案例：动态展示天气状态</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/babel"</span><span class="token operator">></span>
+    <span class="token comment" spellcheck="true">// 1. 创建组件</span>
+    <span class="token keyword">class</span> <span class="token class-name">Weather</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 创建了几个Weather，构造器就调用几次</span>
+        <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true">// 初始化状态</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>isHot<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> wind<span class="token punctuation">:</span> <span class="token string">'微风'</span><span class="token punctuation">}</span>
+            <span class="token comment" spellcheck="true">// 解决changeWeather的this指向问题</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>changeWeather <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>changeWeather<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">// render()调用了1+n次，1是初始化那次，n是状态更新的次数</span>
+        <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">const</span> <span class="token punctuation">{</span>isHot<span class="token punctuation">,</span> wind<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state
+            <span class="token keyword">return</span> <span class="token operator">&lt;</span>h1 onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>changeWeather<span class="token punctuation">}</span><span class="token operator">></span>今天天气很<span class="token punctuation">{</span>isHot <span class="token operator">?</span> <span class="token string">'炎热'</span> <span class="token punctuation">:</span> <span class="token string">'凉爽'</span><span class="token punctuation">}</span>，<span class="token punctuation">{</span>wind<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
+            <span class="token comment" spellcheck="true">// changeWeather放在Weather的原型上，供实例使用</span>
+            <span class="token comment" spellcheck="true">// 由于changeWeather是作为onClick回调，所以不是通过实例调用的，是直接调用。</span>
+            <span class="token comment" spellcheck="true">// 类中的方法开启了局部的严格模式，所以changeWeather中的this为undefined</span>
+            <span class="token function">changeWeather</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">const</span> isHot <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>isHot
+                <span class="token comment" spellcheck="true">// 注意：状态不可直接更改，要借助内置的API:setState，合更新操作属于合并而非替换</span>
+                <span class="token comment" spellcheck="true">// this.state.isHot = !isHot</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>isHot<span class="token punctuation">:</span> <span class="token operator">!</span>isHot<span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-    // 数据的数组
-    var names = ['jquery', 'zeptoo', 'angular', 'react全家桶', 'vue全家桶']
-
-    // 数据的数组--&gt;标签的数组
-    var lis = []
-    names.forEach((name, index) =&gt; lis.push(&lt;li key={index}&gt;{name}&lt;/li&gt;))
-
-    // 创建虚拟DOM
-    const ul = &lt;ul&gt;{lis}&lt;/ul&gt;
-
-    // 渲染虚拟DOM
-    ReactDOM.render(ul, document.getElementById('example1'))
-    const ul2 = &lt;ul&gt;{
-      names.map((name, index) =&gt; &lt;li key={index}&gt;{name}&lt;/li&gt;)
-    }&lt;/ul&gt;
-    ReactDOM.render(ul2, document.getElementById('example2'))
-  &lt;/script&gt;</code></pre><h2 id="六、react-developer-tools"><a href="#六、react-developer-tools" class="headerlink" title="六、react-developer-tools"></a>六、react-developer-tools</h2><p>安装谷歌插件，包含 Components（查看组件状态）和 Profiler（记录网站性能） 功能。</p>
-<h2 id="七、class-类的复习"><a href="#七、class-类的复习" class="headerlink" title="七、class 类的复习"></a>七、class 类的复习</h2><h3 id="7-1-创建类和它的实例对象："><a href="#7-1-创建类和它的实例对象：" class="headerlink" title="7.1 创建类和它的实例对象："></a>7.1 创建类和它的实例对象：</h3><p><img src="/medias/loading.gif" data-original="7.1.png" alt=""></p>
-<h3 id="7-2-类的继承和重写："><a href="#7-2-类的继承和重写：" class="headerlink" title="7.2 类的继承和重写："></a>7.2 类的继承和重写：</h3><p><img src="/medias/loading.gif" data-original="7.2.png" alt=""></p>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 2. 渲染组件到页面</span>
+    ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>Weater<span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'test'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>总结：</strong></p>
+<ul>
+<li>构造器作用：初始化状态，可以通过 bind() 解决 this 的指向问题</li>
+<li>render 中的 this 就是组件实例对象，读取状态进行展示</li>
+<li>自定义方法中使用 setState 进行状态数据的更新</li>
+</ul>
+<h3 id="2-5-State-的简写方式"><a href="#2-5-State-的简写方式" class="headerlink" title="2.5 State 的简写方式"></a>2.5 State 的简写方式</h3><p>利用类的赋值语句规则来简写，Weather的原型上已经没有changeWeather方法，放到了实例自身上。</p>
 <blockquote>
-<p>继承让子类也可以使用父类原型上的方法，即使自身没有也可以沿着原型链往上找。</p>
+<p>和函数体不同，类中不能随意写代码（let a;a=1），类里面可以直接写赋值语句(a=1)，类中可以写构造器、方法、赋值语句。</p>
 </blockquote>
-<p><img src="/medias/loading.gif" data-original="7.3.png" alt=""></p>
-<h2 id="八、函数组件和类组件"><a href="#八、函数组件和类组件" class="headerlink" title="八、函数组件和类组件"></a>八、函数组件和类组件</h2><blockquote>
-<p>注意：</p>
-<ol>
-<li>函数式组件申明时首字母必须大写，函数必须有返回值。</li>
-<li>ReactDOM.render() 中必须有组件标签。</li>
-<li>类式组件必须继承父类 extends React.Component。</li>
-<li>类式组件必须有 render 和它的返回值。</li>
-</ol>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/babel"</span><span class="token operator">></span>
+    <span class="token comment" spellcheck="true">// 创建组件</span>
+    <span class="token keyword">class</span> <span class="token class-name">Weather</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 初始化状态</span>
+        state <span class="token operator">=</span> <span class="token punctuation">{</span>isHot<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> wind<span class="token punctuation">:</span> <span class="token string">'微风'</span><span class="token punctuation">}</span>
+        <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">const</span> <span class="token punctuation">{</span>isHot<span class="token punctuation">,</span> wind<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state
+            <span class="token keyword">return</span> <span class="token operator">&lt;</span>h1 onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>changeWeather<span class="token punctuation">}</span><span class="token operator">></span>今天天气很<span class="token punctuation">{</span>isHot <span class="token operator">?</span> <span class="token string">'炎热'</span> <span class="token punctuation">:</span> <span class="token string">'凉爽'</span><span class="token punctuation">}</span>，<span class="token punctuation">{</span>wind<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
+            <span class="token comment" spellcheck="true">// 自定义方法，要写成赋值语句+箭头函数的形式，箭头函数会去找外层函数的this，即组件实例对象</span>
+            changeWeather <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+                <span class="token keyword">const</span> isHot <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>isHot
+                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>isHot<span class="token punctuation">:</span> <span class="token operator">!</span>isHot<span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 渲染组件到页面</span>
+    ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>Weater<span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'test'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>在使用类创建组件时，所有自定义的方法都要写成赋值语句 + 箭头函数的形式。</p>
 </blockquote>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;03_component_basic&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-  &lt;div id="example1"&gt;&lt;/div&gt;
-  &lt;div id="example2"&gt;&lt;/div&gt;
-
-  &lt;script type="text/javascript" src="../js/react.development.js"&gt;&lt;/script&gt;
-  &lt;script type="text/javascript" src="../js/react-dom.development.js"&gt;&lt;/script&gt;
-  &lt;script type="text/javascript" src="../js/babel.min.js"&gt;&lt;/script&gt;
-
-  &lt;script type="text/babel"&gt;
-    // 1. 定义组件
-    /*方式1: 工厂函数组件(简单组件)*/
-    function MyComponent () {
-      return &lt;h2&gt;工厂函数组件(简单组件)&lt;/h2&gt;
-    }
-    /*方式2: ES6类组件(复杂组件)*/
-    class MyComponent2 extends React.Component {
-      render () {
-          // render放在类MyComponent2的原型对象上供实例使用，它的this是MyComponent2实例对象&lt;=&gt;MyComponent2组件实例对象。
-        console.log(this) // MyComponent2的实例对象
-        return &lt;h2&gt;ES6类组件(复杂组件)&lt;/h2&gt;
-      }
-    }
-    // 2. 渲染组件标签到页面
-    ReactDOM.render(&lt;MyComponent /&gt;, document.getElementById('example1'))
-    ReactDOM.render(&lt;MyComponent2 /&gt;, document.getElementById('example2'))
-    /* 
-        执行了ReactDOM.render(&lt;MyComponent /&gt; ... )后，发生了什么？
-            1. React解析组件标签，找到MyComponent组件。
-            2. 若发现组件是函数定义的，随后调用该函数，将返回的虚拟DOM转化为真实DOM呈现到页面中。
-            3. 若发现组件是类定义的，随后new出该类的实例，并通过该实例调用原型上的render方法
-    */
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre><script>
+<h2 id="三、State-总结"><a href="#三、State-总结" class="headerlink" title="三、State 总结"></a>三、State 总结</h2><ul>
+<li><p>state 是组件对象最重要的属性, 值是对象(可以包含多个数据)</p>
+</li>
+<li><p>组件被称为”状态机”, 通过更新组件的 state 来更新对应的页面显示(重新渲染组件)</p>
+</li>
+<li><p>组件中 render 方法的 this 为组件实例对象</p>
+</li>
+<li><p>自定义方法中 this 为 undefined 解决：</p>
+<ul>
+<li>强制绑定 this：bind()</li>
+<li>箭头函数</li>
+</ul>
+</li>
+<li><p>状态数据不能直接修改，需要使用 setState</p>
+</li>
+</ul>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1315,7 +1256,7 @@ console.log(VDOM instanceof Object) // true</code></pre><p><img src="/medias/loa
                     </span>
                     <a href="http://adaichan.com" class="b-link-green">兴趣使然の边缘人小站</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2021/02/13/37.react-quan-jia-tong-day-01/" class="b-link-green">React 全家桶 day 01</a>
+                    <a href="/2021/02/16/38.react-quan-jia-tong-day-02/" class="b-link-green">React 全家桶 day 02</a>
                 </p>
             </div>
 
@@ -1639,25 +1580,27 @@ console.log(VDOM instanceof Object) // true</code></pre><p><img src="/medias/loa
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/02/14/38.react-quan-jia-tong-day-02/">
+                <a href="/2021/02/18/39.react-quan-jia-tong-day-03/">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/38.jpg" class="responsive-img" alt="React 全家桶 day 02">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/39.jpg" class="responsive-img" alt="React 全家桶 day 03">
                         
-                        <span class="card-title">React 全家桶 day 02</span>
+                        <span class="card-title">React 全家桶 day 03</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、组件实例三大属性由于函数式组件没有自己的 this，也没有实例，更别说实例上的属性了。但是最新的 React 有了 hooks 可以让函数式组件使用三大属性。
-
-        document.querySelectorAll('.g
+                            一、Props 基本使用&lt;script type=”text/babel”&gt;
+    // 创建组件
+    class Person extends React.Component{
+        render(){
+   
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-14
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-18
                         </span>
                         <span class="publish-author">
                             
@@ -1693,32 +1636,37 @@ console.log(VDOM instanceof Object) // true</code></pre><p><img src="/medias/loa
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/12/36.yi-chu-yuan-su/">
+                <a href="/2021/02/14/37.react-quan-jia-tong-day-01/">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/36.jpg" class="responsive-img" alt="移除元素">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/37.jpg" class="responsive-img" alt="React 全家桶 day 01">
                         
-                        <span class="card-title">移除元素</span>
+                        <span class="card-title">React 全家桶 day 01</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            移除元素：给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。
-不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并 原地 修改输入数组。
-元素的顺序可以改变。你不需要考
+                            一、React 简介
+概念：
+用于构建用户界面的 JavaScript 库。即 React 只关注视图层。
+比如有个需求：在页面上展示一些信息，之前的话是分三步走：
+
+发送请求获取后台接口数据
+处理数据（对数组的遍历、过滤等格式整理）
+使用
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-12
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Algorithm/" class="post-category" target="_blank">
-                                    Algorithm
+                            <a href="/categories/前端/" class="post-category" target="_blank">
+                                    前端
                                 </a>
                             
                             
@@ -1728,8 +1676,12 @@ console.log(VDOM instanceof Object) // true</code></pre><p><img src="/medias/loa
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LeetCode/" target="_blank">
-                        <span class="chip bg-color">LeetCode</span>
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                    <a href="/tags/React/" target="_blank">
+                        <span class="chip bg-color">React</span>
                     </a>
                     
                 </div>
@@ -1891,7 +1843,7 @@ console.log(VDOM instanceof Object) // true</code></pre><p><img src="/medias/loa
 			
 			
                 <i class="fa fa-area-chart"></i>&nbsp;字数统计:&nbsp;
-                <span class="white-color">81.3k</span> 字
+                <span class="white-color">85.6k</span> 字
             
 			
 			

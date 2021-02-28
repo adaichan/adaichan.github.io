@@ -6,12 +6,18 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="React 全家桶 day 02, note blog algorithm adaichan">
+    <meta name="keywords" content="React 全家桶 day 06, note blog algorithm adaichan">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="一、组件实例三大属性由于函数式组件没有自己的 this，也没有实例，更别说实例上的属性了。但是最新的 React 有了 hooks 可以让函数式组件使用三大属性。
+    <meta name="description" content="一、高阶函数、柯里化高阶函数：如果一个函数符合以下其中一点，就是高阶函数。
 
-        document.querySelectorAll(&#39;.g">
+若 A 函数接收的参数是一个函数，则 A 为高阶函数。
+若 A 函数调用后，它的返回值仍是一个函数，则 A 为高阶函数。
+
+常见的高阶函数：
+
+Promise
+n">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +25,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>React 全家桶 day 02 | 兴趣使然の边缘人小站</title>
+    <title>React 全家桶 day 06 | 兴趣使然の边缘人小站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -805,13 +811,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/38.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/42.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        React 全家桶 day 02
+                        React 全家桶 day 06
                     </div>
                 </div>
             </div>
@@ -951,7 +957,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-14
+                    2021-02-24
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -965,14 +971,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        112
+                        536
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -989,7 +995,73 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、组件实例三大属性"><a href="#一、组件实例三大属性" class="headerlink" title="一、组件实例三大属性"></a>一、组件实例三大属性</h2><p>由于函数式组件没有自己的 this，也没有实例，更别说实例上的属性了。但是最新的 React 有了 hooks 可以让函数式组件使用三大属性。</p>
+                <h2 id="一、高阶函数、柯里化"><a href="#一、高阶函数、柯里化" class="headerlink" title="一、高阶函数、柯里化"></a>一、高阶函数、柯里化</h2><p><strong>高阶函数</strong>：如果一个函数符合以下其中一点，就是高阶函数。</p>
+<ol>
+<li>若 A 函数接收的参数是一个函数，则 A 为高阶函数。</li>
+<li>若 A 函数调用后，它的返回值仍是一个函数，则 A 为高阶函数。</li>
+</ol>
+<p>常见的高阶函数：</p>
+<ol>
+<li><p>Promise</p>
+<p>new Promise((excutor)=&gt;{})，在 new 一个 Promise 时，需要传一个执行器函数 excutor 作为参数。</p>
+</li>
+<li><p>setTimeout(()=&gt;{})，接收参数是函数</p>
+</li>
+<li><p>数组的常见方法：arr.map()，接收参数是函数</p>
+</li>
+</ol>
+<p><strong>函数柯里化</strong>：通过函数调用继续返回函数的方式，实现多次接收参数最后统一处理的函数编码形式。</p>
+<p><strong>函数柯里化案例：</strong></p>
+<p>之前的 saveUsername 和 savePassword 等用来保存用户名、密码的方法代码相似度高，可以定义一个 saveFormData 方法专门用来保存表单数据。</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">&lt;</span><span class="token operator">!</span>DOCTYPE html<span class="token operator">></span>
+<span class="token operator">&lt;</span>html<span class="token operator">></span>
+<span class="token operator">&lt;</span>head<span class="token operator">></span>
+  <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span>title<span class="token operator">></span>高阶函数、柯里化<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"example"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span> src<span class="token operator">=</span><span class="token string">"../js/react.development.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span> src<span class="token operator">=</span><span class="token string">"../js/react-dom.development.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span> src<span class="token operator">=</span><span class="token string">"../js/babel.min.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/babel"</span><span class="token operator">></span>
+  <span class="token keyword">class</span> <span class="token class-name">Login</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+       <span class="token comment" spellcheck="true">// 初始化状态</span>
+    state <span class="token operator">=</span> <span class="token punctuation">{</span>
+      username<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+      password<span class="token punctuation">:</span> <span class="token string">''</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 保存表单数据到状态中</span>
+    saveFormData <span class="token operator">=</span> <span class="token punctuation">(</span>dataType<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>dataType<span class="token punctuation">,</span>event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true">// 对象中的属性名是字符串，dataType相当于'dataType'，需要加上[]让它成为变量而不是字符串</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">[</span>dataType<span class="token punctuation">]</span><span class="token punctuation">:</span>event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 表单提交的回调</span>
+    handleSubmit <span class="token operator">=</span> <span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 阻止事件的默认行为: 阻止提交表单</span>
+        <span class="token keyword">const</span> <span class="token punctuation">{</span>username<span class="token punctuation">,</span>password<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state
+        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`你输入的用户名是：</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>username<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">，你输入的密码是：</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>password<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    render <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>form onSubmit<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleSubmit<span class="token punctuation">}</span><span class="token operator">></span>
+            用户名：<span class="token operator">&lt;</span>input onChange<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">saveFormData</span><span class="token punctuation">(</span><span class="token string">'username'</span><span class="token punctuation">)</span><span class="token punctuation">}</span> type<span class="token operator">=</span><span class="token string">"text"</span> name<span class="token operator">=</span><span class="token string">"username"</span><span class="token operator">/</span><span class="token operator">></span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>
+            密码<span class="token punctuation">:</span><span class="token operator">&lt;</span>input onChange<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">saveFormData</span><span class="token punctuation">(</span><span class="token string">'password'</span><span class="token punctuation">)</span><span class="token punctuation">}</span> type<span class="token operator">=</span><span class="token string">"password"</span> name<span class="token operator">=</span><span class="token string">"password"</span><span class="token operator">/</span><span class="token operator">></span><span class="token operator">&amp;</span>nbsp<span class="token punctuation">;</span>
+            <span class="token operator">&lt;</span>button<span class="token operator">></span>登录<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>form<span class="token operator">></span>
+      <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment" spellcheck="true">// 渲染组件</span>
+  ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>Login<span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'example'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1158,7 +1230,7 @@
                     </span>
                     <a href="http://adaichan.com" class="b-link-green">兴趣使然の边缘人小站</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2021/02/14/38.react-quan-jia-tong-day-02/" class="b-link-green">React 全家桶 day 02</a>
+                    <a href="/2021/02/24/42.react-quan-jia-tong-day-06/" class="b-link-green">React 全家桶 day 06</a>
                 </p>
             </div>
 
@@ -1483,25 +1555,31 @@
                 <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2021/02/14/38.react-quan-jia-tong-day-02/">
+                <a href="/2021/02/24/42.react-quan-jia-tong-day-06/">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/38.jpg" class="responsive-img" alt="React 全家桶 day 02">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/42.jpg" class="responsive-img" alt="React 全家桶 day 06">
                         
-                        <span class="card-title">React 全家桶 day 02</span>
+                        <span class="card-title">React 全家桶 day 06</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、组件实例三大属性由于函数式组件没有自己的 this，也没有实例，更别说实例上的属性了。但是最新的 React 有了 hooks 可以让函数式组件使用三大属性。
+                            一、高阶函数、柯里化高阶函数：如果一个函数符合以下其中一点，就是高阶函数。
 
-        document.querySelectorAll('.g
+若 A 函数接收的参数是一个函数，则 A 为高阶函数。
+若 A 函数调用后，它的返回值仍是一个函数，则 A 为高阶函数。
+
+常见的高阶函数：
+
+Promise
+n
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-14
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-24
                             </span>
                         <span class="publish-author">
                             
@@ -1538,30 +1616,25 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/13/37.react-quan-jia-tong-day-01/">
+                <a href="/2021/02/22/41.react-quan-jia-tong-day-05/">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/37.jpg" class="responsive-img" alt="React 全家桶 day 01">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/41.jpg" class="responsive-img" alt="React 全家桶 day 05">
                         
-                        <span class="card-title">React 全家桶 day 01</span>
+                        <span class="card-title">React 全家桶 day 05</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、React 简介
-概念：
-用于构建用户界面的 JavaScript 库。即 React 只关注视图层。
-比如有个需求：在页面上展示一些信息，之前的话是分三步走：
-
-发送请求获取后台接口数据
-处理数据（对数组的遍历、过滤等格式整理）
-使用
+                            一、React 事件处理1)    通过 onXxx 属性指定组件的事件处理函数(注意大小写)
+​    a.    React 使用的是自定义(合成)事件，而不是使用的原生DOM事件，兼容性更好
+​    b.    React 中的事件
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-13
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-22
                             </span>
                         <span class="publish-author">
                             
@@ -1745,7 +1818,7 @@
 			
 			
                 <i class="fa fa-area-chart"></i>&nbsp;字数统计:&nbsp;
-                <span class="white-color">81.3k</span> 字
+                <span class="white-color">85.6k</span> 字
             
 			
 			
