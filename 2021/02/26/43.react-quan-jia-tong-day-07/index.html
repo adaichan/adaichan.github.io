@@ -6,47 +6,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="罗马数字转整数, note blog algorithm adaichan">
+    <meta name="keywords" content="React 全家桶 day 07, note blog algorithm adaichan">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="罗马数字转整数：罗马数字包含以下七种字符: I，V，X，L，C，D 和 M。
-
-
-
-字符
-数值
-
-
-
-I
-1
-
-
-V
-5
-
-
-X
-10
-
-
-L
-50
-
-
-C
-100
-
-
-D
-500
-
-
-M
-1000
-
-
-例如， 罗马数字 2 写做 II ，">
+    <meta name="description" content="一、组件的生命周期生命周期回调函数 &amp;lt;=&amp;gt; 生命周期钩子：在组件特定的生命周期里 React 可以自动帮忙调用生命周期钩子里的函数，来完成特定的功能。
+需求: 自定义组件
+   1. 让指定的文本做显示/隐藏的动画
+   2. ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -54,7 +20,7 @@ M
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>罗马数字转整数 | 兴趣使然の边缘人小站</title>
+    <title>React 全家桶 day 07 | 兴趣使然の边缘人小站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -840,13 +806,13 @@ M
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/31.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/43.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        罗马数字转整数
+                        React 全家桶 day 07
                     </div>
                 </div>
             </div>
@@ -958,8 +924,12 @@ M
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/LeetCode/" target="_blank">
-                                <span class="chip bg-color">LeetCode</span>
+                            <a href="/tags/JavaScript/" target="_blank">
+                                <span class="chip bg-color">JavaScript</span>
+                            </a>
+                        
+                            <a href="/tags/React/" target="_blank">
+                                <span class="chip bg-color">React</span>
                             </a>
                         
                     </div>
@@ -970,8 +940,8 @@ M
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Algorithm/" class="post-category" target="_blank">
-                                Algorithm
+                            <a href="/categories/前端/" class="post-category" target="_blank">
+                                前端
                             </a>
                         
                     </div>
@@ -982,7 +952,7 @@ M
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-06
+                    2021-02-26
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -996,14 +966,14 @@ M
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        604
+                        417
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        1 分
                     </div>
                     
                 
@@ -1020,125 +990,68 @@ M
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>罗马数字转整数：</strong>罗马数字包含以下七种字符: I，V，X，L，C，D 和 M。</p>
-<table>
-<thead>
-<tr>
-<th>字符</th>
-<th>数值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>I</td>
-<td>1</td>
-</tr>
-<tr>
-<td>V</td>
-<td>5</td>
-</tr>
-<tr>
-<td>X</td>
-<td>10</td>
-</tr>
-<tr>
-<td>L</td>
-<td>50</td>
-</tr>
-<tr>
-<td>C</td>
-<td>100</td>
-</tr>
-<tr>
-<td>D</td>
-<td>500</td>
-</tr>
-<tr>
-<td>M</td>
-<td>1000</td>
-</tr>
-</tbody></table>
-<p>例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。</p>
-<p>通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：</p>
-<ul>
-<li>I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。</li>
-<li>X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。 </li>
-<li>C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。</li>
-</ul>
-<p>给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 范围内。</p>
-<ul>
-<li><p>示例 1:</p>
-<p>输入: “III”<br>输出: 3</p>
-</li>
-<li><p>示例 2:</p>
-<p>输入: “IV”<br>输出: 4</p>
-</li>
-<li><p>示例 3:</p>
-<p>输入: “IX”<br>输出: 9</p>
-</li>
-<li><p>示例 4:</p>
-<p>输入: “LVIII”<br>输出: 58<br>解释: L = 50, V= 5, III = 3.</p>
-</li>
-<li><p>示例 5:</p>
-<p>输入: “MCMXCIV”<br>输出: 1994<br>解释: M = 1000, CM = 900, XC = 90, IV = 4.</p>
-</li>
-</ul>
-<p>提示：</p>
-<ul>
-<li><p>1 &lt;= s.length &lt;= 15</p>
-</li>
-<li><p>s 仅含字符 (‘I’, ‘V’, ‘X’, ‘L’, ‘C’, ‘D’, ‘M’)</p>
-</li>
-<li><p>题目数据保证 s 是一个有效的罗马数字，且表示整数在范围 [1, 3999] 内</p>
-</li>
-<li><p>题目所给测试用例皆符合罗马数字书写规则，不会出现跨位等情况。</p>
-</li>
-<li><p>IL 和 IM 这样的例子并不符合题目要求，49 应写作 XLIX，999 应写作 CMXCIX 。</p>
-</li>
-</ul>
-<p><strong>题解：</strong></p>
-<pre><code>var romanToInt = function(s) {
-    const map = {
-        I : 1,
-        IV: 4,
-        V: 5,
-        IX: 9,
-        X: 10,
-        XL: 40,
-        L: 50,
-        XC: 90,
-        C: 100,
-        CD: 400,
-        D: 500,
-        CM: 900,
-        M: 1000
-    };
-    let ans = 0;
-    for(let i = 0;i &lt; s.length;) {
-        if(i + 1 &lt; s.length &amp;&amp; map[s.substring(i, i+2)]) {
-            ans += map[s.substring(i, i+2)];
-            i += 2;
-        } else {
-            ans += map[s.substring(i, i+1)];
-            i ++;
-        }
-    }
-    return ans;
-};</code></pre><pre><code>var romanToInt = function(s) {
-    var hashNum = {
-        "I":1,
-        "V":5,
-        "X":10,
-        "L":50,
-        "C":100,
-        "D":500,
-        "M":1000
-    }
-    var result = 0;
-    for(let i = 0;i&lt;s.length;i++){
-        hashNum[s[i]] &lt; hashNum[s[i+1]] ? result -= hashNum[s[i]] : result += hashNum[s[i]]
-    }
-    return result;
-};</code></pre><script>
+                <h2 id="一、组件的生命周期"><a href="#一、组件的生命周期" class="headerlink" title="一、组件的生命周期"></a>一、组件的生命周期</h2><p><strong>生命周期回调函数 &lt;=&gt; 生命周期钩子</strong>：在组件特定的生命周期里 React 可以自动帮忙调用生命周期钩子里的函数，来完成特定的功能。</p>
+<p>需求: 自定义组件</p>
+<pre><code>   1. 让指定的文本做显示/隐藏的动画
+   2. 切换时间为2s
+   3. 点击按钮从界面中移除组件界面</code></pre><pre class="line-numbers language-js"><code class="language-js"><span class="token operator">&lt;</span><span class="token operator">!</span>DOCTYPE html<span class="token operator">></span>
+<span class="token operator">&lt;</span>html<span class="token operator">></span>
+<span class="token operator">&lt;</span>head<span class="token operator">></span>
+  <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span>title<span class="token operator">></span>ComponentLife<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"example"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span> src<span class="token operator">=</span><span class="token string">"../js/react.development.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span> src<span class="token operator">=</span><span class="token string">"../js/react-dom.development.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span> src<span class="token operator">=</span><span class="token string">"../js/babel.min.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/babel"</span><span class="token operator">></span>
+    <span class="token comment" spellcheck="true">// 创建组件</span>
+    <span class="token keyword">class</span> <span class="token class-name">Life</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+
+        state <span class="token operator">=</span> <span class="token punctuation">{</span>opacity<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">}</span>
+
+        death <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 卸载组件</span>
+            ReactDOM<span class="token punctuation">.</span><span class="token function">unmountComponentAtNode</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'example'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment" spellcheck="true">// componentDidMount：在组件挂载完毕后调用</span>
+        componentDidMount <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 在此方法中启动定时器/绑定监听/发送ajax请求</span>
+              <span class="token keyword">this</span><span class="token punctuation">.</span>timer <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">// 获取原状态</span>
+                <span class="token keyword">let</span> <span class="token punctuation">{</span>opacity<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state
+                opacity <span class="token operator">-</span><span class="token operator">=</span> <span class="token number">0.1</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>opacity <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> opacity <span class="token operator">=</span> <span class="token number">1</span>
+                <span class="token comment" spellcheck="true">// 更新状态</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>opacity<span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment" spellcheck="true">// componentWillUnmount：组件将要卸载时调用</span>
+        componentWillUnmount <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 清除定时器/解除监听</span>
+              <span class="token comment" spellcheck="true">// 清除定时器</span>
+            <span class="token function">clearInterval</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>timer<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment" spellcheck="true">// render：初始化渲染以及状态更新之后调用</span>
+        <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span><span class="token punctuation">(</span>
+                <span class="token operator">&lt;</span>div<span class="token operator">></span>
+                    <span class="token operator">&lt;</span>h2 style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>opacity<span class="token punctuation">:</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>opacity<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">></span>天气热得不得了！<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">></span>
+                    <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>death<span class="token punctuation">}</span><span class="token operator">></span>是的呀<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+            <span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 渲染组件</span>
+    ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>Life content<span class="token operator">=</span><span class="token string">"react学不会, 怎么办?"</span><span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'example'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="二、React-生命周期（旧）"><a href="#二、React-生命周期（旧）" class="headerlink" title="二、React 生命周期（旧）"></a>二、React 生命周期（旧）</h2><p><img src="/medias/loading.gif" data-original="2.png" alt=""></p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1306,7 +1219,7 @@ M
                     </span>
                     <a href="http://adaichan.com" class="b-link-green">兴趣使然の边缘人小站</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2021/02/06/31.luo-ma-shu-zi-zhuan-zheng-shu/" class="b-link-green">罗马数字转整数</a>
+                    <a href="/2021/02/26/43.react-quan-jia-tong-day-07/" class="b-link-green">React 全家桶 day 07</a>
                 </p>
             </div>
 
@@ -1626,53 +1539,54 @@ M
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/02/08/33.you-xiao-de-gua-hao/">
+                <a href="/2021/02/26/43.react-quan-jia-tong-day-07/">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/33.jpg" class="responsive-img" alt="有效的括号">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/43.jpg" class="responsive-img" alt="React 全家桶 day 07">
                         
-                        <span class="card-title">有效的括号</span>
+                        <span class="card-title">React 全家桶 day 07</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            有效的括号：给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串 s ，判断字符串是否有效。
-有效字符串需满足：
-
-左括号必须用相同类型的右括号闭合。
-左括号必须以正确的顺序闭合。
-
-
-示例 1：
-输入：s = “()”
+                            一、组件的生命周期生命周期回调函数 &lt;=&gt; 生命周期钩子：在组件特定的生命周期里 React 可以自动帮忙调用生命周期钩子里的函数，来完成特定的功能。
+需求: 自定义组件
+   1. 让指定的文本做显示/隐藏的动画
+   2. 
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Algorithm/" class="post-category" target="_blank">
-                                    Algorithm
+                            <a href="/categories/前端/" class="post-category" target="_blank">
+                                    前端
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LeetCode/" target="_blank">
-                        <span class="chip bg-color">LeetCode</span>
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                    <a href="/tags/React/" target="_blank">
+                        <span class="chip bg-color">React</span>
                     </a>
                     
                 </div>
@@ -1686,33 +1600,38 @@ M
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/04/30.hui-wen-shu/">
+                <a href="/2021/02/24/42.react-quan-jia-tong-day-06/">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/30.jpg" class="responsive-img" alt="回文数">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/42.jpg" class="responsive-img" alt="React 全家桶 day 06">
                         
-                        <span class="card-title">回文数</span>
+                        <span class="card-title">React 全家桶 day 06</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            回文数：给你一个整数 x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。回文数是指正序（从左向右）和倒序（从右向左）都一样的整数。如：121 是回文，而 123 不是。
+                            一、高阶函数、柯里化高阶函数：如果一个函数符合以下其中一点，就是高阶函数。
 
-示例 1：
-输入：x = 121输出：tr
+若 A 函数接收的参数是一个函数，则 A 为高阶函数。
+若 A 函数调用后，它的返回值仍是一个函数，则 A 为高阶函数。
+
+常见高阶函数：
+
+Promise
+ne
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-04
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-24
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Algorithm/" class="post-category" target="_blank">
-                                    Algorithm
+                            <a href="/categories/前端/" class="post-category" target="_blank">
+                                    前端
                                 </a>
                             
                             
@@ -1722,8 +1641,12 @@ M
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LeetCode/" target="_blank">
-                        <span class="chip bg-color">LeetCode</span>
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                    <a href="/tags/React/" target="_blank">
+                        <span class="chip bg-color">React</span>
                     </a>
                     
                 </div>
