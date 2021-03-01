@@ -485,11 +485,11 @@
   </entry>
   
   <entry>
-    <title>Echarts 甘特图</title>
+    <title>ECharts 甘特图</title>
     <link href="http://adaichan.com/2021/01/24/26.echarts-gan-te-tu/"/>
     <id>http://adaichan.com/2021/01/24/26.echarts-gan-te-tu/</id>
     <published>2021-01-23T16:00:00.000Z</published>
-    <updated>2021-02-11T02:55:55.625Z</updated>
+    <updated>2021-03-01T12:16:52.195Z</updated>
     
     <summary type="html">
     
@@ -497,7 +497,7 @@
       
         
         
-          &lt;h2 id=&quot;一、引入&quot;&gt;&lt;a href=&quot;#一、引入&quot; class=&quot;headerlink&quot; title=&quot;一、引入&quot;&gt;&lt;/a&gt;一、引入&lt;/h2&gt;&lt;p&gt;进入 Echarts 官网：&lt;a
+          &lt;h2 id=&quot;一、引入&quot;&gt;&lt;a href=&quot;#一、引入&quot; class=&quot;headerlink&quot; title=&quot;一、引入&quot;&gt;&lt;/a&gt;一、引入&lt;/h2&gt;&lt;p&gt;进入 ECharts 官网：&lt;a
         
       
     
@@ -508,7 +508,7 @@
     
       <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
     
-      <category term="Echarts" scheme="http://adaichan.com/tags/Echarts/"/>
+      <category term="ECharts" scheme="http://adaichan.com/tags/ECharts/"/>
     
   </entry>
   

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://adaichan.com/2021/01/24/26.echarts-gan-te-tu/</loc>
+    <lastmod>2021-03-01</lastmod>
+  </url>  <url>
     <loc>http://adaichan.com/2021/02/26/43.react-quan-jia-tong-day-07/</loc>
     <lastmod>2021-03-01</lastmod>
   </url>  <url>
@@ -50,9 +53,6 @@
     <lastmod>2021-02-14</lastmod>
   </url>  <url>
     <loc>http://adaichan.com/2021/01/28/27.element-ui-zu-jian/</loc>
-    <lastmod>2021-02-11</lastmod>
-  </url>  <url>
-    <loc>http://adaichan.com/2021/01/24/26.echarts-gan-te-tu/</loc>
     <lastmod>2021-02-11</lastmod>
   </url>  <url>
     <loc>http://adaichan.com/2021/01/20/25.bootstrap-table/</loc>

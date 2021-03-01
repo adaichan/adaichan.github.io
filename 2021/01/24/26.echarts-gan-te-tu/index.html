@@ -6,11 +6,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Echarts 甘特图, note blog algorithm adaichan">
+    <meta name="keywords" content="ECharts 甘特图, note blog algorithm adaichan">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="一、引入进入 Echarts 官网：https://echarts.apache.org/zh/index.html ，没有用过的话最好先过一遍它的5分钟快速入门教程。
-值得注意的是在使用 Echarts 时 jQuery 的库也要按需引入">
+    <meta name="description" content="一、引入进入 ECharts 官网：https://echarts.apache.org/zh/index.html ，没有用过的话最好先过一遍它的5分钟快速入门教程。
+值得注意的是在使用 ECharts 时 jQuery 的库也要按需引入">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Echarts 甘特图 | 兴趣使然の边缘人小站</title>
+    <title>ECharts 甘特图 | 兴趣使然の边缘人小站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -810,7 +810,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Echarts 甘特图
+                        ECharts 甘特图
                     </div>
                 </div>
             </div>
@@ -926,8 +926,8 @@
                                 <span class="chip bg-color">JavaScript</span>
                             </a>
                         
-                            <a href="/tags/Echarts/" target="_blank">
-                                <span class="chip bg-color">Echarts</span>
+                            <a href="/tags/ECharts/" target="_blank">
+                                <span class="chip bg-color">ECharts</span>
                             </a>
                         
                     </div>
@@ -988,18 +988,18 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、引入"><a href="#一、引入" class="headerlink" title="一、引入"></a>一、引入</h2><p>进入 Echarts 官网：<a href="https://echarts.apache.org/zh/index.html" target="_blank" rel="noopener">https://echarts.apache.org/zh/index.html</a> ，没有用过的话最好先过一遍它的5分钟快速入门教程。</p>
-<p><strong>值得注意的是在使用 Echarts 时 jQuery 的库也要按需引入</strong>。推荐使用 jsDelivr 方式引入。</p>
+                <h2 id="一、引入"><a href="#一、引入" class="headerlink" title="一、引入"></a>一、引入</h2><p>进入 ECharts 官网：<a href="https://echarts.apache.org/zh/index.html" target="_blank" rel="noopener">https://echarts.apache.org/zh/index.html</a> ，没有用过的话最好先过一遍它的5分钟快速入门教程。</p>
+<p><strong>值得注意的是在使用 ECharts 时 jQuery 的库也要按需引入</strong>。推荐使用 jsDelivr 方式引入。</p>
 <pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span> src<span class="token operator">=</span><span class="token string">"jQuery存放路径/jquery.min.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
 <span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span> src<span class="token operator">=</span><span class="token string">"echarts存放/echarts.min.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="二、甘特图"><a href="#二、甘特图" class="headerlink" title="二、甘特图"></a>二、甘特图</h2><p>参考 CSDN 社区的这篇博客：<a href="https://blog.csdn.net/yixu0534/article/details/82785119" target="_blank" rel="noopener">https://blog.csdn.net/yixu0534/article/details/82785119</a></p>
-<p>他的甘特图不兼容高版本的 Echarts，使用时需要引入 4.0.2 版本。</p>
+<p>他的甘特图不兼容高版本的 ECharts，使用时需要引入 4.0.2 版本。</p>
 <p>引入后发现我之前用 5.0.1 版本制作的树，饼、柱状图表默认样式变丑了，还有部分图表无法显示，体验不是很好。所以想要自定义一个不错的甘特图还是得慢慢看文档说明。</p>
 <h2 id="三、部分代码"><a href="#三、部分代码" class="headerlink" title="三、部分代码"></a>三、部分代码</h2><pre><code>// head
 &lt;head&gt;
     &lt;meta charset="UTF-8" /&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
-    &lt;title&gt;Echarts 图表&lt;/title&gt;
+    &lt;title&gt;ECharts 图表&lt;/title&gt;
     &lt;script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"&gt;&lt;/script&gt;
     &lt;script src="https://cdn.jsdelivr.net/npm/echarts@5.0.1/dist/echarts.min.js"&gt;&lt;/script&gt;
 &lt;/head&gt;</code></pre><pre><code>// body
@@ -1064,8 +1064,8 @@
   }
 &lt;/style&gt;</code></pre><h2 id="四、效果"><a href="#四、效果" class="headerlink" title="四、效果"></a>四、效果</h2><p><img src="/medias/loading.gif" data-original="4.1.png" alt=""></p>
 <p>基本情况就是这样，具体操作可参考官方教程：<a href="https://echarts.apache.org/zh/index.html" target="_blank" rel="noopener">https://echarts.apache.org/zh/index.html</a></p>
-<h2 id="五、报错"><a href="#五、报错" class="headerlink" title="五、报错"></a>五、报错</h2><p>Echarts 报错：<strong>“export ‘default’ (imported as ‘echarts’) was not found in ‘echarts’</strong></p>
-<p>这个是 Echarts 版本太新导致的，引入时这样引入就行了：</p>
+<h2 id="五、报错"><a href="#五、报错" class="headerlink" title="五、报错"></a>五、报错</h2><p>ECharts 报错：<strong>“export ‘default’ (imported as ‘echarts’) was not found in ‘echarts’</strong></p>
+<p>这个是 ECharts 版本太新导致的，引入时这样引入就行了：</p>
 <pre><code>import * as echarts from 'echarts'</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1234,7 +1234,7 @@
                     </span>
                     <a href="http://adaichan.com" class="b-link-green">兴趣使然の边缘人小站</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2021/01/24/26.echarts-gan-te-tu/" class="b-link-green">Echarts 甘特图</a>
+                    <a href="/2021/01/24/26.echarts-gan-te-tu/" class="b-link-green">ECharts 甘特图</a>
                 </p>
             </div>
 
