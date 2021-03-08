@@ -6,11 +6,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Git 填坑之 error 整理, note blog algorithm adaichan">
+    <meta name="keywords" content="浏览器差异及渲染, note blog algorithm adaichan">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="一、Git 环境配置下载安装流程就不一一赘述了，安装好之后在命令行输入 git 回车或鼠标右键界面空白处查看是否出现 Git GUI Here Git Bash Here 检查是否安装成功。
-Git 安装好去 GitHub 上注册一个账号，">
+    <meta name="description" content="一、常见浏览器及其内核
+微软的新一代浏览器Microsoft Edge，宣布打算采用 Chromium 开源项目开发桌面版的 Microsoft Edge 浏览器，详情见Microsoft Edge: Making the web bett">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@ Git 安装好去 GitHub 上注册一个账号，">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Git 填坑之 error 整理 | 兴趣使然の边缘人小站</title>
+    <title>浏览器差异及渲染 | 兴趣使然の边缘人小站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -804,13 +804,13 @@ Git 安装好去 GitHub 上注册一个账号，">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/44.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Git 填坑之 error 整理
+                        浏览器差异及渲染
                     </div>
                 </div>
             </div>
@@ -922,16 +922,12 @@ Git 安装好去 GitHub 上注册一个账号，">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/GitHub/" target="_blank">
-                                <span class="chip bg-color">GitHub</span>
+                            <a href="/tags/JavaScript/" target="_blank">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
-                            <a href="/tags/Git/" target="_blank">
-                                <span class="chip bg-color">Git</span>
-                            </a>
-                        
-                            <a href="/tags/ESLint/" target="_blank">
-                                <span class="chip bg-color">ESLint</span>
+                            <a href="/tags/CSS/" target="_blank">
+                                <span class="chip bg-color">CSS</span>
                             </a>
                         
                     </div>
@@ -942,8 +938,8 @@ Git 安装好去 GitHub 上注册一个账号，">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/工具/" class="post-category" target="_blank">
-                                工具
+                            <a href="/categories/前端/" class="post-category" target="_blank">
+                                前端
                             </a>
                         
                     </div>
@@ -954,7 +950,7 @@ Git 安装好去 GitHub 上注册一个账号，">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-12-06
+                    2021-02-28
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -968,14 +964,14 @@ Git 安装好去 GitHub 上注册一个账号，">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        4k
+                        2.1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        15 分
+                        7 分
                     </div>
                     
                 
@@ -992,229 +988,106 @@ Git 安装好去 GitHub 上注册一个账号，">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、Git-环境配置"><a href="#一、Git-环境配置" class="headerlink" title="一、Git 环境配置"></a>一、Git 环境配置</h2><p>下载安装流程就不一一赘述了，安装好之后在命令行输入 <code>git</code> 回车或鼠标右键界面空白处查看是否出现 <code>Git GUI Here</code> <code>Git Bash Here</code> 检查是否安装成功。</p>
-<p>Git 安装好去 GitHub 上注册一个账号，注册好后，点击 <code>Git Bash</code>，用账号进行环境配置：</p>
-<p><strong>配置用户名</strong></p>
-<p><code>git config --global user.name "xxx"</code></p>
-<p><strong>配置邮箱</strong></p>
-<p><code>git config --global user.email "xxx@xxx.com"</code></p>
-<p><strong>生成ssh</strong><br><code>ssh-keygen -t rsa</code></p>
-<p>然后连敲三次回车键，结束后去系统盘目录下（一般在 C:\Users\你的用户名.ssh）(mac: /Users/用户/.ssh）查看是否有 <strong>ssh</strong> 文件夹生成，此文件夹中两个文件：<code>id_rsa</code> <code>id_rsa.pub</code></p>
-<p>将ssh文件夹中的公钥（ id_rsa.pub）添加到 GitHub 管理平台中，在 GitHub 个人账户的设置中找到如下界面：</p>
-<p><img src="/medias/loading.gif" data-original="1.1.png" alt=""></p>
-<p><strong>Title</strong> 随便起一个，将公钥（ <strong>id_rsa.pub</strong>）文件中内容复制粘贴到 <strong>key</strong> 中，然后点击 <strong>Ass SSH key</strong> 添加成功。</p>
-<p>在 <code>Git Bash</code> 中输入 <code>ssh -T git@github.com</code> 回车，若出现以下提示就说明配置好啦：</p>
-<p><img src="/medias/loading.gif" data-original="1.2.png" alt=""></p>
-<h2 id="二、Git-与-SVN"><a href="#二、Git-与-SVN" class="headerlink" title="二、Git 与 SVN"></a>二、Git 与 SVN</h2><h3 id="2-1-集中式-SVN"><a href="#2-1-集中式-SVN" class="headerlink" title="2.1 集中式(SVN)"></a>2.1 集中式(SVN)</h3><pre><code>SVN 因为每次存入的都是差异，需要的硬盘空间会相对的小一点，可是回滚的速度会很慢。
-优点: 
-代码存放在单一的服务器上，便于项目的管理。
-缺点: 
-服务器宕机：员工写的代码得不到保障。
-服务器炸了：整个项目的历史记录都会丢失。</code></pre><h3 id="2-2-分布式-Git"><a href="#2-2-分布式-Git" class="headerlink" title="2.2 分布式(Git)"></a>2.2 分布式(Git)</h3><pre><code>Git 每次存入的是项目的完整快照 需要的硬盘空间会相对大一点。
-Git 团队对代码做了极致压缩，最终需要的实际空间比 SVN 多不了太多，可是 Git 的回滚速度极快。</code></pre><h2 id="三、Git-命令"><a href="#三、Git-命令" class="headerlink" title="三、Git 命令"></a>三、Git 命令</h2><h3 id="3-1-底层命令"><a href="#3-1-底层命令" class="headerlink" title="3.1 底层命令"></a>3.1 底层命令</h3><pre><code>git对象
-git hash-object -w fileUrl: 生成一个key(hash值):val(压缩后的文件内容)键值对存到 .git/objects
-tree对象
-git update-index --add --cacheinfo 100644 hash test.txt: 
-往暂存区添加一条记录(让git对象对应上文件名)存到 .git/index
-git write-tree: 生成树对象存到 .git/objects
-commit对象
-echo 'first commit' | git commit-tree treehash: 生成一个提交对象存到 .git/objects
-对以上对象的查询
-git cat-file -p hash: 拿对应对象的内容
-git cat-file -t hash: 拿对应对象的类型</code></pre><h3 id="3-2-查看暂存区"><a href="#3-2-查看暂存区" class="headerlink" title="3.2 查看暂存区"></a>3.2 查看暂存区</h3><pre><code>git ls-files -s</code></pre><h3 id="3-3-高层命令"><a href="#3-3-高层命令" class="headerlink" title="3.3 高层命令"></a>3.3 高层命令</h3><p><strong>查看 Git 版本</strong></p>
-<pre><code>git --version</code></pre><p><strong>初始化配置</strong></p>
-<pre><code>git config --global user.name "xxx"
-git config --global user.email xxx@xxx.com    
-git config --list</code></pre><p><strong>初始化仓库</strong></p>
-<pre><code>git init</code></pre><p><strong>C (新增)</strong></p>
-<pre><code>在工作目录中新增文件
-git status 查看文件的状态
-git add ./ 将修改添加到暂存区
-git commit -m "msg" 将暂存区提交到版本库</code></pre><p><strong>U(修改)</strong></p>
-<pre><code>在工作目录中修改文件
-git status 查看文件的状态
-git add ./ 将修改添加到暂存区
-git commit -m "msg" 将暂存区提交到版本库</code></pre><p><strong>D(删除 &amp; 重命名)</strong></p>
-<pre><code>git rm 要删除的文件
-git mv 原文件名 新文件名：将工作目录中的文件进行重命名,再将修改添加到暂存区。
-git rm 文件名：删除工作目录中对应的文件，再将修改添加到暂存区</code></pre><p><strong>R(查询)</strong></p>
-<pre><code>git status: 查看工作目录中文件的状态(已跟踪(已提交 已暂存 已修改) 未跟踪)
-git diff: 查看未暂存的修改
-git diff --cache: 查看未提交的暂存
-git log --oneline: 查看提交记录</code></pre><h2 id="四、分支"><a href="#四、分支" class="headerlink" title="四、分支"></a>四、分支</h2><p><strong>分支的本质其实就是一个提交对象！</strong>所有的分支都会有机会被HEAD所引用(HEAD一个时刻只会指向一个分支)，当我们有新的提交时HEAD会携带当前持有的分支往前移动。<br><strong>HEAD：</strong><br>是一个指针，默认指向master分支，切换分支时其实就是让HEAD指向不同分支。<br>每次有新提交时，HEAD都会带着当前指向的分支一起往前移。</p>
-<p><strong>分支命令：</strong></p>
-<pre><code>git log --oneline --decorate --graph --all: 查看整个项目的分支图  
-git branch: 查看分支列表
-git branch -v: 查看分支指向的最新的提交
-git branch name: 在当前提交对象上创建新的分支
-git branch name commithash: 在指定的提交对象上创建新的分支
-git checkout name: 切换分支
-git branch -d name: 删除空的分支 删除已经被合并的分支
-git branch -D name: 强制删除分支 
-创建分支: git branch branchname
-切换分支: git checkout  branchname
-创建&amp;切换分支: git checkout -b branchname
-版本穿梭(时光机): git branch branchname commitHash  
-普通删除分支: git branch -d branchname
-强制删除分支: git branch -D branchname
-合并分支: git merge branchname
-快进合并 --&gt; 不会产生冲突
-典型合并 --&gt; 有机会产生冲突
-解决冲突 --&gt; 打开冲突的文件进行修改 add commit </code></pre><pre><code>查看分支列表: git branch
-查看合并到当前分支的分支列表: git branch --merged
-一旦出现在这个列表中就应该删除
-查看没有合并到当前分支的分支列表: git branch --no-merged
-一旦出现在这个列表中就应该观察一下是否需要合并</code></pre><p><strong>分支的注意点：</strong></p>
-<pre><code>在切换的时候一定要保证当前分支是干净的!动三个地方：HEAD、暂存区、工作目录
-    允许切换分支: 
-        分支上所有的内容 处于已提交状态    
-        (避免)分支上的内容是初始化创建 处于未跟踪状态
-        (避免)分支上的内容是初始化创建 第一次处于已暂存状态
-    不允许切分支:
-         分支上所有的内容处于 已修改状态或第二次以后的已暂存状态  
-
-在分支上的工作做到一半时 如果有切换分支的需求, 我们应该将现有的工作存储起来
-    git stash: 会将当前分支上的工作推到一个栈中
-    分支切换 进行其他工作 完成其他工作后 切回原分支
-    git stash apply: 将栈顶的工作内容还原 但不让任何内容出栈 
-    git stash drop: 取出栈顶的工作内容后 就应该将其删除(出栈)
-    git stash pop: git stash apply +  git stash drop 
-    git stash list: 查看存储</code></pre><p><strong>后悔药：</strong></p>
-<pre><code>工作区
-    撤销工作目录的修改: git checkout -- filename
-暂存区
-    撤销暂存区的修改: git reset HEAD  filename
-版本库
-    撤销提交: git commit --amend</code></pre><p><strong>reset：</strong></p>
-<pre><code>git log、git reflog: HEAD有变化，git reflog就会记录下来。
-git reset --soft commithash 用commithash的内容重置HEAD内容。
-git reset [--mixed] commithash 用commithash的内容重置HEAD内容，重置暂存区。
-git reset --hard commithash 用commithash的内容重置HEAD内容，重置暂存区，重置工作目录。</code></pre><p><strong>路径 reset：</strong></p>
-<pre><code>所有的路径reset都要省略第一步!
-第一步是重置HEAD内容，HEAD本质指向一个分支，分支的本质是一个提交对象，
-提交对象指向一个树对象，树对象又很有可能指向多个git对象，
-一个git对象代表一个文件，HEAD可以代表一系列文件的状态。
-git reset HEAD filename 动了暂存区
-git reset [--mixed] commithash filename 用commithash中filename的内容重置暂存区</code></pre><p><strong>checkout 深入理解：</strong></p>
-<pre><code>git checkout brancname 跟 git reset --hard commithash特别像
-    共同点
-        都需要重置 HEAD 暂存区 工作目录
-    区别
-        checkout 对工作目录是安全的 reset --hard是强制覆盖
-        checkout 动HEAD时不会带着分支走而是切换分支
-        reset --hard 是带着分支走        
-checkout + 路径
-      git checkout commithash filename 重置暂存区、工作目录
-      git checkout -- filename 重置工作目录     </code></pre><h2 id="五、Eslint-结合-Git"><a href="#五、Eslint-结合-Git" class="headerlink" title="五、Eslint 结合 Git"></a>五、Eslint 结合 Git</h2><h3 id="5-1-Eslint"><a href="#5-1-Eslint" class="headerlink" title="5.1 Eslint"></a>5.1 Eslint</h3><pre><code>js代码的检查工具
-下载: npm i eslint -D
-使用:
-    生成配置文件: npx eslint --init
-    检查js文件: npx eslint 目录名
-    命中的规则:
-        字符串必须使用单引号
-        语句结尾不能有分号
-        文件的最后必须要有换行</code></pre><h3 id="5-2-Eslint-结合-Git"><a href="#5-2-Eslint-结合-Git" class="headerlink" title="5.2 Eslint 结合 Git"></a>5.2 Eslint 结合 Git</h3><pre><code>husky: 哈士奇, 为Git仓库设置钩子程序
-使用:
-    在仓库初始化完毕之后 再去安装哈士奇
-    在package.json文件写配置
-        "husky": {
-            "hooks": {
-              "pre-commit": "npm run lint"   
-              // 在git commit之前一定要通过npm run lint的检查
-              // 只有npm run lint不报错时commit才能真正的运行
-            }
-          }           </code></pre><h2 id="六、协作"><a href="#六、协作" class="headerlink" title="六、协作"></a>六、协作</h2><h3 id="6-1-推送、拉取"><a href="#6-1-推送、拉取" class="headerlink" title="6.1 推送、拉取"></a>6.1 推送、拉取</h3><pre><code>正常的数据推送和拉取步骤：
-    1. 确保本地分支已经跟踪了远程跟踪分支
-    2. 拉取数据: git pull
-    3. 推送数据: git push
-
-一个本地分支怎么去跟踪一个远程跟踪分支：
-    1. 当克隆的时候会自动生成一个master本地分支(已经跟踪了对应的远程跟踪分支)
-    2. 在新建其他分支时可以指定想要跟踪的远程跟踪分支，本地没有分支：
-            git checkout -b 本地分支名 远程跟踪分支名
-            git checkout --track 远程跟踪分支名(remote/分支名)
-    3. 将一个已经存在的本地分支改成一个跟踪分支，本地已经创建了分支：   
-            git branch -u 远程跟踪分支名(remote/分支名) </code></pre><h3 id="6-2-团队协作"><a href="#6-2-团队协作" class="headerlink" title="6.2 团队协作"></a>6.2 团队协作</h3><pre><code>1. 项目经理初始化远程仓库：
-   一定要初始化一个空的仓库，在github上操作
-2. 项目经理创建本地仓库：
-    git remote 别名 仓库地址(https)
-    git init 将源码复制进来，修改用户名，修改邮箱
-    git add
-    git commit 
-3. 项目经理推送本地仓库到远程仓库：
-    清理Windows凭据
-    git push 别名 分支(输入用户名，密码，推完之后会附带生成远程跟踪分支)
-4. 项目邀请成员&amp;成员接受邀请，在github上操作
-5. 成员克隆远程仓库：
-   git clone 仓库地址(在本地生成.git文件 默认为远程仓库配了别名 orgin)
-   只有在克隆的时候，本地分支master和远程跟踪分支别名/master是有同步关系的
-6. 成员做出贡献：
-   修改源码文件
-   git add 
-   git commit 
-   git push 别名 分支(输入用户名，密码，推完之后会附带生成远程跟踪分支)  
-7. 项目经理更新修改：
-    git fetch 别名(将修改同步到远程跟踪分支上)
-    git merge 远程跟踪分支</code></pre><h2 id="七、Error-Resolve"><a href="#七、Error-Resolve" class="headerlink" title="七、Error Resolve"></a>七、Error Resolve</h2><h3 id="7-1-non-fast-forward"><a href="#7-1-non-fast-forward" class="headerlink" title="7.1 non-fast-forward"></a>7.1 non-fast-forward</h3><p><strong>问题描述：</strong><code>git push origin login</code> 报错。</p>
-<p><strong>原因：</strong>远程库与本地库不一致导致。比如别人上传到远程仓库后，你没有及时的同步（拉取）到本地，但是你同时又添加了一些内容（提交），以致于你在提交时，它会检测到你之前从远程仓库拉取的时候的仓库状态和现在的不一样。于是，它为了安全起见拒绝了你的提交（然后就报了这个错误）。</p>
-<p><strong>解决方案一：</strong>先合并之前的历史，再进行提交——提倡使用。</p>
-<p>（1）先把 <strong>Git</strong> 的东西 <strong>fetch</strong> 到你本地然后 <strong>merge</strong> 后再 <strong>push</strong> 。</p>
-<pre><code>$ git fetch origin login
-$ git merge origin FETCH_HEAD</code></pre><p>这2句命令等价于：<code>$ git pull origin login</code>，但是使用 <code>git fetch + git merge</code> 更加安全 </p>
-<p>（2）重定基，可以使历史更加统一，提交历史趋向于一条直线。</p>
-<pre><code>git pull --rebase origin login 
-意为先取消commit记录，临时保存为补丁之后同步远程库到本地，最后合并补丁到本地库之中</code></pre><p>补充：它们间的关系：</p>
-<pre><code>git pull = git fetch + git merge FETCH_HEAD 
-
-git pull --rebase =  git fetch + git rebase FETCH_HEAD</code></pre><p>接着输入 <code>git status</code> 可能会报错：</p>
-<p><img src="/medias/loading.gif" data-original="7.1.png" alt=""></p>
-<p>提示 amend 或 continue，amend会继续报错，而continue则会提交本地修改完成修复：</p>
-<pre><code>git rebase --continue
-git push origin login（查看GitHub上login分支没问题了）</code></pre><p><strong>解决方案二：</strong>放弃之前的历史，<strong>强推</strong>（用强覆盖方式用你本地的代码替代 Git 仓库内的内容）——谨慎使用。</p>
-<pre><code>$ git push -f  或 $ git push --force</code></pre><blockquote>
-<p>官方文档提示：This flag disables these checks, and can cause the remote repository to lose commits; use it with care.（即：此标志禁用这些检查，并可能导致远程存储库丢失提交；小心使用。）</p>
+                <h2 id="一、常见浏览器及其内核"><a href="#一、常见浏览器及其内核" class="headerlink" title="一、常见浏览器及其内核"></a>一、常见浏览器及其内核</h2><p><img src="/medias/loading.gif" data-original="1.png" alt=""></p>
+<p>微软的新一代浏览器Microsoft Edge，宣布打算采用 Chromium 开源项目开发桌面版的 Microsoft Edge 浏览器，详情见<a href="https://blogs.windows.com/windowsexperience/2018/12/06/microsoft-edge-making-the-web-better-through-more-open-source-collaboration/#Q4eKSlPUTUfiWhxF.97" target="_blank" rel="noopener">Microsoft Edge: Making the web better through more open source collaboration</a>.</p>
+<p>对此表示喜大普奔，毕竟IE太难用了，开发的时候做兼容也是非常恶心，(╥╯^╰╥)</p>
+<hr>
+<h2 id="二、什么是内核"><a href="#二、什么是内核" class="headerlink" title="二、什么是内核"></a>二、什么是内核</h2><blockquote>
+<p>浏览器最重要或者说核心的部分是<strong>“Rendering Engine”</strong>，可大概译为“解释引擎”，不过我们一般习惯将之称为“浏览器内核”。负责对网页语法的解释（如HTML、JavaScript）并渲染（显示）网页。<br> 所以，通常所谓的浏览器内核也就是浏览器所采用的渲染引擎，渲染引擎决定了浏览器如何显示网页的内容以及页面的格式信息。<br> 不同的浏览器内核对网页编写语法的解释也有不同，因此同一网页在不同的内核的浏览器里的渲染（显示）效果也可能不同，这也是网页编写者需要在不同内核的浏览器中测试网页显示效果的原因。</p>
 </blockquote>
-<h3 id="7-2-failed-to-push-some-refs-to-‘https-github-com-…"><a href="#7-2-failed-to-push-some-refs-to-‘https-github-com-…" class="headerlink" title="7.2 failed to push some refs to ‘https://github.com/…"></a>7.2 failed to push some refs to ‘<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a>…</h3><p><strong>问题描述：</strong>在 git bash 中键入 $ git push origin master 提交时出现。</p>
-<p><strong>原因：</strong>远程库与本地库不一致导致，在 hint 中也有提示把远程库同步到本地库即可。</p>
-<p><strong>解决方案：</strong></p>
-<pre><code>git pull --rebase origin master</code></pre><p>该命令的意思是把远程库中的更新合并到（pull = fetch + merge）本地库中，–-rebase 的作用是取消掉本地库中刚刚的 commit，并把它们对接到更新后的版本库之中。</p>
-<h3 id="7-3-…-you-have-unmerged-files"><a href="#7-3-…-you-have-unmerged-files" class="headerlink" title="7.3 … you have unmerged files"></a>7.3 … you have unmerged files</h3><p><strong>问题描述：</strong>将本地代码提交到 GitHub 后某些组件插件或其他文件夹丢失。</p>
-<p><strong>原因：</strong>使用 Git 时，没有提前 <code>git pull</code>，就把自己本地修改的文件 <code>git add</code>、<code>git commit</code>，就会出现 “ … you have unmerged files.” 的 error。</p>
-<p><strong>解决方案：</strong></p>
-<pre><code>git reflog：复制以前分支的 hash
-
-git reset --hard hash：回溯之前版本</code></pre><p>然后重新提交：</p>
-<pre><code>git status
-git add . 
-git commit -m "msg"</code></pre><p><code>git push origin 分支</code> 可能会出现报错：<code>non-fast-forward</code> ,参考上述解决方案。</p>
-<h3 id="7-4-already-up-to-date"><a href="#7-4-already-up-to-date" class="headerlink" title="7.4 already up to date"></a>7.4 already up to date</h3><p><strong>问题描述：</strong>合并 login 分支时报错 <code>already up to date</code> 。</p>
-<p><strong>解决方案：</strong></p>
-<pre><code>git checkout master
-git reset --hard login
-git push --force origin master</code></pre><p>查看 GitHub 发现主分支和 login 分支都更新成功，搞腚！</p>
-<h3 id="7-5-error-setting-certificate-verify-locations"><a href="#7-5-error-setting-certificate-verify-locations" class="headerlink" title="7.5 error setting certificate verify locations"></a>7.5 error setting certificate verify locations</h3><p><strong>问题描述：</strong>执行 <code>git push origin master</code> 命令时出错:</p>
-<pre><code>fatal: unable to access ‘https://github.com/…/’: error setting certificate verify locations:
-CAfile: D:/Git/Git/mingw64/ssl/certs/ca-bundle.crt
-CApath: none</code></pre><p><strong>解决方案：</strong></p>
-<p>（1）<code>git config –system http.sslcainfo “C:\Program Files (x86)\git\bin\curl-ca-bundle.crt”</code></p>
-<p>（2）<code>git config –system http.sslverify false</code></p>
-<p>（3）顺着报错信息在文件树里找，发现：<strong>D:/Git/mingw64/libexec 没有 ssl 目录</strong>。但在 <strong>D:\Git\mingw64</strong> 目录下有 <strong>ssl/certs/ca-bundle.crt</strong> 这个路径。将 <strong>ssl 目录</strong> 复制到 <strong>D:/Git/mingw64/libexec</strong> 下即可。</p>
-<h3 id="7-6-Git-Bash-Here-失效"><a href="#7-6-Git-Bash-Here-失效" class="headerlink" title="7.6 Git Bash Here 失效"></a>7.6 Git Bash Here 失效</h3><p><strong>问题描述：</strong>在某个文件夹下右键选择 <code>git bash/gui here</code> ，结果显示 <strong>“找不到应用程序”</strong>，这是 Git 相关的文件路径变更导致的。</p>
-<p><strong>解决方案：</strong></p>
-<p>（1）<strong>win + R</strong> 打开命令行窗口，输入 <strong>regedit</strong> 打开注册表。</p>
-<p>（2）根据路径查找 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\background\shell\git_shell\command] 和[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\git_shell\command] 。</p>
-<p>将其数值数据里面的路径修改为现在的 <strong>git bash.exe</strong> 的路径：</p>
-<p><img src="/medias/loading.gif" data-original="7.6.1.png" alt=""></p>
-<p>将其 <strong>git_shell</strong> 改为 <strong>git_gui</strong> ，找到两个路径，将其数值数据里面的路径修改为现在的 <strong>git gui.exe</strong> 的路径<br>关闭注册表，接着在文件夹右键选择 <strong>git bash/gui here</strong> ，发现可以打开，完成。</p>
-<p>然后你会发现<strong>新问题</strong>：git clone 不好用，<strong>解决：</strong>在 Git 安装包下，找到 <strong>gitconfig</strong> 文件修改里边的路径信息</p>
-<p><img src="/medias/loading.gif" data-original="7.6.2.png" alt=""></p>
-<p><img src="/medias/loading.gif" data-original="7.6.3.png" alt=""></p>
-<p>这里改好就好了，记住安装完 Git <strong>不要随便移动路径</strong>，因为注册表中的信息不会改变。</p>
-<h3 id="7-7-管理小程序"><a href="#7-7-管理小程序" class="headerlink" title="7.7 管理小程序"></a>7.7 管理小程序</h3><p>和管理日常项目流程如出一撤，具体如何用 Git 管理小程序就不一一赘述了，有需要可以看这篇：<a href="https://blog.csdn.net/qq_36672905/article/details/82887102" target="_blank" rel="noopener">微信小程序如何使用Git实现版本管理</a></p>
-<p>说下遇到的问题：<code>push</code> 远程仓库提示 <code>error invalid authentication scheme</code></p>
-<p><strong>解决方案：</strong>在微信小程序的设置里面配置仓库设置中的网络认证，认证选择用户名和密码，然后填写好你创建远程仓库时候设置的用户名和密码。</p>
-<p><img src="/medias/loading.gif" data-original="7.7.png" alt=""></p>
-<h3 id="7-8-问题征集"><a href="#7-8-问题征集" class="headerlink" title="7.8 问题征集"></a>7.8 问题征集</h3><p>到此为止关于 Git 相关的知识就整理完毕了，阿呆暂时只遇到了这些问题，以后出现新问题我会及时整理更新，诸君有其他的疑问也欢迎在评论区留言哦。</p>
+<blockquote>
+<p>另一种关于内核的说明：<a href="https://zh.wikipedia.org/wiki/排版引擎" target="_blank" rel="noopener">维基百科(↓)</a></p>
+</blockquote>
+<h3 id="2-1-排版引擎"><a href="#2-1-排版引擎" class="headerlink" title="2.1 排版引擎"></a>2.1 排版引擎</h3><p> <strong>排版引擎</strong>（layout engine），也称为<strong>浏览器引擎</strong>（web browser engine）、<strong>页面渲染引擎</strong>（rendering engine）或<strong>样版引擎</strong>，负责获取标记式内容（如<a href="https://zh.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a>、<a href="https://zh.wikipedia.org/wiki/XML" target="_blank" rel="noopener">XML</a>及图像文件等等）、整理信息（如<a href="https://zh.wikipedia.org/wiki/CSS" target="_blank" rel="noopener">CSS</a>及<a href="https://zh.wikipedia.org/wiki/XSL" target="_blank" rel="noopener">XSL</a>等），并将排版后的内容输出至显示器或打印机。</p>
+<h3 id="2-2-JavaScript-引擎"><a href="#2-2-JavaScript-引擎" class="headerlink" title="2.2 JavaScript 引擎"></a>2.2 JavaScript 引擎</h3><p>  <strong>JavaScript 引擎</strong>是一个专门处理<a href="https://zh.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">JavaScript</a>脚本的<a href="https://zh.wikipedia.org/wiki/虚拟机" target="_blank" rel="noopener">虚拟机</a>，一般会附带在<a href="https://zh.wikipedia.org/wiki/网页浏览器" target="_blank" rel="noopener">网页浏览器</a>之中。</p>
+<table>
+<thead>
+<tr>
+<th align="center">JS引擎</th>
+<th align="center">应用程序(实现)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a href="https://zh.wikipedia.org/wiki/V8_(JavaScript引擎)" target="_blank" rel="noopener">V8</a></td>
+<td align="center"><a href="https://zh.wikipedia.org/wiki/Google_Chrome" target="_blank" rel="noopener">Google Chrome</a></td>
+</tr>
+<tr>
+<td align="center"><a href="https://zh.wikipedia.org/wiki/SpiderMonkey" target="_blank" rel="noopener">SpiderMonkey</a></td>
+<td align="center"><a href="https://zh.wikipedia.org/wiki/Mozilla_Firefox" target="_blank" rel="noopener">Mozilla Firefox</a></td>
+</tr>
+<tr>
+<td align="center"><a href="https://zh.wikipedia.org/wiki/WebKit#JavaScriptCore" target="_blank" rel="noopener">JavaScriptCore</a></td>
+<td align="center"><a href="https://zh.wikipedia.org/wiki/Safari" target="_blank" rel="noopener">Safari</a></td>
+</tr>
+<tr>
+<td align="center"><a href="https://zh.wikipedia.org/wiki/Chakra_(JScript引擎)" target="_blank" rel="noopener">Chakra (JScript引擎)</a></td>
+<td align="center"><a href="https://zh.wikipedia.org/wiki/Internet_Explorer" target="_blank" rel="noopener">Internet Explorer</a></td>
+</tr>
+<tr>
+<td align="center"><a href="https://zh.wikipedia.org/wiki/Chakra_(JavaScript引擎)" target="_blank" rel="noopener">Chakra (JavaScript引擎)</a></td>
+<td align="center"><a href="https://zh.wikipedia.org/wiki/Microsoft_Edge" target="_blank" rel="noopener">Microsoft Edge</a></td>
+</tr>
+<tr>
+<td align="center"><a href="https://zh.wikipedia.org/wiki/KJS" target="_blank" rel="noopener">KJS</a></td>
+<td align="center">Konqueror</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="三、浏览器渲染原理"><a href="#三、浏览器渲染原理" class="headerlink" title="三、浏览器渲染原理"></a>三、浏览器渲染原理</h2><p>Web页面运行在各种各样的浏览器当中，浏览器载入、渲染页面的速度直接影响着用户体验简单地说，页面渲染就是浏览器将html代码根据CSS定义的规则显示在浏览器窗口中的这个过程。</p>
+<p>先来大致了解一下浏览器都是怎么干活的：</p>
+<ol>
+<li>用户输入网址（假设是个html页面，并且是第一次访问），浏览器向服务器发出请求，服务器返回html文件；</li>
+<li>浏览器开始载入html代码，发现<code>&lt;head&gt;</code>标签内有一个<code>&lt;link&gt;</code>标签引用外部CSS文件；</li>
+<li>浏览器又发出CSS文件的请求，服务器返回这个CSS文件；</li>
+<li>浏览器继续载入html中<code>&lt;body&gt;</code>部分的代码，并且CSS文件已经拿到手了，可以开始渲染页面了；</li>
+<li>浏览器在代码中发现一个<code>&lt;img&gt;</code>标签引用了一张图片，向服务器发出请求。此时浏览器不会等到图片下载完，而是继续渲染后面的代码；</li>
+<li>服务器返回图片文件，由于图片占用了一定面积，影响了后面段落的排布，因此浏览器需要回过头来重新渲染这部分代码；</li>
+<li>浏览器发现了一个包含一行Javascript代码的<code>&lt;script&gt;</code>标签，赶快运行它；</li>
+<li>Javascript脚本执行了这条语句，它命令浏览器隐藏掉代码中的某个（style.display=”none”）。杯具啊，突然就少了这么一个元素，浏览器不得不重新渲染这部分代码；</li>
+<li>终于等到了<code>&lt;/html&gt;</code>的到来，浏览器泪流满面……</li>
+<li>等等，还没完，用户点了一下界面中的“换肤”按钮，Javascript让浏览器换了一下<code>&lt;link&gt;</code>标签的CSS路径；</li>
+<li>浏览器召集了在座的各位<br> <code>&lt;span&gt;&lt;ul&gt;&lt;li&gt;</code>们，“大伙儿收拾收拾行李，咱得重新来过……”，浏览器向服务器请求了新的CSS文件，重新渲染页面。</li>
+</ol>
+<p>说到页面为什么会慢？那是因为浏览器要花时间、花精力去渲染，尤其是当它发现某个部分发生了点变化影响了布局，需要倒回去重新渲染，这个回退的过程叫<strong>reflow</strong>。</p>
+<p>reflow几乎是无法避免的。现在界面上流行的一些效果，比如树状目录的折叠、展开（实质上是元素的显示与隐藏）等，都将引起浏览器的 reflow。</p>
+<p>鼠标滑过、点击……只要这些行为引起了页面上某些元素的占位面积、定位方式、边距等属性的变化，都会引起它内部、周围甚至整个页面的重新渲染。</p>
+<p>通常我们都无法预估浏览器到底会reflow哪一部分的代码，它们都彼此相互影响着。</p>
+<p>reflow问题是可以优化的，我们可以尽量减少不必要的reflow。</p>
+<p>如开头例子中的<code>&lt;img&gt;</code>图片载入问题，这其实就是一个可以避免的reflow——给图片设置宽度和高度。</p>
+<p>这样浏览器就知道了图片的占位面积，在载入图片前就预留好了位置。</p>
+<p><strong>repaint：重绘</strong></p>
+<p>如果只是改变某个元素的背景色、文字颜色、边框颜色等等不影响它周围或内部布局的属性，将只会引起浏览器repaint。</p>
+<p>repaint的速度明显快于 reflow（在IE下需要换一下说法，reflow要比repaint 更缓慢）。</p>
+<h2 id="四、CSS性能"><a href="#四、CSS性能" class="headerlink" title="四、CSS性能"></a>四、CSS性能</h2><p><strong>最终决定浏览器表现出来的页面效果的差异是：渲染引擎 Rendering Engine（也叫做排版引擎），也就是我们通常所说的<a href="http://www.smallni.com/?p=106" target="_blank" rel="noopener">“浏览器内核”</a>，负责解析网页语法（如HTML、JavaScript）并渲染、展示网页。相同的代码在不同的浏览器呈现出来的效果不一样，那么就很有可能是不同的浏览器内核导致的。</strong></p>
+<p><strong>加载页面时浏览器的工作流程：</strong></p>
+<p><strong>1、解析HTML以重建DOM树（Parsing HTML to construct the DOM tree ）</strong>：<br> 渲染引擎开始解析HTML文档，转换树中的标签到DOM节点，它被称为“内容树”。</p>
+<p><strong>2、构建渲染树（Render tree construction）</strong>：<br> 解析CSS（包括外部CSS文件和样式元素），根据CSS选择器计算出节点的样式，创建另一个树 —- 渲染树。</p>
+<p><strong>3、布局渲染树（Layout of the render tree）:</strong><br> &lt;wbr style=”font-family: “Microsoft Yahei”, sans-serif;”&gt;从根节点递归调用，计算每一个元素的大小、位置等，给每个节点所应该出现在屏幕上的精确坐标。</p>
+<p><strong>4、绘制渲染树（Painting the render tree）</strong><br> &lt;wbr style=”font-family: “Microsoft Yahei”, sans-serif;”&gt;: 遍历渲染树，每个节点将使用UI后端层来绘制。</p>
+<p>主要的流程就是：构建一个dom树，页面要显示的各元素都会创建到这个dom树当中，每当一个新元素加入到这个dom树当中，浏览器便会通过css引擎查遍css样式表，找到符合该元素的样式规则应用到这个元素上。</p>
+<p><strong>注意了：css引擎查找样式表，对每条规则都按从右到左的顺序去匹配。</strong></p>
+<p>对此，在CSS书写过程中，总结出如下性能提升的方案：</p>
+<ol>
+<li>避免使用通配规则：如 *{} 计算次数惊人！只对需要用到的元素进行选择</li>
+<li>尽量少的去对标签进行选择，而是用class，如：#nav li{},可以为li加上nav_item的类名，选择.nav_item{}</li>
+<li>不要去用标签限定ID或者类选择符，如：ul#nav，应该简化为#nav</li>
+<li>尽量少的去使用后代选择器，降低选择器的权重值，后代选择器的开销是最高的，尽量将选择器的深度降到最低，最高不要超过三层，更多的使用类来关联每一个标签元素。</li>
+<li>考虑继承样式，了解哪些属性是可以通过继承而来的，避免对这些属性重复指定规则。</li>
+</ol>
+<h2 id="五、CSS初始化"><a href="#五、CSS初始化" class="headerlink" title="五、CSS初始化"></a>五、CSS初始化</h2><p><strong>浏览器 CSS 样式初始化：</strong></p>
+<ul>
+<li>若要求不高追求方便可以直接：</li>
+</ul>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector">*</span><span class="token punctuation">{</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>normalize.css</p>
+</li>
+<li><p>reset.css</p>
+</li>
+</ul>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1383,7 +1256,7 @@ CApath: none</code></pre><p><strong>解决方案：</strong></p>
                     </span>
                     <a href="http://adaichan.com" class="b-link-green">兴趣使然の边缘人小站</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2020/12/06/02.git/" class="b-link-green">Git 填坑之 error 整理</a>
+                    <a href="/2021/02/28/44.liu-lan-qi-chai-yi-ji-xuan-ran/" class="b-link-green">浏览器差异及渲染</a>
                 </p>
             </div>
 
@@ -1703,28 +1576,86 @@ CApath: none</code></pre><p><strong>解决方案：</strong></p>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/12/07/03.vscode/">
+                <a href="/2021/02/28/44.liu-lan-qi-chai-yi-ji-xuan-ran/">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/3.jpg" class="responsive-img" alt="VSCode 心得分享">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/44.jpg" class="responsive-img" alt="浏览器差异及渲染">
                         
-                        <span class="card-title">VSCode 心得分享</span>
+                        <span class="card-title">浏览器差异及渲染</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前端正处于春秋战国时代，各路英雄豪杰成为后浪，各种框架工具层出不穷，VSCode 无疑是大前端时代最骄傲的工具。写下这篇文章，是顺势而为之，顺便纪念下两年来的使用心得，或许这就是：桃李不言，下自成蹊！
+                            一、常见浏览器及其内核
+微软的新一代浏览器Microsoft Edge，宣布打算采用 Chromium 开源项目开发桌面版的 Microsoft Edge 浏览器，详情见Microsoft Edge: Making the web bett
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-12-07
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/前端/" class="post-category" target="_blank">
+                                    前端
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                    <a href="/tags/CSS/" target="_blank">
+                        <span class="chip bg-color">CSS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/02/26/43.react-quan-jia-tong-day-07/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/43.jpg" class="responsive-img" alt="React 全家桶 day 07">
+                        
+                        <span class="card-title">React 全家桶 day 07</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一、组件的生命周期生命周期回调函数 &lt;=&gt; 生命周期钩子：在组件特定的生命周期里 React 可以自动帮忙调用生命周期钩子里的函数，来完成特定的功能。
+需求: 自定义组件
+   1. 让指定的文本做显示/隐藏的动画
+   2. 
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1740,56 +1671,12 @@ CApath: none</code></pre><p><strong>解决方案：</strong></p>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/VSCode/" target="_blank">
-                        <span class="chip bg-color">VSCode</span>
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/12/05/01.markdown/">
-                    <div class="card-image">
-                        
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/1.jpg" class="responsive-img" alt="Markdown 使用详解（附图文）">
-                        
-                        <span class="card-title">Markdown 使用详解（附图文）</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            本文是关于 Markdown 语法的详细指♂南。特地根据写作人、猴头人的实际需求量身定做，深入浅出、图文并茂的介绍了它的完整语法。多说无益，为了迅速、全面的掌握好它，建议各位钢琴家多弹奏几曲方可了然于胸 ♪♪
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-12-05
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/工具/" class="post-category" target="_blank">
-                                    工具
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Markdown/" target="_blank">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/React/" target="_blank">
+                        <span class="chip bg-color">React</span>
                     </a>
                     
                 </div>

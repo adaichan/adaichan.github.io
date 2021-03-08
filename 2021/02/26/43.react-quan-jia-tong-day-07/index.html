@@ -966,14 +966,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        417
+                        875
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        3 分
                     </div>
                     
                 
@@ -1051,6 +1051,41 @@
 <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="二、React-生命周期（旧）"><a href="#二、React-生命周期（旧）" class="headerlink" title="二、React 生命周期（旧）"></a>二、React 生命周期（旧）</h2><p><img src="/medias/loading.gif" data-original="2.png" alt=""></p>
+<ol>
+<li><p>组件的三个生命周期状态:</p>
+<p>Mount：插入真实 DOM</p>
+<p>Update：被重新渲染</p>
+<p>Unmount：被移出真实 DOM</p>
+</li>
+<li><p>React 为每个状态都提供了勾子(hook)函数</p>
+<p>componentWillMount()</p>
+<p>componentDidMount()</p>
+<p>componentWillUpdate()</p>
+<p>componentDidUpdate()</p>
+<p>componentWillUnmount()</p>
+</li>
+<li><p><strong>生命周期流程</strong>:</p>
+<p>a. 初始化阶段：由 ReactDOM.render() 触发</p>
+<p>​    constructor()：创建对象初始化state</p>
+<p>​    componentWillMount()：将要插入回调</p>
+<p>​    render()：用于插入虚拟DOM回调</p>
+<p>​    <strong>componentDidMount()</strong>：组件刚挂载到页面 ====》常用，做初始化操作：开启定时器、发 ajax 请求、消息订阅</p>
+<p>b. 更新阶段：由组件内部 this.setSate() 或父组件重新 render 触发</p>
+<p>​    shouldComponentUpdate()：阀门默认开启</p>
+<p>​    componentWillUpdate()：将要更新回调</p>
+<p>​    <strong>render()</strong>：更新(重新渲染) ====》必须使用</p>
+<p>​    componentDidUpdate()：已经更新回调</p>
+<p>c. 移除组件：由 ReactDOM.unmountComponentAtNode() 触发</p>
+<p>​    <strong>componentWillUnmount()</strong>：组件将要被移除的回调 ====》常用，做收尾操作：清除定时器，取消订阅消息</p>
+</li>
+</ol>
+<h2 id="三、React-生命周期（新）"><a href="#三、React-生命周期（新）" class="headerlink" title="三、React 生命周期（新）"></a>三、React 生命周期（新）</h2><p><img src="/medias/loading.gif" data-original="3.png" alt=""></p>
+<p>和旧的生命周期相比，新的生命周期：</p>
+<p><strong>废弃了三个钩子：WillMount、WillReceiveProps、WillUpdate，使用需要加上UNSAFE_前缀，不常用，开发基本用不上</strong></p>
+<p><strong>提出两个新钩子：getDerivedStateFromProps、getSnapshotBeforeUpdate，极其不常用，开发基本用不上</strong></p>
+<p><strong>其他的都是一样的，常用的三个钩子：render()、componentDidMount()、componentWillUnmount()</strong></p>
+<p>getDerivedStateFromProps：state 的值在任何时候都取决于 props 时，派生状态会导致代码冗余，并使组件难以维护。可以不使用它，用构造器代替。</p>
+<p>getSnapshotBeforeUpdate：在最近一次渲染输出（提交到 DOM 节点）之前被调用。它使得组件能在发生更改之前从 DOM 中捕获一些信息（例如，滚动位置）。此生命周期的任何返回值将作为参数传递给 componentDidUpdate()。此用法并不常见，但它可能出现在 UI 处理中，如需要以特殊方式处理滚动位置的聊天线程等。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1539,32 +1574,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/02/26/43.react-quan-jia-tong-day-07/">
+                <a href="/2021/02/28/44.liu-lan-qi-chai-yi-ji-xuan-ran/">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/43.jpg" class="responsive-img" alt="React 全家桶 day 07">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/44.jpg" class="responsive-img" alt="浏览器差异及渲染">
                         
-                        <span class="card-title">React 全家桶 day 07</span>
+                        <span class="card-title">浏览器差异及渲染</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、组件的生命周期生命周期回调函数 &lt;=&gt; 生命周期钩子：在组件特定的生命周期里 React 可以自动帮忙调用生命周期钩子里的函数，来完成特定的功能。
-需求: 自定义组件
-   1. 让指定的文本做显示/隐藏的动画
-   2. 
+                            一、常见浏览器及其内核
+微软的新一代浏览器Microsoft Edge，宣布打算采用 Chromium 开源项目开发桌面版的 Microsoft Edge 浏览器，详情见Microsoft Edge: Making the web bett
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-26
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-28
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1577,7 +1609,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1585,8 +1616,8 @@
                         <span class="chip bg-color">JavaScript</span>
                     </a>
                     
-                    <a href="/tags/React/" target="_blank">
-                        <span class="chip bg-color">React</span>
+                    <a href="/tags/CSS/" target="_blank">
+                        <span class="chip bg-color">CSS</span>
                     </a>
                     
                 </div>
@@ -1808,7 +1839,7 @@ ne
 			
 			
                 <i class="fa fa-area-chart"></i>&nbsp;字数统计:&nbsp;
-                <span class="white-color">86.3k</span> 字
+                <span class="white-color">88.8k</span> 字
             
 			
 			
@@ -2043,11 +2074,11 @@ $(function () {
 		<script>WIDGET = {CONFIG:{"modules":"01234","background":1,"tmpColor":"FFFFFF","tmpSize":16,"cityColor":"FFFFFF","citySize":16,"aqiSize":16,"weatherIconSize":24,"alertIconSize":18,"padding":"10px 10px 10px 10px","shadow":"1","language":"auto","borderRadius":5,"city":"CN101200101","fixed":"true","vertical":"middle","horizontal":"center","left":"16","top":"16","key":"bAnFmmXfQG"}}</script>
 		<script src="https://apip.weatherdt.com/simple/static/js/weather-simple-common.js?v=2.0"></script>
     
-	<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>
+	<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 	
 </html>
