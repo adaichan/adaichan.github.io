@@ -6,7 +6,7 @@
   <link href="http://adaichan.com/atom.xml" rel="self"/>
   
   <link href="http://adaichan.com/"/>
-  <updated>2021-12-23T02:56:56.912Z</updated>
+  <updated>2022-09-21T03:29:41.177Z</updated>
   <id>http://adaichan.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://adaichan.com/2021/10/10/50.chang-yong-zheng-ze-hui-zong/"/>
     <id>http://adaichan.com/2021/10/10/50.chang-yong-zheng-ze-hui-zong/</id>
     <published>2021-10-09T16:00:00.000Z</published>
-    <updated>2021-12-23T02:56:56.912Z</updated>
+    <updated>2022-09-21T03:29:41.177Z</updated>
     
     
       
@@ -29,11 +29,37 @@
         
         
     <summary type="html">&lt;p&gt;&lt;strong&gt;一、校验数字的表达式&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;1 数字：^[0-9]*$&lt;/p&gt;
-&lt;p&gt;2 n位的数字：^d{n}$&lt;/p&gt;
-&lt;p&gt;3 至少n位的数字：^d{n,}$&lt;/p&gt;
-&lt;p&gt;4 m-n位的数字：^d{m,n}$&lt;/p&gt;
-&lt;p&gt;5</summary>
+&lt;p&gt;数字：^[0-9]*$&lt;/p&gt;
+&lt;p&gt;n位的数字：^d{n}$&lt;/p&gt;
+&lt;p&gt;至少n位的数字：^d{n,}$&lt;/p&gt;
+&lt;p&gt;m-n位的数字：^d{m,n}$&lt;/p&gt;
+&lt;p&gt;零和非零开头的数字：^(0|[1</summary>
+        
+      
+    
+    
+    
+    <category term="工具" scheme="http://adaichan.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="PS" scheme="http://adaichan.com/tags/PS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用正则汇总</title>
+    <link href="http://adaichan.com/2021/10/10/51-excel-dao-chu/"/>
+    <id>http://adaichan.com/2021/10/10/51-excel-dao-chu/</id>
+    <published>2021-10-09T16:00:00.000Z</published>
+    <updated>2023-05-31T07:58:01.423Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;一、使用插件&quot;&gt;&lt;a href=&quot;#一、使用插件&quot; class=&quot;headerlink&quot; title=&quot;一、使用插件&quot;&gt;&lt;/a&gt;一、使用插件&lt;/h3&gt;&lt;p&gt;像excel.js、xlsx.js、js-export-excel这类插件都可以轻松实现&lt;/p&gt;
+&lt;pre</summary>
         
       
     
@@ -518,31 +544,6 @@
         
         
     <summary type="html">&lt;p&gt;&lt;strong&gt;有效的括号：&lt;/strong&gt;给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串 s</summary>
-        
-      
-    
-    
-    
-    <category term="Algorithm" scheme="http://adaichan.com/categories/Algorithm/"/>
-    
-    
-    <category term="LeetCode" scheme="http://adaichan.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>罗马数字转整数</title>
-    <link href="http://adaichan.com/2021/02/06/31.luo-ma-shu-zi-zhuan-zheng-shu/"/>
-    <id>http://adaichan.com/2021/02/06/31.luo-ma-shu-zi-zhuan-zheng-shu/</id>
-    <published>2021-02-05T16:00:00.000Z</published>
-    <updated>2021-02-14T02:10:36.788Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;strong&gt;罗马数字转整数：&lt;/strong&gt;罗马数字包含以下七种字符: I，V，X，L，C，D 和</summary>
         
       
     

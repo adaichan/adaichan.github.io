@@ -6,10 +6,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Idea 热部署, blog note adaichan">
+    <meta name="keywords" content="常用正则汇总, blog note adaichan">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
-    <meta name="description" content="一、概念热部署就是正在运行状态的应用，修改源码后，在不重新启动的情况下能够自动把增量内容编译并部署到服务器上，使得修改立即生效。热部署解决的问题有两个， 一是在开发的时候，修改代码后不需要重启应用就能看到效果，提升开发效率；二是生产上运行的">
+    <meta name="description" content="一、使用插件像excel.js、xlsx.js、js-export-excel这类插件都可以轻松实现
+npm install js-export-excel // 或者
+yarn add js-export-excel
+
+示例：
+impor">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Idea 热部署 | 兴趣使然の边缘人小站</title>
+    <title>常用正则汇总 | 兴趣使然の边缘人小站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -676,13 +681,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/50.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Idea 热部署
+                        常用正则汇总
                     </div>
                 </div>
             </div>
@@ -794,12 +799,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Idea/" target="_blank">
-                                <span class="chip bg-color">Idea</span>
-                            </a>
-                        
-                            <a href="/tags/Java/" target="_blank">
-                                <span class="chip bg-color">Java</span>
+                            <a href="/tags/PS/" target="_blank">
+                                <span class="chip bg-color">PS</span>
                             </a>
                         
                     </div>
@@ -810,8 +811,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category" target="_blank">
-                                后端
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category" target="_blank">
+                                工具
                             </a>
                         
                     </div>
@@ -822,7 +823,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-18
+                    2021-10-10
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -836,14 +837,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        358
+                        519
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -860,31 +861,119 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、概念"><a href="#一、概念" class="headerlink" title="一、概念"></a>一、概念</h2><p>热部署就是正在运行状态的应用，<strong>修改源码后，在不重新启动的情况下能够自动把增量内容编译并部署到服务器上，使得修改立即生效</strong>。热部署解决的问题有两个， 一是在开发的时候，修改代码后不需要重启应用就能看到效果，提升开发效率；二是生产上运行的程序，可以在不停止运行的情况下进行升级，不影响用户使用。</p>
-<p>用 Idea 的人大多数都是用来开发 Java 程序，当前流行的 Java 程序主要有两种，第一种是传统的 Web 应用，依赖 Tomcat 这种 Web 容器运行；第二种是 SpringBoot 程序， 内嵌了运行环境。我只记录配置 SpringBoot 热部署的方法。</p>
-<h2 id="二、方法"><a href="#二、方法" class="headerlink" title="二、方法"></a>二、方法</h2><p><strong>开启自动编译：</strong></p>
-<ul>
-<li><strong>Ctrl+Alt+S 打开配置</strong></li>
-<li><strong>设置自动编译</strong><br><strong>File-Settings-Compiler-Build Project automatically</strong></li>
-</ul>
-<p><img src="/medias/loading.gif" data-original="2.1.png"></p>
-<ul>
-<li><strong>Ctrl+Shift+Alt+/ 选择 Registry</strong></li>
-</ul>
-<p><img src="/medias/loading.gif" data-original="2.2.png"></p>
-<ul>
-<li>找到选项 <strong>Compiler autoMake allow when app running</strong> 打勾</li>
-</ul>
-<p><img src="/medias/loading.gif" data-original="2.3.png"></p>
-<p><strong>设置项目启动加载方式：</strong></p>
-<ul>
-<li>菜单栏选择 <strong>Run-&gt;Edit Configurations…</strong></li>
-</ul>
-<p><img src="/medias/loading.gif" data-original="2.4.png"></p>
-<p>找到 <strong>SpringBoot</strong>下的 <strong>On Update action</strong> 和 <strong>On frame deactivation</strong> ，选择 <strong>Update classes and resources</strong>。</p>
-<p><img src="/medias/loading.gif" data-original="2.5.png"></p>
-<h2 id="三、测试"><a href="#三、测试" class="headerlink" title="三、测试"></a>三、测试</h2><p>修改代码，查看 Idea 最下方的提示条，出现 <strong>build</strong> 后 紧接着出现 <strong>parsing java…</strong> 表示正在重新编译，值得注意的是热部署也是要一定时间的，更新会有一个短暂的延迟。</p>
-<p><img src="/medias/loading.gif" data-original="2.6.png"></p>
+                <h3 id="一、使用插件"><a href="#一、使用插件" class="headerlink" title="一、使用插件"></a>一、使用插件</h3><p>像excel.js、xlsx.js、js-export-excel这类插件都可以轻松实现</p>
+<pre class="line-numbers language-js"><code class="language-js">npm install js<span class="token operator">-</span><span class="token keyword">export</span><span class="token operator">-</span>excel <span class="token comment" spellcheck="true">// 或者</span>
+yarn add js<span class="token operator">-</span><span class="token keyword">export</span><span class="token operator">-</span>excel
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>示例：</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">import</span> ExportJsonExcel <span class="token keyword">from</span> <span class="token string">'js-export-excel'</span>
+<span class="token comment" spellcheck="true">// 模拟数据</span>
+<span class="token keyword">const</span> tableItemConfig <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token punctuation">{</span> label<span class="token punctuation">:</span> <span class="token string">'序号'</span><span class="token punctuation">,</span> prop<span class="token punctuation">:</span> <span class="token string">'index'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> label<span class="token punctuation">:</span> <span class="token string">'物料编码'</span><span class="token punctuation">,</span> prop<span class="token punctuation">:</span> <span class="token string">'materialCode'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> label<span class="token punctuation">:</span> <span class="token string">'物料名称'</span><span class="token punctuation">,</span> prop<span class="token punctuation">:</span> <span class="token string">'materialName'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> label<span class="token punctuation">:</span> <span class="token string">'规格型号'</span><span class="token punctuation">,</span> prop<span class="token punctuation">:</span> <span class="token string">'specification'</span><span class="token punctuation">,</span> width<span class="token punctuation">:</span> <span class="token number">150</span> <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">]</span>
+<span class="token keyword">const</span> arrayData <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>materialCode<span class="token punctuation">:</span><span class="token number">10086</span><span class="token punctuation">,</span>materialName<span class="token punctuation">:</span><span class="token string">'篮球'</span><span class="token punctuation">,</span>specification<span class="token punctuation">:</span><span class="token string">'20*20*20'</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">// 使用</span>
+<span class="token keyword">const</span> option<span class="token punctuation">:</span> Record<span class="token operator">&lt;</span>string<span class="token punctuation">,</span> any<span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+option<span class="token punctuation">.</span>fileName <span class="token operator">=</span> <span class="token string">'文件名'</span>
+option<span class="token punctuation">.</span>datas <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        sheetData<span class="token punctuation">:</span> arrayData<span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 数组数据</span>
+        sheetName<span class="token punctuation">:</span> <span class="token string">'表格名'</span><span class="token punctuation">,</span>
+        sheetFilter<span class="token punctuation">:</span> tableItemConfig<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>i <span class="token operator">=</span><span class="token operator">></span> i<span class="token punctuation">.</span>prop<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 字段prop</span>
+        sheetHeader<span class="token punctuation">:</span> tableItemConfig<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>i <span class="token operator">=</span><span class="token operator">></span> i<span class="token punctuation">.</span>label<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 字段中文</span>
+        columnWidths<span class="token punctuation">:</span> tableItemConfig<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>i <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span>i<span class="token punctuation">.</span>width <span class="token operator">?</span> Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>width <span class="token operator">/</span> <span class="token number">15</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 列宽</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+<span class="token keyword">const</span> toExcel <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ExportJsonExcel</span><span class="token punctuation">(</span>option<span class="token punctuation">)</span>
+toExcel<span class="token punctuation">.</span><span class="token function">saveExcel</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="二、接口返回"><a href="#二、接口返回" class="headerlink" title="二、接口返回"></a>二、接口返回</h3><p>接口加工好返回，用a标签下载就行</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> downloadFile <span class="token operator">=</span> <span class="token punctuation">(</span>data<span class="token punctuation">:</span> any<span class="token punctuation">,</span> fileName<span class="token punctuation">:</span> any<span class="token punctuation">,</span> fileSuffix<span class="token punctuation">:</span> any<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> fileTypeMime <span class="token operator">=</span> <span class="token string">''</span> <span class="token comment" spellcheck="true">// 文件 mime 类型，移动端必传，否则下载不成功；pc端可传可不传</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>
+    fileSuffix <span class="token comment" spellcheck="true">// 获取后缀对应的 mime</span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">'png'</span><span class="token punctuation">:</span>
+      fileTypeMime <span class="token operator">=</span> <span class="token string">'image/png'</span>
+      <span class="token keyword">break</span>
+    <span class="token keyword">case</span> <span class="token string">'doc'</span><span class="token punctuation">:</span>
+      fileTypeMime <span class="token operator">=</span> <span class="token string">'application/msword'</span>
+      <span class="token keyword">break</span>
+    <span class="token keyword">case</span> <span class="token string">'docx'</span><span class="token punctuation">:</span>
+      fileTypeMime <span class="token operator">=</span> <span class="token string">'application/vnd.openxmlformats-officedocument.wordprocessingml.document'</span>
+      <span class="token keyword">break</span>
+    <span class="token keyword">case</span> <span class="token string">'jpg'</span><span class="token punctuation">:</span>
+    <span class="token keyword">case</span> <span class="token string">'jpeg'</span><span class="token punctuation">:</span>
+      fileTypeMime <span class="token operator">=</span> <span class="token string">'image/jpeg'</span>
+      <span class="token keyword">break</span>
+    <span class="token keyword">case</span> <span class="token string">'gif'</span><span class="token punctuation">:</span>
+      fileTypeMime <span class="token operator">=</span> <span class="token string">'image/gif'</span>
+      <span class="token keyword">break</span>
+    <span class="token keyword">case</span> <span class="token string">'svg'</span><span class="token punctuation">:</span>
+      fileTypeMime <span class="token operator">=</span> <span class="token string">'image/svg+xml'</span>
+      <span class="token keyword">break</span>
+    <span class="token keyword">case</span> <span class="token string">'tif'</span><span class="token punctuation">:</span>
+    <span class="token keyword">case</span> <span class="token string">'tiff'</span><span class="token punctuation">:</span>
+      fileTypeMime <span class="token operator">=</span> <span class="token string">'image/tiff'</span>
+      <span class="token keyword">break</span>
+    <span class="token keyword">case</span> <span class="token string">'txt'</span><span class="token punctuation">:</span>
+      fileTypeMime <span class="token operator">=</span> <span class="token string">'text/plain'</span>
+      <span class="token keyword">break</span>
+    <span class="token keyword">case</span> <span class="token string">'ppt'</span><span class="token punctuation">:</span>
+      fileTypeMime <span class="token operator">=</span> <span class="token string">'application/vnd.ms-powerpoint'</span>
+      <span class="token keyword">break</span>
+    <span class="token keyword">case</span> <span class="token string">'pptx'</span><span class="token punctuation">:</span>
+      fileTypeMime <span class="token operator">=</span> <span class="token string">'application/vnd.openxmlformats-officedocument.presentationml.presentation'</span>
+      <span class="token keyword">break</span>
+    <span class="token keyword">case</span> <span class="token string">'xls'</span><span class="token punctuation">:</span>
+      fileTypeMime <span class="token operator">=</span> <span class="token string">'application/vnd.ms-excel'</span>
+      <span class="token keyword">break</span>
+    <span class="token keyword">case</span> <span class="token string">'xlsx'</span><span class="token punctuation">:</span>
+      fileTypeMime <span class="token operator">=</span> <span class="token string">'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'</span>
+      <span class="token keyword">break</span>
+    <span class="token keyword">case</span> <span class="token string">'zip'</span><span class="token punctuation">:</span>
+      fileTypeMime <span class="token operator">=</span> <span class="token string">'application/zip'</span>
+      <span class="token keyword">break</span>
+    <span class="token keyword">case</span> <span class="token string">'7z'</span><span class="token punctuation">:</span>
+      fileTypeMime <span class="token operator">=</span> <span class="token string">'application/x-7z-compressed'</span>
+      <span class="token keyword">break</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">const</span> blob <span class="token operator">=</span> window<span class="token punctuation">.</span>URL<span class="token punctuation">.</span><span class="token function">createObjectURL</span><span class="token punctuation">(</span>
+    <span class="token keyword">new</span> <span class="token class-name">Blob</span><span class="token punctuation">(</span><span class="token punctuation">[</span>data<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      type<span class="token punctuation">:</span> fileTypeMime<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span>
+  <span class="token keyword">const</span> link <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span>
+  link<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'none'</span>
+  link<span class="token punctuation">.</span>href <span class="token operator">=</span> blob
+  link<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'download'</span><span class="token punctuation">,</span> fileName<span class="token punctuation">)</span>
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>link<span class="token punctuation">)</span>
+  link<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>link<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//下载完成移除元素</span>
+  window<span class="token punctuation">.</span>URL<span class="token punctuation">.</span><span class="token function">revokeObjectURL</span><span class="token punctuation">(</span>blob<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//释放掉 blob 对象</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//临时表数据下载</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">downloadFiles</span><span class="token punctuation">(</span>configCode<span class="token punctuation">:</span> string<span class="token punctuation">,</span> query<span class="token punctuation">:</span> any<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    url<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`/wms/wms-account/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>configCode<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/download`</span></span><span class="token punctuation">,</span>
+    method<span class="token punctuation">:</span> <span class="token string">'get'</span><span class="token punctuation">,</span>
+    params<span class="token punctuation">:</span> query<span class="token punctuation">,</span>
+    responseType<span class="token punctuation">:</span> <span class="token string">'blob'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> fileName <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">decodeURI</span><span class="token punctuation">(</span>
+      res<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">'content-disposition'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>
+        res<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">'content-disposition'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'filename='</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">9</span>
+      <span class="token punctuation">)</span>
+    <span class="token punctuation">)</span>
+    <span class="token keyword">const</span> fileSuffix <span class="token operator">=</span> fileName<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>fileName<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> fileName<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
+    <span class="token function">downloadFile</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">,</span> fileName<span class="token punctuation">,</span> fileSuffix<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="三、WebWorker"><a href="#三、WebWorker" class="headerlink" title="三、WebWorker"></a>三、WebWorker</h3><p>​    其实第一种办法简单方便，试了下我三年前的联想轻薄本10w条数据用脚本开销1.5s-3s完全可以接受。如果数据量确实很大而且需要进一步处理比如日期或其他字段的format会增加开销可以试下WebWorker。</p>
 
             </div>
             <hr/>
@@ -1035,7 +1124,7 @@
                     </span>
                     <a href="http://adaichan.com" class="b-link-green">兴趣使然の边缘人小站</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2021/01/18/24.idea-re-bu-shu/" class="b-link-green">Idea 热部署</a>
+                    <a href="/2021/10/10/51-excel-dao-chu/" class="b-link-green">常用正则汇总</a>
                 </p>
             </div>
 
@@ -1359,30 +1448,36 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/01/20/25.bootstrap-table/">
+                <a href="/2021/10/10/50.chang-yong-zheng-ze-hui-zong/">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/25.jpg" class="responsive-img" alt="Bootstrap - table 使用总结">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/50.jpg" class="responsive-img" alt="常用正则汇总">
                         
-                        <span class="card-title">Bootstrap - table 使用总结</span>
+                        <span class="card-title">常用正则汇总</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            最近在帮忙迭代公司的一个快速开发平台项目，得将之前 Bootstrap 开发的部分用 Element 取代，里面还有 jQuery 的一些 zTree、UI Layout，若依等插件封装好的语法和 Element 冲突，这里整理记录一下。
+                            一、校验数字的表达式
+数字：^[0-9]*$
+n位的数字：^d{n}$
+至少n位的数字：^d{n,}$
+m-n位的数字：^d{m,n}$
+零和非零开头的数字：^(0|[1-9][0-9]*)$
+非零开头的最多带两位小数的数字：^([1-9]
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-01-20
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-10
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category" target="_blank">
+                                    工具
                                 </a>
                             
                             
@@ -1392,12 +1487,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript/" target="_blank">
-                        <span class="chip bg-color">JavaScript</span>
-                    </a>
-                    
-                    <a href="/tags/Bootstrap/" target="_blank">
-                        <span class="chip bg-color">Bootstrap</span>
+                    <a href="/tags/PS/" target="_blank">
+                        <span class="chip bg-color">PS</span>
                     </a>
                     
                 </div>
@@ -1411,30 +1502,51 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/12/23.chu-shi-react/">
+                <a href="/2021/10/09/49.chang-yong-rgb-zheng-li/">
                     <div class="card-image">
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/23.jpg" class="responsive-img" alt="初识 React">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/49.jpg" class="responsive-img" alt="常用 RGB 整理">
                         
-                        <span class="card-title">初识 React</span>
+                        <span class="card-title">常用 RGB 整理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            自动挡已经了然于胸，为了成为秋名山的 old driver，最近开始学习手动挡，没错！就是拥有函数式编程的理念和丰富的技术选型的前端两大框架之一的 React 全家桶。一个是响应式的，一个是手动 setState。多的不说盘它！
+                            常用护眼色代码与RGB值
+常见的一些保护眼睛的颜色（可根据喜好设置）：
+
+
+
+颜色
+代码
+RGB值
+
+
+
+银河白
+#FFFFFF
+RGB(255, 255, 255)
+
+
+杏仁黄
+#FAF9DE
+RGB(250,249,222)
+
+
+秋叶褐
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-01-12
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category" target="_blank">
-                                    前端
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category" target="_blank">
+                                    工具
                                 </a>
                             
                             
@@ -1444,20 +1556,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript/" target="_blank">
-                        <span class="chip bg-color">JavaScript</span>
-                    </a>
-                    
-                    <a href="/tags/React/" target="_blank">
-                        <span class="chip bg-color">React</span>
-                    </a>
-                    
-                    <a href="/tags/Vue/" target="_blank">
-                        <span class="chip bg-color">Vue</span>
-                    </a>
-                    
-                    <a href="/tags/jQuery/" target="_blank">
-                        <span class="chip bg-color">jQuery</span>
+                    <a href="/tags/PS/" target="_blank">
+                        <span class="chip bg-color">PS</span>
                     </a>
                     
                 </div>
