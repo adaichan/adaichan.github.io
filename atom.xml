@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>兴趣使然の边缘人小站</title>
+  
+  <subtitle>阿呆是也！</subtitle>
+  <link href="http://adaichan.com/atom.xml" rel="self"/>
+  
+  <link href="http://adaichan.com/"/>
+  <updated>2022-09-21T03:29:41.177Z</updated>
+  <id>http://adaichan.com/</id>
+  
+  <author>
+    <name>adaichan</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>常用正则汇总</title>
+    <link href="http://adaichan.com/2021/10/10/50.chang-yong-zheng-ze-hui-zong/"/>
+    <id>http://adaichan.com/2021/10/10/50.chang-yong-zheng-ze-hui-zong/</id>
+    <published>2021-10-09T16:00:00.000Z</published>
+    <updated>2022-09-21T03:29:41.177Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;一、校验数字的表达式&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;数字：^[0-9]*$&lt;/p&gt;
+&lt;p&gt;n位的数字：^d{n}$&lt;/p&gt;
+&lt;p&gt;至少n位的数字：^d{n,}$&lt;/p&gt;
+&lt;p&gt;m-n位的数字：^d{m,n}$&lt;/p&gt;
+&lt;p&gt;零和非零开头的数字：^(0|[1</summary>
+        
+      
+    
+    
+    
+    <category term="工具" scheme="http://adaichan.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="PS" scheme="http://adaichan.com/tags/PS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用正则汇总</title>
+    <link href="http://adaichan.com/2021/10/10/51-excel-dao-chu/"/>
+    <id>http://adaichan.com/2021/10/10/51-excel-dao-chu/</id>
+    <published>2021-10-09T16:00:00.000Z</published>
+    <updated>2023-05-31T07:58:01.423Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;一、使用插件&quot;&gt;&lt;a href=&quot;#一、使用插件&quot; class=&quot;headerlink&quot; title=&quot;一、使用插件&quot;&gt;&lt;/a&gt;一、使用插件&lt;/h3&gt;&lt;p&gt;像excel.js、xlsx.js、js-export-excel这类插件都可以轻松实现&lt;/p&gt;
+&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="工具" scheme="http://adaichan.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="PS" scheme="http://adaichan.com/tags/PS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用 RGB 整理</title>
+    <link href="http://adaichan.com/2021/10/09/49.chang-yong-rgb-zheng-li/"/>
+    <id>http://adaichan.com/2021/10/09/49.chang-yong-rgb-zheng-li/</id>
+    <published>2021-10-08T16:00:00.000Z</published>
+    <updated>2021-10-09T03:08:14.497Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;常用护眼色代码与RGB值&lt;/p&gt;
+&lt;p&gt;常见的一些保护眼睛的颜色（可根据喜好设置）：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;颜色&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;代码&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong</summary>
+        
+      
+    
+    
+    
+    <category term="工具" scheme="http://adaichan.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="PS" scheme="http://adaichan.com/tags/PS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PS去水印</title>
+    <link href="http://adaichan.com/2021/10/09/48.ps-qu-shui-yin/"/>
+    <id>http://adaichan.com/2021/10/09/48.ps-qu-shui-yin/</id>
+    <published>2021-10-08T16:00:00.000Z</published>
+    <updated>2021-10-09T03:04:56.227Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在我们的日常工作当中，经常会遇到一些图片需要去水印，有时候还真是一件比较苦逼的事情；另外面对不同的图片水印，处理方法也不一样，下面就分享几种常见的去水印方法。&lt;/p&gt;
+&lt;h2 id=&quot;一、仿制图章工具&quot;&gt;&lt;a href=&quot;#一、仿制图章工具&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="工具" scheme="http://adaichan.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="PS" scheme="http://adaichan.com/tags/PS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高项论文范文汇总（十大管理）</title>
+    <link href="http://adaichan.com/2021/10/08/47.gao-xiang-lun-wen-fan-wen-hui-zong-shi-da-guan-li/"/>
+    <id>http://adaichan.com/2021/10/08/47.gao-xiang-lun-wen-fan-wen-hui-zong-shi-da-guan-li/</id>
+    <published>2021-10-07T16:00:00.000Z</published>
+    <updated>2021-11-02T15:05:42.069Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、整体管理&quot;&gt;&lt;a href=&quot;#一、整体管理&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="考试" scheme="http://adaichan.com/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="软考" scheme="http://adaichan.com/tags/%E8%BD%AF%E8%80%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机组成原理之机器</title>
+    <link href="http://adaichan.com/2021/03/15/46.ji-suan-ji-zu-cheng-yuan-li-zhi-ji-qi-day-01/"/>
+    <id>http://adaichan.com/2021/03/15/46.ji-suan-ji-zu-cheng-yuan-li-zhi-ji-qi-day-01/</id>
+    <published>2021-03-14T16:00:00.000Z</published>
+    <updated>2021-03-16T13:50:08.295Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、计算机系统概论&quot;&gt;&lt;a href=&quot;#一、计算机系统概论&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="MOOC" scheme="http://adaichan.com/categories/MOOC/"/>
+    
+    
+    <category term="计算机组成原理" scheme="http://adaichan.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML 回顾</title>
+    <link href="http://adaichan.com/2021/03/03/45.html-hui-gu/"/>
+    <id>http://adaichan.com/2021/03/03/45.html-hui-gu/</id>
+    <published>2021-03-02T16:00:00.000Z</published>
+    <updated>2021-03-15T02:22:08.028Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、简介&quot;&gt;&lt;a href=&quot;#一、简介&quot; class=&quot;headerlink&quot; title=&quot;一、简介&quot;&gt;&lt;/a&gt;一、简介&lt;/h2&gt;&lt;p&gt;什么是 HTML？&lt;/p&gt;
+&lt;p&gt;HTML</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="HTML" scheme="http://adaichan.com/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浏览器差异及渲染</title>
+    <link href="http://adaichan.com/2021/02/28/44.liu-lan-qi-chai-yi-ji-xuan-ran/"/>
+    <id>http://adaichan.com/2021/02/28/44.liu-lan-qi-chai-yi-ji-xuan-ran/</id>
+    <published>2021-02-27T16:00:00.000Z</published>
+    <updated>2021-03-05T03:04:31.754Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、常见浏览器及其内核&quot;&gt;&lt;a href=&quot;#一、常见浏览器及其内核&quot; class=&quot;headerlink&quot; title=&quot;一、常见浏览器及其内核&quot;&gt;&lt;/a&gt;一、常见浏览器及其内核&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    
+    <category term="CSS" scheme="http://adaichan.com/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 全家桶 day 07</title>
+    <link href="http://adaichan.com/2021/02/26/43.react-quan-jia-tong-day-07/"/>
+    <id>http://adaichan.com/2021/02/26/43.react-quan-jia-tong-day-07/</id>
+    <published>2021-02-25T16:00:00.000Z</published>
+    <updated>2021-03-05T02:44:49.512Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、组件的生命周期&quot;&gt;&lt;a href=&quot;#一、组件的生命周期&quot; class=&quot;headerlink&quot; title=&quot;一、组件的生命周期&quot;&gt;&lt;/a&gt;一、组件的生命周期&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;生命周期回调函数 &amp;lt;=&amp;gt;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    
+    <category term="React" scheme="http://adaichan.com/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 全家桶 day 06</title>
+    <link href="http://adaichan.com/2021/02/24/42.react-quan-jia-tong-day-06/"/>
+    <id>http://adaichan.com/2021/02/24/42.react-quan-jia-tong-day-06/</id>
+    <published>2021-02-23T16:00:00.000Z</published>
+    <updated>2021-03-01T10:58:15.383Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、高阶函数、柯里化&quot;&gt;&lt;a href=&quot;#一、高阶函数、柯里化&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    
+    <category term="React" scheme="http://adaichan.com/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 全家桶 day 05</title>
+    <link href="http://adaichan.com/2021/02/22/41.react-quan-jia-tong-day-05/"/>
+    <id>http://adaichan.com/2021/02/22/41.react-quan-jia-tong-day-05/</id>
+    <published>2021-02-21T16:00:00.000Z</published>
+    <updated>2021-02-28T12:20:42.413Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、React-事件处理&quot;&gt;&lt;a href=&quot;#一、React-事件处理&quot; class=&quot;headerlink&quot; title=&quot;一、React 事件处理&quot;&gt;&lt;/a&gt;一、React 事件处理&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;   通过 onXxx</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    
+    <category term="React" scheme="http://adaichan.com/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 全家桶 day 04</title>
+    <link href="http://adaichan.com/2021/02/20/40.react-quan-jia-tong-day-04/"/>
+    <id>http://adaichan.com/2021/02/20/40.react-quan-jia-tong-day-04/</id>
+    <published>2021-02-19T16:00:00.000Z</published>
+    <updated>2021-02-28T12:19:25.581Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、回调形式的-ref&quot;&gt;&lt;a href=&quot;#一、回调形式的-ref&quot; class=&quot;headerlink&quot; title=&quot;一、回调形式的 ref&quot;&gt;&lt;/a&gt;一、回调形式的 ref&lt;/h2&gt;&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    
+    <category term="React" scheme="http://adaichan.com/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 全家桶 day 03</title>
+    <link href="http://adaichan.com/2021/02/18/39.react-quan-jia-tong-day-03/"/>
+    <id>http://adaichan.com/2021/02/18/39.react-quan-jia-tong-day-03/</id>
+    <published>2021-02-17T16:00:00.000Z</published>
+    <updated>2021-02-28T12:18:11.547Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、Props-基本使用&quot;&gt;&lt;a href=&quot;#一、Props-基本使用&quot; class=&quot;headerlink&quot; title=&quot;一、Props 基本使用&quot;&gt;&lt;/a&gt;一、Props 基本使用&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;script</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    
+    <category term="React" scheme="http://adaichan.com/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 全家桶 day 02</title>
+    <link href="http://adaichan.com/2021/02/16/38.react-quan-jia-tong-day-02/"/>
+    <id>http://adaichan.com/2021/02/16/38.react-quan-jia-tong-day-02/</id>
+    <published>2021-02-15T16:00:00.000Z</published>
+    <updated>2021-02-24T04:18:11.823Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、组件实例的三大属性&quot;&gt;&lt;a href=&quot;#一、组件实例的三大属性&quot; class=&quot;headerlink&quot; title=&quot;一、组件实例的三大属性&quot;&gt;&lt;/a&gt;一、组件实例的三大属性&lt;/h2&gt;&lt;p&gt;由于函数式组件没有自己的</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    
+    <category term="React" scheme="http://adaichan.com/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 全家桶 day 01</title>
+    <link href="http://adaichan.com/2021/02/14/37.react-quan-jia-tong-day-01/"/>
+    <id>http://adaichan.com/2021/02/14/37.react-quan-jia-tong-day-01/</id>
+    <published>2021-02-13T16:00:00.000Z</published>
+    <updated>2021-02-22T08:14:11.980Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、React-简介&quot;&gt;&lt;a href=&quot;#一、React-简介&quot; class=&quot;headerlink&quot; title=&quot;一、React 简介&quot;&gt;&lt;/a&gt;一、React</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    
+    <category term="React" scheme="http://adaichan.com/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>移除元素</title>
+    <link href="http://adaichan.com/2021/02/12/36.yi-chu-yuan-su/"/>
+    <id>http://adaichan.com/2021/02/12/36.yi-chu-yuan-su/</id>
+    <published>2021-02-11T16:00:00.000Z</published>
+    <updated>2021-02-14T02:12:32.927Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;移除元素：&lt;/strong&gt;给你一个数组 nums 和一个值 val，你需要 &lt;strong&gt;原地&lt;/strong&gt; 移除所有数值等于 val 的元素，并返回移除后数组的新长度。&lt;/p&gt;
+&lt;p&gt;不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并</summary>
+        
+      
+    
+    
+    
+    <category term="Algorithm" scheme="http://adaichan.com/categories/Algorithm/"/>
+    
+    
+    <category term="LeetCode" scheme="http://adaichan.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>删除排序数组中的重复项</title>
+    <link href="http://adaichan.com/2021/02/11/35.shan-chu-pai-xu-shu-zu-zhong-de-chong-fu-xiang/"/>
+    <id>http://adaichan.com/2021/02/11/35.shan-chu-pai-xu-shu-zu-zhong-de-chong-fu-xiang/</id>
+    <published>2021-02-10T16:00:00.000Z</published>
+    <updated>2021-02-14T02:12:23.610Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;删除排序数组中的重复项：&lt;/strong&gt;给定一个排序数组，你需要在 &lt;strong&gt;原地&lt;/strong&gt; 删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。&lt;/p&gt;
+&lt;p&gt;不要使用额外的数组空间，你必须在 &lt;strong&gt;原地</summary>
+        
+      
+    
+    
+    
+    <category term="Algorithm" scheme="http://adaichan.com/categories/Algorithm/"/>
+    
+    
+    <category term="LeetCode" scheme="http://adaichan.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>合并两个有序链表</title>
+    <link href="http://adaichan.com/2021/02/10/34.he-bing-liang-ge-you-xu-lian-biao/"/>
+    <id>http://adaichan.com/2021/02/10/34.he-bing-liang-ge-you-xu-lian-biao/</id>
+    <published>2021-02-09T16:00:00.000Z</published>
+    <updated>2021-02-14T02:10:55.277Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;合并两个有序链表：&lt;/strong&gt;将两个升序链表合并为一个新的 &lt;strong&gt;升序&lt;/strong&gt; 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;示例 1：&lt;/p&gt;
+&lt;p&gt;输入：l1 =</summary>
+        
+      
+    
+    
+    
+    <category term="Algorithm" scheme="http://adaichan.com/categories/Algorithm/"/>
+    
+    
+    <category term="LeetCode" scheme="http://adaichan.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>最长公共前缀</title>
+    <link href="http://adaichan.com/2021/02/08/32.zui-chang-gong-gong-qian-zhui/"/>
+    <id>http://adaichan.com/2021/02/08/32.zui-chang-gong-gong-qian-zhui/</id>
+    <published>2021-02-07T16:00:00.000Z</published>
+    <updated>2021-02-14T02:10:42.824Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;最长公共前缀：&lt;/strong&gt;编写一个函数来查找字符串数组中的最长公共前缀。如果不存在公共前缀，返回空字符串 &lt;code&gt;&quot;&quot;&lt;/code&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;示例 1：&lt;/p&gt;
+&lt;p&gt;输入：strs =</summary>
+        
+      
+    
+    
+    
+    <category term="Algorithm" scheme="http://adaichan.com/categories/Algorithm/"/>
+    
+    
+    <category term="LeetCode" scheme="http://adaichan.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>有效的括号</title>
+    <link href="http://adaichan.com/2021/02/08/33.you-xiao-de-gua-hao/"/>
+    <id>http://adaichan.com/2021/02/08/33.you-xiao-de-gua-hao/</id>
+    <published>2021-02-07T16:00:00.000Z</published>
+    <updated>2021-02-14T02:10:49.134Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;有效的括号：&lt;/strong&gt;给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串 s</summary>
+        
+      
+    
+    
+    
+    <category term="Algorithm" scheme="http://adaichan.com/categories/Algorithm/"/>
+    
+    
+    <category term="LeetCode" scheme="http://adaichan.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+</feed>
