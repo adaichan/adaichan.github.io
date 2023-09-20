@@ -123,7 +123,7 @@ deploy:
       repo:
           github: git@github.com:adaichan/adaichan.github.io.git
           gitee: https://gitee.com/adaichan/adaichan.git
-          coding: https://adaichan.coding.net/p/adaichan/d/adaichan/git
+          coding: https://e.coding.net/adaichan/adaichan/adaichan.git
       branch: master
     - type: baidu_url_submitter
 
