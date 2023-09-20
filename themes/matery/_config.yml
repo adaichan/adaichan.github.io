@@ -64,9 +64,8 @@ dream:
 # 是否在首页显示音乐.
 music:
   enable: true
-  title: #非吸底模式有效
-    enable: true
-    show: light melody
+  title: light melody
+  showTitle: true    #非吸底模式有效
   autoHide: true     # hide automaticaly
   server: netease    # require	music platform: netease, tencent, kugou, xiami, baidu
   type: playlist     # require song, playlist, album, search, artist
@@ -205,7 +204,7 @@ myProjects:
     matery:
         icon: fa-meetup
         iconBackground: 'linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)'
-        url: https://github.com/adaichan/matery
+        url: https://github.com/adaichan/adaichan.github.io
         desc: 我的个性化博客源码
     latest-info:
         icon: fa-weixin
@@ -246,13 +245,13 @@ mySkills:
       percent: 90%
     React:
       background: 'linear-gradient(to right, #00BCD4 0%, #80DEEA 100%)'
-      percent: 65%
-    Mini-program:
+      percent: 70%
+    Java:
       background: 'linear-gradient(to right, #4CAF50 0%, #81C784 100%)'
-      percent: 80%
+      percent: 10%
     Algorithm:
       background: 'linear-gradient(to right, #FFEB3B 0%, #FFF176 100%)'
-      percent: 50%
+      percent: 20%
 
 # config gallery of my photos in about page.
 # If you don't want to display this `Gallery` content, you can deactivate or delete this configuration.
@@ -281,30 +280,6 @@ myGallery:
     - /medias/featureimages/18.jpg
     - /medias/featureimages/19.jpg
     - /medias/featureimages/20.jpg
-    - /medias/featureimages/21.jpg
-    - /medias/featureimages/22.jpg
-    - /medias/featureimages/23.jpg
-    - /medias/featureimages/24.jpg
-    - /medias/featureimages/25.jpg
-    - /medias/featureimages/26.jpg
-    - /medias/featureimages/27.jpg
-    - /medias/featureimages/28.jpg
-    - /medias/featureimages/29.jpg
-    - /medias/featureimages/30.jpg
-    - /medias/featureimages/31.jpg
-    - /medias/featureimages/32.jpg
-    - /medias/featureimages/33.jpg
-    - /medias/featureimages/34.jpg
-    - /medias/featureimages/35.jpg
-    - /medias/featureimages/36.jpg
-    - /medias/featureimages/37.jpg
-    - /medias/featureimages/38.jpg
-    - /medias/featureimages/39.jpg
-    - /medias/featureimages/40.jpg
-    - /medias/featureimages/41.jpg
-    - /medias/featureimages/42.jpg
-    - /medias/featureimages/43.jpg
-    - /medias/featureimages/44.jpg
 
 # Whether to display post-calender in the `archive` page
 # 设置在归档页面中是否显示'文章日历'控件
@@ -509,6 +484,61 @@ featureImages:
 - /medias/featureimages/42.jpg
 - /medias/featureimages/43.jpg
 - /medias/featureimages/44.jpg
+- /medias/featureimages/45.jpg
+- /medias/featureimages/46.jpg
+- /medias/featureimages/47.jpg
+- /medias/featureimages/48.jpg
+- /medias/featureimages/49.jpg
+- /medias/featureimages/50.jpg
+- /medias/featureimages/51.jpg
+- /medias/featureimages/52.jpg
+- /medias/featureimages/53.jpg
+- /medias/featureimages/54.jpg
+- /medias/featureimages/55.jpg
+- /medias/featureimages/56.jpg
+- /medias/featureimages/57.jpg
+- /medias/featureimages/58.jpg
+- /medias/featureimages/59.jpg
+- /medias/featureimages/60.jpg
+- /medias/featureimages/61.jpg
+- /medias/featureimages/62.jpg
+- /medias/featureimages/63.jpg
+- /medias/featureimages/64.jpg
+- /medias/featureimages/65.jpg
+- /medias/featureimages/66.jpg
+- /medias/featureimages/67.jpg
+- /medias/featureimages/68.jpg
+- /medias/featureimages/69.jpg
+- /medias/featureimages/70.jpg
+- /medias/featureimages/71.jpg
+- /medias/featureimages/72.jpg
+- /medias/featureimages/73.jpg
+- /medias/featureimages/74.jpg
+- /medias/featureimages/75.jpg
+- /medias/featureimages/76.jpg
+- /medias/featureimages/77.jpg
+- /medias/featureimages/78.jpg
+- /medias/featureimages/79.jpg
+- /medias/featureimages/80.jpg
+- /medias/featureimages/81.jpg
+- /medias/featureimages/82.jpg
+- /medias/featureimages/83.jpg
+- /medias/featureimages/84.jpg
+- /medias/featureimages/85.jpg
+- /medias/featureimages/86.jpg
+- /medias/featureimages/87.jpg
+- /medias/featureimages/88.jpg
+- /medias/featureimages/89.jpg
+- /medias/featureimages/90.jpg
+- /medias/featureimages/91.jpg
+- /medias/featureimages/92.jpg
+- /medias/featureimages/93.jpg
+- /medias/featureimages/94.jpg
+- /medias/featureimages/95.jpg
+- /medias/featureimages/96.jpg
+- /medias/featureimages/97.jpg
+- /medias/featureimages/98.jpg
+- /medias/featureimages/99.jpg
 
   # default configs that the default policy for every articles/posts
   # default 配置文章的默认转载规则
@@ -560,13 +590,13 @@ wenzi:
   enable: true
 
 # adaichan 2020.12.04 M
-# 背景canvas-nest
+# 背景动态科技线条
 canvas_nest:
-  enable: true
-  color: 0,0,255 # 线条颜色, 默认: '0,0,0' ；三个数字分别为(R,G,B)，注意用,分割
-  pointColor: 0,0,255 #交点颜色, 默认: '0,0,0' ；三个数字分别为(R,G,B)，注意用,分割
+  enable: false
+  color: 0,0,0 # 线条颜色, 默认: '0,0,0' ；三个数字分别为(R,G,B)，注意用,分割
+  pointColor: 0,0,0 #交点颜色, 默认: '0,0,0' ；三个数字分别为(R,G,B)，注意用,分割
   opacity: 0.5 # 线条透明度（0~1）, 默认: 0.5
-  zIndex: -1 # 背景的z-index属性，css属性用于控制所在层的位置, 默认: -1
+  zIndex: -2 # 背景的z-index属性，css属性用于控制所在层的位置, 默认: -1
   count: 150 # 线条的总数量, 默认: 150
 
 # 背景静止彩带

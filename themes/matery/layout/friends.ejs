@@ -179,10 +179,12 @@
     .friend-introduction {
         min-height: 3rem;
     }
+
     /* 修复卡片底部按键被裁减问题 adaichan 2020.12.04 M */
     article .card {
-		overflow: visible !important;
-	}
+        overflow: visible !important;
+    }
+
     /* .f-card {
         overflow: visible !important;
     }  */
@@ -228,6 +230,6 @@
     $(function () {
         $('#friends-link').masonry({
             itemSelector: '.friend-div'
-        });
+        })
     });
 </script>
