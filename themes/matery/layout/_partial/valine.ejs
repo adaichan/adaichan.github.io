@@ -257,6 +257,18 @@
 <script src="/libs//libs/jQuery-emoji/dist/js/emoji.list.js"></script> -->
 <script>
     new Valine({
+        // el: '#vcomments',
+        // appId: '<%- theme.valine.appId %>',
+        // appKey: '<%- theme.valine.appKey %>',
+        // notify: '<%- theme.valine.notify %>',
+        // verify: '<%- theme.valine.verify %>',
+        // pageSize: '<%- theme.valine.pageSize %>',
+        // avatar: '<%- theme.valine.avatar %>',
+        // guest_info: '<%- theme.valine.guest_info %>',
+        // recordIP: '<%- theme.valine.recordIP %>',
+        // lang: '<%- theme.valine.lang %>',
+        // placeholder: '<%= theme.valine.placeholder %>',
+        // count: '<%= theme.valine.count %>',
         el: '#vcomments',
         appId: '<%- theme.valine.appId %>',
         appKey: '<%- theme.valine.appKey %>',
@@ -267,7 +279,7 @@
         pageSize: '<%- theme.valine.pageSize %>',
         lang: '<% if (config.language == "zh-CN") {  %>zh-cn<% } else { %>en<% } %>',
         placeholder: '<%= theme.valine.placeholder %>',
-
+        serverURLs: '<%= theme.valine.serverURLs %>' 
     });
 
 //     function parse_emoji() {
