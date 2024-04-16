@@ -9,11 +9,11 @@
     <meta name="keywords" content="ES6 语法汇总, blog note adaichan">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
-    <meta name="description" content="一、兼容性目前各大浏览器基本上都支持 ES6 的新特性，其中 Chrome 和 Firefox 对 ES6 最为友好，但 IE7~11 基本不支持。
-以下是各大浏览器支持情况及开始时间：
+    <meta name="description" content="一、兼容性目前各大浏览器基本上都能够支持 ES6 的新特性，其中 Chrome 和 Firefox 对 ES6 最为友好，但 IE7~11 基本不支持。
+以下是各大浏览器支持情况以及开始时间：
 
 二、let 与 const
-let声明变量，con">
+let声明变量，">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -204,9 +204,9 @@ let声明变量，con">
     };
     loaded();
 })()
- </script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="兴趣使然の边缘人小站" type="application/atom+xml">
-
+ </script><meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="兴趣使然の边缘人小站" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
@@ -840,7 +840,7 @@ let声明变量，con">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        7.8k
+                        7.9k
                     </div>
                     
 
@@ -864,8 +864,8 @@ let声明变量，con">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、兼容性"><a href="#一、兼容性" class="headerlink" title="一、兼容性"></a>一、兼容性</h2><p>目前各大浏览器基本上都支持 ES6 的新特性，其中 Chrome 和 Firefox 对 ES6 最为友好，但 IE7~11 基本不支持。</p>
-<p>以下是各大浏览器支持情况及开始时间：</p>
+                <h2 id="一、兼容性"><a href="#一、兼容性" class="headerlink" title="一、兼容性"></a>一、兼容性</h2><p>目前各大浏览器基本上都能够支持 ES6 的新特性，其中 Chrome 和 Firefox 对 ES6 最为友好，但 IE7~11 基本不支持。</p>
+<p>以下是各大浏览器支持情况以及开始时间：</p>
 <p><img src="/medias/loading.gif" data-original="1.png"></p>
 <h2 id="二、let-与-const"><a href="#二、let-与-const" class="headerlink" title="二、let 与 const"></a>二、let 与 const</h2><blockquote>
 <p>let声明变量，const声明常量：两个都有块级作用域，ES5没有块级作用域。</p>
@@ -900,7 +900,7 @@ let声明变量，con">
 <span class="token comment" spellcheck="true">// const声明后不许改变,所以为初始赋值0</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="三、解构赋值"><a href="#三、解构赋值" class="headerlink" title="三、解构赋值"></a>三、解构赋值</h2><blockquote>
-<p>针对<strong>数组</strong>或<strong>对象</strong>进行匹配，然后对其中的变量进行赋值。常用于交换变量值，取函数返回值，设置默认值。</p>
+<p>针对<strong>数组</strong>或<strong>对象</strong>进行匹配，然后对其中的变量进行赋值。常用于交换变量值，取函数返回值，或设置默认值。</p>
 </blockquote>
 <h3 id="3-1-数组的解构赋值（Array）"><a href="#3-1-数组的解构赋值（Array）" class="headerlink" title="3.1 数组的解构赋值（Array）"></a>3.1 数组的解构赋值（Array）</h3><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 基本</span>
 <span class="token keyword">let</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// a = 1  b = 2  c = 3</span>
@@ -2502,7 +2502,7 @@ helloAsync();
                     
                         <i class="fa fa-area-chart"></i>&nbsp;字数统计:&nbsp;
                         <span class="white-color">
-                            143k
+                            136.5k
                         </span> 字
                         
                             
