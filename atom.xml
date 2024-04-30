@@ -463,27 +463,6 @@
   </entry>
   
   <entry>
-    <title>快速进阶 Vue 3.0</title>
-    <link href="http://adaichan.com/2021/08/15/04.vue-3.0/"/>
-    <id>http://adaichan.com/2021/08/15/04.vue-3.0/</id>
-    <published>2021-08-14T16:00:00.000Z</published>
-    <updated>2024-04-16T00:30:36.623Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot; title=&quot;一、前言&quot;&gt;&lt;/a&gt;一、前言&lt;/h2&gt;&lt;p&gt;2020年09月18日，&lt;code&gt;Vue.js 3.0&lt;/code&gt; 正式发布，俺寻思才混熟 Vue 2</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>SEO 站点优化</title>
     <link href="http://adaichan.com/2021/08/04/04.seo/"/>
     <id>http://adaichan.com/2021/08/04/04.seo/</id>
@@ -530,6 +509,35 @@
     
     
     <category term="VSCode" scheme="http://adaichan.com/tags/VSCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git 填坑之 error 整理</title>
+    <link href="http://adaichan.com/2021/04/12/02.git/"/>
+    <id>http://adaichan.com/2021/04/12/02.git/</id>
+    <published>2021-04-11T16:00:00.000Z</published>
+    <updated>2024-04-16T00:15:00.363Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、Git-环境配置&quot;&gt;&lt;a href=&quot;#一、Git-环境配置&quot; class=&quot;headerlink&quot; title=&quot;一、Git 环境配置&quot;&gt;&lt;/a&gt;一、Git 环境配置&lt;/h2&gt;&lt;p&gt;下载安装流程就不一一赘述了，安装好之后在命令行输入</summary>
+        
+      
+    
+    
+    
+    <category term="工具" scheme="http://adaichan.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="GitHub" scheme="http://adaichan.com/tags/GitHub/"/>
+    
+    <category term="ESLint" scheme="http://adaichan.com/tags/ESLint/"/>
+    
+    <category term="Git" scheme="http://adaichan.com/tags/Git/"/>
     
   </entry>
   

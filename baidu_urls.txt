@@ -15,7 +15,6 @@ http://adaichan.com/2022/06/29/14.es6/
 http://adaichan.com/2022/06/09/07.liu-lan-qi-chai-yi-ji-xuan-ran/
 http://adaichan.com/2022/04/15/06.yi-dong-duan-gua-pei/
 http://adaichan.com/2021/10/29/05.gao-xiang-lun-wen-fan-wen-hui-zong-shi-da-guan-li/
-http://adaichan.com/2021/08/15/04.vue-3.0/
 http://adaichan.com/2021/08/04/04.seo/
 http://adaichan.com/2021/06/28/03.vscode/
 http://adaichan.com/2021/04/12/02.git/
