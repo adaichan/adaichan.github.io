@@ -323,14 +323,7 @@
   </url>
   
   <url>
-    <loc>http://adaichan.life/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://adaichan.life/tags/Lazyload/</loc>
+    <loc>http://adaichan.life/tags/%E8%BD%AF%E8%80%83/</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -351,7 +344,7 @@
   </url>
   
   <url>
-    <loc>http://adaichan.life/tags/PR/</loc>
+    <loc>http://adaichan.life/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -365,7 +358,7 @@
   </url>
   
   <url>
-    <loc>http://adaichan.life/tags/%E8%BD%AF%E8%80%83/</loc>
+    <loc>http://adaichan.life/tags/Lazyload/</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -373,6 +366,13 @@
   
   <url>
     <loc>http://adaichan.life/tags/Gulp/</loc>
+    <lastmod>2025-12-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://adaichan.life/tags/PR/</loc>
     <lastmod>2025-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
