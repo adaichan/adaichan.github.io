@@ -3,11 +3,11 @@
   <title>兴趣使然の边缘人小站</title>
   
   <subtitle>阿呆是也！</subtitle>
-  <link href="http://adaichan.com/atom.xml" rel="self"/>
+  <link href="http://adaichan.life/atom.xml" rel="self"/>
   
-  <link href="http://adaichan.com/"/>
+  <link href="http://adaichan.life/"/>
   <updated>2024-04-30T08:36:20.157Z</updated>
-  <id>http://adaichan.com/</id>
+  <id>http://adaichan.life/</id>
   
   <author>
     <name>adaichan</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Excel 前端导出</title>
-    <link href="http://adaichan.com/2023/12/28/21.excel-dao-chu/"/>
-    <id>http://adaichan.com/2023/12/28/21.excel-dao-chu/</id>
+    <link href="http://adaichan.life/2023/12/28/21.excel-dao-chu/"/>
+    <id>http://adaichan.life/2023/12/28/21.excel-dao-chu/</id>
     <published>2023-12-27T16:00:00.000Z</published>
     <updated>2024-04-30T08:36:20.157Z</updated>
     
@@ -35,17 +35,17 @@
     
     
     
-    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="http://adaichan.life/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="http://adaichan.life/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>Sass 基础学习</title>
-    <link href="http://adaichan.com/2023/12/06/20.sass/"/>
-    <id>http://adaichan.com/2023/12/06/20.sass/</id>
+    <link href="http://adaichan.life/2023/12/06/20.sass/"/>
+    <id>http://adaichan.life/2023/12/06/20.sass/</id>
     <published>2023-12-05T16:00:00.000Z</published>
     <updated>2024-04-30T08:36:16.067Z</updated>
     
@@ -60,19 +60,19 @@
     
     
     
-    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="http://adaichan.life/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="Sass" scheme="http://adaichan.com/tags/Sass/"/>
+    <category term="CSS" scheme="http://adaichan.life/tags/CSS/"/>
     
-    <category term="CSS" scheme="http://adaichan.com/tags/CSS/"/>
+    <category term="Sass" scheme="http://adaichan.life/tags/Sass/"/>
     
   </entry>
   
   <entry>
     <title>JS 继承汇总</title>
-    <link href="http://adaichan.com/2023/10/23/19.js-ji-cheng/"/>
-    <id>http://adaichan.com/2023/10/23/19.js-ji-cheng/</id>
+    <link href="http://adaichan.life/2023/10/23/19.js-ji-cheng/"/>
+    <id>http://adaichan.life/2023/10/23/19.js-ji-cheng/</id>
     <published>2023-10-22T16:00:00.000Z</published>
     <updated>2024-04-30T08:36:12.665Z</updated>
     
@@ -87,17 +87,17 @@
     
     
     
-    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="http://adaichan.life/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="http://adaichan.life/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>ESLint 使用和配置</title>
-    <link href="http://adaichan.com/2023/10/02/18.eslint/"/>
-    <id>http://adaichan.com/2023/10/02/18.eslint/</id>
+    <link href="http://adaichan.life/2023/10/02/18.eslint/"/>
+    <id>http://adaichan.life/2023/10/02/18.eslint/</id>
     <published>2023-10-01T16:00:00.000Z</published>
     <updated>2024-04-30T08:36:09.584Z</updated>
     
@@ -112,19 +112,19 @@
     
     
     
-    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="http://adaichan.life/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    <category term="ESLint" scheme="http://adaichan.life/tags/ESLint/"/>
     
-    <category term="ESLint" scheme="http://adaichan.com/tags/ESLint/"/>
+    <category term="JavaScript" scheme="http://adaichan.life/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>常用正则汇总</title>
-    <link href="http://adaichan.com/2023/08/15/17.chang-yong-zheng-ze-hui-zong/"/>
-    <id>http://adaichan.com/2023/08/15/17.chang-yong-zheng-ze-hui-zong/</id>
+    <link href="http://adaichan.life/2023/08/15/17.chang-yong-zheng-ze-hui-zong/"/>
+    <id>http://adaichan.life/2023/08/15/17.chang-yong-zheng-ze-hui-zong/</id>
     <published>2023-08-14T16:00:00.000Z</published>
     <updated>2024-04-30T08:36:05.496Z</updated>
     
@@ -139,17 +139,17 @@
     
     
     
-    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="http://adaichan.life/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="http://adaichan.life/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>常用 RGB 整理</title>
-    <link href="http://adaichan.com/2023/08/14/16.chang-yong-rgb-zheng-li/"/>
-    <id>http://adaichan.com/2023/08/14/16.chang-yong-rgb-zheng-li/</id>
+    <link href="http://adaichan.life/2023/08/14/16.chang-yong-rgb-zheng-li/"/>
+    <id>http://adaichan.life/2023/08/14/16.chang-yong-rgb-zheng-li/</id>
     <published>2023-08-13T16:00:00.000Z</published>
     <updated>2024-04-30T08:36:00.928Z</updated>
     
@@ -171,17 +171,17 @@
     
     
     
-    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="http://adaichan.life/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="http://adaichan.life/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>九种跨域方式及其原理</title>
-    <link href="http://adaichan.com/2023/06/26/15.kua-yu/"/>
-    <id>http://adaichan.com/2023/06/26/15.kua-yu/</id>
+    <link href="http://adaichan.life/2023/06/26/15.kua-yu/"/>
+    <id>http://adaichan.life/2023/06/26/15.kua-yu/</id>
     <published>2023-06-25T16:00:00.000Z</published>
     <updated>2024-04-30T08:16:22.294Z</updated>
     
@@ -196,17 +196,17 @@
     
     
     
-    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="http://adaichan.life/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="http://adaichan.life/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>HTTP 协议相关</title>
-    <link href="http://adaichan.com/2023/04/22/13.http-xie-yi/"/>
-    <id>http://adaichan.com/2023/04/22/13.http-xie-yi/</id>
+    <link href="http://adaichan.life/2023/04/22/13.http-xie-yi/"/>
+    <id>http://adaichan.life/2023/04/22/13.http-xie-yi/</id>
     <published>2023-04-21T16:00:00.000Z</published>
     <updated>2024-04-30T08:14:35.576Z</updated>
     
@@ -221,17 +221,17 @@
     
     
     
-    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="http://adaichan.life/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="HTTP" scheme="http://adaichan.com/tags/HTTP/"/>
+    <category term="HTTP" scheme="http://adaichan.life/tags/HTTP/"/>
     
   </entry>
   
   <entry>
     <title>Webpack 初步了解</title>
-    <link href="http://adaichan.com/2023/04/10/12.webpack/"/>
-    <id>http://adaichan.com/2023/04/10/12.webpack/</id>
+    <link href="http://adaichan.life/2023/04/10/12.webpack/"/>
+    <id>http://adaichan.life/2023/04/10/12.webpack/</id>
     <published>2023-04-09T16:00:00.000Z</published>
     <updated>2024-04-30T08:12:24.035Z</updated>
     
@@ -246,19 +246,19 @@
     
     
     
-    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="http://adaichan.life/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="http://adaichan.life/tags/JavaScript/"/>
     
-    <category term="Webpack" scheme="http://adaichan.com/tags/Webpack/"/>
+    <category term="Webpack" scheme="http://adaichan.life/tags/Webpack/"/>
     
   </entry>
   
   <entry>
     <title>Gulp 快速入门</title>
-    <link href="http://adaichan.com/2023/01/09/11.gulp/"/>
-    <id>http://adaichan.com/2023/01/09/11.gulp/</id>
+    <link href="http://adaichan.life/2023/01/09/11.gulp/"/>
+    <id>http://adaichan.life/2023/01/09/11.gulp/</id>
     <published>2023-01-08T16:00:00.000Z</published>
     <updated>2024-04-30T08:12:17.105Z</updated>
     
@@ -274,17 +274,17 @@
     
     
     
-    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="http://adaichan.life/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="Gulp" scheme="http://adaichan.com/tags/Gulp/"/>
+    <category term="Gulp" scheme="http://adaichan.life/tags/Gulp/"/>
     
   </entry>
   
   <entry>
     <title>PS去水印</title>
-    <link href="http://adaichan.com/2022/12/15/10.ps-qu-shui-yin/"/>
-    <id>http://adaichan.com/2022/12/15/10.ps-qu-shui-yin/</id>
+    <link href="http://adaichan.life/2022/12/15/10.ps-qu-shui-yin/"/>
+    <id>http://adaichan.life/2022/12/15/10.ps-qu-shui-yin/</id>
     <published>2022-12-14T16:00:00.000Z</published>
     <updated>2024-04-30T08:10:18.346Z</updated>
     
@@ -299,17 +299,17 @@
     
     
     
-    <category term="工具" scheme="http://adaichan.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    <category term="工具" scheme="http://adaichan.life/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="PS" scheme="http://adaichan.com/tags/PS/"/>
+    <category term="PS" scheme="http://adaichan.life/tags/PS/"/>
     
   </entry>
   
   <entry>
     <title>PR 重拾</title>
-    <link href="http://adaichan.com/2022/10/31/09.pr/"/>
-    <id>http://adaichan.com/2022/10/31/09.pr/</id>
+    <link href="http://adaichan.life/2022/10/31/09.pr/"/>
+    <id>http://adaichan.life/2022/10/31/09.pr/</id>
     <published>2022-10-30T16:00:00.000Z</published>
     <updated>2024-04-30T08:10:10.861Z</updated>
     
@@ -325,17 +325,17 @@
     
     
     
-    <category term="工具" scheme="http://adaichan.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    <category term="工具" scheme="http://adaichan.life/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="PR" scheme="http://adaichan.com/tags/PR/"/>
+    <category term="PR" scheme="http://adaichan.life/tags/PR/"/>
     
   </entry>
   
   <entry>
     <title>Lazyload 优化</title>
-    <link href="http://adaichan.com/2022/08/12/08.lazyload/"/>
-    <id>http://adaichan.com/2022/08/12/08.lazyload/</id>
+    <link href="http://adaichan.life/2022/08/12/08.lazyload/"/>
+    <id>http://adaichan.life/2022/08/12/08.lazyload/</id>
     <published>2022-08-11T16:00:00.000Z</published>
     <updated>2024-04-30T08:02:44.624Z</updated>
     
@@ -350,17 +350,17 @@
     
     
     
-    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="http://adaichan.life/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="Lazyload" scheme="http://adaichan.com/tags/Lazyload/"/>
+    <category term="Lazyload" scheme="http://adaichan.life/tags/Lazyload/"/>
     
   </entry>
   
   <entry>
     <title>ES6 语法汇总</title>
-    <link href="http://adaichan.com/2022/06/29/14.es6/"/>
-    <id>http://adaichan.com/2022/06/29/14.es6/</id>
+    <link href="http://adaichan.life/2022/06/29/14.es6/"/>
+    <id>http://adaichan.life/2022/06/29/14.es6/</id>
     <published>2022-06-28T16:00:00.000Z</published>
     <updated>2024-04-30T08:14:41.363Z</updated>
     
@@ -375,19 +375,19 @@
     
     
     
-    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="http://adaichan.life/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="http://adaichan.life/tags/JavaScript/"/>
     
-    <category term="ES6" scheme="http://adaichan.com/tags/ES6/"/>
+    <category term="ES6" scheme="http://adaichan.life/tags/ES6/"/>
     
   </entry>
   
   <entry>
     <title>浏览器差异及渲染</title>
-    <link href="http://adaichan.com/2022/06/09/07.liu-lan-qi-chai-yi-ji-xuan-ran/"/>
-    <id>http://adaichan.com/2022/06/09/07.liu-lan-qi-chai-yi-ji-xuan-ran/</id>
+    <link href="http://adaichan.life/2022/06/09/07.liu-lan-qi-chai-yi-ji-xuan-ran/"/>
+    <id>http://adaichan.life/2022/06/09/07.liu-lan-qi-chai-yi-ji-xuan-ran/</id>
     <published>2022-06-08T16:00:00.000Z</published>
     <updated>2024-04-30T08:02:25.997Z</updated>
     
@@ -402,21 +402,21 @@
     
     
     
-    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="http://adaichan.life/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="JavaScript" scheme="http://adaichan.com/tags/JavaScript/"/>
+    <category term="CSS" scheme="http://adaichan.life/tags/CSS/"/>
     
-    <category term="CSS" scheme="http://adaichan.com/tags/CSS/"/>
+    <category term="JavaScript" scheme="http://adaichan.life/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>移动端适配方案汇总</title>
-    <link href="http://adaichan.com/2022/04/15/06.yi-dong-duan-gua-pei/"/>
-    <id>http://adaichan.com/2022/04/15/06.yi-dong-duan-gua-pei/</id>
+    <link href="http://adaichan.life/2022/04/15/06.yi-dong-duan-gua-pei/"/>
+    <id>http://adaichan.life/2022/04/15/06.yi-dong-duan-gua-pei/</id>
     <published>2022-04-14T16:00:00.000Z</published>
-    <updated>2024-04-30T08:02:08.226Z</updated>
+    <updated>2024-04-30T10:00:09.695Z</updated>
     
     
       
@@ -429,19 +429,19 @@
     
     
     
-    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="http://adaichan.life/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="移动端" scheme="http://adaichan.com/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+    <category term="移动端" scheme="http://adaichan.life/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
     
   </entry>
   
   <entry>
-    <title>高项论文范文汇总（十大管理）</title>
-    <link href="http://adaichan.com/2021/10/29/05.gao-xiang-lun-wen-fan-wen-hui-zong-shi-da-guan-li/"/>
-    <id>http://adaichan.com/2021/10/29/05.gao-xiang-lun-wen-fan-wen-hui-zong-shi-da-guan-li/</id>
+    <title>高项论文范文汇总</title>
+    <link href="http://adaichan.life/2021/10/29/05.gao-xiang-lun-wen-fan-wen-hui-zong/"/>
+    <id>http://adaichan.life/2021/10/29/05.gao-xiang-lun-wen-fan-wen-hui-zong/</id>
     <published>2021-10-28T16:00:00.000Z</published>
-    <updated>2024-04-30T08:00:33.848Z</updated>
+    <updated>2024-04-30T10:00:05.792Z</updated>
     
     
       
@@ -455,19 +455,19 @@
     
     
     
-    <category term="考试" scheme="http://adaichan.com/categories/%E8%80%83%E8%AF%95/"/>
+    <category term="考试" scheme="http://adaichan.life/categories/%E8%80%83%E8%AF%95/"/>
     
     
-    <category term="软考" scheme="http://adaichan.com/tags/%E8%BD%AF%E8%80%83/"/>
+    <category term="软考" scheme="http://adaichan.life/tags/%E8%BD%AF%E8%80%83/"/>
     
   </entry>
   
   <entry>
     <title>SEO 站点优化</title>
-    <link href="http://adaichan.com/2021/08/04/04.seo/"/>
-    <id>http://adaichan.com/2021/08/04/04.seo/</id>
+    <link href="http://adaichan.life/2021/08/04/04.seo/"/>
+    <id>http://adaichan.life/2021/08/04/04.seo/</id>
     <published>2021-08-03T16:00:00.000Z</published>
-    <updated>2024-04-30T08:00:15.298Z</updated>
+    <updated>2025-12-24T16:10:04.622Z</updated>
     
     
       
@@ -480,19 +480,19 @@
     
     
     
-    <category term="工具" scheme="http://adaichan.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    <category term="工具" scheme="http://adaichan.life/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="SEO" scheme="http://adaichan.com/tags/SEO/"/>
+    <category term="SEO" scheme="http://adaichan.life/tags/SEO/"/>
     
   </entry>
   
   <entry>
     <title>VSCode 配置分享</title>
-    <link href="http://adaichan.com/2021/06/28/03.vscode/"/>
-    <id>http://adaichan.com/2021/06/28/03.vscode/</id>
+    <link href="http://adaichan.life/2021/06/28/03.vscode/"/>
+    <id>http://adaichan.life/2021/06/28/03.vscode/</id>
     <published>2021-06-27T16:00:00.000Z</published>
-    <updated>2024-04-16T00:16:58.407Z</updated>
+    <updated>2024-04-30T06:06:40.291Z</updated>
     
     
       
@@ -505,19 +505,19 @@
     
     
     
-    <category term="前端" scheme="http://adaichan.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="http://adaichan.life/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="VSCode" scheme="http://adaichan.com/tags/VSCode/"/>
+    <category term="VSCode" scheme="http://adaichan.life/tags/VSCode/"/>
     
   </entry>
   
   <entry>
     <title>Git 填坑之 error 整理</title>
-    <link href="http://adaichan.com/2021/04/12/02.git/"/>
-    <id>http://adaichan.com/2021/04/12/02.git/</id>
+    <link href="http://adaichan.life/2021/04/12/02.git/"/>
+    <id>http://adaichan.life/2021/04/12/02.git/</id>
     <published>2021-04-11T16:00:00.000Z</published>
-    <updated>2024-04-16T00:15:00.363Z</updated>
+    <updated>2024-04-30T06:06:00.537Z</updated>
     
     
       
@@ -530,14 +530,14 @@
     
     
     
-    <category term="工具" scheme="http://adaichan.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    <category term="工具" scheme="http://adaichan.life/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="GitHub" scheme="http://adaichan.com/tags/GitHub/"/>
+    <category term="GitHub" scheme="http://adaichan.life/tags/GitHub/"/>
     
-    <category term="ESLint" scheme="http://adaichan.com/tags/ESLint/"/>
+    <category term="Git" scheme="http://adaichan.life/tags/Git/"/>
     
-    <category term="Git" scheme="http://adaichan.com/tags/Git/"/>
+    <category term="ESLint" scheme="http://adaichan.life/tags/ESLint/"/>
     
   </entry>
   
