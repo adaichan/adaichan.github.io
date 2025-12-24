@@ -4,4 +4,4 @@
 
 # Demo
 
-[http://adaichan.com](http://adaichan.com)
+[http://adaichan.life](http://adaichan.life)

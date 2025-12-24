@@ -20,6 +20,6 @@ layout: "contact"
 
 例如咱的博客友链，大家就可以加到自己博客中：
 * **名称：**阿呆是也！
-* **地址：**http://adaichan.com
+* **地址：**http://adaichan.life
 * **简介：**兴趣使然の边缘人小站
-* **头像：**http://adaichan.com/medias/avatars/avatar.jpg
+* **头像：**http://adaichan.life/medias/avatars/avatar.jpg
