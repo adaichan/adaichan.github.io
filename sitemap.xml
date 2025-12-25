@@ -4,7 +4,16 @@
   <url>
     <loc>http://adaichan.life/baidu_verify_codeva-Rx9qrp9Yby.html</loc>
     
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2025-12-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://adaichan.life/baidu_verify_codeva-lNnfbyYLVb.html</loc>
+    
+    <lastmod>2025-12-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -274,134 +283,134 @@
 
   <url>
     <loc>http://adaichan.life/</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>http://adaichan.life/tags/GitHub/</loc>
-    <lastmod>2025-12-24</lastmod>
+    <loc>http://adaichan.life/tags/Markdown/</loc>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://adaichan.life/tags/Markdown/</loc>
-    <lastmod>2025-12-24</lastmod>
+    <loc>http://adaichan.life/tags/GitHub/</loc>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://adaichan.life/tags/Git/</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://adaichan.life/tags/ESLint/</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://adaichan.life/tags/SEO/</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://adaichan.life/tags/VSCode/</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://adaichan.life/tags/%E8%BD%AF%E8%80%83/</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://adaichan.life/tags/CSS/</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://adaichan.life/tags/JavaScript/</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://adaichan.life/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://adaichan.life/tags/PS/</loc>
-    <lastmod>2025-12-24</lastmod>
+    <loc>http://adaichan.life/tags/CSS/</loc>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://adaichan.life/tags/JavaScript/</loc>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://adaichan.life/tags/%E8%BD%AF%E8%80%83/</loc>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://adaichan.life/tags/Lazyload/</loc>
-    <lastmod>2025-12-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://adaichan.life/tags/Gulp/</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://adaichan.life/tags/PR/</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://adaichan.life/tags/PS/</loc>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://adaichan.life/tags/Gulp/</loc>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://adaichan.life/tags/Webpack/</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://adaichan.life/tags/HTTP/</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://adaichan.life/tags/ES6/</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://adaichan.life/tags/Sass/</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -410,21 +419,21 @@
   
   <url>
     <loc>http://adaichan.life/categories/%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://adaichan.life/categories/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://adaichan.life/categories/%E8%80%83%E8%AF%95/</loc>
-    <lastmod>2025-12-24</lastmod>
+    <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
