@@ -121,7 +121,7 @@ theme: matery
 deploy:
     - type: git
       repo:
-          github: git@github.com-adaichan:adaichan/adaichan.github.io.git
+          github: https://github.com/adaichan/adaichan.github.io.git
           gitee: https://gitee.com/adaichan/adaichan.git
       branch: master
     - type: baidu_url_submitter
