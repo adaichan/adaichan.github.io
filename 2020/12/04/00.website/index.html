@@ -9,7 +9,7 @@
     <meta name="keywords" content="Hexo + GitHub 搭建教程, blog note adaichan">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
-    <meta name="description" content="前言如今知识分享的平台论坛五花八门，比如知乎、掘金、Stack Overflow、CSDN、博客园、思否还有简书等等，很多问题上面都有答案并且方便收藏，然鹅它们不够个性化，作为一个喜欢折腾的边缘人思量一番撅腚再弄个自己的無名小站，兜兜转转最">
+    <meta name="description" content="前言如今知识分享的平台和论坛有很多，像知乎、掘金、Stack Overflow、CSDN、博客园、思否还有简书等等，很多问题上面都有答案并且方便收藏，然鹅它们不够个性化，作为一个喜欢折腾的边缘人思量一番撅腚再弄个自己的無名小站，兜兜转转最后">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -200,7 +200,7 @@
     };
     loaded();
 })()
- </script><meta name="generator" content="Hexo 5.4.0">
+ </script><meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="兴趣使然の边缘人小站" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
@@ -856,7 +856,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>如今知识分享的平台论坛五花八门，比如知乎、掘金、Stack Overflow、CSDN、博客园、思否还有简书等等，很多问题上面都有答案并且<strong>方便收藏</strong>，然鹅它们不够<strong>个性化</strong>，作为一个喜欢折腾的边缘人思量一番撅腚再弄个自己的無名小站，兜兜转转最后还是选择了 Hexo + <a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery">hexo-theme-matery</a> 这套架子来搭建。</p>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>如今知识分享的平台和论坛有很多，像知乎、掘金、Stack Overflow、CSDN、博客园、思否还有简书等等，很多问题上面都有答案并且<strong>方便收藏</strong>，然鹅它们不够<strong>个性化</strong>，作为一个喜欢折腾的边缘人思量一番撅腚再弄个自己的無名小站，兜兜转转最后还是选择了 Hexo + <a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery">hexo-theme-matery</a> 这套架子来搭建。</p>
 <h2 id="一、安装-Git、Node-js、Hexo"><a href="#一、安装-Git、Node-js、Hexo" class="headerlink" title="一、安装 Git、Node.js、Hexo"></a>一、安装 Git、Node.js、Hexo</h2><h3 id="1-1-安装-Git"><a href="#1-1-安装-Git" class="headerlink" title="1.1 安装 Git"></a>1.1 安装 Git</h3><p>为了把本地文件上传到 GitHub，需要用到分布式版本控制工具 <strong>Git</strong>，不得不说 <strong>Linus Torvalds</strong> YYDS，基于 Git 之后又有了全球最大的同性交友平台 GitHub，由三个旧金山的年轻人在2008年4月创办，正如每个伟大的传奇都开始于一场冒险，Tom 在这篇文章 <a target="_blank" rel="noopener" href="http://tom.preston-werner.com/2008/10/18/how-i-turned-down-300k.html">我如何辞掉微软30万年薪邀约，创办GitHub</a> 中谈到：当我老去，回顾一生，我想说，”哇，那是一场冒险“；而不是，“哇，我真的很安稳“。</p>
 <p><strong>Windows下载：</strong>到 Git 官网上下载，安装时选项默认，只不过最后一步添加路径时要选择<code>Use Git from the Windows Command Prompt</code>，这样我们就可以直接在命令提示符里打开 Git 了。之后，就可以直接右键空白处使用<code>git bash</code>来敲命令行了。</p>
 <p><strong>linux 下载：</strong></p>
@@ -893,9 +893,9 @@
 <pre class="line-numbers language-bash"><code class="language-bash">hexo g
 hexo server<span class="token punctuation">(</span>或者简写:hexo s）<span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>然后浏览器打开<a target="_blank" rel="noopener" href="http://localhost:4000/%EF%BC%8C%E5%B0%B1%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E6%88%91%E4%BB%AC%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E5%95%A6">http://localhost:4000/，就可以看到我们的博客网站啦</a></p>
+<p>然后在浏览器中打开<a target="_blank" rel="noopener" href="http://localhost:4000/%EF%BC%8C%E5%B0%B1%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E6%88%91%E4%BB%AC%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E5%95%A6%EF%BC%81">http://localhost:4000/，就可以看到我们的博客网站啦！</a></p>
 <p>按<code>Ctrl + C</code>关闭本地服务器</p>
-<h2 id="二、GitHub-创建个人仓库"><a href="#二、GitHub-创建个人仓库" class="headerlink" title="二、GitHub 创建个人仓库"></a>二、GitHub 创建个人仓库</h2><p>接下来需要注册一个<code>GitHub</code>账号，用来存放我们的网站。然后打开<a target="_blank" rel="noopener" href="https://github.com/%EF%BC%8C%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E4%BB%93%E5%BA%93%60New">https://github.com/，新建一个仓库`New</a> repository<code> 输入自己的项目名，后面一定要加</code>.github.io<code>后缀，</code>README`初始化也要勾上。</p>
+<h2 id="二、GitHub-创建个人仓库"><a href="#二、GitHub-创建个人仓库" class="headerlink" title="二、GitHub 创建个人仓库"></a>二、GitHub 创建个人仓库</h2><p>接下来需要去注册一个<code>GitHub</code>账号，用来存放我们的网站。然后打开<a target="_blank" rel="noopener" href="https://github.com/%EF%BC%8C%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E4%BB%93%E5%BA%93%60New">https://github.com/，新建一个仓库`New</a> repository<code> 输入自己的项目名，后面一定要加</code>.github.io<code>后缀，</code>README`初始化也要勾上。</p>
 <h2 id="三、生成-SSH-添加到-GitHub"><a href="#三、生成-SSH-添加到-GitHub" class="headerlink" title="三、生成 SSH 添加到 GitHub"></a>三、生成 SSH 添加到 GitHub</h2><p><strong>生成<code>SSH</code>添加到<code>GitHub</code>，连接<code>Github</code>与本地。</strong><br>右键空白打开<code>git bash</code>，接着输入下面命令：</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> config --global user.name <span class="token string">"yourname"</span>
 <span class="token function">git</span> config --global user.email <span class="token string">"youremail"</span>
@@ -1489,7 +1489,7 @@ hexo deploy
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文是一篇记录该小站在2020年12月4日呱呱坠地的初步搭建指南，希望能帮到想建站的小伙伴 ♪♪
+                            本文是一篇记录该小站在2020年12月4日呱呱坠地的初步搭建指南，希望能帮到想建站的小伙伴们 ♪♪
                         
                     </div>
                     <div class="publish-info">
@@ -1665,7 +1665,7 @@ hexo deploy
     <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            Copyright&nbsp;&copy; 2020-2024 adaichan&nbsp;♡.&nbsp;All Rights Reserved
+            Copyright&nbsp;&copy; 2020-2025 adaichan&nbsp;♡.&nbsp;All Rights Reserved
 
                 <br>
                 <span id="sitetime"></span><span class="my-face">&nbsp;٩( 'ω' )و</span>
@@ -1676,7 +1676,7 @@ hexo deploy
                     
                         <i class="fa fa-area-chart"></i>&nbsp;字数统计:&nbsp;
                         <span class="white-color">
-                            136.5k
+                            73k
                         </span> 字
                         
                             
@@ -1914,12 +1914,19 @@ $(function () {
     <div id="weather-v2-plugin-simple"></div>
     <script>WIDGET = { CONFIG: { "modules": "01234", "background": 1, "tmpColor": "FFFFFF", "tmpSize": 16, "cityColor": "FFFFFF", "citySize": 16, "aqiSize": 16, "weatherIconSize": 24, "alertIconSize": 18, "padding": "10px 10px 10px 10px", "shadow": "1", "language": "auto", "borderRadius": 5, "city": "CN101200101", "fixed": "true", "vertical": "middle", "horizontal": "center", "left": "16", "top": "16", "key": "bAnFmmXfQG" } }</script>
     <script src="https://apip.weatherdt.com/simple/static/js/weather-simple-common.js?v=2.0"></script>
-<script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
 
 </html>
