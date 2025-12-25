@@ -297,14 +297,14 @@
   </url>
   
   <url>
-    <loc>http://adaichan.life/tags/GitHub/</loc>
+    <loc>http://adaichan.life/tags/Git/</loc>
     <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://adaichan.life/tags/Git/</loc>
+    <loc>http://adaichan.life/tags/GitHub/</loc>
     <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -318,13 +318,6 @@
   </url>
   
   <url>
-    <loc>http://adaichan.life/tags/SEO/</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://adaichan.life/tags/VSCode/</loc>
     <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -332,7 +325,28 @@
   </url>
   
   <url>
+    <loc>http://adaichan.life/tags/SEO/</loc>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://adaichan.life/tags/%E8%BD%AF%E8%80%83/</loc>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://adaichan.life/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/</loc>
+    <lastmod>2025-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://adaichan.life/tags/Lazyload/</loc>
     <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -347,20 +361,6 @@
   
   <url>
     <loc>http://adaichan.life/tags/JavaScript/</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://adaichan.life/tags/%E8%BD%AF%E8%80%83/</loc>
-    <lastmod>2025-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://adaichan.life/tags/Lazyload/</loc>
     <lastmod>2025-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

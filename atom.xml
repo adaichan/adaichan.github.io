@@ -533,9 +533,9 @@
     <category term="工具" scheme="http://adaichan.life/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="GitHub" scheme="http://adaichan.life/tags/GitHub/"/>
-    
     <category term="Git" scheme="http://adaichan.life/tags/Git/"/>
+    
+    <category term="GitHub" scheme="http://adaichan.life/tags/GitHub/"/>
     
     <category term="ESLint" scheme="http://adaichan.life/tags/ESLint/"/>
     
