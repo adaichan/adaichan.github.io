@@ -37,6 +37,15 @@
     simplePasswordMode: {
       enabled: false,
       password: '' // 设置访问密码
+    },
+    
+    // 登录页背景音乐配置
+    bgm: {
+      enabled: true,
+      // 使用在线音乐链接（推荐使用免费音效网站的链接）
+      // 示例：轻音乐/钢琴曲等
+      url: 'https://music.163.com/song/media/outer/url?id=2730699305.mp3',
+      volume: 0.6  // 音量 0-1
     }
   };
 
@@ -90,11 +99,45 @@
     const overlay = document.createElement('div');
     overlay.id = 'auth-overlay';
     overlay.innerHTML = `
+      <!-- 流星雨效果 -->
+      <div class="meteor-shower">
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+      </div>
+      
+      <!-- 浮动光球 -->
+      <div class="floating-orbs">
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+      </div>
+      
+      <!-- 萤火虫 -->
+      <div class="fireflies">
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+      </div>
+      
       <div class="auth-container">
         <div class="auth-box">
           <div class="auth-header">
-            <h2>🔐 需要登录</h2>
-            <p>请登录后访问网站内容</p>
+            <div class="auth-logo">
+              <div class="logo-ring"></div>
+              <div class="logo-ring"></div>
+              <div class="logo-icon">✦</div>
+            </div>
+            <h2>欢迎回来</h2>
+            <p>请登录以访问专属内容</p>
           </div>
           
           <form id="auth-form" class="auth-form">
@@ -122,6 +165,14 @@
             <p>登录即表示同意我们的使用条款</p>
           </div>
         </div>
+        
+        <!-- 背景音乐控制 -->
+        <div class="auth-music-control" style="display: ${AUTH_CONFIG.bgm.enabled ? 'flex' : 'none'}">
+          <audio id="auth-bgm" loop src="${AUTH_CONFIG.bgm.url}"></audio>
+          <button type="button" id="music-toggle" class="music-btn" title="播放/暂停音乐">
+            <span class="music-icon">♪</span>
+          </button>
+        </div>
       </div>
     `;
     
@@ -136,9 +187,69 @@
   function hideLoginOverlay() {
     const overlay = document.getElementById('auth-overlay');
     if (overlay) {
+      // 停止背景音乐
+      const bgm = document.getElementById('auth-bgm');
+      if (bgm) {
+        bgm.pause();
+      }
       overlay.remove();
       document.body.style.overflow = '';
     }
+  }
+
+  // 背景音乐控制
+  function setupBgmControl() {
+    const bgm = document.getElementById('auth-bgm');
+    const musicBtn = document.getElementById('music-toggle');
+    const musicIcon = musicBtn ? musicBtn.querySelector('.music-icon') : null;
+    
+    if (!bgm || !musicBtn) return;
+
+    let isPlaying = false;
+
+    // 尝试自动播放（可能被浏览器阻止）
+    const tryAutoPlay = function() {
+      bgm.volume = AUTH_CONFIG.bgm.volume || 0.3; // 使用配置的音量
+      bgm.play().then(function() {
+        isPlaying = true;
+        musicBtn.classList.add('playing');
+        if (musicIcon) musicIcon.textContent = '🎶';
+      }).catch(function() {
+        // 自动播放被阻止，等待用户点击
+        isPlaying = false;
+        musicBtn.classList.remove('playing');
+        if (musicIcon) musicIcon.textContent = '🎵';
+      });
+    };
+
+    // 页面加载后尝试自动播放
+    setTimeout(tryAutoPlay, 500);
+
+    // 点击切换播放/暂停
+    musicBtn.addEventListener('click', function() {
+      if (isPlaying) {
+        bgm.pause();
+        isPlaying = false;
+        musicBtn.classList.remove('playing');
+        if (musicIcon) musicIcon.textContent = '🎵';
+      } else {
+        bgm.play().then(function() {
+          isPlaying = true;
+          musicBtn.classList.add('playing');
+          if (musicIcon) musicIcon.textContent = '🎶';
+        }).catch(function(err) {
+          console.log('播放失败:', err);
+        });
+      }
+    });
+
+    // 用户首次交互后尝试播放
+    document.addEventListener('click', function firstClick() {
+      if (!isPlaying) {
+        tryAutoPlay();
+      }
+      document.removeEventListener('click', firstClick);
+    }, { once: true });
   }
 
   // 设置认证事件
@@ -147,6 +258,9 @@
     const submitBtn = document.getElementById('auth-submit-btn');
     const anonymousBtn = document.getElementById('auth-anonymous-btn');
     const errorDiv = document.getElementById('auth-error');
+
+    // 背景音乐控制
+    setupBgmControl();
 
     // 表单提交
     form.addEventListener('submit', async function(e) {
