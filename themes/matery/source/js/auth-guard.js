@@ -128,6 +128,9 @@
         <div class="firefly"></div>
       </div>
       
+      <!-- 烟花画布 -->
+      <canvas class="fireworks-canvas" id="auth-fireworks"></canvas>
+      
       <div class="auth-container">
         <div class="auth-box">
           <div class="auth-header">
@@ -136,8 +139,7 @@
               <div class="logo-ring"></div>
               <div class="logo-icon">✦</div>
             </div>
-            <h2>欢迎回来</h2>
-            <p>请登录以访问专属内容</p>
+            <h2>Welcome</h2>
           </div>
           
           <form id="auth-form" class="auth-form">
@@ -153,17 +155,9 @@
             <button type="submit" class="auth-submit" id="auth-submit-btn">登录</button>
           </form>
           
-          <div class="auth-divider">
-            <span>或者</span>
-          </div>
-          
           <button class="auth-anonymous" id="auth-anonymous-btn" style="display: ${AUTH_CONFIG.allowAnonymous ? 'block' : 'none'}">
             匿名访问
           </button>
-          
-          <div class="auth-footer">
-            <p>登录即表示同意我们的使用条款</p>
-          </div>
         </div>
         
         <!-- 背景音乐控制 -->
@@ -181,6 +175,9 @@
 
     // 绑定事件
     setupAuthEvents();
+    
+    // 初始化烟花动画
+    initFireworks();
   }
 
   // 隐藏登录遮罩层
@@ -192,9 +189,170 @@
       if (bgm) {
         bgm.pause();
       }
+      // 停止烟花动画
+      if (window.fireworksAnimation) {
+        window.fireworksAnimation.pause();
+        window.fireworksAnimation = null;
+      }
       overlay.remove();
       document.body.style.overflow = '';
     }
+  }
+
+  // 初始化烟花动画
+  function initFireworks() {
+    const canvas = document.getElementById('auth-fireworks');
+    if (!canvas || typeof anime === 'undefined') return;
+
+    const ctx = canvas.getContext('2d');
+    let numberOfParticules = 30;
+    const colors = ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C', '#FF6B9D', '#C44569', '#F8B500'];
+
+    // 设置画布大小
+    function setCanvasSize() {
+      canvas.width = 2 * window.innerWidth;
+      canvas.height = 2 * window.innerHeight;
+      canvas.style.width = window.innerWidth + 'px';
+      canvas.style.height = window.innerHeight + 'px';
+      ctx.scale(2, 2);
+    }
+
+    setCanvasSize();
+    
+    // 防抖处理resize事件
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(setCanvasSize, 250);
+    });
+
+    // 创建粒子方向
+    function setParticuleDirection(p) {
+      const angle = anime.random(0, 360) * Math.PI / 180;
+      const value = anime.random(50, 180);
+      const radius = [-1, 1][anime.random(0, 1)] * value;
+      return {
+        x: p.x + radius * Math.cos(angle),
+        y: p.y + radius * Math.sin(angle)
+      };
+    }
+
+    // 创建粒子
+    function createParticule(x, y) {
+      const p = {
+        x: x,
+        y: y,
+        color: colors[anime.random(0, colors.length - 1)],
+        radius: anime.random(16, 32),
+        endPos: null,
+        draw: function() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, true);
+          ctx.fillStyle = this.color;
+          ctx.fill();
+        }
+      };
+      p.endPos = setParticuleDirection(p);
+      return p;
+    }
+
+    // 创建圆形
+    function createCircle(x, y) {
+      const p = {
+        x: x,
+        y: y,
+        color: '#F00',
+        radius: 0.1,
+        alpha: 0.5,
+        lineWidth: 6,
+        draw: function() {
+          ctx.globalAlpha = this.alpha;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, true);
+          ctx.lineWidth = this.lineWidth;
+          ctx.strokeStyle = this.color;
+          ctx.stroke();
+          ctx.globalAlpha = 1;
+        }
+      };
+      return p;
+    }
+
+    // 渲染粒子
+    function renderParticule(anim) {
+      for (let i = 0; i < anim.animatables.length; i++) {
+        anim.animatables[i].target.draw();
+      }
+    }
+
+    // 动画粒子
+    function animateParticules(x, y) {
+      const circle = createCircle(x, y);
+      const particules = [];
+      for (let i = 0; i < numberOfParticules; i++) {
+        particules.push(createParticule(x, y));
+      }
+
+      anime.timeline().add({
+        targets: particules,
+        x: function(p) { return p.endPos.x; },
+        y: function(p) { return p.endPos.y; },
+        radius: 0.1,
+        duration: anime.random(1200, 1800),
+        easing: 'easeOutExpo',
+        update: renderParticule
+      }).add({
+        targets: circle,
+        radius: anime.random(80, 160),
+        lineWidth: 0,
+        alpha: {
+          value: 0,
+          easing: 'linear',
+          duration: anime.random(600, 800)
+        },
+        duration: anime.random(1200, 1800),
+        easing: 'easeOutExpo',
+        update: renderParticule,
+        offset: 0
+      });
+    }
+
+    // 清除画布
+    function clearCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    // 创建持续渲染循环
+    window.fireworksAnimation = anime({
+      duration: Infinity,
+      update: clearCanvas
+    });
+
+    // 自动播放烟花
+    function autoFireworks() {
+      // 随机位置
+      const x = anime.random(100, window.innerWidth - 100);
+      const y = anime.random(100, window.innerHeight - 100);
+      animateParticules(x, y);
+    }
+
+    // 初始播放几个烟花
+    setTimeout(() => {
+      autoFireworks();
+      setTimeout(autoFireworks, 500);
+      setTimeout(autoFireworks, 1000);
+    }, 500);
+
+    // 定时自动播放烟花（每2-4秒一次）
+    function scheduleNextFirework() {
+      const delay = anime.random(2000, 4000);
+      setTimeout(() => {
+        autoFireworks();
+        scheduleNextFirework();
+      }, delay);
+    }
+
+    scheduleNextFirework();
   }
 
   // 背景音乐控制
