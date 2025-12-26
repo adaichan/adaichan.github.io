@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.12/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/css/auth.css">
     
     <style type="text/css">
         
@@ -969,7 +970,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["JavaScript","GitHub","ESLint","CSS","Markdown","Git","SEO","VSCode","移动端","软考"]
+                data: ["JavaScript","GitHub","ESLint","CSS","Markdown","VSCode","Git","软考","SEO","移动端"]
             }
         ],
         yAxis: [
@@ -1186,14 +1187,20 @@
         <div class="tag-chips center-align">
             
             
+            <a href="/tags/GitHub/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">GitHub</span>
+            </a>
+            
+            
+            
             <a href="/tags/Markdown/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">Markdown</span>
             </a>
             
             
             
-            <a href="/tags/GitHub/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">GitHub</span>
+            <a href="/tags/VSCode/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">VSCode</span>
             </a>
             
             
@@ -1210,14 +1217,14 @@
             
             
             
-            <a href="/tags/SEO/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">SEO</span>
+            <a href="/tags/%E8%BD%AF%E8%80%83/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">软考</span>
             </a>
             
             
             
-            <a href="/tags/VSCode/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">VSCode</span>
+            <a href="/tags/SEO/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">SEO</span>
             </a>
             
             
@@ -1228,30 +1235,18 @@
             
             
             
-            
-            
-            
-            
-            <a href="/tags/%E8%BD%AF%E8%80%83/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">软考</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Lazyload/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">Lazyload</span>
-            </a>
-            
-            
-            
             <a href="/tags/PR/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">PR</span>
             </a>
             
             
             
-            <a href="/tags/PS/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">PS</span>
+            
+            
+            
+            
+            <a href="/tags/Lazyload/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Lazyload</span>
             </a>
             
             
@@ -1262,14 +1257,20 @@
             
             
             
-            <a href="/tags/Webpack/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">Webpack</span>
+            <a href="/tags/PS/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">PS</span>
             </a>
             
             
             
             <a href="/tags/HTTP/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">HTTP</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Webpack/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Webpack</span>
             </a>
             
             
@@ -1648,6 +1649,10 @@ $(function () {
 </div>
 
 
+    <!-- 权限控制系统 -->
+    <script src="/js/cloudbase.js"></script>
+    <script src="/js/auth-guard.js"></script>
+    
     <script src="https://cdn.bootcss.com/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdn.bootcss.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
     <script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
