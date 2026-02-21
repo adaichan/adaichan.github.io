@@ -1,0 +1,2378 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<!-- adaichan 2020.12.04 M -->
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="移动端适配方案汇总, blog note adaichan">
+    <meta name="baidu-site-verification" content="fmlEuI34ir" />
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
+    <meta name="description" content="一、前言由于屏幕尺寸、分辨率不同，还要考虑横竖屏问题，为了使 web 页面在不同移动设备上适配，需要在开发过程中使用合理的适配方案。
+早期网页设计采用静态布局，通过&amp;lt;meta&amp;gt;标签中的applicable-device设备标识识">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>移动端适配方案汇总 | 兴趣使然の边缘人小站</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.12/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/css/auth.css">
+    
+    <style type="text/css">
+        
+            
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+    
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+    
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+    
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+    
+   
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },1000); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+ </script><meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="兴趣使然の边缘人小站" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+ <div id="loading-container">
+     <p class="loading-text">玩命加载中 . . . </p> 
+     <div class="loading-image">
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div> 
+         <div></div>
+     </div>
+ </div><body>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+				<a href="/" class="waves-effect waves-light">
+					<div>
+						
+						<img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+						
+						<span class="logo-span">兴趣使然の边缘人小站</span>
+					</div>
+				</a>
+			</div>
+            
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-fort-awesome"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-pencil-square-o"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友人帐</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性 adaichan 2020.12.04 M -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-fort-awesome"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/tags" class="waves-effect waves-light">
+              
+                <i class="fa fa-tags"></i>
+              
+              <span>标签</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/categories" class="waves-effect waves-light">
+              
+                <i class="fa fa-bookmark"></i>
+              
+              <span>分类</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/archives" class="waves-effect waves-light">
+              
+                <i class="fa fa-archive"></i>
+              
+              <span>归档</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>关于</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-pencil-square-o"></i>
+              
+              <span>留言板</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>友人帐</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">兴趣使然の边缘人小站</div>
+        <div class="logo-desc">
+            
+            ADAI&#39;s personal website just for fun！
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-fort-awesome"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-pencil-square-o"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友人帐
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/adaichan/matery" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+   
+   
+<!-- 支持二级菜单特性 adaichan 2020.12.04 M -->
+<!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-fort-awesome"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/categories" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/archives" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-archive"></i>
+                        
+                        归档
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-pencil-square-o"></i>
+                        
+                        留言板
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友人帐
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/adaichan/matery" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/adaichan/matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        移动端适配方案汇总
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- adaichan 2020.12.04 M -->
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" target="_blank">
+                                <span class="chip bg-color">移动端</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category" target="_blank">
+                                前端
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-04-15
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        adaichan
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        6.6k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        25 分
+                    </div>
+                    
+                
+                
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+    
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>由于屏幕尺寸<strong>、</strong>分辨率不同，还要考虑横竖屏问题，为了使 web 页面在不同移动设备上适配，需要在开发过程中使用合理的适配方案。</p>
+<p>早期网页设计采用<strong>静态布局</strong>，通过<code>&lt;meta&gt;</code>标签中的<code>applicable-device</code>设备标识识别移动设备，即<code>&lt;meta name = 'applicable-device' content = 'mobile'&gt;</code>，在<code>&lt;meta&gt;</code>标签中的<code>viewport</code>标签中设置<code>width</code>，通过<code>js</code>动态修改标签的<code>initial-scale</code>使得页面等比缩放刚好占满屏幕。静态布局各个元素采用<code>px</code>为单位，这种方案实现简单，不存在兼容性问题，但用户体验很不友好。</p>
+<p>后面出现了<strong>流式布局</strong>，使用百分比<code>%</code>定义宽度，高度使用<code>px</code>固定，根据可视区域的大小实时进行尺寸调整，通常使用<code>max-width/min-width</code>控制尺寸范围过大或者过小。这种方案实现比较简单，但在大屏手机或横竖屏切换场景下可能会导致页面元素被拉伸变形，字体大小无法随屏幕大小发生变化。</p>
+<p>为了适应不同页面字体大小展现问题，出现了<strong>弹性布局</strong>。这种布局方案下，包裹文字的元素的尺寸采用<code>em/rem</code>为单位，页面主要划分区域依据情况使用<code>px</code>、百分数或者<code>em/rem</code>。如一些高校的网站，页面的主要划分区域使用<code>px</code>和百分比，包裹文字的元素和文字采用<code>em</code>。</p>
+<p>上面几种方案，页面元素的大小按照屏幕分辨率进行适配调整，但整体布局不变，对于<strong>响应式web设计</strong>，网页布局会随着访问它的视口及设备的不同从而呈现不同的样式，在实现上会以上多种方案相结合，搭配<strong>媒体查询</strong>，使得一个页面在多个终端 (PC, mobile, pad) 呈现满意效果。</p>
+<h2 id="二、基本概念"><a href="#二、基本概念" class="headerlink" title="二、基本概念"></a>二、基本概念</h2><h3 id="2-1-像素"><a href="#2-1-像素" class="headerlink" title="2.1 像素"></a>2.1 像素</h3><h4 id="px-pixel"><a href="#px-pixel" class="headerlink" title="px (pixel)"></a>px (pixel)</h4><p><strong>像素，（物理像素/设备像素），是分辨率的尺寸单位，用来显示图像的基本单元。</strong>不同分辨率下相同长度的<code>px</code>显示会不一样，因为像素点的个数相同情况下，不同分辨率下每个像素点对应像素宽度不同。同样是<code>14px</code>大小的字，在<code>1366×768</code>显示屏下会显示小些，在<code>1024×768</code>显示屏下会相对大。</p>
+<h4 id="分辨率"><a href="#分辨率" class="headerlink" title="分辨率"></a>分辨率</h4><p><strong>分辨率：</strong>屏幕上纵横的像素点。</p>
+<h4 id="CSS-像素"><a href="#CSS-像素" class="headerlink" title="CSS 像素"></a>CSS 像素</h4><p><strong>逻辑像素(逻辑分辨率) = 设备独立像素(DIP) = CSS像素：是非真实存在的，代码中用来衡量页面内容的大小。</strong>不同屏幕上，<code>css</code>像素呈现的物理尺寸一致，但<code>css</code>像素对应的物理像素具数不同。标准的显示密度下，<code>1</code>个<code>css</code>像素对应一个物理像素，缩放时，<code>1</code>个<code>css</code>像素对应的物理像素会减增。</p>
+<h4 id="物理像素"><a href="#物理像素" class="headerlink" title="物理像素"></a>物理像素</h4><p><strong>物理像素(物理分辨率) = 设备像素(DP) ：</strong> 设备屏幕的显示单位，设计图一般给的是物理分辨率</p>
+<h4 id="PPI-pixel-per-inch"><a href="#PPI-pixel-per-inch" class="headerlink" title="PPI (pixel per inch)"></a>PPI (pixel per inch)</h4><p><strong>屏幕像素密度(ppi)：</strong>屏幕每英寸可显示像素点的数量，与之类似的还有dpi。值越高，显示画面细节越丰富。计算公式为：</p>
+<p><img src="/medias/loading.gif" data-original="2.1.1.png"></p>
+<p>其中 <strong>W</strong> 和 <strong>H</strong> 是分辨率的宽高，<strong>S</strong> 是屏幕尺寸。</p>
+<h4 id="DPI-dot-per-inch"><a href="#DPI-dot-per-inch" class="headerlink" title="DPI (dot per inch)"></a>DPI (dot per inch)</h4><p>打印设备每英寸印刷出来的点有多少个，值越高，图片越细腻。</p>
+<h4 id="DPR-devicePixelRatio"><a href="#DPR-devicePixelRatio" class="headerlink" title="DPR (devicePixelRatio)"></a>DPR (devicePixelRatio)</h4><p><strong>设备像素比</strong>，即：</p>
+<p><img src="/medias/loading.gif" data-original="2.1.2.png"></p>
+<p>指用多少个物理像素来渲染一个css像素。js中通过<code>window.devicePixelRatio</code>获取，css中通过<code>-webkit-device-pixel-ratio</code>,<code>-webkit-min-device-pixel-ratio</code>,<code>-webkit-max-device-pixel-ratio</code>进行媒体查询。</p>
+<p>dpr 的出现是苹果在 iphone4 产品中推出了所谓的 retina 视网膜屏幕。因为屏幕的 ppi 太高，达到了人类视网膜的分辨极限。它在保持屏幕大小尺寸不变的情况下将它物理分辨率提高了一倍，在同样大小的屏幕上，像素多了一倍。</p>
+<h4 id="em"><a href="#em" class="headerlink" title="em"></a>em</h4><p>大小<strong>取决于当前对象的 font-size</strong>，未设置的话则 1 em 默认为 16 px，此时 10 px = 0.625 em。</p>
+<p>换算:</p>
+<blockquote>
+<p>1em = 16px =&gt; 62.5%em = 10px</p>
+</blockquote>
+<p>需要在 css 中的 body 选择器中声明 font-size = 62.5% ，使 1 em = 10 px，再把之前的 px 数值除以 10，然后换上 em 作为单位。</p>
+<p>特点:</p>
+<ol>
+<li>em 的值并不是固定的,em <strong>会继承父级元素的字体大小</strong></li>
+<li>比如要设置 p 标签内的文本为 12 px,但包裹 p 标签的 #content 中已经声明了 font-size = 1.2 em,在声明 p 的字体大小时就只能是 1 em</li>
+</ol>
+<h4 id="rem-root-em"><a href="#rem-root-em" class="headerlink" title="rem (root em)"></a>rem (root em)</h4><p>CSS3 新增的一个单位，<strong>相对于 HTML 根元素 font-size</strong> 。</p>
+<p>特点:</p>
+<ol>
+<li>修改根元素大小比例地调整所有字体大小，避免了字体大小的逐层复合。</li>
+<li>对于 IE8 及更早版本不兼容。</li>
+</ol>
+<h4 id="VM"><a href="#VM" class="headerlink" title="VM"></a>VM</h4><p>CSS3 引入与视口有关的新单位：<strong>vw 表示相对于视口的宽度，vh 表示相对于视口高度</strong>。</p>
+<p>平时拿到的设计图是基于 px ，怎么将 px 转为 vw 呢？</p>
+<p><strong>vw 单位换算：</strong>视口宽度为 100 vw 占满整个视口区域，1 vw 相当于占整个视口宽度的 1%，所以 375 px = 100 vw =&gt; 1 px = 1/375*100  vw</p>
+<p>所有页面元素都可换算成 vw 单位，但和百分比方案计算类似，会比较麻烦。</p>
+<p>用插件 postcss-px-to-viewport，来预处理 CSS，将 px 转换为 vw，需要进行一些相关 Webpack 配置：</p>
+<pre><code>{
+
+  loader: 'postcss-loader',
+
+  options: {
+
+​      plugins: ()=&gt;[
+
+​        require('autoprefixer')({
+
+​            browsers: ['last 5 versions']
+
+​        }),
+
+​        require('postcss-px-to-viewport')({
+
+​            viewportWidth: 375,
+
+​            viewportHeight: 1334,
+
+​            unitPrecision: 3,
+
+​            viewportUnit: 'vw',
+
+​            selectorBlackList: ['.ignore', '.hairlines'],
+
+​        minPixelValue: 1,
+
+​        mediaQuery: false
+
+​        })
+
+​      ]
+
+}
+</code></pre>
+<p>优点：</p>
+<ol>
+<li> vw \ vh相对于视口的宽高，通过 postcss-px-to-viewport 插件进行单位转换比较方便。</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>直接进行单位换算时百分比可能出现小数。</li>
+<li>兼容性 - ie11和少数低版本手机系统 ios8、android4.4 以下不支持。</li>
+</ol>
+<h3 id="2-2-视口"><a href="#2-2-视口" class="headerlink" title="2.2 视口"></a>2.2 视口</h3><meta>标签中定义了一些元数据信息，通过设置<meta name="viewport">，提供有关 视口初始大小 的信息，供移动设备 使用。属性值为：
+
+
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">属性值</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>width</code></td>
+<td align="center">数值 / <code>device-width</code></td>
+<td align="center">视口宽度</td>
+</tr>
+<tr>
+<td align="center"><code>height</code></td>
+<td align="center">数值 / <code>device-height</code></td>
+<td align="center">视口高度</td>
+</tr>
+<tr>
+<td align="center"><code>initial-scale</code></td>
+<td align="center">0.0 ~ 10.0</td>
+<td align="center">设备宽度与视口大小之间的缩放比率</td>
+</tr>
+<tr>
+<td align="center"><code>maximum-scale</code></td>
+<td align="center">0.0 ~ 10.0</td>
+<td align="center">缩放最大值</td>
+</tr>
+<tr>
+<td align="center"><code>minimum-scale</code></td>
+<td align="center">0.0 ~ 10.0</td>
+<td align="center">缩放最小值</td>
+</tr>
+<tr>
+<td align="center"><code>user-scalable</code></td>
+<td align="center">布尔值</td>
+<td align="center">默认<code>yes</code>，为<code>no</code>时用户不能缩放网页</td>
+</tr>
+</tbody></table>
+<p>移动端涉及<strong>布局视口</strong>（Layout Viewport）、<strong>视觉视口</strong>（Visual ViewPort）和<strong>理想视口</strong>（Ideal ViewPort）。</p>
+<ul>
+<li><strong>布局视口</strong>指用视口元标签（viewport meta）来进行布局视口设置，<code>css</code>布局是相对于布局视口计算。</li>
+<li><strong>视觉视口</strong>指用户当前看到的区域。</li>
+<li><strong>理想视口</strong>指屏幕分辨率的值，通过设置 <code>&lt;meta name = "viewport" content = "width = device-width， initial-scale = 1.0"&gt;</code>实现。</li>
+</ul>
+<h3 id="2-3-手机屏幕特性"><a href="#2-3-手机屏幕特性" class="headerlink" title="2.3 手机屏幕特性"></a>2.3 手机屏幕特性</h3><h4 id="像素分辨率"><a href="#像素分辨率" class="headerlink" title="像素分辨率"></a>像素分辨率</h4><p>硬件所支持的，屏幕每行的像素<code>*</code>每列的像素点数，单位是<code>px</code>。</p>
+<h4 id="逻辑分辨率"><a href="#逻辑分辨率" class="headerlink" title="逻辑分辨率"></a>逻辑分辨率</h4><p>设备独立的，软件可以达到的，个人理解是使得软件/页面在不同屏幕上显示出来的效果一致。</p>
+<h4 id="倍率"><a href="#倍率" class="headerlink" title="倍率"></a>倍率</h4><p>像素分辨率<code>÷</code>逻辑分辨率等于<strong>倍率</strong>，如<code>@3x</code>表示分辨率的<code>3</code>倍。一个已知物理像素大小的元素，如果在普通屏中其设备像素等于<code>css</code>像素，但在一些高清屏中，如 <strong>Retina</strong> 显示屏，一个css像素对应<code>2</code>或<code>3</code>个设备像素，这时显示出来的元素会变小。为了让元素如期待显示，需要传入<strong>原始设计稿尺寸<code>×</code>倍率</strong>的设计稿，根据 <strong>DPR</strong> 的定义，这样加载后能够达到同样的效果。</p>
+<h4 id="尺寸"><a href="#尺寸" class="headerlink" title="尺寸"></a>尺寸</h4><p>手机屏幕对角线长度换算成英寸的大小</p>
+<h2 id="三、适配方案"><a href="#三、适配方案" class="headerlink" title="三、适配方案"></a>三、适配方案</h2><h3 id="3-1-百分比方案"><a href="#3-1-百分比方案" class="headerlink" title="3.1 百分比方案"></a>3.1 百分比方案</h3><h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><blockquote>
+<p>使用 <strong>百分比%</strong> 定义 <strong>宽度</strong>，<strong>高度</strong> 用**<code>px</code>**固定，根据可视区域实时尺寸进行调整，尽可能适应各种分辨率，通常使用<code>max-width</code>/<code>min-width</code>控制尺寸范围过大或者过小。下表是子元素不同属性设置百分比的依据</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">设置参考</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>height</code>/<code>width</code></td>
+<td align="left">基于子元素的直接父元素，<code>width</code>相对于父元素的<code>width</code>，<code>height</code>相对于父元素的<code>height</code></td>
+</tr>
+<tr>
+<td align="left"><code>top</code>/<code>bottom</code> 和<code>left</code>/<code>right</code></td>
+<td align="left">相对于直接非<code>static</code>定位的父元素的<code>height</code>/<code>width</code></td>
+</tr>
+<tr>
+<td align="left"><code>padding</code>/<code>margin</code></td>
+<td align="left">不论是垂直方向或者是水平方向，都相对于直接父亲元素的<code>width</code>，与父元素的<code>height</code>无关。</td>
+</tr>
+<tr>
+<td align="left"><code>border-radius</code></td>
+<td align="left">相对于自身的宽度</td>
+</tr>
+</tbody></table>
+<h4 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h4><blockquote>
+<p>简单，不存在兼容问题</p>
+</blockquote>
+<h4 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h4><blockquote>
+<ul>
+<li>如果屏幕尺度跨度太大，相对设计稿过大或者过小的屏幕不能正常显示，在大屏手机或横竖屏切换场景下可能会导致页面元素被拉伸变形，字体大小无法随屏幕大小发生变化。</li>
+<li>设置盒模型的不同属性时，其百分比设置的参考元素不唯一，容易使布局问题变得复杂</li>
+</ul>
+</blockquote>
+<h3 id="3-2-rem-方案"><a href="#3-2-rem-方案" class="headerlink" title="3.2 rem 方案"></a>3.2 rem 方案</h3><h4 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h4><blockquote>
+<p><strong>rem</strong> 是相对长度单位，rem方案中的样式设计为相对于 <strong>根元素</strong> <code>font-size</code>计算值的倍数。根据 <strong>屏幕宽度</strong> 设置<code>html</code>标签的<code>font-size</code>，在布局时使用 <strong>rem</strong> 单位布局，达到自适应的目的，是 <strong>弹性布局</strong> 的一种实现方式。</p>
+</blockquote>
+<blockquote>
+<p><strong>实现过程：</strong>  首先获取文档根元素和设备<code>dpr</code>，设置 <strong>rem</strong>，在<code>html</code>文档加载和解析完成后调整<code>body</code>字体大小； 在页面<strong>缩放 / 回退 / 前进</strong>的时候， 获取元素的内部宽度 (不包括垂直滚动条，边框和外边距)，重新调整 <strong>rem</strong> 大小。</p>
+</blockquote>
+<blockquote>
+<p><strong>实现方法：</strong>用 <strong>css</strong> 处理器或 <strong>npm</strong> 包将页面 <strong>css</strong> 样式中的<code>px</code>自动转换成 <strong>rem</strong>。在整个 <strong>flexible</strong> 适配方案中，文本使用<code>px</code>作为单位，使用<code>[data-dpr]</code>属性来区分不同<code>dpr</code>下的文本字号。由于手机浏览器对字体显示最小是<code>8px</code>，因此对于小尺寸文字需要采用<code>px</code>为单位，防止通过 <strong>rem</strong> 转化后出现显示问题。<strong>手机淘宝</strong>中的字体使用<code>px</code>为单位，<strong>腾讯新闻</strong>中的字体使用<code>rem</code>为单位。</p>
+</blockquote>
+<p><strong>贴上源码分析：</strong></p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>win<span class="token punctuation">,</span> lib<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> doc <span class="token operator">=</span> win<span class="token punctuation">.</span>document<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//当前文档对象</span>
+    <span class="token keyword">var</span> docEl <span class="token operator">=</span> doc<span class="token punctuation">.</span>documentElement<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//文档对象根元素的只读属性</span>
+    <span class="token keyword">var</span> metaEl <span class="token operator">=</span> doc<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'meta[name="viewport"]'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> flexibleEl <span class="token operator">=</span> doc<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'meta[name="flexible"]'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> dpr <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> scale <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> tid<span class="token punctuation">;</span>
+    <span class="token keyword">var</span> flexible <span class="token operator">=</span> lib<span class="token punctuation">.</span>flexible <span class="token operator">||</span> <span class="token punctuation">(</span>lib<span class="token punctuation">.</span>flexible <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>metaEl<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token comment" spellcheck="true">//当meta中viewport的标签设置了scale时，将根据scale手动设置dpr</span>
+        console<span class="token punctuation">.</span><span class="token function">warn</span><span class="token punctuation">(</span><span class="token string">'将根据已有的meta标签来设置缩放比例'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> match <span class="token operator">=</span> metaEl<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">'content'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/initial\-scale=([\d\.]+)/</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>match<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            scale <span class="token operator">=</span> <span class="token function">parseFloat</span><span class="token punctuation">(</span>match<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            dpr <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">/</span> scale<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>flexibleEl<span class="token punctuation">)</span> <span class="token punctuation">{</span>   
+    <span class="token comment" spellcheck="true">//当meta中flexible的标签存在时，据此设置dpr</span>
+        <span class="token keyword">var</span> content <span class="token operator">=</span> flexibleEl<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">'content'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>content<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">var</span> initialDpr <span class="token operator">=</span> content<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/initial\-dpr=([\d\.]+)/</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">var</span> maximumDpr <span class="token operator">=</span> content<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/maximum\-dpr=([\d\.]+)/</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>initialDpr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                dpr <span class="token operator">=</span> <span class="token function">parseFloat</span><span class="token punctuation">(</span>initialDpr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                scale <span class="token operator">=</span> <span class="token function">parseFloat</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">/</span> dpr<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>maximumDpr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                dpr <span class="token operator">=</span> <span class="token function">parseFloat</span><span class="token punctuation">(</span>maximumDpr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                scale <span class="token operator">=</span> <span class="token function">parseFloat</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">/</span> dpr<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>dpr <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>scale<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token comment" spellcheck="true">//根据js获取到的devicePixelRatio设置dpr及scale，scale是dpr的倒数</span>
+        <span class="token keyword">var</span> isAndroid <span class="token operator">=</span> win<span class="token punctuation">.</span>navigator<span class="token punctuation">.</span>appVersion<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/android/gi</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> isIPhone <span class="token operator">=</span> win<span class="token punctuation">.</span>navigator<span class="token punctuation">.</span>appVersion<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/iphone/gi</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> devicePixelRatio <span class="token operator">=</span> win<span class="token punctuation">.</span>devicePixelRatio<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>isIPhone<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// iOS下，对于2和3的屏，分别用2和3倍方案</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>devicePixelRatio <span class="token operator">>=</span> <span class="token number">3</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token operator">!</span>dpr <span class="token operator">||</span> dpr <span class="token operator">>=</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>                
+                dpr <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>devicePixelRatio <span class="token operator">>=</span> <span class="token number">2</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token operator">!</span>dpr <span class="token operator">||</span> dpr <span class="token operator">>=</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                dpr <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                dpr <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 其他设备下，仍旧使用1倍的方案</span>
+            dpr <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        scale <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">/</span> dpr<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    docEl<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'data-dpr'</span><span class="token punctuation">,</span> dpr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//文本字号不建议使用rem，flexible适配方案中，文本使用px作为单位，使用[data-dpr]属性来区分不同dpr下的文本字号</span>
+    
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>metaEl<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//添加meta标签，设置name为viewport，content根据scale设置缩放比(默认、最大、最小缩放比)</span>
+        metaEl <span class="token operator">=</span> doc<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'meta'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        metaEl<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'viewport'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        metaEl<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'content'</span><span class="token punctuation">,</span> <span class="token string">'initial-scale='</span> <span class="token operator">+</span> scale <span class="token operator">+</span> <span class="token string">', maximum-scale='</span> <span class="token operator">+</span> scale <span class="token operator">+</span> <span class="token string">', minimum-scale='</span> <span class="token operator">+</span> scale <span class="token operator">+</span> <span class="token string">', user-scalable=no'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>docEl<span class="token punctuation">.</span>firstElementChild<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            docEl<span class="token punctuation">.</span>firstElementChild<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>metaEl<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">var</span> wrap <span class="token operator">=</span> doc<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            wrap<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>metaEl<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            doc<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>wrap<span class="token punctuation">.</span>innerHTML<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">function</span> <span class="token function">refreshRem</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//更新rem值</span>
+        <span class="token keyword">var</span> width <span class="token operator">=</span> docEl<span class="token punctuation">.</span><span class="token function">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>width<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>width <span class="token operator">/</span> dpr <span class="token operator">></span> <span class="token number">540</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            width <span class="token operator">=</span> <span class="token number">540</span> <span class="token operator">*</span> dpr<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">var</span> rem <span class="token operator">=</span> width <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//1rem = viewWidth / 10</span>
+        docEl<span class="token punctuation">.</span>style<span class="token punctuation">.</span>fontSize <span class="token operator">=</span> rem <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+        flexible<span class="token punctuation">.</span>rem <span class="token operator">=</span> win<span class="token punctuation">.</span>rem <span class="token operator">=</span> rem<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment" spellcheck="true">//resize与pageshow延时300ms触发refreshRem(),使用防抖函数，防止事件被高频触发可能引起性能问题</span>
+    win<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'resize'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">clearTimeout</span><span class="token punctuation">(</span>tid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        tid <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>refreshRem<span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    win<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'pageshow'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//当一条会话历史纪录被执行的时候触发事件，包括后退/前进按钮，同时会在onload页面触发后初始化页面时触发</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>persisted<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment" spellcheck="true">//表示网页是否来自缓存</span>
+            <span class="token function">clearTimeout</span><span class="token punctuation">(</span>tid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            tid <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>refreshRem<span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//在html文档加载和解析完成后设置body元素字体大小</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>doc<span class="token punctuation">.</span>readyState <span class="token operator">===</span> <span class="token string">'complete'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        doc<span class="token punctuation">.</span>body<span class="token punctuation">.</span>style<span class="token punctuation">.</span>fontSize <span class="token operator">=</span> <span class="token number">12</span> <span class="token operator">*</span> dpr <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        doc<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'DOMContentLoaded'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            doc<span class="token punctuation">.</span>body<span class="token punctuation">.</span>style<span class="token punctuation">.</span>fontSize <span class="token operator">=</span> <span class="token number">12</span> <span class="token operator">*</span> dpr <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> 
+    <span class="token comment" spellcheck="true">//浏览器有最小字体限制，css在pc上font-size是12px(移动端最小是8px), 也就是css像素是12，其DPR为1，在移动端dpr有可能为2和3，为了保证字体不变小，需要用12*dpr进行换算。</span>
+   
+    <span class="token function">refreshRem</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token comment" spellcheck="true">//实现rem与px相互转换</span>
+    flexible<span class="token punctuation">.</span>dpr <span class="token operator">=</span> win<span class="token punctuation">.</span>dpr <span class="token operator">=</span> dpr<span class="token punctuation">;</span>
+    flexible<span class="token punctuation">.</span>refreshRem <span class="token operator">=</span> refreshRem<span class="token punctuation">;</span>
+    flexible<span class="token punctuation">.</span>rem2px <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> val <span class="token operator">=</span> <span class="token function">parseFloat</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span>rem<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> d <span class="token operator">===</span> <span class="token string">'string'</span> <span class="token operator">&amp;&amp;</span> d<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/rem$/</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            val <span class="token operator">+</span><span class="token operator">=</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> val<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    flexible<span class="token punctuation">.</span>px2rem <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> val <span class="token operator">=</span> <span class="token function">parseFloat</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token keyword">this</span><span class="token punctuation">.</span>rem<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> d <span class="token operator">===</span> <span class="token string">'string'</span> <span class="token operator">&amp;&amp;</span> d<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/px$/</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            val <span class="token operator">+</span><span class="token operator">=</span> <span class="token string">'rem'</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> val<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>window<span class="token punctuation">,</span> window<span class="token punctuation">[</span><span class="token string">'lib'</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">(</span>window<span class="token punctuation">[</span><span class="token string">'lib'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="优势-1"><a href="#优势-1" class="headerlink" title="优势"></a>优势</h4><blockquote>
+<p>兼容性好</p>
+</blockquote>
+<ul>
+<li><p>ios: 6.1系统以上都支持</p>
+</li>
+<li><p>android: 2.1系统以上都支持</p>
+</li>
+<li><p>大部分主流浏览器都支持</p>
+<p><img src="/medias/loading.gif" data-original="3.2.png"></p>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>相较于之前的静态布局和百分比方案，页面不会因为伸缩发生变形，自适应效果更佳。</li>
+</ul>
+</blockquote>
+<h4 id="不足-1"><a href="#不足-1" class="headerlink" title="不足"></a>不足</h4><blockquote>
+<ul>
+<li><strong>不是纯css移动适配方案，需要引入js脚本</strong> 在头部内嵌一段 <code>js</code>脚本 <strong>监听分辨率的变化来动态改变根元素的字体大小</strong>，<code>css</code>样式和 <code>js</code> 代码有一定 <strong>耦合性</strong>，并且必须将改变<code>font-size</code>的代码放在 <strong>css</strong> 样式之前。</li>
+<li><strong>小数像素问题：</strong>通过 <strong>rem</strong> 计算后可能会出现小数像素，浏览器会对这部分小数四舍五入，按照整数渲染。浏览器在渲染时所做的摄入处理只是应用在元素的尺寸渲染上，其真实占据的空间依旧是原始大小。也就是说如果一个元素尺寸是 <code>0.625px</code>，那么其渲染尺寸应该是 <code>1px</code>，空出的 <code>0.375px</code> 空间由其临近的元素填充；同样道理，如果一个元素尺寸是 <code>0.375px</code>，其渲染尺寸就应该是<code>0</code>，但是其会占据临近元素 <code>0.375px</code> 的空间。会导致：<strong>缩放到低于<code>1px</code>的元素时隐时现</strong>（解决办法：指定最小转换像素，对于比较小的像素，不转换为 <strong>rem</strong> 或 <strong>vw</strong>）；两个同样宽度的元素因为各自周围的元素宽度不同，导致两元素相差<code>1px</code>；宽高相同的正方形，长宽不等了；<code>border-radius: 50%</code> 画的圆不圆。</li>
+<li><strong>Android 浏览器下 line-height 垂直居中偏离的问题</strong>。常用的垂直居中方式就是使用line-height，这种方法在Android设备下并不能完全居中。</li>
+<li><strong>cursor: pointer 元素点击背景变色的问题</strong>，对添加了 cursor:pointer 属性的元素，在移动端点击时，背景会高亮。为元素添加<code>tag-highlight-color:transparent</code> 属性可以隐藏背景高亮。</li>
+</ul>
+</blockquote>
+<h3 id="3-3-vh-vw-方案"><a href="#3-3-vh-vw-方案" class="headerlink" title="3.3 vh / vw 方案"></a>3.3 vh / vw 方案</h3><h4 id="原理-2"><a href="#原理-2" class="headerlink" title="原理"></a>原理</h4><p><strong>视口</strong>是浏览器中用于呈现网页的区域，移动端的视口通常指的是 <strong>布局视口</strong></p>
+<ul>
+<li><strong>vw</strong> : <strong>1vw</strong> 等于 <strong>视口宽度</strong> 的 <strong>1%</strong></li>
+<li><strong>vh</strong> : <strong>1vh</strong>  等于 <strong>视口高度</strong> 的 **1% **</li>
+<li><strong>vmin</strong> : 选取 <strong>vw</strong> 和 <strong>vh</strong> 中 <strong>最小</strong> 的那个</li>
+<li><strong>vmax</strong> : 选取 <strong>vw</strong> 和 <strong>vh</strong> 中 <strong>最大</strong> 的那个</li>
+</ul>
+<p>使用 <strong>css</strong> 预处理器把设计稿尺寸转换为 <strong>vw</strong> 单位，包括 <strong>文本</strong>，<strong>布局高宽</strong>，<strong>间距</strong> 等，使得这些元素能够随视口大小自适应调整。以<code>1080px</code>设计稿为基准，转化的计算表示为：</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 以1080px作为设计稿基准</span>
+$vw_base<span class="token punctuation">:</span> <span class="token number">1080</span>
+@<span class="token keyword">function</span> <span class="token function">vw</span><span class="token punctuation">(</span>$px<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    @<span class="token keyword">return</span><span class="token punctuation">(</span>$px <span class="token operator">/</span> <span class="token number">1080</span><span class="token punctuation">)</span> <span class="token operator">*</span> 100vw
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="优势-2"><a href="#优势-2" class="headerlink" title="优势"></a>优势</h4><blockquote>
+<ul>
+<li>纯 <strong>css</strong> 移动端适配方案，不存在脚本依赖问题。</li>
+<li>相对于 <strong>rem</strong> 以<strong>根元素字体大小的倍数</strong> 定义 <strong>元素大小</strong>，逻辑清晰简单，视口单位依赖于视口的尺寸 <code>"1vw ＝ 1/100 viewport width"</code>，根据 <strong>视口尺寸的百分比</strong> 来定义 <strong>元素宽度</strong>。</li>
+</ul>
+</blockquote>
+<h4 id="不足-2"><a href="#不足-2" class="headerlink" title="不足"></a>不足</h4><blockquote>
+<ul>
+<li>存在一些兼容性问题，Android4.4以下不支持</li>
+</ul>
+</blockquote>
+<p><img src="/medias/loading.gif" data-original="3.3.png"></p>
+<h3 id="3-4-rem-vw-vh-方案"><a href="#3-4-rem-vw-vh-方案" class="headerlink" title="3.4 rem + vw / vh 方案"></a>3.4 rem + vw / vh 方案</h3><h4 id="原理-3"><a href="#原理-3" class="headerlink" title="原理"></a>原理</h4><blockquote>
+<p><strong>vw / vh</strong>  方案能够实现宽度和高度的自适应，并且逻辑清晰，由于其被支持得较晚，所以存在一定的兼容性问题。将  <strong>vw/vh</strong>  方案与 <strong>rem</strong> 方案相结合，<strong>给根元素设置随视口变化的 vw 单位</strong>，可以通过 <code>postcss-plugin-vwtorem</code> 将其转换。具体的<strong>计算过程</strong>为：</p>
+</blockquote>
+<blockquote>
+<p>对于<code>1080px</code>宽的设计稿，设置默认根字号的大小为<code>100px</code>，那么设计稿中<code>1px</code>对应的是 <code>100vw/1080 = 0.0925926vw</code>，并且 <code>1rem = 100px</code>，也就可以得到<code>1rem = 9.256926vw</code></p>
+</blockquote>
+<blockquote>
+<p>同时可以使用媒体查询限制根元素的最大最小值，实现对页面的最大最小宽度限制，对用户的视觉体验更好。</p>
+</blockquote>
+<h4 id="实用性"><a href="#实用性" class="headerlink" title="实用性"></a>实用性</h4><blockquote>
+<p><strong>rem</strong> 弹性布局方式作为移动端web页面适配方法，后期从 <strong>rem</strong> 过渡到 <strong>vw</strong> ，只需要通过 <strong>改变根元素大小的计算方式</strong> 不需要其他处理。<strong>vw</strong> 将会成为一种更好的适配方式，目前由于兼容性的原因得不到广泛应用。<strong>rem + vw / vh</strong>  不存在 <strong>vw/vh</strong> 的兼容性问题，可以成为由 <strong>rem</strong> 向 <strong>vw / vh</strong> 转变的一种过渡方案。</p>
+</blockquote>
+<h3 id="3-5-基于媒体查询的响应式设计"><a href="#3-5-基于媒体查询的响应式设计" class="headerlink" title="3.5 基于媒体查询的响应式设计"></a>3.5 基于媒体查询的响应式设计</h3><p><strong>响应式设计</strong> 使得一个网站同时适配 <strong>多种设备</strong> 和 <strong>多个屏幕</strong>，让网站的布局和功能随用户的使用环境（屏幕大小、输出方式、设备/浏览器能力而变化），使其视觉合理，交互方式符合习惯。如使得内容区块可伸缩与自由排布，边距适应页面尺寸，图片适应比例变化，能够自动隐藏/部分显示内容等。</p>
+<h4 id="原理-4"><a href="#原理-4" class="headerlink" title="原理"></a>原理</h4><blockquote>
+<p>主要实现是通过 <strong>媒体查询</strong>，通过给不同分辨率的设备编写不同的样式实现响应式布局，用于解决不同设备不同分辨率之间兼容问题，一般是指PC、平板、手机设备之间较大的分辨率差异。实现上不局限于具体的方案，通常结合了 <strong>流式布局</strong> <code>+</code> <strong>弹性布局</strong> 方案。比如给小屏幕手机设置 <code>@2x</code> 图，为大屏手机设置 <code>@3x</code> 图</p>
+</blockquote>
+<pre class="line-numbers language-javascript"><code class="language-javascript">@media only screen and <span class="token punctuation">(</span>min<span class="token operator">-</span>width<span class="token punctuation">:</span> 375px<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    样式<span class="token number">1</span>
+<span class="token punctuation">}</span>
+@media only screen and <span class="token punctuation">(</span>min<span class="token operator">-</span>width<span class="token punctuation">:</span> <span class="token number">750</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    样式<span class="token number">2</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="优势-3"><a href="#优势-3" class="headerlink" title="优势"></a>优势</h4><blockquote>
+<p>能够使网页在不同设备、不同分辨率屏幕上呈现合理布局，不仅仅是样式伸缩变换</p>
+</blockquote>
+<h4 id="不足-3"><a href="#不足-3" class="headerlink" title="不足"></a>不足</h4><blockquote>
+<ul>
+<li>要匹配足够多的设备与屏幕，一个web页面需要多个设计方案，工作量比较大</li>
+<li>通过媒体查询技术需要设置一定量的断点，到达某个断点前后的页面发生显著变化</li>
+</ul>
+</blockquote>
+<h2 id="四、移动端web页面适配方案中的通用问题"><a href="#四、移动端web页面适配方案中的通用问题" class="headerlink" title="四、移动端web页面适配方案中的通用问题"></a>四、移动端web页面适配方案中的通用问题</h2><h3 id="4-1-像素问题"><a href="#4-1-像素问题" class="headerlink" title="4.1 像素问题"></a>4.1 像素问题</h3><blockquote>
+<p>设置边框 为<code>1px</code> <strong>css</strong>像素，在 <strong>普通屏幕</strong> 下<code>1px</code>，<strong>高清屏幕</strong> (<code>dpr</code>为<code>2</code>)下<code>2px</code>的情况。是由于不同移动设备的<code>dpr</code>不同，导致<code>1px</code> <strong>css</strong>像素，转换成物理像素后显示不一样。</p>
+</blockquote>
+<h4 id="4-1-1-设置scale-为-1-dpr"><a href="#4-1-1-设置scale-为-1-dpr" class="headerlink" title="4.1.1 设置scale 为 1/dpr"></a>4.1.1 设置scale 为 1/dpr</h4><blockquote>
+<p><strong>css</strong> 中涉及<code>1</code>像素的地方仍然使用<code>px</code>作为单位，设置<code>&lt;meta&gt;</code> 标签中 <code>initial-scale = 1/dpr</code> ，将整个页面缩小<code>dpr</code>倍，对于页面采用 <strong>rem</strong> 方案的情况，将页面的 <strong>根字体</strong> 再放大<code>dpr</code>倍，这个时候就能够在不改变页面其他布局的情况下，保持边框的 <strong>css</strong> 像素为<code>1px</code>。</p>
+</blockquote>
+<h4 id="4-1-2-transform-的-scale-属性"><a href="#4-1-2-transform-的-scale-属性" class="headerlink" title="4.1.2 transform 的 scale 属性"></a>4.1.2 transform 的 scale 属性</h4><blockquote>
+<p><code>transform</code>的<code>scale</code>属性允许对元素进行缩放，其中<code>scaleY(y)</code>通过设置Y轴的值来定义缩放转换，并结合伪元素使用，通过<code>transform-origin: 50% 0%</code>修改元素变换的中心点实现。针对横着的边框线用<code>scaleY(y)</code>，针对竖着的边框线要用<code>scaleX(x)</code>，针对一圈的边框线用<code>scale()</code>，并且需要注意转移元素变换中心点。</p>
+</blockquote>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+<span class="token selector">//针对竖着的边框线
+<span class="token class">.className:</span> before </span><span class="token punctuation">{</span>
+  //其他样式
+  <span class="token property">transform-origin</span><span class="token punctuation">:</span> <span class="token number">50%</span> <span class="token number">0%</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token atrule"><span class="token rule">@media</span> only screen and <span class="token punctuation">(</span><span class="token property">-webkit-min-device-pixel-ratio</span><span class="token punctuation">:</span> 2<span class="token punctuation">)</span></span> <span class="token punctuation">{</span> <span class="token selector">//dpr为2时
+  <span class="token class">.className:</span> before </span><span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">scaleY</span><span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token atrule"><span class="token rule">@media</span> only screen and <span class="token punctuation">(</span><span class="token property">-webkit-min-device-pixel-ratio</span><span class="token punctuation">:</span> 3<span class="token punctuation">)</span></span> <span class="token punctuation">{</span> <span class="token selector">//dpr为3时
+  <span class="token class">.className:</span> before </span><span class="token punctuation">{</span>
+    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">scaleY</span><span class="token punctuation">(</span><span class="token number">0.33</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-1-3-border-image-属性"><a href="#4-1-3-border-image-属性" class="headerlink" title="4.1.3 border-image 属性"></a>4.1.3 border-image 属性</h4><blockquote>
+<p>使用<code>border-image</code>，在元素的边框上设置一个一半透明一半显示的图片。</p>
+</blockquote>
+<h3 id="4-2-对图片的处理"><a href="#4-2-对图片的处理" class="headerlink" title="4.2 对图片的处理"></a>4.2 对图片的处理</h3><blockquote>
+<p>加载网页时，平均<code>60%</code>以上的流量来自 <strong>加载图片</strong>。指定图像宽度时使用<strong>相对单位</strong>，<strong>防止意外溢出视口</strong>，如 <code>width: 50%</code>，将图片宽度设置为包含元素宽度的 <code>50%</code>。因为 <strong>css</strong> 允许内容溢出容器， 需要使用**<code>max-width: 100%</code> 来保证图像及其他内容不会溢出<strong>。使用 img 元素的 <code>alt</code> 属性提供描述，描述有助于提高网站的可访问性，能提供语境给屏幕阅读器及其他辅助性技术。</strong>维护自适应页面中图片宽高比固定<strong>比较常用的方法是使用</strong><code>padding</code>**设置。对于不同<code>dpr</code>以及不同分辨率/尺寸的屏幕，为了避免资源浪费和等待时间延长，需要针对不同的屏幕使用合适的图片，加载的图片分为通过标签引入的图片和背景图片。</p>
+</blockquote>
+<h4 id="4-2-1-srcse-和-sizes"><a href="#4-2-1-srcse-和-sizes" class="headerlink" title="4.2.1 srcse 和 sizes"></a>4.2.1 srcse 和 sizes</h4><blockquote>
+<p><strong>对于<code>&lt;img&gt;</code>引入的图片，如果想要图片适应不同像素密度的屏幕，并且屏幕上显示图片的实际尺寸相同，使用</strong><code>srcset</code><strong>属性用来指定多张图像。</strong>它的值是一个逗号分隔的字符串，每个部分都是一张图像的 URL，后面接一个空格，后接是像素密度描述符。浏览器根据当前设备的像素密度，选择需要加载的图像。如果<code>srcset</code>属性都不满足条件，那么就加载<code>src</code>属性指定的默认图像。</p>
+</blockquote>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>foo-320w.jpg,
+             foo-480w.jpg 1.5x,
+             foo-640w.jpg 2x<span class="token punctuation">"</span></span>
+     <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>foo-640w.jpg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+     <span class="token comment" spellcheck="true">&lt;!--srcset属性给出了三个图像URL，适应三种不同的像素密度， 后面的像素密度描述符，格式是像素密度倍数 + 字母x。1x表示单倍像素密度，可以省略。--></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p><strong>如果想要针对不同屏幕，使用不同分辨率版本和尺寸的图片，使用属性<code>srcse</code> 和 <code>sizes</code> 。<a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images">srcset</a> 定义了允许浏览器选择的图像集，以及每个图像的大小（使用w单位）。<code>sizes</code>定义了一组媒体条件（例如屏幕宽度），指明当某些媒体条件为真时，什么样的图片尺寸是最佳选择。</strong></p>
+</blockquote>
+<pre class="line-numbers language-html"><code class="language-html">&lt;img srcset = "elva-fairy-320w.jpg 320w,
+               elva-fairy-480w.jpg 480w,
+               elva-fairy-800w.jpg 800w"
+     sizes = "(max-width: 320px) 280px,
+              (max-width: 480px) 440px,
+              800px"
+     src = "elva-fairy-800w.jpg" alt="Elva dressed as a fairy">
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>浏览器的查询过程：</p>
+</blockquote>
+<ul>
+<li>查看设备宽度；</li>
+<li>检查<code>sizes</code>列表中哪个媒体条件是第一个为真；</li>
+<li>查看给予该媒体查询的槽大小；</li>
+<li>加载<code>srcset</code>列表中引用的最接近所选的槽大小的图像</li>
+</ul>
+<h4 id="4-2-2-异步加载"><a href="#4-2-2-异步加载" class="headerlink" title="4.2.2 异步加载"></a>4.2.2 异步加载</h4><blockquote>
+<p><strong>&lt; img&gt; 引入的图片，使用js自带的异步加载图片。</strong>根据不同的<code>dpr</code>，加载不同分辨率的图片。</p>
+</blockquote>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>img<span class="token punctuation">"</span></span> <span class="token attr-name">data-src1x</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>xxx@1x.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">data-src2x</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>xxx@2x.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">data-src3x</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>xxx@3x.jpg<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> dpr <span class="token operator">=</span> window<span class="token punctuation">.</span>devicePixelRatio<span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>dpr <span class="token operator">></span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    dpr <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> imgSrc <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#img'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">data</span><span class="token punctuation">(</span><span class="token string">'src'</span><span class="token operator">+</span>dpr<span class="token operator">+</span><span class="token string">'x'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> img <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Image</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+img<span class="token punctuation">.</span>src <span class="token operator">=</span> imgSrc<span class="token punctuation">;</span>
+img<span class="token punctuation">.</span>onload <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>imgObj<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#img'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">prepend</span><span class="token punctuation">(</span>imgObj<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//替换img对象</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-2-3-picture"><a href="#4-2-3-picture" class="headerlink" title="4.2.3 picture"></a>4.2.3 picture</h4><blockquote>
+<p><strong>为不同的视口提供不同的图片，使用<code>&lt;picture&gt;</code>标签。</strong><code>&lt;picture&gt;</code>是<code>html5</code>中定义的一个容器标签，内部使用<code>&lt;source&gt;</code>和<code>&lt;image&gt;</code>，<strong>浏览器会匹配<code>&lt;source&gt;</code>的<code>type</code>,<code>media</code>,<code>srcset</code>等属性，找到最适合当前布局 / 视口宽度 / 设备像素密度的图像进行加载。</strong>这里的<code>&lt;img&gt;</code>标签是浏览器不支持<code>picture</code>元素，或者支持<code>picture</code>但没有合适的媒体定义时的后备，不能省略。</p>
+</blockquote>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>picture</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>(min-width: 30px)<span class="token punctuation">"</span></span> <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>cat-vertical.jpg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>(min-width: 60px)<span class="token punctuation">"</span></span> <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>cat-horizontal.jpg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>cat.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>cat<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>picture</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-2-4-Image-set"><a href="#4-2-4-Image-set" class="headerlink" title="4.2.4 Image-set"></a>4.2.4 Image-set</h4><blockquote>
+<p><strong>对于背景图片，使用<code>image-set</code>根据用户设备的分辨率匹配合适的图像</strong>， 同时要考虑兼容性问题。</p>
+</blockquote>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+<span class="token selector"><span class="token class">.css</span> </span><span class="token punctuation">{</span>
+    <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url">url(1x.png)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/*不支持image-set的情况下显示*/</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">-image-set</span><span class="token punctuation">(</span>
+            <span class="token url">url(1x.png)</span> <span class="token number">1</span>x,<span class="token comment" spellcheck="true">/* 支持image-set的浏览器的[普通屏幕]下 */</span>
+            <span class="token url">url(2x.png)</span> <span class="token number">2</span>x,<span class="token comment" spellcheck="true">/* 支持image-set的浏览器的[2倍Retina屏幕] */</span>
+            <span class="token url">url(3x.png)</span> <span class="token number">3</span>x<span class="token comment" spellcheck="true">/* 支持image-set的浏览器的[3倍Retina屏幕] */</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-2-5-media-query"><a href="#4-2-5-media-query" class="headerlink" title="4.2.5 media query"></a>4.2.5 media query</h4><blockquote>
+<p><strong>对于背景图片，使用媒体查询自动切换不同分辨率的版本</strong></p>
+</blockquote>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+<span class="token comment" spellcheck="true">/* 普通显示屏(设备像素比例小于等于1)使用1倍的图 */</span>
+<span class="token selector"><span class="token class">.css</span></span><span class="token punctuation">{</span>
+    <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url">url(img_1x.png)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">/* 高清显示屏(设备像素比例大于等于2)使用2倍图  */</span>
+<span class="token atrule"><span class="token rule">@media</span> only screen and <span class="token punctuation">(</span><span class="token property">min-device-pixel-ratio</span><span class="token punctuation">:</span>2<span class="token punctuation">)</span></span><span class="token punctuation">{</span>
+    <span class="token selector"><span class="token class">.css</span></span><span class="token punctuation">{</span>
+        <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url">url(img_2x.png)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">/* 高清显示屏(设备像素比例大于等于3)使用3倍图  */</span>
+<span class="token atrule"><span class="token rule">@media</span> only screen and <span class="token punctuation">(</span><span class="token property">min-device-pixel-ratio</span><span class="token punctuation">:</span>3<span class="token punctuation">)</span></span><span class="token punctuation">{</span>
+    <span class="token selector"><span class="token class">.css</span></span><span class="token punctuation">{</span>
+        <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url">url(img_3x.png)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h2><blockquote>
+<p><strong>对于国内的一些网站，查看源码发现，它可能不是某一种方案的单独使用，而是多种方案的结合。一个页面上，元素的宽度设置上有百分比，也有<code>rem</code>，字体的样式中有<code>rem</code>，有<code>em</code>，还有固定大小的<code>px</code>，宽度缩放上也会用到媒体查询。当然，市场上对于适配问题已经有了大量成熟的 webpack 插件和 npm 包，本文的初衷在于了解设备适配的历史发展过程，秉着不要重复造轮子的原则建议大家直接用插件包也方便后续他人维护 (ಡωಡ)</strong></p>
+<p><strong>各种方案的具体代码示例可以参考<a target="_blank" rel="noopener" href="https://www.cnblogs.com/tylerdonet/p/10146632.html">这篇文章</a>。</strong></p>
+</blockquote>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">可否打赏一包辣条 (o°ω°o)</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/loading.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/loading.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+            
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="http://adaichan.life" class="b-link-green">兴趣使然の边缘人小站</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2022/04/15/06.yi-dong-duan-gua-pei/" class="b-link-green">移动端适配方案汇总</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+    /* valine 评论框增加背景图片 */
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("") 100% 100% no-repeat;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    /* 修复评论第一行位置错位 */
+    .v .vlist .vcard {
+    padding-top: 2.5em !important ;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="/libs//libs/jQuery-emoji/dist/css/jquery.emoji.css">
+<script src="/libs//libs/jQuery-emoji/dist/js/jquery.emoji.min.js"></script>
+<script src="/libs//libs/jQuery-emoji/dist/js/emoji.list.js"></script> -->
+<script>
+    new Valine({
+        // el: '#vcomments',
+        // appId: 'vuqu5zUgdQ9sJlmw7sf6fY04-gzGzoHsz',
+        // appKey: 'y2JOS3FSAavtbxKMYH6UJ6jd',
+        // notify: 'false',
+        // verify: 'false',
+        // pageSize: '10',
+        // avatar: 'mm',
+        // guest_info: 'nick,mail,link',
+        // recordIP: 'true',
+        // lang: 'zh-cn',
+        // placeholder: '欢迎在此指点江山！',
+        // count: 'true',
+        el: '#vcomments',
+        appId: 'vuqu5zUgdQ9sJlmw7sf6fY04-gzGzoHsz',
+        appKey: 'y2JOS3FSAavtbxKMYH6UJ6jd',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: '' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '欢迎在此指点江山！',
+        serverURLs: 'https://vuqu5zug.lc-cn-n1-shared.com' 
+    });
+
+//     function parse_emoji() {
+//     jQuery(".vcontent").emojiParse({
+//       basePath: '/libs/jQuery-emoji/images/emoji',
+//       icons: emojiLists   // 注：详见 js/emoji.list.js
+//     });
+//   }
+  
+//   setTimeout(function() {
+//     // jQuery emoji 解析
+//     parse_emoji();
+//     // jquery emoji 初始化
+//     jQuery(".veditor").emoji({
+//       showTab: true,
+//       animation: 'slide',
+//       basePath: '/libs/jQuery-emoji/images/emoji',
+//       icons: emojiLists  // 注：详见 js/emoji.list.js
+//     });
+//     jQuery(".vmore").on("click", function() {
+//       setTimeout(function() {
+//         parse_emoji();
+//       }, 500);
+//     });
+//   }, 800)
+
+</script>
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/06/09/07.liu-lan-qi-chai-yi-ji-xuan-ran/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/7.jpg" class="responsive-img" alt="浏览器差异及渲染">
+                        
+                        <span class="card-title">浏览器差异及渲染</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一、常见浏览器及其内核
+微软的新一代浏览器Microsoft Edge，宣布打算采用 Chromium 开源项目开发桌面版的 Microsoft Edge 浏览器，详情见Microsoft Edge: Making the web bett
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2022-06-09
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category" target="_blank">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/CSS/" target="_blank">
+                        <span class="chip bg-color">CSS</span>
+                    </a>
+                    
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/10/29/05.gao-xiang-lun-wen-fan-wen-hui-zong/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/5.jpg" class="responsive-img" alt="高项论文范文汇总">
+                        
+                        <span class="card-title">高项论文范文汇总</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            软考又双叒来了，已经连续五次没过说实话有点心态爆炸，洒家撅腚这次再铩羽而归就不受这鸟气了。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%80%83%E8%AF%95/" class="post-category" target="_blank">
+                                    考试
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%BD%AF%E8%80%83/" target="_blank">
+                        <span class="chip bg-color">软考</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 兴趣使然の边缘人小站<br />'
+            + '作者: adaichan<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy; 2020-2026 adaichan&nbsp;♡.&nbsp;All Rights Reserved
+
+                <br>
+                <span id="sitetime"></span><span class="my-face">&nbsp;٩( 'ω' )و</span>
+                <br>
+
+                
+
+                    
+                        <i class="fa fa-area-chart"></i>&nbsp;字数统计:&nbsp;
+                        <span class="white-color">
+                            73k
+                        </span> 字
+                        
+                            
+
+                                
+                                    
+                                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                                        |&nbsp;<i class="fa fa-eye"></i>&nbsp;总访问量:&nbsp;<span
+                                            id="busuanzi_value_site_pv" class="white-color"></span>
+                                        
+
+                                            
+                                                <span id="busuanzi_container_site_uv" style='display:none'></span>
+                                                次&nbsp;|&nbsp;<i class="fa fa-users"></i>&nbsp;访客人数:&nbsp;<span
+                                                    id="busuanzi_value_site_uv" class="white-color"></span> 人
+                                                
+                                                    
+                                                        <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+            
+    <a href="https://github.com/adaichan" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1322688810@qq.com" class="tooltipped" target="_blank" data-tooltip="Email：1322688810@qq.com" data-position="top" data-delay="50">
+        <i class="fa fa-envelope"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1322688810" class="tooltipped" data-tooltip="QQ：1322688810" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="JavaScript:;" class="tooltipped" data-tooltip="WeChat：asleepyhatter" data-position="top" data-delay="50">
+        <i class="fa fa-weixin"></i>
+    </a>
+
+
+
+    <a href="https://linecorp.com/zh-hans" class="tooltipped" target="_blank" data-tooltip="Line：ll12345614" data-position="top" data-delay="50">
+        <i class="fa fa-commenting"></i>
+    </a>
+
+
+
+    <a href="https://asobimo.com/game/toram.html" class="tooltipped" target="_blank" data-tooltip="Re:千和ちゃん" data-position="top" data-delay="50">
+        <i class="fa fa-gamepad"></i>
+    </a>
+
+        </div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50) // 50ms周期检测函数
+        var pvcountOffset = 2020 // 初始化首次数据
+        var uvcountOffset = 0
+
+        function fixCount () {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset)
+                clearInterval(int)
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset) // 加上初始数据 
+                clearInterval(int) // 停止检测
+            }
+        }
+    });
+</script>
+
+<script language=javascript>
+    function siteTime () {
+        window.setTimeout("siteTime()", 1000)
+        var seconds = 1000
+        var minutes = seconds * 60
+        var hours = minutes * 60
+        var days = hours * 24
+        var years = days * 365
+        var today = new Date()
+        var todayYear = today.getFullYear()
+        var todayMonth = today.getMonth() + 1
+        var todayDate = today.getDate()
+        var todayHour = today.getHours()
+        var todayMinute = today.getMinutes()
+        var todaySecond = today.getSeconds()
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2020, 12, 04, 00, 00, 00) // 北京时间 2020-12-04 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond)
+        var diff = t2 - t1
+        var diffYears = Math.floor(diff / years)
+        var diffDays = Math.floor((diff / days) - diffYears * 365)
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours)
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes)
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds)
+        document.getElementById("sitetime").innerHTML = "边缘人小站已悄然問世 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒"
+    }
+    siteTime();
+</script>
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <!-- 权限控制系统 -->
+    <script src="/js/cloudbase.js"></script>
+    <script src="/js/auth-guard.js"></script>
+    
+    <script src="https://cdn.bootcss.com/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.bootcss.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
+    <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+    <script src="https://cdn.bootcss.com/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    
+    <script src="/libs/others/clicklove.js"></script>
+    
+
+    
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    <!-- adaichan 2020.12.04 M -->
+    <script type="text/javascript">
+        var OriginTitile = document.title,
+            st
+        document.addEventListener("visibilitychange", function () {
+            document.hidden ? (document.title = "(๑´▽`)ﾉ Ty & bye cya~", clearTimeout(st)) : (document.title =
+                "(〃'▽'〃) Welcome back ♪", st = setTimeout(function () {
+                    document.title = OriginTitile
+                }, 3e3))
+        })
+    </script>
+
+    <!-- 背景樱花飘落特效 adaichan 2020.12.04 M -->
+    
+    <script type="text/javascript">
+        //只在桌面版网页启用特效
+        var windowWidth = $(window).width()
+        if (windowWidth > 768) {
+            document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>')
+        }
+    </script>
+    
+
+    <!-- 背景雪花飘落特效 adaichan 2020.12.04 M -->
+    
+
+    <!-- 背景动态科技线条 adaichan 2020.12.04 M -->
+    
+
+    <!-- 背景静止彩带 adaichan 2020.12.04 M -->
+    
+    <script type="text/javascript">
+        var windowWidth = $(window).width()
+        if (windowWidth > 992) {
+            document.write('<script type="text/javascript" size="150" alpha="0.8" zIndex="-1" src="/libs/background/ribbon.min.js"><\/script>')
+        }
+    </script>
+    
+
+    <!-- 背景动态彩带 adaichan 2020.12.04 M -->
+    
+    <script type="text/javascript">
+        var windowWidth = $(window).width()
+        if (windowWidth > 992) {
+            document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>')
+        }
+    </script>
+    
+
+    <!-- 鼠标点击烟花爆炸效果 adaichan 2020.12.04 M -->
+    
+    <canvas class="fireworks" style="position: fixed; left: 0; top: 0; z-index: 1; pointer-events: none;"></canvas>
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script type="text/javascript" src="/js/fireworks.js"></script>
+    
+
+    <!-- 鼠标点击文字特效 adaichan 2020.12.04 M -->
+    
+    <script src="/js/wenzi.js" type="text/javascript"></script>
+    
+
+    <!-- 在线聊天工具  adaichan 2020.12.04 M -->
+    
+
+    <!-- 中国天气网插件 adaichan 2020.12.04 M -->
+    <div id="weather-v2-plugin-simple"></div>
+    <script>WIDGET = { CONFIG: { "modules": "01234", "background": 1, "tmpColor": "FFFFFF", "tmpSize": 16, "cityColor": "FFFFFF", "citySize": 16, "aqiSize": 16, "weatherIconSize": 24, "alertIconSize": 18, "padding": "10px 10px 10px 10px", "shadow": "1", "language": "auto", "borderRadius": 5, "city": "CN101200101", "fixed": "true", "vertical": "middle", "horizontal": "center", "left": "16", "top": "16", "key": "bAnFmmXfQG" } }</script>
+    <script src="https://apip.weatherdt.com/simple/static/js/weather-simple-common.js?v=2.0"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7}});</script>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
+
+</html>
